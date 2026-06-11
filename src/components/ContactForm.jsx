@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Contact } from "@/api/entities";
+import { submitNetlifyForm } from "@/lib/netlifyForms";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -28,7 +28,7 @@ export default function ContactForm({ title, description, language }) {
     setIsSubmitting(true);
     
     try {
-      await Contact.create(formData);
+      await submitNetlifyForm("contact", formData);
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -142,7 +142,20 @@ export default function ContactForm({ title, description, language }) {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p className="hidden">
+                    <label>
+                      Don't fill this out: <input name="bot-field" />
+                    </label>
+                  </p>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="name" className="text-sm font-medium text-gray-900 mb-2 block">

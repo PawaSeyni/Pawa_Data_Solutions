@@ -1,18 +1,9 @@
 
-import React, { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-export default function Layout({ children, currentPageName }) {
-  const [language, setLanguage] = useState("en");
-
-  const childrenWithProps = React.Children.map(children, child => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child, { language });
-    }
-    return child;
-  });
-
+export default function Layout({ children, currentPageName, language, setLanguage }) {
   return (
     <div className="min-h-screen bg-white">
       <style>
@@ -40,7 +31,7 @@ export default function Layout({ children, currentPageName }) {
         setLanguage={setLanguage}
       />
       <main>
-        {childrenWithProps}
+        {children}
       </main>
       <Footer language={language} />
     </div>

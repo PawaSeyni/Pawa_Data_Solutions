@@ -22,6 +22,7 @@ import DoNotSellOrShare from "./DoNotSellOrShare";
 
 import Careers from "./Careers";
 
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
@@ -67,36 +68,23 @@ function _getCurrentPage(url) {
 function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
-    
+    const [language, setLanguage] = useState("en");
+
     return (
-        <Layout currentPageName={currentPage}>
-            <Routes>            
-                
-                    <Route path="/" element={<Home />} />
-                
-                
-                <Route path="/Home" element={<Home />} />
-                
-                <Route path="/Workshop" element={<Workshop />} />
-                
-                <Route path="/DataIntegration" element={<DataIntegration />} />
-                
-                <Route path="/PipelineArchitecture" element={<PipelineArchitecture />} />
-                
-                <Route path="/DataGovernance" element={<DataGovernance />} />
-                
-                <Route path="/AIReadiness" element={<AIReadiness />} />
-                
-                <Route path="/AnalyticsEnablement" element={<AnalyticsEnablement />} />
-                
-                <Route path="/ProcessAutomation" element={<ProcessAutomation />} />
-                
-                <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-                
-                <Route path="/DoNotSellOrShare" element={<DoNotSellOrShare />} />
-                
-                <Route path="/Careers" element={<Careers />} />
-                
+        <Layout currentPageName={currentPage} language={language} setLanguage={setLanguage}>
+            <Routes>
+                <Route path="/" element={<Home language={language} />} />
+                <Route path="/Home" element={<Home language={language} />} />
+                <Route path="/Workshop" element={<Workshop language={language} />} />
+                <Route path="/DataIntegration" element={<DataIntegration language={language} />} />
+                <Route path="/PipelineArchitecture" element={<PipelineArchitecture language={language} />} />
+                <Route path="/DataGovernance" element={<DataGovernance language={language} />} />
+                <Route path="/AIReadiness" element={<AIReadiness language={language} />} />
+                <Route path="/AnalyticsEnablement" element={<AnalyticsEnablement language={language} />} />
+                <Route path="/ProcessAutomation" element={<ProcessAutomation language={language} />} />
+                <Route path="/PrivacyPolicy" element={<PrivacyPolicy language={language} />} />
+                <Route path="/DoNotSellOrShare" element={<DoNotSellOrShare language={language} />} />
+                <Route path="/Careers" element={<Careers language={language} />} />
             </Routes>
         </Layout>
     );

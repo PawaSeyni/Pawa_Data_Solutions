@@ -2,37 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pawa Data Solutions</title>
+    <meta name="description" content="PaWa Data Solutions helps mid-market teams integrate, govern, and activate trusted data—fast. From pipelines to AI readiness, get measurable outcomes in weeks, not months." />
+    <title>PaWa Data Solutions — Trusted Data, Delivered Fast</title>
   </head>
   <body>
+    <!--
+      Hidden static forms for Netlify build-time form detection.
+      The live React forms submit via AJAX to these form names.
+      https://docs.netlify.com/forms/setup/#javascript-forms
+    -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="phone" />
+      <textarea name="message"></textarea>
+      <input type="text" name="language" />
+    </form>
+
+    <form name="job-application" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="full_name" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="position" />
+      <input type="text" name="experience_level" />
+      <input type="text" name="location" />
+      <input type="text" name="remote_preference" />
+      <input type="file" name="resume" />
+      <textarea name="cover_letter"></textarea>
+      <input type="url" name="linkedin_url" />
+      <input type="url" name="portfolio_url" />
+      <input type="text" name="availability" />
+      <input type="text" name="language" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <!-- Netlify Forms detection (hidden at runtime) -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="contact" />
-      <input name="bot-field" />
-      <input name="name" />
-      <input name="email" />
-      <input name="company" />
-      <input name="phone" />
-      <textarea name="message"></textarea>
-    </form>
-
-    <form name="job-application" netlify netlify-honeypot="bot-field" hidden enctype="multipart/form-data">
-      <input type="hidden" name="form-name" value="job-application" />
-      <input name="bot-field" />
-      <input name="full_name" />
-      <input name="email" />
-      <input name="phone" />
-      <input name="location" />
-      <input name="availability" />
-      <input name="linkedin_url" />
-      <input name="portfolio_url" />
-      <input name="cover_letter" />
-      <input type="file" name="resume" />
-    </form>
   </body>
 </html>

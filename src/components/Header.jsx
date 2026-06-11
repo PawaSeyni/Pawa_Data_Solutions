@@ -42,10 +42,10 @@ export default function Header({ currentPageName, language, setLanguage }) {
         <div className="flex items-center justify-between py-3">
           {/* Brand */}
           <Link to={createPageUrl('Home')} className="flex items-center">
-            <img 
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/ac5d130b7_20250808_1357_WhiteBackgroundLogo_remix_01k25d2v51eh8r6dsfep60r96e.png" 
-              alt="PaWa Data Solutions Logo" 
-              className="h-32 w-auto" 
+            <img
+              src="/pawa-logo.png"
+              alt="PaWa Data Solutions Logo"
+              className="h-32 w-auto"
             />
           </Link>
 

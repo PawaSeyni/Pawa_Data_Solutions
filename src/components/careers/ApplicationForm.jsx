@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
-import { JobApplication } from "@/api/entities";
-import { UploadFile } from "@/api/integrations";
+import { submitNetlifyFormWithFiles } from "@/lib/netlifyForms";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,7 +20,6 @@ export default function ApplicationForm({ language }) {
     experience_level: '',
     location: '',
     remote_preference: '',
-    resume_url: '',
     cover_letter: '',
     linkedin_url: '',
     portfolio_url: '',
@@ -35,15 +33,15 @@ export default function ApplicationForm({ language }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.resume_url) {
+    if (!resumeFile) {
       alert(t.careersResumeRequired);
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      await JobApplication.create(formData);
+      await submitNetlifyFormWithFiles("job-application", formData, { resume: resumeFile });
       setIsSubmitted(true);
       setFormData({
         full_name: '',
@@ -53,7 +51,6 @@ export default function ApplicationForm({ language }) {
         experience_level: '',
         location: '',
         remote_preference: '',
-        resume_url: '',
         cover_letter: '',
         linkedin_url: '',
         portfolio_url: '',
@@ -88,11 +85,11 @@ export default function ApplicationForm({ language }) {
 
     setIsUploadingResume(true);
     try {
-      const { file_url } = await UploadFile({ file });
-      setFormData(prev => ({ ...prev, resume_url: file_url }));
+      // The file is attached directly to the form submission (multipart),
+      // so we just stash it locally — no separate upload round-trip.
       setResumeFile(file);
     } catch (error) {
-      console.error('Error uploading file:', error);
+      console.error('Error attaching file:', error);
       alert(t.careersUploadError);
     } finally {
       setIsUploadingResume(false);
@@ -155,7 +152,21 @@ export default function ApplicationForm({ language }) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              name="job-application"
+              method="POST"
+              data-netlify="true"
+              encType="multipart/form-data"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="job-application" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out: <input name="bot-field" />
+                </label>
+              </p>
               {/* Personal Information */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>

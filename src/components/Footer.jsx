@@ -38,7 +38,7 @@ export default function Footer({ language }) {
           <div className="md:col-span-2">
             <div className="mb-4">
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/ac5d130b7_20250808_1357_WhiteBackgroundLogo_remix_01k25d2v51eh8r6dsfep60r96e.png"
+                src="/pawa-logo.png"
                 alt="PaWa Data Solutions Logo"
                 className="h-40 w-auto filter brightness-0 invert"
               />

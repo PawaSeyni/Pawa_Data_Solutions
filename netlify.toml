@@ -1,0 +1,16 @@
+# Netlify build & deploy configuration for PaWa Data Solutions
+# Static Vite + React SPA — no backend. Forms handled by Netlify Forms.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback: let React Router handle client-side routes.
+# (Form POSTs to "/" are intercepted by Netlify Forms before this runs.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
