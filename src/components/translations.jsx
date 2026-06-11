@@ -356,7 +356,7 @@ export const translations = {
     processAutomationFeature5: "Measure and continuously optimize key performance indicators (throughput, error rates, cycle time, satisfaction) while managing the people side of change.",
     processAutomationCaseStudyTitle: "Operations Transformation",
     processAutomationCaseStudyDesc: "A logistics company automated their entire reporting pipeline, reducing processing time from hours to minutes.",
-    processAutomationCaseStudyResult: "85% reduction in manual work",
+    processAutomationCaseStudyResult: "55% reduction in manual work",
   },
   fr: {
     // Header
@@ -721,7 +721,7 @@ export const translations = {
     processAutomationFeature6: "Surveillance et optimisation des performances",
     processAutomationCaseStudyTitle: "Transformation des Opérations",
     processAutomationCaseStudyDesc: "Une entreprise de logistique a automatisé l'intégralité de son pipeline de reporting, réduisant le temps de traitement de plusieurs heures à quelques minutes.",
-    processAutomationCaseStudyResult: "85% de réduction du travail manuel",
+    processAutomationCaseStudyResult: "55% de réduction du travail manuel",
   },
   es: {
     // Header
@@ -1086,7 +1086,7 @@ export const translations = {
     processAutomationFeature6: "Monitoreo y optimización del rendimiento",
     processAutomationCaseStudyTitle: "Transformación de Operaciones",
     processAutomationCaseStudyDesc: "Una empresa de logística automatizó todo su pipeline de informes, reduciendo el tiempo de procesamiento de horas a minutos.",
-    processAutomationCaseStudyResult: "85% de reducción en el trabajo manual",
+    processAutomationCaseStudyResult: "55% de reducción en el trabajo manual",
   },
   pt: {
     // Header
@@ -1451,6 +1451,6 @@ export const translations = {
     processAutomationFeature6: "Monitoramento e otimização de desempenho",
     processAutomationCaseStudyTitle: "Transformação de Operações",
     processAutomationCaseStudyDesc: "Uma empresa de logística automatizou todo o seu pipeline de relatórios, reduzindo o tempo de processamento de horas para minutos.",
-    processAutomationCaseStudyResult: "85% de redução no trabalho manual",
+    processAutomationCaseStudyResult: "55% de redução no trabalho manual",
   }
 };
