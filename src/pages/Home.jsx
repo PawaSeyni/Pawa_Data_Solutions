@@ -3,7 +3,6 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Process from "../components/Process";
 import KPIs from "../components/KPIs";
-import Testimonials from "../components/Testimonials";
 import ContactForm from "../components/ContactForm";
 import { translations } from "@/components/translations";
 
@@ -15,8 +14,7 @@ export default function Home({ language }) {
       <Services language={language} />
       <Process language={language} />
       <KPIs language={language} />
-      <Testimonials language={language} />
-      <ContactForm 
+      <ContactForm
         title={t.contactTitleHome}
         description={t.contactSubtitleHome}
         language={language}

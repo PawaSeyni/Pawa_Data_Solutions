@@ -54,31 +54,6 @@ export default function Hero({ language }) {
               {t.heroCtaSecondary}
             </Button>
           </div>
-
-          {/* Trust indicators */}
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <p className="text-sm text-gray-500 mb-6 uppercase tracking-wider font-medium">
-              {t.heroTrustedBy}
-            </p>
-            
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center opacity-60">
-              {[
-                { name: "TechCorp", logo: "TC" },
-                { name: "DataFlow", logo: "DF" },
-                { name: "CloudVault", logo: "CV" },
-                { name: "Analytics Pro", logo: "AP" },
-                { name: "SmartData", logo: "SD" },
-                { name: "InfoSystems", logo: "IS" }
-              ].map((company, idx) => (
-                <div key={idx} className="flex flex-col items-center">
-                  <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
-                    <span className="text-gray-600 font-semibold text-sm">{company.logo}</span>
-                  </div>
-                  <span className="text-xs text-gray-400">{company.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
