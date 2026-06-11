@@ -3,7 +3,7 @@ import React from 'react';
 const contentHtml = `
     <h1>Do Not Sell or Share My Personal Information (CPRA) / Ne pas vendre/partager mes renseignements (CPRA)</h1>
     <p class="meta"><strong>Effective / Date d’entrée en vigueur:</strong> August 10, 2025<br>
-    <strong>Contact:</strong> <a href="mailto:privacy@pawa-data.com">privacy@pawa-data.com</a> • 628 Fleet Street, Suite 2803, Toronto, Ontario, Canada</p>
+    <strong>Contact:</strong> <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a> • 628 Fleet Street, Suite 2803, Toronto, Ontario, Canada</p>
 
     <h2 id="en">EN — California Consumer Privacy Rights (CPRA)</h2>
     <p>This page applies only to California residents. PaWa Data Solutions <strong>does not sell</strong> personal information. If activities ever qualify as “selling” or “sharing” (for cross-context behavioral advertising) under the CPRA, you can use the options below to opt out.</p>
@@ -17,10 +17,9 @@ const contentHtml = `
 
     <h3>2) How to exercise</h3>
     <ul>
-      <li><strong>Cookie Settings / Privacy Preferences:</strong> <a href="#">https://www.pawa-data.com/privacy-preferences</a> (insert your link)</li>
+      <li><strong>Email (primary method):</strong> <a href="mailto:privacy@pawadata.com?subject=CPRA%20Request">privacy@pawadata.com</a> with the subject “CPRA Request.”</li>
       <li><strong>Global Privacy Control (GPC):</strong> we honor recognized browser opt-out signals.</li>
-      <li><strong>Web form:</strong> <a href="#">https://www.pawa-data.com/privacy-request</a> (insert your link)</li>
-      <li><strong>Email:</strong> <a href="mailto:privacy@pawa-data.com">privacy@pawa-data.com</a> (subject: “CPRA Request”).</li>
+      <li><strong>Cookies:</strong> this Site uses no cookies or tracking, so there are no cookie preferences to set.</li>
       <li><strong>Authorized agents:</strong> may submit requests with proof of authorization and identity.</li>
     </ul>
 
@@ -44,10 +43,9 @@ const contentHtml = `
 
     <h3>2) Comment exercer</h3>
     <ul>
-      <li><strong>Paramètres des témoins / Préférences de confidentialité :</strong> <a href="#">https://www.pawa-data.com/privacy-preferences</a> (insérez votre lien)</li>
+      <li><strong>Courriel (méthode principale) :</strong> <a href="mailto:privacy@pawadata.com?subject=Demande%20CPRA">privacy@pawadata.com</a> avec l’objet « Demande CPRA ».</li>
       <li><strong>Global Privacy Control (GPC) :</strong> signaux reconnus honorés.</li>
-      <li><strong>Formulaire Web :</strong> <a href="#">https://www.pawa-data.com/privacy-request</a> (insérez votre lien)</li>
-      <li><strong>Courriel :</strong> <a href="mailto:privacy@pawa-data.com">privacy@pawa-data.com</a> (objet : « Demande CPRA »).</li>
+      <li><strong>Témoins :</strong> ce site n’utilise aucun témoin ni traceur; il n’y a donc aucune préférence de témoins à régler.</li>
       <li><strong>Mandataires autorisés :</strong> avec preuve d’autorisation et d’identité.</li>
     </ul>
 

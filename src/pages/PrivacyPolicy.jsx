@@ -5,7 +5,7 @@ const policyHtml = `
     <h1>Privacy Policy — PaWa Data Solutions</h1>
     <p class="meta"><strong>Effective date:</strong> August 10, 2025<br>
     <strong>Website:</strong> <a href="/">pawadata.com</a><br>
-    <strong>Contact:</strong> <a href="mailto:privacy@pawa-data.com">privacy@pawa-data.com</a> • 628 Fleet Street, Suite 2803, Toronto, Ontario, Canada</p>
+    <strong>Contact:</strong> <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a> • 628 Fleet Street, Suite 2803, Toronto, Ontario, Canada</p>
 
     <div class="toc">
       <strong>On this page:</strong>
@@ -34,37 +34,34 @@ const policyHtml = `
     <h2 id="collect">2) What we collect</h2>
     <h3>Information you provide</h3>
     <ul>
-      <li>Contact forms and email: name, work email, phone, company, role, and message contents.</li>
-      <li>Scheduling (e.g., Calendly): name, email, and time-zone details.</li>
-      <li>Newsletter (if enabled): email address and subscription preferences.</li>
+      <li>Contact form: name, work email, phone, company, and message contents.</li>
+      <li>Job applications (Careers page): name, email, phone, location, the role and experience level you select, your résumé, and any links or cover letter you provide.</li>
     </ul>
     <h3>Information collected automatically</h3>
     <ul>
-      <li>IP address (short-lived), device/browser details, pages viewed, timestamps, referrers, and general location inferred from IP.</li>
-      <li>Analytics: we use <strong>Plausible Analytics</strong>, a privacy-friendly tool that does <strong>not</strong> use cookies and collects only aggregated, non-identifying metrics.</li>
+      <li>Our hosting provider (Netlify) may log standard technical data such as IP address, device/browser details, and request timestamps to operate and secure the Site.</li>
+      <li>This Site does <strong>not</strong> use cookies or third-party analytics.</li>
     </ul>
-    <h3>Information from service providers</h3>
-    <p>If you interact with embedded tools (e.g., meeting scheduler, contact widgets, or captcha), those providers may receive data necessary to operate the feature.</p>
 
     <h2 id="use">3) How we use information</h2>
     <ul>
       <li>Operate, maintain, and improve the Site and user experience.</li>
-      <li>Respond to inquiries, schedule meetings, and provide requested information.</li>
-      <li>Plan sales/marketing follow-ups you requested.</li>
+      <li>Respond to inquiries and provide requested information.</li>
+      <li>Review and respond to job applications submitted through the Careers page.</li>
       <li>Safeguard the Site, detect/prevent abuse and security incidents.</li>
       <li>Comply with legal, tax, and regulatory obligations.</li>
     </ul>
 
     <h2 id="legal">4) Legal bases (EU/UK)</h2>
-    <p>Where the GDPR/UK GDPR applies, we process data under: <strong>Contract</strong>, <strong>Legitimate Interests</strong> (site operations, security, B2B relationship management balanced with your rights), <strong>Consent</strong> (newsletter or optional cookies), and <strong>Legal Obligation</strong>.</p>
+    <p>Where the GDPR/UK GDPR applies, we process data under: <strong>Contract</strong>, <strong>Legitimate Interests</strong> (site operations, security, B2B relationship management balanced with your rights), and <strong>Legal Obligation</strong>.</p>
 
     <h2 id="cookies">5) Cookies &amp; similar technologies</h2>
-    <p>Our default setup aims to be low-cookie. Plausible is cookie-free. Some embedded services (e.g., scheduling widgets, spam protection) may set strictly necessary cookies so the feature works. If we later enable optional marketing or ad cookies, we will present a preferences banner.</p>
+    <p>This Site does not use cookies, tracking pixels, or third-party analytics. If we ever introduce optional marketing or analytics cookies, we will present a preferences banner first.</p>
 
     <h2 id="sharing">6) Sharing your information</h2>
     <p>We do not sell personal information. We share limited data with:</p>
     <ul>
-      <li><strong>Service providers (processors):</strong> Hosting/CDN (e.g., Vercel/Cloudflare/Netlify), Analytics (Plausible), Scheduling (e.g., Calendly), and Email/CRM (e.g., Google Workspace/HubSpot/Mailchimp). These providers are bound to use data only per our instructions.</li>
+      <li><strong>Service providers (processors):</strong> <strong>Netlify</strong> provides hosting/CDN and processes our contact and job-application form submissions; submission notifications are delivered to our email. These providers are bound to use data only per our instructions.</li>
       <li><strong>Business transfers:</strong> in mergers, acquisitions, or financing.</li>
       <li><strong>Legal/safety:</strong> to comply with law or protect rights, security, and safety.</li>
     </ul>
@@ -75,8 +72,7 @@ const policyHtml = `
     <h2 id="retention">8) Data retention</h2>
     <ul>
       <li>Contact &amp; sales inquiries: up to <strong>24 months</strong> after last interaction.</li>
-      <li>Scheduling metadata: <strong>24 months</strong>.</li>
-      <li>Analytics aggregates (Plausible): typically <strong>12–24 months</strong>.</li>
+      <li>Job applications: up to <strong>24 months</strong>, unless you ask us to delete them sooner.</li>
       <li>Transaction/tax records (if any): <strong>7 years</strong> or as required by law.</li>
     </ul>
 
@@ -104,7 +100,7 @@ const policyHtml = `
     <p>We may update this policy. The “effective date” at the top indicates the latest revision. We encourage you to review it periodically.</p>
 
     <h2 id="contact">15) How to contact us</h2>
-    <p>For questions about this policy or your data, please contact us at <a href="mailto:privacy@pawa-data.com">privacy@pawa-data.com</a>.</p>
+    <p>For questions about this policy or your data, please contact us at <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a>.</p>
 `;
 
 const policyCss = `
