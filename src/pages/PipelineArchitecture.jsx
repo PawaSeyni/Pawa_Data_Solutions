@@ -126,6 +126,9 @@ export default function PipelineArchitecture({ language = "en" }) {
 
             <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8">
               <div className="bg-white rounded-xl p-6 shadow-lg">
+                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+                  {t.caseStudyLabel}
+                </span>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   {t.pipelineArchitectureCaseStudyTitle}
                 </h3>

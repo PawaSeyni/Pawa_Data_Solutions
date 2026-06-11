@@ -237,7 +237,7 @@ export const translations = {
     dataIntegrationFeature5: "Build for sovereignty & compliance (PII, residency) from day one—region-aware storage, policies, and controls.",
     dataIntegrationCaseStudyTitle: "Manufacturing Success Story",
     dataIntegrationCaseStudyDesc: "A leading manufacturer unified 15 disparate systems, reducing reporting time from days to minutes.",
-    dataIntegrationCaseStudyResult: "90% reduction in data preparation time",
+    dataIntegrationCaseStudyResult: "Up to 70% less data preparation time",
 
     // Pipeline Architecture Service Page
     pipelineArchitectureEyebrow: "Modern Pipeline Architecture",
@@ -261,7 +261,7 @@ export const translations = {
     pipelineArchitectureFeature5: "Adopt lakehouse governance (e.g., centralized catalogs) to simplify access and compliance at scale.",
     pipelineArchitectureCaseStudyTitle: "Financial Services Transformation",
     pipelineArchitectureCaseStudyDesc: "A regional bank modernized their data infrastructure, enabling real-time fraud detection and customer analytics.",
-    pipelineArchitectureCaseStudyResult: "5x improvement in processing speed",
+    pipelineArchitectureCaseStudyResult: "Near real-time processing",
 
     // Data Governance Service Page
     dataGovernanceEyebrow: "Trusted Data Governance",
@@ -284,7 +284,7 @@ export const translations = {
     dataGovernanceFeature4: "Govern where the data lives (multi-cloud, on-prem) including sovereignty/residency constraints. Promote literacy and adoption—governance is continuous change, not a one-off project.",
     dataGovernanceCaseStudyTitle: "Healthcare Compliance Success",
     dataGovernanceCaseStudyDesc: "A healthcare network implemented comprehensive governance, achieving HIPAA compliance while improving data accessibility.",
-    dataGovernanceCaseStudyResult: "100% compliance audit success",
+    dataGovernanceCaseStudyResult: "Passed HIPAA compliance audit",
 
     // AI Readiness Service Page
     aiReadinessEyebrow: "AI-Ready Data Foundation",
@@ -332,7 +332,7 @@ export const translations = {
     analyticsEnablementFeature5: "Accelerate discovery with cataloging and stewards; document lineage from sources to dashboards.",
     analyticsEnablementCaseStudyTitle: "Marketing Analytics Success",
     analyticsEnablementCaseStudyDesc: "A marketing team increased campaign ROI by implementing advanced attribution modeling and customer analytics.",
-    analyticsEnablementCaseStudyResult: "40% improvement in marketing ROI",
+    analyticsEnablementCaseStudyResult: "~30% improvement in marketing ROI",
 
     // Process Automation Service Page
     processAutomationEyebrow: "Intelligent Automation",
@@ -357,6 +357,7 @@ export const translations = {
     processAutomationCaseStudyTitle: "Operations Transformation",
     processAutomationCaseStudyDesc: "A logistics company automated their entire reporting pipeline, reducing processing time from hours to minutes.",
     processAutomationCaseStudyResult: "55% reduction in manual work",
+    caseStudyLabel: "Illustrative example",
   },
   fr: {
     // Header
@@ -596,7 +597,7 @@ export const translations = {
     dataIntegrationFeature6: "Architecture cloud-native évolutive",
     dataIntegrationCaseStudyTitle: "Succès Manufacturing",
     dataIntegrationCaseStudyDesc: "Un fabricant de premier plan a unifié 15 systèmes disparates, réduisant le temps de reporting de jours à minutes.",
-    dataIntegrationCaseStudyResult: "90% de réduction du temps de préparation des données",
+    dataIntegrationCaseStudyResult: "Jusqu'à 70% de temps de préparation des données en moins",
 
     // Pipeline Architecture Service Page French
     pipelineArchitectureEyebrow: "Architecture de Pipeline Moderne",
@@ -621,7 +622,7 @@ export const translations = {
     pipelineArchitectureFeature6: "Principes de conception API-first",
     pipelineArchitectureCaseStudyTitle: "Transformation des Services Financiers",
     pipelineArchitectureCaseStudyDesc: "Une banque régionale a modernisé son infrastructure de données, permettant la détection de fraudes en temps réel et l'analyse des clients.",
-    pipelineArchitectureCaseStudyResult: "5x amélioration de la vitesse de traitement",
+    pipelineArchitectureCaseStudyResult: "Traitement en temps quasi réel",
 
     // Data Governance Service Page French
     dataGovernanceEyebrow: "Gouvernance de Données Fiable",
@@ -646,7 +647,7 @@ export const translations = {
     dataGovernanceFeature6: "Gestion et application des politiques",
     dataGovernanceCaseStudyTitle: "Succès de Conformité en Soins de Santé",
     dataGovernanceCaseStudyDesc: "Un réseau de soins de santé a mis en œuvre une gouvernance complète, atteignant la conformité HIPAA tout en améliorant l'accessibilité des données.",
-    dataGovernanceCaseStudyResult: "100% de succès d'audit de conformité",
+    dataGovernanceCaseStudyResult: "Audit de conformité HIPAA réussi",
 
     // AI Readiness Service Page French
     aiReadinessEyebrow: "Fondation de Données Prête pour l'IA",
@@ -696,7 +697,7 @@ export const translations = {
     analyticsEnablementFeature6: "Rapports et alertes planifiés",
     analyticsEnablementCaseStudyTitle: "Succès de l'Analytique Marketing",
     analyticsEnablementCaseStudyDesc: "Une équipe marketing a augmenté le ROI de ses campagnes en implémentant une modélisation d'attribution avancée et l'analyse des clients.",
-    analyticsEnablementCaseStudyResult: "40% de réduction du temps de préparation des données",
+    analyticsEnablementCaseStudyResult: "~30% d'amélioration du ROI marketing",
 
     // Process Automation Service Page French
     processAutomationEyebrow: "Automatisation Intelligente",
@@ -722,6 +723,7 @@ export const translations = {
     processAutomationCaseStudyTitle: "Transformation des Opérations",
     processAutomationCaseStudyDesc: "Une entreprise de logistique a automatisé l'intégralité de son pipeline de reporting, réduisant le temps de traitement de plusieurs heures à quelques minutes.",
     processAutomationCaseStudyResult: "55% de réduction du travail manuel",
+    caseStudyLabel: "Exemple illustratif",
   },
   es: {
     // Header
@@ -961,7 +963,7 @@ export const translations = {
     dataIntegrationFeature6: "Arquitectura nativa de la nube escalable",
     dataIntegrationCaseStudyTitle: "Caso de Éxito en Manufactura",
     dataIntegrationCaseStudyDesc: "Un fabricante líder unificó 15 sistemas dispares, reduciendo el tiempo de generación de informes de días a minutos.",
-    dataIntegrationCaseStudyResult: "90% de reducción en el tiempo de preparación de datos",
+    dataIntegrationCaseStudyResult: "Hasta 70% menos tiempo de preparación de datos",
 
     // Pipeline Architecture Service Page Spanish
     pipelineArchitectureEyebrow: "Arquitectura de Pipeline Moderna",
@@ -986,7 +988,7 @@ export const translations = {
     pipelineArchitectureFeature6: "Principios de diseño API-first",
     pipelineArchitectureCaseStudyTitle: "Transformación de Servicios Financieros",
     pipelineArchitectureCaseStudyDesc: "Un banco regional modernizó su infraestructura de datos, permitiendo la detección de fraude en tiempo real y el análisis de clientes.",
-    pipelineArchitectureCaseStudyResult: "5x mejora en la velocidad de procesamiento",
+    pipelineArchitectureCaseStudyResult: "Procesamiento casi en tiempo real",
 
     // Data Governance Service Page Spanish
     dataGovernanceEyebrow: "Gobernanza de Datos Confiable",
@@ -1011,7 +1013,7 @@ export const translations = {
     dataGovernanceFeature6: "Gestión y aplicación de políticas",
     dataGovernanceCaseStudyTitle: "Éxito de Cumplimiento en el Sector Salud",
     dataGovernanceCaseStudyDesc: "Una red de atención médica implementó una gobernanza integral, logrando el cumplimiento de HIPAA mientras mejoraba la accesibilidad de los datos.",
-    dataGovernanceCaseStudyResult: "100% de éxito en auditorías de cumplimiento",
+    dataGovernanceCaseStudyResult: "Auditoría de cumplimiento HIPAA superada",
 
     // AI Readiness Service Page Spanish
     aiReadinessEyebrow: "Base de Datos Lista para IA",
@@ -1061,7 +1063,7 @@ export const translations = {
     analyticsEnablementFeature6: "Informes y alertas programados",
     analyticsEnablementCaseStudyTitle: "Éxito en Análisis de Marketing",
     analyticsEnablementCaseStudyDesc: "Un equipo de marketing aumentó el ROI de la campaña al implementar un modelado de atribución avanzado y análisis de clientes.",
-    analyticsEnablementCaseStudyResult: "40% de mejora en el ROI de marketing",
+    analyticsEnablementCaseStudyResult: "~30% de mejora en el ROI de marketing",
 
     // Process Automation Service Page Spanish
     processAutomationEyebrow: "Automatización Inteligente",
@@ -1087,6 +1089,7 @@ export const translations = {
     processAutomationCaseStudyTitle: "Transformación de Operaciones",
     processAutomationCaseStudyDesc: "Una empresa de logística automatizó todo su pipeline de informes, reduciendo el tiempo de procesamiento de horas a minutos.",
     processAutomationCaseStudyResult: "55% de reducción en el trabajo manual",
+    caseStudyLabel: "Ejemplo ilustrativo",
   },
   pt: {
     // Header
@@ -1326,7 +1329,7 @@ export const translations = {
     dataIntegrationFeature6: "Arquitetura nativa da nuvem escalável",
     dataIntegrationCaseStudyTitle: "Caso de Sucesso na Manufatura",
     dataIntegrationCaseStudyDesc: "Um fabricante líder unificou 15 sistemas díspares, reduzindo o tempo de relatório de dias para minutos.",
-    dataIntegrationCaseStudyResult: "90% de redução no tempo de preparação de dados",
+    dataIntegrationCaseStudyResult: "Até 70% menos tempo de preparação de dados",
 
     // Pipeline Architecture Service Page Portuguese
     pipelineArchitectureEyebrow: "Arquitetura de Pipeline Moderna",
@@ -1351,7 +1354,7 @@ export const translations = {
     pipelineArchitectureFeature6: "Principios de design API-first",
     pipelineArchitectureCaseStudyTitle: "Transformação de Serviços Financeiros",
     pipelineArchitectureCaseStudyDesc: "Um banco regional modernizou sua infraestrutura de dados, permitindo a detecção de fraudes em tempo real e a análise de clientes.",
-    pipelineArchitectureCaseStudyResult: "5x melhoria na velocidade de processamento",
+    pipelineArchitectureCaseStudyResult: "Processamento quase em tempo real",
 
     // Data Governance Service Page Portuguese
     dataGovernanceEyebrow: "Governança de Dados Confiável",
@@ -1376,7 +1379,7 @@ export const translations = {
     dataGovernanceFeature6: "Gestão e aplicação de políticas",
     dataGovernanceCaseStudyTitle: "Sucesso de Conformidade na Saúde",
     dataGovernanceCaseStudyDesc: "Uma rede de saúde implementou governança abrangente, alcançando conformidade HIPAA enquanto melhorava a acessibilidade dos dados.",
-    dataGovernanceCaseStudyResult: "100% de sucesso na auditoria de conformidade",
+    dataGovernanceCaseStudyResult: "Auditoria de conformidade HIPAA aprovada",
 
     // AI Readiness Service Page Portuguese
     aiReadinessEyebrow: "Base de Dados Pronta para IA",
@@ -1426,7 +1429,7 @@ export const translations = {
     analyticsEnablementFeature6: "Relatórios e alertas agendados",
     analyticsEnablementCaseStudyTitle: "Sucesso na Análise de Marketing",
     analyticsEnablementCaseStudyDesc: "Uma equipe de marketing aumentou o ROI da campanha implementando modelagem de atribuição avançada e análise de clientes.",
-    analyticsEnablementCaseStudyResult: "40% de melhoria no ROI de marketing",
+    analyticsEnablementCaseStudyResult: "~30% de melhoria no ROI de marketing",
 
     // Process Automation Service Page Portuguese
     processAutomationEyebrow: "Automação Inteligente",
@@ -1452,5 +1455,6 @@ export const translations = {
     processAutomationCaseStudyTitle: "Transformação de Operações",
     processAutomationCaseStudyDesc: "Uma empresa de logística automatizou todo o seu pipeline de relatórios, reduzindo o tempo de processamento de horas para minutos.",
     processAutomationCaseStudyResult: "55% de redução no trabalho manual",
+    caseStudyLabel: "Exemplo ilustrativo",
   }
 };
