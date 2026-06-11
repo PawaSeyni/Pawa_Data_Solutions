@@ -22,11 +22,20 @@ export default function ContactForm({ title, description, language }) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  const errorMessages = {
+    en: "Something went wrong sending your message. Please try again, or email us at hello@pawadata.com.",
+    fr: "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer ou nous écrire à hello@pawadata.com.",
+    es: "Algo salió mal al enviar tu mensaje. Inténtalo de nuevo o escríbenos a hello@pawadata.com.",
+    pt: "Ocorreu um erro ao enviar sua mensagem. Tente novamente ou escreva para hello@pawadata.com.",
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setHasError(false);
+
     try {
       await submitNetlifyForm("contact", formData);
       setIsSubmitted(true);
@@ -40,6 +49,7 @@ export default function ContactForm({ title, description, language }) {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
+      setHasError(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -246,8 +256,14 @@ export default function ContactForm({ title, description, language }) {
                     </Select>
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  {hasError && (
+                    <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                      {errorMessages[language] || errorMessages.en}
+                    </p>
+                  )}
+
+                  <Button
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                   >

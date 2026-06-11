@@ -30,6 +30,14 @@ export default function ApplicationForm({ language }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [resumeFile, setResumeFile] = useState(null);
   const [isUploadingResume, setIsUploadingResume] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  const errorMessages = {
+    en: "Something went wrong submitting your application. Please try again, or email us at hello@pawadata.com.",
+    fr: "Une erreur s'est produite lors de l'envoi de votre candidature. Veuillez réessayer ou nous écrire à hello@pawadata.com.",
+    es: "Algo salió mal al enviar tu solicitud. Inténtalo de nuevo o escríbenos a hello@pawadata.com.",
+    pt: "Ocorreu um erro ao enviar sua candidatura. Tente novamente ou escreva para hello@pawadata.com.",
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,6 +47,7 @@ export default function ApplicationForm({ language }) {
     }
 
     setIsSubmitting(true);
+    setHasError(false);
 
     try {
       await submitNetlifyFormWithFiles("job-application", formData, { resume: resumeFile });
@@ -60,6 +69,7 @@ export default function ApplicationForm({ language }) {
       setResumeFile(null);
     } catch (error) {
       console.error('Error submitting application:', error);
+      setHasError(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -379,8 +389,14 @@ export default function ApplicationForm({ language }) {
                 />
               </div>
 
-              <Button 
-                type="submit" 
+              {hasError && (
+                <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                  {errorMessages[language] || errorMessages.en}
+                </p>
+              )}
+
+              <Button
+                type="submit"
                 disabled={isSubmitting || isUploadingResume}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
               >

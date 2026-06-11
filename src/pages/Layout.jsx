@@ -2,10 +2,12 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 export default function Layout({ children, currentPageName, language, setLanguage }) {
   return (
     <div className="min-h-screen bg-white">
+      <Seo pageName={currentPageName} language={language} />
       <style>
         {`
           :root {

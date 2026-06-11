@@ -37,11 +37,16 @@ export default function Footer({ language }) {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <img
-                src="/pawa-logo.png"
-                alt="PaWa Data Solutions Logo"
-                className="h-40 w-auto filter brightness-0 invert"
-              />
+              <picture>
+                <source srcSet="/pawa-logo.webp" type="image/webp" />
+                <img
+                  src="/pawa-logo.png"
+                  alt="PaWa Data Solutions"
+                  width="240"
+                  height="360"
+                  className="h-40 w-auto filter brightness-0 invert"
+                />
+              </picture>
             </div>
             <p className="text-gray-300 max-w-md mb-4">
               {t.footerDesc}

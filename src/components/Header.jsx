@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react";
 import { translations } from "@/components/translations";
 import { Button } from "@/components/ui/button";
 
+const langNames = { en: "English", fr: "French", es: "Spanish", pt: "Portuguese" };
+
 export default function Header({ currentPageName, language, setLanguage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -42,11 +44,16 @@ export default function Header({ currentPageName, language, setLanguage }) {
         <div className="flex items-center justify-between py-3">
           {/* Brand */}
           <Link to={createPageUrl('Home')} className="flex items-center">
-            <img
-              src="/pawa-logo.png"
-              alt="PaWa Data Solutions Logo"
-              className="h-32 w-auto"
-            />
+            <picture>
+              <source srcSet="/pawa-logo.webp" type="image/webp" />
+              <img
+                src="/pawa-logo.png"
+                alt="PaWa Data Solutions"
+                width="240"
+                height="360"
+                className="h-32 w-auto"
+              />
+            </picture>
           </Link>
 
           {/* Desktop Navigation */}
@@ -77,14 +84,16 @@ export default function Header({ currentPageName, language, setLanguage }) {
 
           {/* Language Switch & Mobile Menu */}
           <div className="flex items-center gap-3">
-            <div className="flex gap-1">
+            <div className="flex gap-1" role="group" aria-label="Select language">
               {['en', 'fr', 'es', 'pt'].map(lang => (
                 <button
                   key={lang}
                   onClick={() => setLanguage(lang)}
+                  aria-label={`Switch to ${langNames[lang]}`}
+                  aria-pressed={language === lang}
                   className={`px-2 py-1.5 text-sm border rounded-full transition-all ${
-                    language === lang 
-                      ? "bg-blue-600 text-white border-blue-600" 
+                    language === lang
+                      ? "bg-blue-600 text-white border-blue-600"
                       : "bg-white text-gray-600 border-gray-300"
                   }`}
                 >
@@ -92,12 +101,14 @@ export default function Header({ currentPageName, language, setLanguage }) {
                 </button>
               ))}
             </div>
-            
+
             <Button
               variant="outline"
               size="icon"
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </Button>
