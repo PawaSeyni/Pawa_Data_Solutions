@@ -31,9 +31,17 @@
 # trailing-slash form, so links, sitemap and canonicals agree with what the CDN
 # actually serves and no rule is needed.
 
-# /Home and /home both duplicated "/" at HTTP 200.
+# /Home and /home both duplicated "/" at HTTP 200. Both spellings need a rule:
+# `from` matching IS case-sensitive (it was Netlify's own path normalization,
+# not the matcher, that caused the earlier redirect loop), and there is no
+# /home file for the normalizer to find, so /Home would otherwise 404.
 [[redirects]]
   from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/Home"
   to = "/"
   status = 301
 
