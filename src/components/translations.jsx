@@ -183,6 +183,7 @@ export const translations = {
     footerTerms: "Terms of Service",
     footerDoNotSell: "Do Not Sell/Share My Info",
     footerCta: "Ready to transform your data?",
+    footerSocialLabel: "Follow PaWa Data Solutions",
     footerCtaLink: "Get started today.",
     
     // Workshop Page
@@ -542,6 +543,7 @@ export const translations = {
     footerTerms: "Conditions de Service",
     footerDoNotSell: "Ne pas vendre/partager mes infos",
     footerCta: "Prêt à transformer vos données ?",
+    footerSocialLabel: "Suivez PaWa Data Solutions",
     footerCtaLink: "Commencez aujourd'hui.",
     
     // Workshop Page - Professional French translations
@@ -908,6 +910,7 @@ export const translations = {
     footerTerms: "Términos de Servicio",
     footerDoNotSell: "No Vender/Compartir Mi Información",
     footerCta: "¿Listo para transformar tus datos?",
+    footerSocialLabel: "Sigue a PaWa Data Solutions",
     footerCtaLink: "Comienza hoy.",
     
     // Workshop Page
@@ -1266,7 +1269,7 @@ export const translations = {
 
     // Footer
     footerDesc: "A PaWa Data Solutions é uma consultoria boutique sediada em Toronto que ajuda equipes de médio mercado a transformar dados isolados em ativos governados e prontos para análise. Projetamos e operamos plataformas de dados nativas da nuvem, construímos pipelines confiáveis e preparamos organizações para IA—com resultados mensuráveis em semanas.",
-    footerServicesTitle: "Services",
+    footerServicesTitle: "Serviços",
     footerCompanyTitle: "Empresa",
     footerAbout: "Sobre Nós",
     footerCaseStudies: "Estudos de Caso",
@@ -1274,6 +1277,7 @@ export const translations = {
     footerTerms: "Termos de Serviço",
     footerDoNotSell: "Não Vender/Compartilhar Minhas Informações",
     footerCta: "Pronto para transformar seus dados?",
+    footerSocialLabel: "Siga a PaWa Data Solutions",
     footerCtaLink: "Comece hoje.",
     
     // Workshop Page

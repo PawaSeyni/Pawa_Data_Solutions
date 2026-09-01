@@ -2,7 +2,31 @@
 import React from "react";
 import { translations } from "@/components/translations";
 import { Link, useNavigate } from "react-router-dom";
+import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { createPageUrl } from "@/utils";
+
+// X ships no lucide glyph, so draw the wordmark directly.
+function XIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+    </svg>
+  );
+}
+
+// Every url here was opened and confirmed to be our account before being added —
+// LinkedIn and Instagram serve a "page not found" body under an HTTP 200, so a
+// status check alone will happily wire up a dead link. A link with no url never
+// renders, so leaving one null is always safe.
+// Watch the LinkedIn slug: /company/pawa is an unrelated farming business and
+// /company/pawadata does not exist. Ours is /company/pawa-data-solutions.
+//   Instagram: /pawadata is not a live profile
+const SOCIAL_LINKS = [
+  { name: "LinkedIn", Icon: Linkedin, url: "https://www.linkedin.com/company/pawa-data-solutions" },
+  { name: "X", Icon: XIcon, url: "https://x.com/pawadata" },
+  { name: "YouTube", Icon: Youtube, url: "https://www.youtube.com/@Pawadata" },
+  { name: "Instagram", Icon: Instagram, url: null },
+].filter((s) => s.url);
 
 export default function Footer({ language }) {
   const t = translations[language];
@@ -52,8 +76,26 @@ export default function Footer({ language }) {
               {t.footerDesc}
             </p>
             <div className="text-sm text-gray-400">
-              © 2024 PaWa Data Solutions. All rights reserved.
+              © {new Date().getFullYear()} PaWa Data Solutions. All rights reserved.
             </div>
+
+            {SOCIAL_LINKS.length > 0 && (
+              <ul className="flex gap-3 mt-5" aria-label={t.footerSocialLabel}>
+                {SOCIAL_LINKS.map(({ name, Icon, url }) => (
+                  <li key={name}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${name} — ${t.footerSocialLabel}`}
+                      className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 text-gray-300 hover:text-white hover:border-white focus-visible:text-white focus-visible:border-white transition-colors"
+                    >
+                      <Icon className="w-5 h-5" aria-hidden="true" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           {/* Services */}
