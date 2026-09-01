@@ -150,9 +150,24 @@ function assertCanonical(html, route) {
   }
 }
 
+// Analytics beacons to abort during prerender. Every build loads all 11 routes
+// plus the 404 in headless Chromium; without this they would land in the
+// Plausible dashboard as real traffic and quietly inflate the numbers this whole
+// step exists to make trustworthy. The snapshot keeps the <script> tag, so real
+// visitors are still counted. Keep in sync with the analytics tags in index.html.
+const ANALYTICS_HOSTS = ['plausible.io'];
+
+async function blockAnalytics(page) {
+  await page.setRequestInterception(true);
+  page.on('request', (req) =>
+    ANALYTICS_HOSTS.some((h) => req.url().includes(h)) ? req.abort() : req.continue(),
+  );
+}
+
 async function snapshot(route) {
   const page = await browser.newPage();
   try {
+    await blockAnalytics(page);
     await page.goto(ORIGIN + route, { waitUntil: 'load', timeout: 30000 });
     await waitUntilRendered(page, route);
     return await page.content();

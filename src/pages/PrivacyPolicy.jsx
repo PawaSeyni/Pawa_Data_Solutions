@@ -3,7 +3,7 @@ import React from 'react';
 
 const policyHtml = `
     <h1>Privacy Policy — PaWa Data Solutions</h1>
-    <p class="meta"><strong>Effective date:</strong> August 10, 2025<br>
+    <p class="meta"><strong>Effective date:</strong> September 1, 2026<br>
     <strong>Website:</strong> <a href="/">pawadata.com</a><br>
     <strong>Contact:</strong> <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a> • 628 Fleet Street, Suite 2803, Toronto, Ontario, Canada</p>
 
@@ -40,7 +40,7 @@ const policyHtml = `
     <h3>Information collected automatically</h3>
     <ul>
       <li>Our hosting provider (Netlify) may log standard technical data such as IP address, device/browser details, and request timestamps to operate and secure the Site.</li>
-      <li>This Site does <strong>not</strong> use cookies or third-party analytics.</li>
+      <li>This Site does <strong>not</strong> use cookies. We use Plausible Analytics, which is cookieless and collects only aggregate, non-identifying page statistics.</li>
     </ul>
 
     <h2 id="use">3) How we use information</h2>
@@ -56,12 +56,12 @@ const policyHtml = `
     <p>Where the GDPR/UK GDPR applies, we process data under: <strong>Contract</strong>, <strong>Legitimate Interests</strong> (site operations, security, B2B relationship management balanced with your rights), and <strong>Legal Obligation</strong>.</p>
 
     <h2 id="cookies">5) Cookies &amp; similar technologies</h2>
-    <p>This Site does not use cookies, tracking pixels, or third-party analytics. If we ever introduce optional marketing or analytics cookies, we will present a preferences banner first.</p>
+    <p>This Site sets <strong>no cookies</strong> and uses no tracking pixels, no advertising trackers, and no cross-site profiling. We do use <a href="https://plausible.io/privacy-focused-web-analytics" rel="noopener noreferrer" target="_blank">Plausible Analytics</a>, a privacy-focused, cookieless service that records aggregate page views, referrers, and approximate country. It stores no cookies, assigns no persistent identifier, does not follow you across sites, and never collects personal data, so it needs no consent banner under GDPR or PIPEDA. If we ever introduce optional marketing or analytics cookies, we will present a preferences banner first.</p>
 
     <h2 id="sharing">6) Sharing your information</h2>
     <p>We do not sell personal information. We share limited data with:</p>
     <ul>
-      <li><strong>Service providers (processors):</strong> <strong>Netlify</strong> provides hosting/CDN and processes our contact and job-application form submissions; submission notifications are delivered to our email. These providers are bound to use data only per our instructions.</li>
+      <li><strong>Service providers (processors):</strong> <strong>Netlify</strong> provides hosting/CDN and processes our contact and job-application form submissions; submission notifications are delivered to our email. <strong>Plausible Analytics</strong> (EU-hosted) processes aggregate, cookieless site statistics. These providers are bound to use data only per our instructions.</li>
       <li><strong>Business transfers:</strong> in mergers, acquisitions, or financing.</li>
       <li><strong>Legal/safety:</strong> to comply with law or protect rights, security, and safety.</li>
     </ul>

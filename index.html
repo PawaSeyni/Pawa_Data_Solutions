@@ -54,6 +54,24 @@
       ]
     }
     </script>
+
+    <!--
+      Analytics: Plausible only — cookieless, aggregate, no personal data, which
+      is what lets the privacy policy keep saying this site sets no cookies.
+      Uses the classic data-domain script deliberately: it needs no inline stub,
+      so script-src does NOT need 'unsafe-inline'.
+
+      Whatever ships here must stay in sync with THREE other places or it breaks
+      silently: the CSP in netlify.toml (script-src + connect-src), the Cookies
+      and Sharing sections of src/pages/PrivacyPolicy.jsx, and ANALYTICS_HOSTS in
+      scripts/prerender.mjs — the prerender loads every route in headless Chrome
+      on each build, and without that block those would land in the dashboard as
+      real traffic.
+
+      Requires pawadata.com to be added as a site in the Plausible account, or
+      the beacon 404s and nothing is recorded.
+    -->
+    <script defer data-domain="pawadata.com" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <!--

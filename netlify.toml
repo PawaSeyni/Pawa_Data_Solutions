@@ -53,7 +53,17 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), browsing-topics=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'"
+    # The allowlist is the site's ACTUAL external resource graph, nothing more.
+    #   plausible.io  analytics script (script-src) + its event beacon (connect-src)
+    # Everything else is same-origin. Netlify Forms POSTs to "/", hence
+    # form-action 'self'. Adding any third-party script, font, image host or API
+    # endpoint means adding it HERE too, or it fails closed in production.
+    #
+    # No 'unsafe-inline' on script-src: the Plausible snippet in index.html is a
+    # plain external <script defer data-domain>, with no inline stub to allow.
+    # The prerendered JSON-LD blocks are type="application/ld+json", which is not
+    # executable and so is not governed by script-src.
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://plausible.io; font-src 'self'; connect-src 'self' https://plausible.io; form-action 'self'"
 
 # Long-cache fingerprinted build assets (filenames change on every build).
 [[headers]]
