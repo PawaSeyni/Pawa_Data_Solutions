@@ -15,67 +15,67 @@ const DEFAULT = {
 const PAGES = {
   Home: DEFAULT,
   DataIntegration: {
-    path: "/DataIntegration",
+    path: "/dataintegration/",
     title: "Data Integration" + SUFFIX,
     description:
       "Unify your data sources with cloud-native ELT/CDC, APIs, and streaming so trusted data lands in governed platforms reliably and fast.",
   },
   PipelineArchitecture: {
-    path: "/PipelineArchitecture",
+    path: "/pipelinearchitecture/",
     title: "Pipeline Architecture" + SUFFIX,
     description:
       "Design resilient, observable data pipelines from raw to refined using lakehouse patterns and DataOps best practices.",
   },
   DataGovernance: {
-    path: "/DataGovernance",
+    path: "/datagovernance/",
     title: "Data Governance" + SUFFIX,
     description:
       "Make data a managed asset with policy, catalog and lineage, and controls that scale across domains.",
   },
   AIReadiness: {
-    path: "/AIReadiness",
+    path: "/aireadiness/",
     title: "AI Readiness" + SUFFIX,
     description:
       "Harden your data foundation and operationalize Responsible AI so your team is ready to build with confidence.",
   },
   AnalyticsEnablement: {
-    path: "/AnalyticsEnablement",
+    path: "/analyticsenablement/",
     title: "Analytics Enablement" + SUFFIX,
     description:
       "Deliver consistent, self-serve insights with a governed semantic layer and clear, shared metric definitions.",
   },
   ProcessAutomation: {
-    path: "/ProcessAutomation",
+    path: "/processautomation/",
     title: "Process Automation" + SUFFIX,
     description:
       "Automate cross-app, high-volume work with a blend of RPA, workflow/BPM, process mining, and AI.",
   },
   Workshop: {
-    path: "/Workshop",
+    path: "/workshop/",
     title: "Data Workshop" + SUFFIX,
     description:
       "A hands-on PaWa data workshop to assess readiness and build a practical roadmap for trusted, AI-ready data.",
   },
   Careers: {
-    path: "/Careers",
+    path: "/careers/",
     title: "Careers" + SUFFIX,
     description:
       "Join PaWa Data Solutions. Explore open data engineering, architecture, and analytics roles—remote and Toronto-based.",
   },
   PrivacyPolicy: {
-    path: "/PrivacyPolicy",
+    path: "/privacypolicy/",
     title: "Privacy Policy" + SUFFIX,
     description:
       "How PaWa Data Solutions collects, uses, and protects your personal information.",
   },
   DoNotSellOrShare: {
-    path: "/DoNotSellOrShare",
+    path: "/donotsellorshare/",
     title: "Do Not Sell or Share" + SUFFIX,
     description:
       "California (CPRA) privacy rights and how to exercise them with PaWa Data Solutions.",
   },
   NotFound: {
-    path: "/404",
+    path: "/404/",
     title: "Page Not Found" + SUFFIX,
     description:
       "That page does not exist. Browse our data integration, governance, analytics, and AI readiness services instead.",

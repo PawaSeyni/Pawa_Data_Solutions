@@ -16,71 +16,20 @@
 # real route unserved. Netlify Forms still intercepts POSTs to "/" before any of
 # this runs.
 
-# Internal links used to be lowercased by createPageUrl() while the sitemap and
-# canonicals said CamelCase, so Google was fed two spellings of every page. The
-# code now emits CamelCase; these 301s catch the lowercase URLs already crawled
-# or linked.
+# No casing redirects here, deliberately.
 #
-# Do NOT add `force = true` here. Netlify's production redirect engine matches
-# `from` case-INSENSITIVELY (the local CLI does not, so this does not reproduce
-# under `netlify dev`). Forcing therefore makes "/dataintegration" match the
-# CamelCase request too and redirect it to itself — an infinite loop that took
-# every service page down. Without force, a matching static file wins, so
-# /DataIntegration serves its prerendered page and only genuinely unmatched
-# spellings fall through to the 301.
+# Netlify lowercases every deployed path and serves directories with a trailing
+# slash, so the prerendered dist/DataIntegration/index.html is served at
+# /dataintegration/ and Netlify itself 301s /DataIntegration to it. An earlier
+# attempt added /dataintegration -> /DataIntegration rules, which pointed the
+# opposite way and produced an infinite redirect loop on all ten service and
+# legal pages. `netlify dev` does not reproduce it: locally the matcher is
+# case-sensitive and macOS's filesystem is not, which is the reverse of
+# production on both counts.
 #
-# The real duplicate-content fix is the per-page canonical the prerender now
-# bakes into every route; these rules are only for inbound links already in the
-# wild.
-[[redirects]]
-  from = "/dataintegration"
-  to = "/DataIntegration"
-  status = 301
-
-[[redirects]]
-  from = "/pipelinearchitecture"
-  to = "/PipelineArchitecture"
-  status = 301
-
-[[redirects]]
-  from = "/datagovernance"
-  to = "/DataGovernance"
-  status = 301
-
-[[redirects]]
-  from = "/aireadiness"
-  to = "/AIReadiness"
-  status = 301
-
-[[redirects]]
-  from = "/analyticsenablement"
-  to = "/AnalyticsEnablement"
-  status = 301
-
-[[redirects]]
-  from = "/processautomation"
-  to = "/ProcessAutomation"
-  status = 301
-
-[[redirects]]
-  from = "/workshop"
-  to = "/Workshop"
-  status = 301
-
-[[redirects]]
-  from = "/careers"
-  to = "/Careers"
-  status = 301
-
-[[redirects]]
-  from = "/privacypolicy"
-  to = "/PrivacyPolicy"
-  status = 301
-
-[[redirects]]
-  from = "/donotsellorshare"
-  to = "/DoNotSellOrShare"
-  status = 301
+# createPageUrl(), sitemap.xml and the canonical tags now all emit the lowercase
+# trailing-slash form, so links, sitemap and canonicals agree with what the CDN
+# actually serves and no rule is needed.
 
 # /Home and /home both duplicated "/" at HTTP 200.
 [[redirects]]
@@ -88,12 +37,6 @@
   to = "/"
   status = 301
 
-[[redirects]]
-  from = "/Home"
-  to = "/"
-  status = 301
-
-# Security headers applied to every response.
 [[headers]]
   for = "/*"
   [headers.values]

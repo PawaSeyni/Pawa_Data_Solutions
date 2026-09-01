@@ -1,11 +1,11 @@
-// Route paths are CamelCase ("/DataIntegration") — that is what the router
-// declares, what sitemap.xml lists, and what src/lib/seo.js emits as canonical.
+// Netlify lowercases every deployed path and serves directories with a trailing
+// slash, so "/DataIntegration" is 301'd to "/dataintegration/". That is the
+// canonical shape on this host, and links, sitemap and canonical tags all have
+// to agree with it or the redirect chain fights itself.
 //
-// This used to lowercase the page name, so every internal link pointed at
-// "/dataintegration" while the sitemap advertised "/DataIntegration". The SPA
-// fallback answered 200 to both, so Google was handed two spellings of every
-// page with nothing to reconcile them. Emit the canonical casing; netlify.toml
-// 301s the old lowercase URLs so existing inbound links keep working.
+// History: this originally lowercased without the slash while the sitemap said
+// CamelCase, so Google saw two spellings. Emitting CamelCase instead looked
+// right locally but looped in production against Netlify's own normalization.
 export function createPageUrl(pageName: string) {
-    return '/' + pageName.replace(/ /g, '-');
+    return '/' + pageName.toLowerCase().replace(/ /g, '-') + '/';
 }

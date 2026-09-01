@@ -137,15 +137,11 @@ async function waitUntilRendered(page, route) {
 
 // Guards against the exact bug this script exists to fix: a route that silently
 // keeps the shell's homepage canonical would look fine in the build log.
-// Netlify serves directories with a trailing slash, so compare on a normalized
-// form rather than an exact string — otherwise every route fails on the slash.
-const norm = (p) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
-
 function assertCanonical(html, route) {
   const m = html.match(/<link rel="canonical" href="([^"]+)"/);
   if (!m) throw new Error(`no canonical in snapshot for ${route}`);
   const got = new URL(m[1]).pathname;
-  if (norm(got) !== norm(route)) {
+  if (got !== route) {
     throw new Error(`canonical mismatch for ${route} — snapshot claims ${got}`);
   }
 }
