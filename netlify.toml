@@ -18,67 +18,69 @@
 
 # Internal links used to be lowercased by createPageUrl() while the sitemap and
 # canonicals said CamelCase, so Google was fed two spellings of every page. The
-# code now emits CamelCase; these 301s keep the lowercase URLs already crawled or
-# linked from breaking, and consolidate their signals onto the canonical form.
+# code now emits CamelCase; these 301s catch the lowercase URLs already crawled
+# or linked.
+#
+# Do NOT add `force = true` here. Netlify's production redirect engine matches
+# `from` case-INSENSITIVELY (the local CLI does not, so this does not reproduce
+# under `netlify dev`). Forcing therefore makes "/dataintegration" match the
+# CamelCase request too and redirect it to itself — an infinite loop that took
+# every service page down. Without force, a matching static file wins, so
+# /DataIntegration serves its prerendered page and only genuinely unmatched
+# spellings fall through to the 301.
+#
+# The real duplicate-content fix is the per-page canonical the prerender now
+# bakes into every route; these rules are only for inbound links already in the
+# wild.
 [[redirects]]
   from = "/dataintegration"
   to = "/DataIntegration"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/pipelinearchitecture"
   to = "/PipelineArchitecture"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/datagovernance"
   to = "/DataGovernance"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/aireadiness"
   to = "/AIReadiness"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/analyticsenablement"
   to = "/AnalyticsEnablement"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/processautomation"
   to = "/ProcessAutomation"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/workshop"
   to = "/Workshop"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/careers"
   to = "/Careers"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/privacypolicy"
   to = "/PrivacyPolicy"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/donotsellorshare"
   to = "/DoNotSellOrShare"
   status = 301
-  force = true
 
 # /Home and /home both duplicated "/" at HTTP 200.
 [[redirects]]
