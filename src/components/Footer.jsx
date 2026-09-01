@@ -41,17 +41,24 @@ export default function Footer({ language }) {
     { title: t.service6Title, page: "ProcessAutomation" },
   ];
 
+  // These targets live on the home page, so a click from any other route has to
+  // navigate first and scroll once the section exists. This used to wait a fixed
+  // 300ms, which is a race: arriving from a lazy-loaded route often takes longer,
+  // and the scroll then silently did nothing. Poll instead, and give up rather
+  // than spin forever if the id is genuinely absent.
   const handleSectionClick = (sectionId) => {
-    // First navigate to home page
     navigate("/");
-    
-    // Then scroll to section after a brief delay
-    setTimeout(() => {
+
+    const deadline = Date.now() + 3000;
+    const tryScroll = () => {
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else if (Date.now() < deadline) {
+        requestAnimationFrame(tryScroll);
       }
-    }, 300);
+    };
+    requestAnimationFrame(tryScroll);
   };
 
   return (
@@ -100,7 +107,7 @@ export default function Footer({ language }) {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-white mb-4">{t.footerServicesTitle}</h4>
+            <h2 className="font-semibold text-white mb-4">{t.footerServicesTitle}</h2>
             <ul className="space-y-2 text-sm text-gray-300">
               {services.map((service) => (
                 <li key={service.page}>
@@ -118,7 +125,7 @@ export default function Footer({ language }) {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-white mb-4">{t.footerCompanyTitle}</h4>
+            <h2 className="font-semibold text-white mb-4">{t.footerCompanyTitle}</h2>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
                 <button 

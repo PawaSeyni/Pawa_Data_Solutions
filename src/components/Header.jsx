@@ -89,7 +89,7 @@ export default function Header({ currentPageName, language, setLanguage }) {
                 <button
                   key={lang}
                   onClick={() => setLanguage(lang)}
-                  aria-label={`Switch to ${langNames[lang]}`}
+                  aria-label={`${lang.toUpperCase()} — switch to ${langNames[lang]}`}
                   aria-pressed={language === lang}
                   className={`px-2 py-1.5 text-sm border rounded-full transition-all ${
                     language === lang

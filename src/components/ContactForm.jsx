@@ -238,11 +238,11 @@ export default function ContactForm({ title, description, language }) {
                   </div>
 
                   <div>
-                    <Label className="text-sm font-medium text-gray-900 mb-2 block">
+                    <Label htmlFor="language" className="text-sm font-medium text-gray-900 mb-2 block">
                       {t.contactLanguage}
                     </Label>
                     <Select value={formData.language} onValueChange={(value) => handleChange('language', value)}>
-                      <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                      <SelectTrigger id="language" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>

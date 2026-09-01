@@ -238,11 +238,11 @@ export default function ApplicationForm({ language }) {
               {/* Position Information */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label className="text-sm font-medium text-gray-900 mb-2 block">
+                  <Label htmlFor="position" className="text-sm font-medium text-gray-900 mb-2 block">
                     {t.careersPosition}
                   </Label>
                   <Select value={formData.position} onValueChange={(value) => handleChange('position', value)} required>
-                    <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                    <SelectTrigger id="position" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                       <SelectValue placeholder={t.careersSelectPosition} />
                     </SelectTrigger>
                     <SelectContent>
@@ -258,11 +258,11 @@ export default function ApplicationForm({ language }) {
                 </div>
 
                 <div>
-                  <Label className="text-sm font-medium text-gray-900 mb-2 block">
+                  <Label htmlFor="experience_level" className="text-sm font-medium text-gray-900 mb-2 block">
                     {t.careersExperienceLevel}
                   </Label>
                   <Select value={formData.experience_level} onValueChange={(value) => handleChange('experience_level', value)} required>
-                    <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                    <SelectTrigger id="experience_level" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                       <SelectValue placeholder={t.careersSelectExperience} />
                     </SelectTrigger>
                     <SelectContent>
@@ -277,11 +277,11 @@ export default function ApplicationForm({ language }) {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label className="text-sm font-medium text-gray-900 mb-2 block">
+                  <Label htmlFor="remote_preference" className="text-sm font-medium text-gray-900 mb-2 block">
                     {t.careersRemotePreference}
                   </Label>
                   <Select value={formData.remote_preference} onValueChange={(value) => handleChange('remote_preference', value)}>
-                    <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                    <SelectTrigger id="remote_preference" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                       <SelectValue placeholder={t.careersSelectRemote} />
                     </SelectTrigger>
                     <SelectContent>
