@@ -17,7 +17,7 @@ export default function Header({ currentPageName, language, setLanguage }) {
     
     // If not on the home page, navigate there first.
     if (currentPageName !== 'Home') {
-      navigate(createPageUrl('Home'));
+      navigate("/");
     }
     
     // Scroll to the section after a brief delay to allow the page to render.
@@ -43,7 +43,7 @@ export default function Header({ currentPageName, language, setLanguage }) {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between py-3">
           {/* Brand */}
-          <Link to={createPageUrl('Home')} className="flex items-center">
+          <Link to="/" className="flex items-center">
             <picture>
               <source srcSet="/pawa-logo.webp" type="image/webp" />
               <img

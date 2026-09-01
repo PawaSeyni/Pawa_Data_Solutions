@@ -32,6 +32,21 @@ function setCanonical(href) {
   el.setAttribute("href", href);
 }
 
+// Only the 404 sets robots. This has to REMOVE the tag as well as add it: the
+// SPA keeps one <head> across client-side navigation, so a noindex left behind
+// by the 404 would silently de-index the next page the visitor clicks through to.
+function setRobots(noindex) {
+  const existing = document.head.querySelector('meta[name="robots"]');
+  if (!noindex) {
+    if (existing) existing.remove();
+    return;
+  }
+  const el = existing || document.createElement("meta");
+  el.setAttribute("name", "robots");
+  el.setAttribute("content", "noindex, follow");
+  if (!existing) document.head.appendChild(el);
+}
+
 export default function Seo({ pageName, language }) {
   useEffect(() => {
     const seo = getSeo(pageName);
@@ -41,6 +56,7 @@ export default function Seo({ pageName, language }) {
     document.documentElement.lang = language || "en";
 
     setNamedMeta("description", seo.description);
+    setRobots(seo.noindex);
     setPropMeta("og:title", seo.title);
     setPropMeta("og:description", seo.description);
     setPropMeta("og:url", url);

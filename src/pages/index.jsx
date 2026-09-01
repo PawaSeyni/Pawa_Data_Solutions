@@ -1,5 +1,5 @@
-import { lazy, Suspense, useState } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect, useState } from "react";
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Layout from "./Layout.jsx";
 
 // Home is the landing page — load it eagerly so the first paint needs no extra request.
@@ -16,6 +16,7 @@ const ProcessAutomation = lazy(() => import("./ProcessAutomation"));
 const PrivacyPolicy = lazy(() => import("./PrivacyPolicy"));
 const DoNotSellOrShare = lazy(() => import("./DoNotSellOrShare"));
 const Careers = lazy(() => import("./Careers"));
+const NotFound = lazy(() => import("./NotFound"));
 
 // Page names drive _getCurrentPage (used for the active-nav highlight + SEO key).
 const PAGE_NAMES = [
@@ -42,11 +43,13 @@ function _getCurrentPage(url) {
     }
 
     const pageName = PAGE_NAMES.find(page => page.toLowerCase() === urlLastPart.toLowerCase());
-    return pageName || PAGE_NAMES[0];
+    // An unknown path is NOT the home page. Returning "Home" here is what gave
+    // every 404 the homepage's title, description and canonical.
+    return pageName || (urlLastPart === '' ? PAGE_NAMES[0] : "NotFound");
 }
 
 function PageFallback() {
-    return <div className="min-h-[60vh]" aria-busy="true" />;
+    return <div data-prerender-loading className="min-h-[60vh]" aria-busy="true" />;
 }
 
 // Create a wrapper component that uses useLocation inside the Router context
@@ -55,12 +58,21 @@ function PagesContent() {
     const currentPage = _getCurrentPage(location.pathname);
     const [language, setLanguage] = useState("en");
 
+    // Tells the build-time prerender crawler that the first render and every
+    // child effect have completed — Seo.jsx writes title/canonical/OG in a
+    // useEffect, so snapshotting before this fires would bake the shell's
+    // default homepage metadata into every route.
+    useEffect(() => {
+        window.__PRERENDER_READY__ = true;
+    }, []);
+
     return (
         <Layout currentPageName={currentPage} language={language} setLanguage={setLanguage}>
             <Suspense fallback={<PageFallback />}>
                 <Routes>
                     <Route path="/" element={<Home language={language} />} />
-                    <Route path="/Home" element={<Home language={language} />} />
+                    {/* /Home duplicated / at HTTP 200. Redirect so there is one home URL. */}
+                    <Route path="/Home" element={<Navigate to="/" replace />} />
                     <Route path="/Workshop" element={<Workshop language={language} />} />
                     <Route path="/DataIntegration" element={<DataIntegration language={language} />} />
                     <Route path="/PipelineArchitecture" element={<PipelineArchitecture language={language} />} />
@@ -71,6 +83,7 @@ function PagesContent() {
                     <Route path="/PrivacyPolicy" element={<PrivacyPolicy language={language} />} />
                     <Route path="/DoNotSellOrShare" element={<DoNotSellOrShare language={language} />} />
                     <Route path="/Careers" element={<Careers language={language} />} />
+                    <Route path="*" element={<NotFound language={language} />} />
                 </Routes>
             </Suspense>
         </Layout>

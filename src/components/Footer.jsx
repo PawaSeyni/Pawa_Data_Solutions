@@ -43,7 +43,7 @@ export default function Footer({ language }) {
 
   const handleSectionClick = (sectionId) => {
     // First navigate to home page
-    navigate(createPageUrl('Home'));
+    navigate("/");
     
     // Then scroll to section after a brief delay
     setTimeout(() => {

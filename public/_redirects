@@ -1,2 +1,8 @@
-# SPA fallback for React Router (backup to netlify.toml)
-/*    /index.html   200
+# Intentionally empty of an SPA catch-all.
+#
+# Every real route is prerendered to its own dist/<Route>/index.html by
+# scripts/prerender.mjs, so unmatched URLs fall through to Netlify's
+# auto-served dist/404.html with a real HTTP 404 — instead of the old
+# `/* /index.html 200`, which answered every typo with the home page.
+#
+# Redirect rules live in netlify.toml so they sit next to the headers.

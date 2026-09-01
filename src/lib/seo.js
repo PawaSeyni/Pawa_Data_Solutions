@@ -74,6 +74,15 @@ const PAGES = {
     description:
       "California (CPRA) privacy rights and how to exercise them with PaWa Data Solutions.",
   },
+  NotFound: {
+    path: "/404",
+    title: "Page Not Found" + SUFFIX,
+    description:
+      "That page does not exist. Browse our data integration, governance, analytics, and AI readiness services instead.",
+    // Keep 404s out of the index — they are a real HTTP 404 at the edge, and a
+    // crawler that follows a stale link should not bank a thin page on top of it.
+    noindex: true,
+  },
 };
 
 export function getSeo(pageName) {

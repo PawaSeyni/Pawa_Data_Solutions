@@ -184,6 +184,13 @@ export const translations = {
     footerDoNotSell: "Do Not Sell/Share My Info",
     footerCta: "Ready to transform your data?",
     footerSocialLabel: "Follow PaWa Data Solutions",
+    // 404
+    notFoundEyebrow: "404",
+    notFoundTitle: "We can't find that page",
+    notFoundBody: "The link may be out of date, or the address may have a typo. Here is where most people are headed.",
+    notFoundHome: "Back to home",
+    notFoundContact: "Talk to us",
+    notFoundServicesTitle: "Our services",
     footerCtaLink: "Get started today.",
     
     // Workshop Page
@@ -544,6 +551,13 @@ export const translations = {
     footerDoNotSell: "Ne pas vendre/partager mes infos",
     footerCta: "Prêt à transformer vos données ?",
     footerSocialLabel: "Suivez PaWa Data Solutions",
+    // 404
+    notFoundEyebrow: "404",
+    notFoundTitle: "Cette page est introuvable",
+    notFoundBody: "Le lien est peut-être obsolète, ou l'adresse comporte une faute de frappe. Voici les pages les plus consultées.",
+    notFoundHome: "Retour à l'accueil",
+    notFoundContact: "Nous contacter",
+    notFoundServicesTitle: "Nos services",
     footerCtaLink: "Commencez aujourd'hui.",
     
     // Workshop Page - Professional French translations
@@ -911,6 +925,13 @@ export const translations = {
     footerDoNotSell: "No Vender/Compartir Mi Información",
     footerCta: "¿Listo para transformar tus datos?",
     footerSocialLabel: "Sigue a PaWa Data Solutions",
+    // 404
+    notFoundEyebrow: "404",
+    notFoundTitle: "No encontramos esa página",
+    notFoundBody: "Puede que el enlace esté desactualizado o que la dirección tenga un error. Esto es lo que más buscan los visitantes.",
+    notFoundHome: "Volver al inicio",
+    notFoundContact: "Hablemos",
+    notFoundServicesTitle: "Nuestros servicios",
     footerCtaLink: "Comienza hoy.",
     
     // Workshop Page
@@ -1278,6 +1299,13 @@ export const translations = {
     footerDoNotSell: "Não Vender/Compartilhar Minhas Informações",
     footerCta: "Pronto para transformar seus dados?",
     footerSocialLabel: "Siga a PaWa Data Solutions",
+    // 404
+    notFoundEyebrow: "404",
+    notFoundTitle: "Não encontramos essa página",
+    notFoundBody: "O link pode estar desatualizado ou o endereço pode ter um erro de digitação. Veja o que a maioria procura.",
+    notFoundHome: "Voltar ao início",
+    notFoundContact: "Fale conosco",
+    notFoundServicesTitle: "Nossos serviços",
     footerCtaLink: "Comece hoje.",
     
     // Workshop Page

@@ -8,12 +8,88 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# SPA fallback: let React Router handle client-side routes.
-# (Form POSTs to "/" are intercepted by Netlify Forms before this runs.)
+# No SPA catch-all, on purpose. Every route in sitemap.xml is prerendered to its
+# own static index.html by scripts/prerender.mjs, so unmatched URLs fall through
+# to Netlify's auto-served dist/404.html (a real HTTP 404) rather than the home
+# page at HTTP 200. The prerender step is REQUIRED — if it fails, the build fails
+# and the last good deploy stays live, so dropping the fallback can never leave a
+# real route unserved. Netlify Forms still intercepts POSTs to "/" before any of
+# this runs.
+
+# Internal links used to be lowercased by createPageUrl() while the sitemap and
+# canonicals said CamelCase, so Google was fed two spellings of every page. The
+# code now emits CamelCase; these 301s keep the lowercase URLs already crawled or
+# linked from breaking, and consolidate their signals onto the canonical form.
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/dataintegration"
+  to = "/DataIntegration"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pipelinearchitecture"
+  to = "/PipelineArchitecture"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/datagovernance"
+  to = "/DataGovernance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/aireadiness"
+  to = "/AIReadiness"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/analyticsenablement"
+  to = "/AnalyticsEnablement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/processautomation"
+  to = "/ProcessAutomation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workshop"
+  to = "/Workshop"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/careers"
+  to = "/Careers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacypolicy"
+  to = "/PrivacyPolicy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/donotsellorshare"
+  to = "/DoNotSellOrShare"
+  status = 301
+  force = true
+
+# /Home and /home both duplicated "/" at HTTP 200.
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/Home"
+  to = "/"
+  status = 301
 
 # Security headers applied to every response.
 [[headers]]

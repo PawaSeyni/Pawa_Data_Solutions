@@ -165,9 +165,7 @@ export default function ApplicationForm({ language }) {
             <form
               name="job-application"
               method="POST"
-              data-netlify="true"
               encType="multipart/form-data"
-              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="space-y-6"
             >
