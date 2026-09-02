@@ -21,7 +21,11 @@
  * priority    sitemap priority
  * changefreq  sitemap change frequency
  */
-export const PAGES = [
+// Relative, not the @/ alias: scripts/gen-sitemap.mjs and friends import this
+// file directly with Node, which does not resolve Vite's alias.
+import { CASE_STUDIES } from './caseStudies.js';
+
+const BASE_PAGES = [
   { name: 'Home',                 slug: '',                                legacySlug: null,                 changefreq: 'monthly', priority: '1.0' },
 
   // Hub for the six pages below. Added 2 Sep because moving them under
@@ -57,6 +61,23 @@ export const PAGES = [
   { name: 'PrivacyPolicy',        slug: 'privacy-policy',                  legacySlug: 'privacypolicy',        changefreq: 'yearly',  priority: '0.3' },
   { name: 'DoNotSellOrShare',     slug: 'do-not-sell',                     legacySlug: 'donotsellorshare',     changefreq: 'yearly',  priority: '0.3' },
 ];
+
+// Case studies are appended only when there are approved ones. With the array
+// empty this adds nothing: no index page, no routes, no sitemap entries, no nav
+// item. The moment a real entry lands, the route, canonical, hreflang and
+// sitemap line all appear on the next build with no other file touched.
+const CASE_STUDY_PAGES = CASE_STUDIES.length === 0 ? [] : [
+  { name: 'CaseStudies', slug: 'case-studies', legacySlug: null, changefreq: 'monthly', priority: '0.7' },
+  ...CASE_STUDIES.map((c) => ({
+    name: `CaseStudy:${c.slug}`,
+    slug: `case-studies/${c.slug}`,
+    legacySlug: null,
+    changefreq: 'yearly',
+    priority: '0.6',
+  })),
+];
+
+export const PAGES = [...BASE_PAGES, ...CASE_STUDY_PAGES];
 
 /** name -> slug, for path building. */
 export const SLUG_BY_NAME = Object.fromEntries(PAGES.map((p) => [p.name, p.slug]));

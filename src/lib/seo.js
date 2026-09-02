@@ -7,6 +7,7 @@
 // strings would mean two things to keep in sync and one of them drifting.
 
 import { translations } from '@/components/translations';
+import { caseStudyBySlug } from '@/lib/caseStudies';
 import { DEFAULT_LANGUAGE, LANGUAGES, localizedPath, alternatesFor } from '@/lib/i18n';
 
 export const SITE_URL = 'https://pawadata.com';
@@ -32,6 +33,7 @@ const SOURCES = {
   Locations:            { title: 'navLocations',  desc: 'locationsSubtitle' },
   Blog:                 { title: 'blogEyebrow',   desc: 'blogSubtitle' },
   Publications:         { title: 'publicationsEyebrow', desc: 'publicationsSubtitle' },
+  CaseStudies:          { title: 'caseStudiesEyebrow',   desc: 'caseStudiesSubtitle' },
   DataIntegration:      { title: 'service1Title', desc: 'service1Desc' },
   PipelineArchitecture: { title: 'service2Title', desc: 'service2Desc' },
   DataGovernance:       { title: 'service3Title', desc: 'service3Desc' },
@@ -55,6 +57,22 @@ const HOME_TITLES = {
 };
 
 export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
+  // An individual case study describes itself; its title and description come
+  // from the approved entry rather than from a generic template.
+  if (pageName?.startsWith('CaseStudy:')) {
+    const lang = LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
+    const study = caseStudyBySlug(pageName.slice('CaseStudy:'.length));
+    if (study) {
+      return {
+        path: localizedPath(pageName, lang),
+        title: `${study.client} — ${SITE_NAME}`,
+        description: trim(study.challenge),
+        noindex: false,
+        alternates: alternatesFor(pageName),
+      };
+    }
+  }
+
   const lang = LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
   const t = translations[lang];
   const page = SOURCES[pageName] ? pageName : 'Home';
