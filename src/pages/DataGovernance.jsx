@@ -143,7 +143,8 @@ export default function DataGovernance({ language = "en" }) {
         </div>
       </section>
 
-      <ContactForm 
+      <ContactForm
+        source="DataGovernance" 
         title={t.contactTitleService}
         description={t.contactSubtitleService}
         language={language}

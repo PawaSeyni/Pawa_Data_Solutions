@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Check, UserCheck, ShieldCheck, Scale, GraduationCap } from "lucide-react";
 import { translations } from "@/components/translations";
+import { createPageUrl } from "@/utils";
 import { prefixFor } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/jobPostings";
 import { trackCta } from "@/lib/analytics";
@@ -193,7 +194,7 @@ export default function About({ language }) {
             <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.aboutCtaTitle}</h2>
             <p className="mx-auto mb-6 max-w-2xl text-gray-600">{t.aboutCtaBody}</p>
             <Link
-              to={`${prefixFor(language)}/#contact`}
+              to={createPageUrl('HealthCheck', language)}
               onClick={() => trackCta({ label: 'health_check_about', location: 'about_cta', page: 'About', language })}
               className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
             >

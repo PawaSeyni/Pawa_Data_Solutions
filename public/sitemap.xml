@@ -322,6 +322,46 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://pawadata.com/data-health-check/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/data-health-check/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/data-health-check/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/data-health-check/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/data-health-check/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/data-health-check/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/data-health-check/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/data-health-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/data-health-check/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://pawadata.com/about/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/about/"/>

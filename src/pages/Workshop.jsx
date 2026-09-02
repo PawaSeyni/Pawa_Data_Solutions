@@ -13,7 +13,8 @@ export default function Workshop({ language }) {
       <WorkshopHero language={language} />
       <WorkshopModules language={language} />
       <KeyTakeaways language={language} />
-      <ContactForm 
+      <ContactForm
+        source="Workshop" 
         title={t.contactTitleWorkshop}
         description={t.contactSubtitleWorkshop}
         language={language}

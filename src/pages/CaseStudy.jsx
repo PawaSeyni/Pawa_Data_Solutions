@@ -136,7 +136,7 @@ export default function CaseStudy({ language }) {
             <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.solutionsCtaTitle}</h2>
             <p className="mx-auto mb-6 max-w-2xl text-gray-600">{t.solutionsCtaBody}</p>
             <Link
-              to={`${prefixFor(language)}/#contact`}
+              to={createPageUrl('HealthCheck', language)}
               onClick={() => trackCta({ label: 'health_check_case', location: 'case_study', page: 'CaseStudy', language })}
               className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
             >

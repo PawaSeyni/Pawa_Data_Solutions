@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
 import { CASE_STUDIES } from "@/lib/caseStudies";
+import { createPageUrl } from "@/utils";
 import { prefixFor } from "@/lib/i18n";
 import { trackCta } from "@/lib/analytics";
 
@@ -62,7 +63,7 @@ export default function CaseStudies({ language }) {
             <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.solutionsCtaTitle}</h2>
             <p className="mx-auto mb-6 max-w-2xl text-gray-600">{t.solutionsCtaBody}</p>
             <Link
-              to={`${prefixFor(language)}/#contact`}
+              to={createPageUrl('HealthCheck', language)}
               onClick={() => trackCta({ label: 'health_check_cases', location: 'case_studies_index', page: 'CaseStudies', language })}
               className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
             >

@@ -11,7 +11,17 @@ import { translations } from "@/components/translations";
 import { EVENTS, track, makeStartTracker } from "@/lib/analytics";
 import { Send, CheckCircle, Mail, Phone, MapPin } from "lucide-react";
 
-export default function ContactForm({ title, description, language }) {
+// `source` says which page the enquiry came from. It used to be hardcoded to
+// 'Home' in all three track calls even though this form is mounted on the
+// solution pages, Workshop, Locations and now the Data Health Check — so every
+// contact event in Plausible has been attributed to the homepage regardless of
+// where it happened. Historic funnel data for non-home pages is wrong; from here
+// it is not.
+//
+// It also rides along as a hidden field, so the Netlify submission itself records
+// the origin. Plausible tells you the rate; the submission tells you which lead
+// came from where, and those need to agree.
+export default function ContactForm({ title, description, language, source = 'Home' }) {
   const t = translations[language];
   const [formData, setFormData] = useState({
     name: '',
@@ -21,7 +31,8 @@ export default function ContactForm({ title, description, language }) {
     role: '',
     timeline: '',
     message: '',
-    language: language
+    language: language,
+    source,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -42,7 +53,7 @@ export default function ContactForm({ title, description, language }) {
   // contact_start fired on every keystroke and the abandonment rate was noise.
   const startTracker = useRef(null);
   if (!startTracker.current) {
-    startTracker.current = makeStartTracker(EVENTS.CONTACT_START, { page: 'Home', language });
+    startTracker.current = makeStartTracker(EVENTS.CONTACT_START, { page: source, language });
   }
   const trackStart = () => startTracker.current();
 
@@ -54,7 +65,7 @@ export default function ContactForm({ title, description, language }) {
     try {
       await submitNetlifyForm("contact", formData);
       track(EVENTS.CONTACT_SUBMIT, {
-        page: 'Home',
+        page: source,
         language,
         role: formData.role,
         timeline: formData.timeline,
@@ -68,11 +79,12 @@ export default function ContactForm({ title, description, language }) {
         role: '',
         timeline: '',
         message: '',
-        language: language
+        language: language,
+        source,
       });
     } catch (error) {
       console.error('Error submitting form:', error);
-      track(EVENTS.CONTACT_ERROR, { page: 'Home', language });
+      track(EVENTS.CONTACT_ERROR, { page: source, language });
       setHasError(true);
     } finally {
       setIsSubmitting(false);
@@ -184,6 +196,7 @@ export default function ContactForm({ title, description, language }) {
                   className="space-y-6"
                 >
                   <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="source" value={source} />
                   <p className="hidden">
                     <label>
                       Don't fill this out: <input name="bot-field" />

@@ -93,7 +93,28 @@ If it is ever challenged, the supporting position is that the six solution pages
 are all delivered by one senior practitioner rather than by separate teams, which
 is the boutique argument rather than a contradiction of it.
 
-## 7. Open items handed to the next sprint
+## 7. Commercial claims on the Data Health Check (Sprint 4)
+
+The Health Check page makes commitments the rest of the site does not. These are
+the ones that bind, and **the pricing model needs Papa's sign-off** — the Sprint 4
+brief itself says "price model if approved", and no price or model was supplied.
+
+| Claim on the page | Status |
+|---|---|
+| Two to three weeks | Already published sitewide before this sprint |
+| Runs remotely | Already published (Locations page) |
+| Led by a senior practitioner, not a junior team | Consistent with Sprint 2 positioning |
+| **Fixed price, agreed in writing before it starts** | **NEEDS SIGN-OFF — written by me, not supplied** |
+| **Free 30-minute scoping call** | **NEEDS SIGN-OFF — written by me, not supplied** |
+| NDA signed before any access | Standard, but confirm it is actually the practice |
+| 3–6 people, ~1 hour each in week 1; 90-minute readout | Estimate written by me; adjust to reality |
+| No obligation to continue afterwards | Consistent with existing copy ("whether or not you work with us") |
+| No outcome guarantee | Deliberate — §7 forbids promising fixed outcomes |
+
+No price figure appears anywhere on the page. If the fixed-price model is wrong,
+the two flagged rows are the only copy to change (`hcFaq4A` in four locales).
+
+## 8. Open items handed to the next sprint
 
 Per §8 of the brief, recorded rather than silently deferred:
 
@@ -111,3 +132,13 @@ Per §8 of the brief, recorded rather than silently deferred:
   larger original in the repo if a bigger treatment is ever wanted.
 - **Credentials are unverified from my side.** They were supplied directly and
   are published as given. No certificate numbers or issue dates are held.
+- **Health Check pricing model is unapproved.** See section 7. The page states a
+  fixed price agreed in writing and a free 30-minute scoping call; neither was
+  supplied to me.
+- **Historic contact-funnel data is wrong for non-home pages.** `page: 'Home'`
+  was hardcoded in all three contact events, so every enquiry from a solution
+  page, Workshop or Locations was attributed to the homepage. Fixed this sprint;
+  data before 2026-09-02 cannot be corrected.
+- **The example risk matrix is illustrative.** Labelled as such on the page. Its
+  six sample findings are plausible generic examples, not anyone's real
+  assessment.

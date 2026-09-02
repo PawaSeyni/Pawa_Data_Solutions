@@ -46,6 +46,13 @@ const BASE_PAGES = [
   { name: 'AnalyticsEnablement',  slug: 'solutions/analytics-enablement',  legacySlug: 'analyticsenablement',  changefreq: 'monthly', priority: '0.8' },
   { name: 'ProcessAutomation',    slug: 'solutions/process-automation',    legacySlug: 'processautomation',    changefreq: 'monthly', priority: '0.8' },
 
+  // The productised entry engagement. It was the primary CTA on seven pages
+  // before it had a page of its own — every "Book a Data Health Check" button
+  // pointed at the homepage contact anchor, so the most-repeated promise on the
+  // site was the least explained thing on it. High priority: this is the page
+  // the whole funnel now converges on.
+  { name: 'HealthCheck',          slug: 'data-health-check',               legacySlug: null,                 changefreq: 'monthly', priority: '0.9' },
+
   // Added 2 Sep. The footer's "About Us" link had always scrolled to the
   // services grid because no About page existed — audit finding CONTENT-01.
   { name: 'About',                slug: 'about',                           legacySlug: null,                 changefreq: 'yearly',  priority: '0.6' },
