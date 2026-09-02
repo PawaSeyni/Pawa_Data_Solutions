@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Users, ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
+import { ROLES } from "@/lib/jobPostings";
 
 export default function OpenPositions({ language }) {
   const t = translations[language];
@@ -13,40 +14,17 @@ export default function OpenPositions({ language }) {
     document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const positions = [
-    {
-      title: t.jobDataEngineerTitle,
-      location: "Toronto, ON / Remote",
-      type: "Contract/Full-time",
-      level: "Mid-Senior",
-      description: t.jobDataEngineerDesc,
-      skills: ["Python", "SQL", "Apache Spark", "Kubernetes", "AWS/Azure"]
-    },
-    {
-      title: t.jobDataArchitectTitle,
-      location: "Toronto, ON / Remote",
-      type: "Contract/Full-time", 
-      level: "Senior",
-      description: t.jobDataArchitectDesc,
-      skills: ["Data Architecture", "Cloud Platforms", "Data Governance", "Leadership"]
-    },
-    {
-      title: t.jobDataPipelineTitle,
-      location: "Remote",
-      type: "Contract/Full-time",
-      level: "Mid-Senior",
-      description: t.jobDataPipelineDesc,
-      skills: ["Informatica", "Salesforce (SFDC)", "ETL/ELT Design", "SQL", "Python", "API Integration"]
-    },
-    {
-      title: t.jobAnalyticsConsultantTitle,
-      location: "Remote",
-      type: "Contract/Full-time",
-      level: "Mid-Senior",
-      description: t.jobAnalyticsConsultantDesc,
-      skills: ["Analytics", "BI Tools", "Client Management", "Data Visualization"]
-    }
-  ];
+  // Single source of truth, shared with the JobPosting schema in src/lib/jobPostings.js.
+  // A schema that disagrees with the visible page is a Google policy violation,
+  // so these must never be two separate lists again.
+  const positions = ROLES.map((role) => ({
+    title: t[role.titleKey],
+    location: role.location,
+    type: role.type,
+    level: role.level,
+    description: t[role.descKey],
+    skills: role.skills,
+  }));
 
   return (
     <section id="open-positions" className="py-20 bg-gray-50/30">
