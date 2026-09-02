@@ -362,6 +362,46 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://pawadata.com/locations/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/locations/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/locations/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/locations/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/locations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/locations/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/locations/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/locations/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/locations/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/locations/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/locations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/locations/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/locations/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/locations/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/locations/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/locations/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/locations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/locations/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/locations/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/locations/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/locations/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/locations/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/locations/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/locations/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://pawadata.com/workshop/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/workshop/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/workshop/"/>

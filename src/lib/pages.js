@@ -44,6 +44,8 @@ export const PAGES = [
   // services grid because no About page existed — audit finding CONTENT-01.
   { name: 'About',                slug: 'about',                           legacySlug: null,                 changefreq: 'yearly',  priority: '0.6' },
 
+  { name: 'Locations',            slug: 'locations',                       legacySlug: null,                 changefreq: 'yearly',  priority: '0.5' },
+
   // Workshop and Careers stay top-level. Neither is a solution — one is an
   // offer, the other is hiring — and burying them under /solutions/ would make
   // the nav less honest, not more organised.

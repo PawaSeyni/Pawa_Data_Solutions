@@ -29,6 +29,7 @@ const SOURCES = {
   Home:                 { title: null,            desc: 'heroSubtitle' },
   Solutions:            { title: 'solutionsEyebrow', desc: 'solutionsSubtitle' },
   About:                { title: 'aboutEyebrow',  desc: 'aboutIntro' },
+  Locations:            { title: 'navLocations',  desc: 'locationsSubtitle' },
   DataIntegration:      { title: 'service1Title', desc: 'service1Desc' },
   PipelineArchitecture: { title: 'service2Title', desc: 'service2Desc' },
   DataGovernance:       { title: 'service3Title', desc: 'service3Desc' },

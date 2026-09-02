@@ -42,15 +42,15 @@ export default function Header({ currentPageName, language }) {
   // firm, rather than what it sells. Careers moves in here off the top level,
   // which it was cluttering — very few visitors arrive looking for a job.
   //
-  // Four items, each with a real destination. The reference design also carried
-  // Locations and Awards & Recognition; Awards was dropped on Papa's call, and
-  // Locations is still open — this firm has one office, so that page would carry
-  // nothing the contact block does not already say.
+  // Each item has a real destination. Awards & Recognition from the reference
+  // design was dropped on Papa's call — there are none to list, and an empty
+  // awards page invites the kind of invention this site has removed once.
   // Blog and Publications both point at papanguer.com, which is deliberate:
   // thought leadership was settled there, so linking out keeps one canonical
   // home for it rather than splitting the effort across two domains.
   const companyItems = [
     { id: 'about',        label: t.footerAbout,      page: 'About' },
+    { id: 'locations',    label: t.navLocations,     page: 'Locations' },
     { id: 'blog',         label: t.navBlog,          href: 'https://papanguer.com/writing/', external: true },
     { id: 'publications', label: t.navPublications,  href: 'https://papanguer.com/#books',   external: true },
     { id: 'careers',      label: t.navCareers,       page: 'Careers' },
