@@ -65,27 +65,6 @@ export const translations = {
     kpi4Label: "Senior, Hands-On Team",
     kpi4Desc: "You work directly with experienced practitioners, not junior hand-offs.",
     
-    // Testimonials
-    testimonialsTitle: "What Our Clients Say",
-    testimonialsSubtitle: "We're proud to have partnered with innovative companies to solve their toughest data challenges.",
-    testimonials: [
-      {
-        quote: "PaWa's approach to data integration was a game-changer for our reporting. We went from manual, error-prone processes to a fully automated pipeline in just six weeks. The team's expertise is unparalleled.",
-        name: "Jessica Miller",
-        role: "Director of Analytics, TechCorp",
-      },
-      {
-        quote: "The Data Foundation Workshop provided our team with the exact blueprint we needed. We now have a clear, scalable architecture and the in-house skills to manage it effectively. Highly recommended.",
-        name: "David Chen",
-        role: "Head of Engineering, CloudVault",
-      },
-      {
-        quote: "Implementing a robust governance framework seemed daunting, but PaWa made it straightforward and business-focused. Our data is now a trusted, secure asset that drives our decision-making.",
-        name: "Maria Garcia",
-        role: "Chief Operating Officer, InfoSystems",
-      }
-    ],
-
     // Careers
     careersEyebrow: "Join Our Team",
     careersHeroTitle: "Build the Future of Data",
@@ -433,27 +412,6 @@ export const translations = {
     kpi3Desc: "Sécurité, traçabilité et contrôles intégrés dès le premier jour—pas ajoutés après coup.",
     kpi4Label: "Équipe Expérimentée et Engagée",
     kpi4Desc: "Vous travaillez directement avec des praticiens expérimentés, sans intermédiaires juniors.",
-
-    // Testimonials
-    testimonialsTitle: "Ce Que Disent Nos Clients",
-    testimonialsSubtitle: "Nous sommes fiers d'avoir collaboré avec des entreprises innovantes pour résoudre leurs défis de données les plus complexes.",
-    testimonials: [
-      {
-        quote: "L'approche de PaWa en matière d'intégration de données a changé la donne pour nos rapports. Nous sommes passés de processus manuels et sujets aux erreurs à un pipeline entièrement automatisé en seulement six semaines. L'expertise de l'équipe est inégalée.",
-        name: "Jessica Miller",
-        role: "Directrice de l'Analytique, TechCorp",
-      },
-      {
-        quote: "L'atelier sur les fondations de données a fourni à notre équipe le plan exact dont nous avions besoin. Nous avons maintenant une architecture claire et évolutive, et les compétences internes pour la gérer efficacement. Fortement recommandé.",
-        name: "David Chen",
-        role: "Chef de l'Ingénierie, CloudVault",
-      },
-      {
-        quote: "La mise en place d'un cadre de gouvernance robuste semblait intimidante, mais PaWa l'a rendue simple et axée sur les affaires. Nos données sont maintenant un atout fiable et sécurisé qui guide notre prise de décision.",
-        name: "Maria Garcia",
-        role: "Chef de l'Exploitation, InfoSystems",
-      }
-    ],
 
     // Careers
     careersEyebrow: "Rejoignez Notre Équipe",
@@ -810,27 +768,6 @@ export const translations = {
     kpi4Label: "Equipo Senior y Práctico",
     kpi4Desc: "Trabajas directamente con profesionales experimentados, sin traspasos a personal junior.",
 
-    // Testimonials
-    testimonialsTitle: "Lo Que Dicen Nuestros Clientes",
-    testimonialsSubtitle: "Estamos orgullosos de habernos asociado con empresas innovadoras para resolver sus desafíos de datos más difíciles.",
-    testimonials: [
-      {
-        quote: "El enfoque de PaWa para la integración de datos cambió las reglas del juego para nuestros informes. Pasamos de procesos manuales y propensos a errores a un pipeline totalmente automatizado en solo seis semanas. La experiencia del equipo es inigualable.",
-        name: "Jessica Miller",
-        role: "Directora de Analítica, TechCorp",
-      },
-      {
-        quote: "El Taller de Fundamentos de Datos proporcionó a nuestro equipo el plan exacto que necesitábamos. Ahora tenemos una arquitectura clara y escalable, y las habilidades internas para gestionarla eficazmente. Muy recomendable.",
-        name: "David Chen",
-        role: "Jefe de Ingeniería, CloudVault",
-      },
-      {
-        quote: "Implementar un marco de gobernanza sólido parecía abrumador, pero PaWa lo hizo sencillo y centrado en el negocio. Nuestros datos son ahora un activo confiable y seguro que impulsa nuestra toma de decisiones.",
-        name: "Maria Garcia",
-        role: "Directora de Operaciones, InfoSystems",
-      }
-    ],
-
     // Careers
     careersEyebrow: "Únete a Nuestro Equipo",
     careersHeroTitle: "Construye el Futuro de los Datos",
@@ -1185,27 +1122,6 @@ export const translations = {
     kpi3Desc: "Segurança, linhagem e controles integrados desde o primeiro dia—não acrescentados depois.",
     kpi4Label: "Equipe Sênior e Atuante",
     kpi4Desc: "Você trabalha diretamente com profissionais experientes, sem repasses a juniores.",
-
-    // Testimonials
-    testimonialsTitle: "O Que Nossos Clientes Dizem",
-    testimonialsSubtitle: "Temos orgulho de ter feito parceria com empresas inovadoras para resolver seus desafios de dados mais difíceis.",
-    testimonials: [
-      {
-        quote: "A abordagem da PaWa para a integração de dados foi um divisor de águas para nossos relatórios. Passamos de processos manuais e propensos a erros para um pipeline totalmente automatizado em apenas seis semanas. A experiência da equipe é inigualável.",
-        name: "Jessica Miller",
-        role: "Diretora de Análise, TechCorp",
-      },
-      {
-        quote: "O Workshop de Fundação de Dados forneceu à nossa equipe o projeto exato de que precisávamos. Agora temos uma arquitetura clara e escalável e as habilidades internas para gerenciá-la de forma eficaz. Altamente recomendado.",
-        name: "David Chen",
-        role: "Chefe de Engenharia, CloudVault",
-      },
-      {
-        quote: "Implementar uma estrutura de governança robusta parecia assustador, mas a PaWa tornou tudo simples e focado nos negócios. Nossos dados agora são um ativo confiável e seguro que impulsiona nossa tomada de decisão.",
-        name: "Maria Garcia",
-        role: "Diretora de Operações, InfoSystems",
-      }
-    ],
 
     // Careers
     careersEyebrow: "Junte-se à Nossa Equipe",
