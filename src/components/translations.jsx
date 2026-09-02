@@ -186,6 +186,8 @@ export const translations = {
     footerSocialLabel: "Follow PaWa Data Solutions",
     // 404
     notFoundEyebrow: "404",
+    seoPrivacyDesc: "How PaWa Data Solutions collects, uses, and protects your personal information, and the privacy rights you can exercise.",
+    seoDoNotSellDesc: "California (CPRA) privacy rights and how to exercise them with PaWa Data Solutions. We do not sell personal information.",
     notFoundTitle: "We can't find that page",
     notFoundBody: "The link may be out of date, or the address may have a typo. Here is where most people are headed.",
     notFoundHome: "Back to home",
@@ -553,6 +555,8 @@ export const translations = {
     footerSocialLabel: "Suivez PaWa Data Solutions",
     // 404
     notFoundEyebrow: "404",
+    seoPrivacyDesc: "Comment PaWa Data Solutions collecte, utilise et protège vos données personnelles, et les droits que vous pouvez exercer.",
+    seoDoNotSellDesc: "Droits de confidentialité de Californie (CPRA) et comment les exercer auprès de PaWa Data Solutions. Nous ne vendons aucune donnée personnelle.",
     notFoundTitle: "Cette page est introuvable",
     notFoundBody: "Le lien est peut-être obsolète, ou l'adresse comporte une faute de frappe. Voici les pages les plus consultées.",
     notFoundHome: "Retour à l'accueil",
@@ -927,6 +931,8 @@ export const translations = {
     footerSocialLabel: "Sigue a PaWa Data Solutions",
     // 404
     notFoundEyebrow: "404",
+    seoPrivacyDesc: "Cómo PaWa Data Solutions recopila, usa y protege tu información personal, y los derechos de privacidad que puedes ejercer.",
+    seoDoNotSellDesc: "Derechos de privacidad de California (CPRA) y cómo ejercerlos con PaWa Data Solutions. No vendemos información personal.",
     notFoundTitle: "No encontramos esa página",
     notFoundBody: "Puede que el enlace esté desactualizado o que la dirección tenga un error. Esto es lo que más buscan los visitantes.",
     notFoundHome: "Volver al inicio",
@@ -1301,6 +1307,8 @@ export const translations = {
     footerSocialLabel: "Siga a PaWa Data Solutions",
     // 404
     notFoundEyebrow: "404",
+    seoPrivacyDesc: "Como a PaWa Data Solutions coleta, usa e protege suas informações pessoais, e os direitos de privacidade que você pode exercer.",
+    seoDoNotSellDesc: "Direitos de privacidade da Califórnia (CPRA) e como exercê-los com a PaWa Data Solutions. Não vendemos informações pessoais.",
     notFoundTitle: "Não encontramos essa página",
     notFoundBody: "O link pode estar desatualizado ou o endereço pode ter um erro de digitação. Veja o que a maioria procura.",
     notFoundHome: "Voltar ao início",

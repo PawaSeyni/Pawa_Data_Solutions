@@ -1,14 +1,444 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://pawadata.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://pawadata.com/dataintegration/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pawadata.com/pipelinearchitecture/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pawadata.com/datagovernance/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pawadata.com/aireadiness/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pawadata.com/analyticsenablement/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pawadata.com/processautomation/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pawadata.com/workshop/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pawadata.com/careers/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pawadata.com/privacypolicy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://pawadata.com/donotsellorshare/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pawadata.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/dataintegration/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/dataintegration/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/dataintegration/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/dataintegration/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/dataintegration/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/dataintegration/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/dataintegration/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/dataintegration/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/dataintegration/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pipelinearchitecture/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/pipelinearchitecture/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/pipelinearchitecture/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/pipelinearchitecture/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/pipelinearchitecture/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/pipelinearchitecture/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/pipelinearchitecture/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/pipelinearchitecture/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/pipelinearchitecture/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/datagovernance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/datagovernance/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/datagovernance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/datagovernance/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/datagovernance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/datagovernance/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/datagovernance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/datagovernance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/datagovernance/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/aireadiness/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/aireadiness/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/aireadiness/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/aireadiness/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/aireadiness/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/aireadiness/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/aireadiness/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/aireadiness/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/aireadiness/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/analyticsenablement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/analyticsenablement/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/analyticsenablement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/analyticsenablement/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/analyticsenablement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/analyticsenablement/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/analyticsenablement/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/analyticsenablement/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/analyticsenablement/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/processautomation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/processautomation/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/processautomation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/processautomation/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/processautomation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/processautomation/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/processautomation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/processautomation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/processautomation/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/workshop/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/workshop/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/workshop/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/workshop/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/workshop/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/workshop/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/workshop/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/workshop/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/workshop/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/careers/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/careers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/careers/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/careers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/careers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/careers/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/careers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/careers/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/careers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/careers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/careers/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/careers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/careers/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/careers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/careers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/careers/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/careers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/careers/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/careers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/careers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/privacypolicy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/privacypolicy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/privacypolicy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/privacypolicy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/privacypolicy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/privacypolicy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/privacypolicy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/privacypolicy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/privacypolicy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/donotsellorshare/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/donotsellorshare/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/donotsellorshare/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/donotsellorshare/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/donotsellorshare/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/donotsellorshare/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/donotsellorshare/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/donotsellorshare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/donotsellorshare/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

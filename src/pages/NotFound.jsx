@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
 import { createPageUrl } from "@/utils";
+import { prefixFor } from "@/lib/i18n";
 
 // Rendered by the "*" route, and snapshotted to dist/404.html at build time so
 // Netlify can serve a real HTTP 404 for unmatched URLs. Before this existed the
@@ -33,14 +34,14 @@ export default function NotFound({ language }) {
 
         <div className="flex flex-wrap gap-3 mb-14">
           <Link
-            to="/"
+            to={`${prefixFor(language)}/`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
           >
             {t.notFoundHome}
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
           <a
-            href="/#contact"
+            href={`${prefixFor(language)}/#contact`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 text-gray-900 font-medium hover:border-gray-900 transition-colors"
           >
             {t.notFoundContact}
@@ -54,7 +55,7 @@ export default function NotFound({ language }) {
           {services.map((service) => (
             <li key={service.page} className="border-t border-gray-200">
               <Link
-                to={createPageUrl(service.page)}
+                to={createPageUrl(service.page, language)}
                 onClick={() => window.scrollTo(0, 0)}
                 className="block py-3 text-gray-700 hover:text-blue-600 transition-colors"
               >

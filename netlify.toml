@@ -45,6 +45,24 @@
   to = "/"
   status = 301
 
+# Same for each locale. Nothing links to these — the locale prefixes are new — but
+# leaving /fr/home as a 404 while /home redirects is an inconsistency someone will
+# eventually trip over.
+[[redirects]]
+  from = "/fr/home"
+  to = "/fr/"
+  status = 301
+
+[[redirects]]
+  from = "/es/home"
+  to = "/es/"
+  status = 301
+
+[[redirects]]
+  from = "/pt/home"
+  to = "/pt/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

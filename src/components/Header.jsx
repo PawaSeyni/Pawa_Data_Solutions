@@ -1,23 +1,29 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
+import { LANGUAGES, LANGUAGE_NAMES, localizedPath, prefixFor } from "@/lib/i18n";
 import { Menu, X } from "lucide-react";
 import { translations } from "@/components/translations";
 import { Button } from "@/components/ui/button";
 
-const langNames = { en: "English", fr: "French", es: "Spanish", pt: "Portuguese" };
-
-export default function Header({ currentPageName, language, setLanguage }) {
+export default function Header({ currentPageName, language }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const t = translations[language];
+
+  // Switching locale keeps you on the same page and changes the URL, so the
+  // address bar always matches the language on screen and the result is linkable.
+  const switchLanguage = (lang) => {
+    setIsMenuOpen(false);
+    navigate(localizedPath(currentPageName, lang));
+  };
 
   const scrollToSection = (sectionId) => {
     setIsMenuOpen(false);
     
     // If not on the home page, navigate there first.
     if (currentPageName !== 'Home') {
-      navigate("/");
+      navigate(`${prefixFor(language)}/`);
     }
     
     // Scroll to the section after a brief delay to allow the page to render.
@@ -43,7 +49,7 @@ export default function Header({ currentPageName, language, setLanguage }) {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between py-3">
           {/* Brand */}
-          <Link to="/" className="flex items-center">
+          <Link to={`${prefixFor(language)}/`} className="flex items-center">
             <picture>
               <source srcSet="/pawa-logo.webp" type="image/webp" />
               <img
@@ -63,7 +69,7 @@ export default function Header({ currentPageName, language, setLanguage }) {
                 <li key={item.label}>
                   {item.page ? (
                     <Link 
-                      to={createPageUrl(item.page)}
+                      to={createPageUrl(item.page, language)}
                       onClick={() => window.scrollTo(0, 0)}
                       className="text-gray-700 hover:text-blue-600 transition-colors"
                     >
@@ -85,11 +91,11 @@ export default function Header({ currentPageName, language, setLanguage }) {
           {/* Language Switch & Mobile Menu */}
           <div className="flex items-center gap-3">
             <div className="flex gap-1" role="group" aria-label="Select language">
-              {['en', 'fr', 'es', 'pt'].map(lang => (
+              {LANGUAGES.map(lang => (
                 <button
                   key={lang}
-                  onClick={() => setLanguage(lang)}
-                  aria-label={`${lang.toUpperCase()} — switch to ${langNames[lang]}`}
+                  onClick={() => switchLanguage(lang)}
+                  aria-label={`${lang.toUpperCase()} — ${LANGUAGE_NAMES[lang]}`}
                   aria-pressed={language === lang}
                   className={`px-2 py-1.5 text-sm border rounded-full transition-all ${
                     language === lang
@@ -124,7 +130,7 @@ export default function Header({ currentPageName, language, setLanguage }) {
                   <li key={item.label}>
                     {item.page ? (
                       <Link 
-                        to={createPageUrl(item.page)} 
+                        to={createPageUrl(item.page, language)} 
                         onClick={() => {
                           setIsMenuOpen(false);
                           window.scrollTo(0, 0);

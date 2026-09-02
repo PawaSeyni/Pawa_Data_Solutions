@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 
-export default function Layout({ children, currentPageName, language, setLanguage }) {
+export default function Layout({ children, currentPageName, language }) {
   return (
     <div className="min-h-screen bg-white">
       <Seo pageName={currentPageName} language={language} />
@@ -27,11 +27,7 @@ export default function Layout({ children, currentPageName, language, setLanguag
           }
         `}
       </style>
-      <Header 
-        currentPageName={currentPageName} 
-        language={language}
-        setLanguage={setLanguage}
-      />
+      <Header currentPageName={currentPageName} language={language} />
       <main>
         {children}
       </main>

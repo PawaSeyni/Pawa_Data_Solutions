@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run prerender",
+    "build": "npm run gen:sitemap && vite build && npm run prerender",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:spa": "vite build",
-    "prerender": "node scripts/prerender.mjs"
+    "prerender": "node scripts/prerender.mjs",
+    "gen:sitemap": "node scripts/gen-sitemap.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",

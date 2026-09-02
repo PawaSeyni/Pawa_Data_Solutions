@@ -61,7 +61,7 @@ export default function Services({ language = "en" }) {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => (
-            <Link key={idx} to={createPageUrl(service.page)} onClick={() => window.scrollTo(0, 0)}>
+            <Link key={idx} to={createPageUrl(service.page, language)} onClick={() => window.scrollTo(0, 0)}>
               <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white h-full cursor-pointer">
                 <CardHeader className="pb-4">
                   <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors duration-300">

@@ -1,6 +1,7 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Layout from "./Layout.jsx";
+import { LANGUAGES, DEFAULT_LANGUAGE, parsePath, prefixFor } from "@/lib/i18n";
 
 // Home is the landing page — load it eagerly so the first paint needs no extra request.
 import Home from "./Home";
@@ -18,71 +19,75 @@ const DoNotSellOrShare = lazy(() => import("./DoNotSellOrShare"));
 const Careers = lazy(() => import("./Careers"));
 const NotFound = lazy(() => import("./NotFound"));
 
-// Page names drive _getCurrentPage (used for the active-nav highlight + SEO key).
-const PAGE_NAMES = [
-    "Home",
-    "Workshop",
-    "DataIntegration",
-    "PipelineArchitecture",
-    "DataGovernance",
-    "AIReadiness",
-    "AnalyticsEnablement",
-    "ProcessAutomation",
-    "PrivacyPolicy",
-    "DoNotSellOrShare",
-    "Careers",
+// slug -> page name. The slug is what appears in the URL; the page name is the
+// key used by src/lib/seo.js and by the active-nav highlight.
+const PAGES = [
+    ["workshop", "Workshop", Workshop],
+    ["dataintegration", "DataIntegration", DataIntegration],
+    ["pipelinearchitecture", "PipelineArchitecture", PipelineArchitecture],
+    ["datagovernance", "DataGovernance", DataGovernance],
+    ["aireadiness", "AIReadiness", AIReadiness],
+    ["analyticsenablement", "AnalyticsEnablement", AnalyticsEnablement],
+    ["processautomation", "ProcessAutomation", ProcessAutomation],
+    ["privacypolicy", "PrivacyPolicy", PrivacyPolicy],
+    ["donotsellorshare", "DoNotSellOrShare", DoNotSellOrShare],
+    ["careers", "Careers", Careers],
 ];
 
-function _getCurrentPage(url) {
-    if (url.endsWith('/')) {
-        url = url.slice(0, -1);
-    }
-    let urlLastPart = url.split('/').pop();
-    if (urlLastPart.includes('?')) {
-        urlLastPart = urlLastPart.split('?')[0];
-    }
-
-    const pageName = PAGE_NAMES.find(page => page.toLowerCase() === urlLastPart.toLowerCase());
-    // An unknown path is NOT the home page. Returning "Home" here is what gave
-    // every 404 the homepage's title, description and canonical.
-    return pageName || (urlLastPart === '' ? PAGE_NAMES[0] : "NotFound");
+// Page name from the path, with any language prefix already stripped. An unknown
+// slug is NOT the home page — returning "Home" here is what once gave every 404
+// the homepage's title, description and canonical.
+function pageNameFor(slug) {
+    if (!slug) return "Home";
+    const match = PAGES.find(([s]) => s === slug);
+    return match ? match[1] : "NotFound";
 }
 
 function PageFallback() {
     return <div data-prerender-loading className="min-h-[60vh]" aria-busy="true" />;
 }
 
-// Create a wrapper component that uses useLocation inside the Router context
 function PagesContent() {
     const location = useLocation();
-    const currentPage = _getCurrentPage(location.pathname);
-    const [language, setLanguage] = useState("en");
+    // Locale comes from the URL, not from component state. That is the whole
+    // point of this structure: state cannot be indexed, linked, or shared.
+    const { language, slug } = parsePath(location.pathname);
+    const currentPage = pageNameFor(slug);
 
     // Tells the build-time prerender crawler that the first render and every
-    // child effect have completed — Seo.jsx writes title/canonical/OG in a
+    // child effect have completed — Seo.jsx writes title/canonical/hreflang in a
     // useEffect, so snapshotting before this fires would bake the shell's
     // default homepage metadata into every route.
     useEffect(() => {
         window.__PRERENDER_READY__ = true;
     }, []);
 
+    // Same route table mounted under every locale. English is unprefixed, so the
+    // URLs already indexed keep resolving exactly as before.
+    const routesForPrefix = (prefix) => ([
+        <Route key={`${prefix}/`} path={`${prefix}/`} element={<Home language={language} />} />,
+        ...PAGES.map(([slugPart, name, Component]) => (
+            <Route
+                key={`${prefix}/${slugPart}`}
+                path={`${prefix}/${slugPart}`}
+                element={<Component language={language} />}
+            />
+        )),
+    ]);
+
     return (
-        <Layout currentPageName={currentPage} language={language} setLanguage={setLanguage}>
+        <Layout currentPageName={currentPage} language={language}>
             <Suspense fallback={<PageFallback />}>
                 <Routes>
-                    <Route path="/" element={<Home language={language} />} />
-                    {/* /Home duplicated / at HTTP 200. Redirect so there is one home URL. */}
-                    <Route path="/Home" element={<Navigate to="/" replace />} />
-                    <Route path="/Workshop" element={<Workshop language={language} />} />
-                    <Route path="/DataIntegration" element={<DataIntegration language={language} />} />
-                    <Route path="/PipelineArchitecture" element={<PipelineArchitecture language={language} />} />
-                    <Route path="/DataGovernance" element={<DataGovernance language={language} />} />
-                    <Route path="/AIReadiness" element={<AIReadiness language={language} />} />
-                    <Route path="/AnalyticsEnablement" element={<AnalyticsEnablement language={language} />} />
-                    <Route path="/ProcessAutomation" element={<ProcessAutomation language={language} />} />
-                    <Route path="/PrivacyPolicy" element={<PrivacyPolicy language={language} />} />
-                    <Route path="/DoNotSellOrShare" element={<DoNotSellOrShare language={language} />} />
-                    <Route path="/Careers" element={<Careers language={language} />} />
+                    {LANGUAGES.flatMap((lang) => routesForPrefix(prefixFor(lang)))}
+                    {/* /home duplicated / at HTTP 200. One home URL per locale. */}
+                    {LANGUAGES.map((lang) => (
+                        <Route
+                            key={`${prefixFor(lang)}/home`}
+                            path={`${prefixFor(lang)}/home`}
+                            element={<Navigate to={`${prefixFor(lang)}/`} replace />}
+                        />
+                    ))}
                     <Route path="*" element={<NotFound language={language} />} />
                 </Routes>
             </Suspense>
@@ -97,3 +102,5 @@ export default function Pages() {
         </Router>
     );
 }
+
+export { DEFAULT_LANGUAGE };

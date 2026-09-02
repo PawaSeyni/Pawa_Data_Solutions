@@ -4,6 +4,7 @@ import { translations } from "@/components/translations";
 import { Link, useNavigate } from "react-router-dom";
 import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { createPageUrl } from "@/utils";
+import { prefixFor } from "@/lib/i18n";
 
 // X ships no lucide glyph, so draw the wordmark directly.
 function XIcon(props) {
@@ -47,7 +48,7 @@ export default function Footer({ language }) {
   // and the scroll then silently did nothing. Poll instead, and give up rather
   // than spin forever if the id is genuinely absent.
   const handleSectionClick = (sectionId) => {
-    navigate("/");
+    navigate(`${prefixFor(language)}/`);
 
     const deadline = Date.now() + 3000;
     const tryScroll = () => {
@@ -112,7 +113,7 @@ export default function Footer({ language }) {
               {services.map((service) => (
                 <li key={service.page}>
                   <Link
-                    to={createPageUrl(service.page)}
+                    to={createPageUrl(service.page, language)}
                     className="hover:text-white transition-colors"
                     onClick={() => window.scrollTo(0, 0)}
                   >
@@ -160,10 +161,10 @@ export default function Footer({ language }) {
                 </button>
               </li>
               <li>
-                <Link to={createPageUrl('PrivacyPolicy')} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">{t.footerPrivacy}</Link>
+                <Link to={createPageUrl('PrivacyPolicy', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">{t.footerPrivacy}</Link>
               </li>
               <li>
-                <Link to={createPageUrl('DoNotSellOrShare')} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">{t.footerDoNotSell}</Link>
+                <Link to={createPageUrl('DoNotSellOrShare', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">{t.footerDoNotSell}</Link>
               </li>
             </ul>
           </div>

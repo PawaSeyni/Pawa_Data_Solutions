@@ -141,12 +141,40 @@ async function waitUntilRendered(page, route) {
 // form rather than an exact string — otherwise every route fails on the slash.
 const norm = (p) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
 
+const LANGUAGES = ['en', 'fr', 'es', 'pt'];
+const DEFAULT_LANGUAGE = 'en';
+
+function languageOf(route) {
+  const first = route.split('/').filter(Boolean)[0];
+  return LANGUAGES.includes(first) && first !== DEFAULT_LANGUAGE ? first : DEFAULT_LANGUAGE;
+}
+
 function assertCanonical(html, route) {
   const m = html.match(/<link rel="canonical" href="([^"]+)"/);
   if (!m) throw new Error(`no canonical in snapshot for ${route}`);
   const got = new URL(m[1]).pathname;
   if (norm(got) !== norm(route)) {
     throw new Error(`canonical mismatch for ${route} — snapshot claims ${got}`);
+  }
+}
+
+// A locale that silently renders in English is the failure mode this whole step
+// exists to prevent, and it looks completely fine in a build log. Assert the
+// document language and the full reciprocal hreflang set on every snapshot.
+function assertLocalized(html, route) {
+  const expected = languageOf(route);
+
+  const langAttr = html.match(/<html[^>]*\blang="([^"]+)"/);
+  if (!langAttr) throw new Error(`no <html lang> in snapshot for ${route}`);
+  if (langAttr[1] !== expected) {
+    throw new Error(`lang mismatch for ${route} — snapshot claims "${langAttr[1]}", expected "${expected}"`);
+  }
+
+  const found = [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)]
+    .map((m) => m[1]);
+  const missing = [...LANGUAGES, 'x-default'].filter((l) => !found.includes(l));
+  if (missing.length) {
+    throw new Error(`incomplete hreflang set for ${route} — missing ${missing.join(', ')}`);
   }
 }
 
@@ -194,6 +222,7 @@ for (const route of routes) {
       html = await snapshot(route);
     }
     assertCanonical(html, route);
+    assertLocalized(html, route);
     const outDir = route === '/' ? DIST : path.join(DIST, route);
     await mkdir(outDir, { recursive: true });
     await writeFile(path.join(outDir, 'index.html'), html);
