@@ -173,7 +173,7 @@ export default function Footer({ language }) {
                   onClick={() => trackCta({ label: 'papanguer_writing', location: 'footer', page: 'any', language })}
                   className="hover:text-white transition-colors"
                 >
-                  {t.footerWriting}
+                  {t.navBlog}
                 </a>
               </li>
               <li>

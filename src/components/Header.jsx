@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { LANGUAGES, LANGUAGE_NAMES, localizedPath, prefixFor } from "@/lib/i18n";
 import { Menu, X } from "lucide-react";
+import CompanyMenu from "@/components/CompanyMenu";
+import { trackCta } from "@/lib/analytics";
 import { translations } from "@/components/translations";
 import { Button } from "@/components/ui/button";
 
@@ -36,11 +38,29 @@ export default function Header({ currentPageName, language }) {
     }, 100);
   };
   
+  // Company groups the pages a buyer checks when deciding whether to trust the
+  // firm, rather than what it sells. Careers moves in here off the top level,
+  // which it was cluttering — very few visitors arrive looking for a job.
+  //
+  // Four items, each with a real destination. The reference design also carried
+  // Locations and Awards & Recognition; Awards was dropped on Papa's call, and
+  // Locations is still open — this firm has one office, so that page would carry
+  // nothing the contact block does not already say.
+  // Blog and Publications both point at papanguer.com, which is deliberate:
+  // thought leadership was settled there, so linking out keeps one canonical
+  // home for it rather than splitting the effort across two domains.
+  const companyItems = [
+    { id: 'about',        label: t.footerAbout,      page: 'About' },
+    { id: 'blog',         label: t.navBlog,          href: 'https://papanguer.com/writing/', external: true },
+    { id: 'publications', label: t.navPublications,  href: 'https://papanguer.com/#books',   external: true },
+    { id: 'careers',      label: t.navCareers,       page: 'Careers' },
+  ];
+
   const navItems = [
     { label: t.navServices, id: "services" },
     { label: t.navProcess, id: "process" },
     { label: t.navWorkshop, page: "Workshop" },
-    { label: t.navCareers, page: "Careers" },
+    { label: t.footerCompanyTitle, company: true },
     { label: t.navContact, id: "contact" }
   ];
 
@@ -67,7 +87,9 @@ export default function Header({ currentPageName, language }) {
             <ul className="flex items-center gap-6 list-none m-0 p-0">
               {navItems.map(item => (
                 <li key={item.label}>
-                  {item.page ? (
+                  {item.company ? (
+                    <CompanyMenu language={language} label={item.label} items={companyItems} />
+                  ) : item.page ? (
                     <Link 
                       to={createPageUrl(item.page, language)}
                       onClick={() => window.scrollTo(0, 0)}
@@ -128,7 +150,48 @@ export default function Header({ currentPageName, language }) {
               <ul className="flex flex-col gap-3 list-none m-0 p-0">
                 {navItems.map(item => (
                   <li key={item.label}>
-                    {item.page ? (
+                    {/* On mobile the Company group is a labelled, indented list
+                        rather than a dropdown. A menu inside an already-open menu
+                        is an extra tap for no gain, and the whole list fits. */}
+                    {item.company ? (
+                      <>
+                        <span className="block py-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                          {item.label}
+                        </span>
+                        <ul className="ml-3 border-l border-gray-200 pl-3 list-none m-0">
+                          {companyItems.map(sub => (
+                            <li key={sub.id}>
+                              {sub.external ? (
+                                <a
+                                  href={sub.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={() => {
+                                    trackCta({ label: sub.id, location: 'nav_company_mobile', page: 'any', language });
+                                    setIsMenuOpen(false);
+                                  }}
+                                  className="text-gray-700 hover:text-blue-600 transition-colors block py-1"
+                                >
+                                  {sub.label}
+                                </a>
+                              ) : (
+                                <Link
+                                  to={createPageUrl(sub.page, language)}
+                                  onClick={() => {
+                                    trackCta({ label: sub.id, location: 'nav_company_mobile', page: 'any', language });
+                                    setIsMenuOpen(false);
+                                    window.scrollTo(0, 0);
+                                  }}
+                                  className="text-gray-700 hover:text-blue-600 transition-colors block py-1"
+                                >
+                                  {sub.label}
+                                </Link>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : item.page ? (
                       <Link 
                         to={createPageUrl(item.page, language)} 
                         onClick={() => {
