@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Users, ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
+import { scrollToId } from "@/lib/motion";
 import { ROLES } from "@/lib/jobPostings";
 
 export default function OpenPositions({ language }) {
   const t = translations[language];
 
   const scrollToApplication = () => {
-    document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToId('application');
   };
 
   // Single source of truth, shared with the JobPosting schema in src/lib/jobPostings.js.

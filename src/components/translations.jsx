@@ -1813,7 +1813,7 @@ export const translations = {
     service3Desc: "Estabeleça estruturas de governança abrangentes que garantam conformidade, segurança e confiabilidade dos dados.",
     service4Title: "Preparação para IA",
     service4Desc: "Prepare sua infraestrutura de dados para iniciativas de IA e machine learning com conjuntos de dados otimizados e limpos.",
-    service5Title: "Analytics Enablement",
+    service5Title: "Capacitação em Analytics",
     service5Desc: "Transforme dados brutos em insights acionáveis com capacidades avançadas de análise e relatórios.",
     service6Title: "Automação de Processos",
     service6Desc: "Otimize fluxos de trabalho de dados e reduza intervenção manual com soluções de automação inteligente.",

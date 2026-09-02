@@ -2,12 +2,13 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users } from "lucide-react";
 import { translations } from "@/components/translations";
+import { scrollToId } from "@/lib/motion";
 
 export default function CareersHero({ language }) {
   const t = translations[language];
 
   const scrollToJobs = () => {
-    document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToId('open-positions');
   };
 
   return (

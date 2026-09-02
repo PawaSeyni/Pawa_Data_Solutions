@@ -3,12 +3,13 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { translations } from "@/components/translations";
+import { scrollToId } from "@/lib/motion";
 
 export default function WorkshopHero({ language }) {
   const t = translations[language];
 
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToId('contact');
   };
 
   return (

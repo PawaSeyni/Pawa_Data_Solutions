@@ -154,7 +154,7 @@ export default function Insights({ language }) {
                 >
                   {Icon && <Icon className="h-4 w-4" aria-hidden="true" />}
                   {label}
-                  <span className={active ? 'text-blue-100' : 'text-gray-400'}>{n}</span>
+                  <span className={active ? 'text-white' : 'text-gray-500'}>{n}</span>
                 </button>
               );
             })}
@@ -169,10 +169,10 @@ export default function Insights({ language }) {
                       {typeLabel[item.type]}
                     </span>
                     <span className="text-gray-500">{item.author}</span>
-                    {item.date && <span className="text-gray-400">{fmt(item.date)}</span>}
-                    {item.meta && <span className="text-gray-400">{item.meta}</span>}
+                    {item.date && <span className="text-gray-500">{fmt(item.date)}</span>}
+                    {item.meta && <span className="text-gray-500">{item.meta}</span>}
                     {item.status === 'forthcoming' && (
-                      <span className="text-gray-400">{t.publicationsForthcoming}</span>
+                      <span className="text-gray-500">{t.publicationsForthcoming}</span>
                     )}
                   </div>
                   <h3 className="mb-1.5 text-xl font-semibold text-gray-900 group-hover:text-blue-600">

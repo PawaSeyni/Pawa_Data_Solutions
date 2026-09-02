@@ -5,6 +5,7 @@ import { Play, TrendingUp } from "lucide-react";
 import { translations } from "@/components/translations";
 import PrimaryCta from "@/components/PrimaryCta";
 import { CTA_LOCATIONS } from "@/lib/cta";
+import { scrollToId } from "@/lib/motion";
 import { trackCta } from "@/lib/analytics";
 
 export default function Hero({ language }) {
@@ -14,7 +15,7 @@ export default function Hero({ language }) {
   // which placement actually converts.
   const goTo = (sectionId, label) => {
     trackCta({ label, location: 'hero', page: 'Home', language });
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    scrollToId(sectionId);
   };
 
   return (

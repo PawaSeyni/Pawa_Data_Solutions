@@ -15,6 +15,17 @@ import { DEFAULT_LANGUAGE, LANGUAGES, localizedPath, alternatesFor } from '@/lib
 export const SITE_URL = 'https://pawadata.com';
 export const SITE_NAME = 'PaWa Data Solutions';
 
+// Google truncates around 60-65 characters. A page whose own headline is long
+// gains nothing from a brand suffix that gets cut off mid-word — the domain is
+// already shown beside the result. So the suffix is appended only when it fits,
+// and the headline is never itself truncated: the page's own words are the part
+// worth keeping.
+const MAX_TITLE = 65;
+export function withBrand(title) {
+  const full = `${title} — ${SITE_NAME}`;
+  return full.length <= MAX_TITLE ? full : title;
+}
+
 // Descriptions are trimmed to ~155 chars: Google truncates around 160, and the
 // source strings are body copy, not meta copy.
 const MAX_DESCRIPTION = 155;
@@ -67,7 +78,7 @@ export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
     if (book) {
       return {
         path: localizedPath(pageName, lang),
-        title: `${book.title} — ${SITE_NAME}`,
+        title: withBrand(book.title),
         description: trim(book.thesis),
         noindex: false,
         alternates: alternatesFor(pageName),
@@ -81,7 +92,7 @@ export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
     if (bp) {
       return {
         path: localizedPath(pageName, lang),
-        title: `${bp.title} — ${SITE_NAME}`,
+        title: withBrand(bp.title),
         description: trim(bp.purpose),
         noindex: false,
         alternates: alternatesFor(pageName),
@@ -95,7 +106,7 @@ export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
     if (study) {
       return {
         path: localizedPath(pageName, lang),
-        title: `${study.headline} — ${SITE_NAME}`,
+        title: withBrand(study.headline),
         description: trim(study.challenge),
         noindex: false,
         alternates: alternatesFor(pageName),
@@ -111,7 +122,7 @@ export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
   const title =
     page === 'Home'
       ? HOME_TITLES[lang]
-      : `${t[source.title] || translations[DEFAULT_LANGUAGE][source.title]} — ${SITE_NAME}`;
+      : withBrand(t[source.title] || translations[DEFAULT_LANGUAGE][source.title]);
 
   const description = trim(t[source.desc] || translations[DEFAULT_LANGUAGE][source.desc]);
 

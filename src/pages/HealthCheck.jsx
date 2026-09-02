@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 import { TRIGGERS, SCOPE, OUTPUTS, TIMELINE, NOT_INCLUDED, FAQ, MATRIX_EXAMPLE } from "@/lib/healthCheck";
 import { CTA_PRIMARY, CTA_LOCATIONS } from "@/lib/cta";
 import { SITE_URL } from "@/lib/jobPostings";
+import { scrollToId } from "@/lib/motion";
 import { trackCta } from "@/lib/analytics";
 
 // The Data Health Check. §5 asks for one dominant conversion action, so there is
@@ -18,7 +19,7 @@ export default function HealthCheck({ language }) {
 
   const scrollToForm = () => {
     trackCta({ label: CTA_PRIMARY, location: CTA_LOCATIONS.HEALTH_CHECK, page: 'HealthCheck', language });
-    document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToId('book');
   };
 
   // Service + FAQPage. The FAQ block is eligible for rich results and the

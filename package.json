@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run check:cases && npm run gen:sitemap && npm run gen:redirects && vite build && npm run prerender",
+    "build": "npm run check:cases && npm run check:pages && npm run gen:sitemap && npm run gen:redirects && vite build && npm run prerender",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:spa": "vite build",
@@ -13,7 +13,8 @@
     "gen:sitemap": "node scripts/gen-sitemap.mjs",
     "gen:redirects": "node scripts/gen-redirects.mjs",
     "sync:writing": "node scripts/sync-writing.mjs",
-    "check:cases": "node scripts/check-case-studies.mjs"
+    "check:cases": "node scripts/check-case-studies.mjs",
+    "check:pages": "node scripts/check-page-names.mjs"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.2",

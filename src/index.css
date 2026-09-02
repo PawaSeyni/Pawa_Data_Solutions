@@ -156,3 +156,46 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* Reduced motion. Sprint 6 (§3 accessibility, §7 "do not sacrifice
+   accessibility for decorative motion").
+   Nothing on this site depends on animation to convey meaning — the transitions
+   are hover polish and Radix's enter/exit — so for a visitor who asks for less
+   motion, all of it can go. Vestibular disorders make even short transforms
+   genuinely unpleasant, and this is a one-block fix.
+   Times are near-zero rather than 0 so animationend/transitionend listeners
+   still fire and nothing waits forever on an event that never arrives. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus. Sprint 6 (§3 "focus states").
+   The browser default is a 1px outline at 50% opacity — legible on plain white,
+   easy to lose on the dark footer and on the blue primary buttons. This is one
+   ring that works on any background: a solid dark outline with a white offset
+   ring behind it, so whichever of the two contrasts with the surface, one of
+   them always does.
+   :focus-visible, not :focus — a mouse click on a button should not leave a ring
+   behind, which is why the default outline was removed from designs in the first
+   place. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid #1e3a8a;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #ffffff;
+  border-radius: 2px;
+}
+/* On the dark footer the two swap roles. */
+footer :where(a, button):focus-visible {
+  outline-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.6);
+}

@@ -1,6 +1,7 @@
 
 import React from "react";
 import { translations } from "@/components/translations";
+import { scrollToId } from "@/lib/motion";
 import { Link, useNavigate } from "react-router-dom";
 import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { createPageUrl } from "@/utils";
@@ -55,7 +56,7 @@ export default function Footer({ language }) {
     const tryScroll = () => {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        scrollToId(sectionId);
       } else if (Date.now() < deadline) {
         requestAnimationFrame(tryScroll);
       }
@@ -160,12 +161,16 @@ export default function Footer({ language }) {
                   {t.navContact}
                 </button>
               </li>
-              {/* Points at the on-site Blog index, which in turn links out to
-                  the canonical articles on papanguer.com. Indexing here,
-                  publishing there. */}
+              {/* Insights: the on-site index, which links out to the canonical
+                  articles on papanguer.com. Indexing here, publishing there.
+                  This said 'Blog' and called createPageUrl('Blog') until Sprint 6
+                  — the page was renamed in Sprint 3 and createPageUrl falls back
+                  to "/" for an unknown name, so the footer link on all 92 pages
+                  quietly pointed at the homepage. scripts/check-page-names.mjs
+                  now fails the build on a dangling name. */}
               <li>
-                <Link to={createPageUrl('Blog', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">
-                  {t.navBlog}
+                <Link to={createPageUrl('Insights', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">
+                  {t.insightsEyebrow}
                 </Link>
               </li>
               <li>

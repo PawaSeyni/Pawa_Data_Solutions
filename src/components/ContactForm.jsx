@@ -165,7 +165,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
                   </a>
                 )}
               </div>
-              <p className="mt-8 text-sm uppercase tracking-widest text-gray-400">{t.contactOrWrite}</p>
+              <p className="mt-8 text-sm uppercase tracking-widest text-gray-500">{t.contactOrWrite}</p>
             </>
           )}
         </div>

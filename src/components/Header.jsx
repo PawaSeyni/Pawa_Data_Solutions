@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import CompanyMenu from "@/components/CompanyMenu";
 import { trackCta } from "@/lib/analytics";
 import { translations } from "@/components/translations";
+import { scrollToId } from "@/lib/motion";
 import { hasCaseStudies } from "@/lib/caseStudies";
 import { Button } from "@/components/ui/button";
 
@@ -34,7 +35,7 @@ export default function Header({ currentPageName, language }) {
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        scrollToId(sectionId);
       }
     }, 100);
   };
@@ -163,7 +164,7 @@ export default function Header({ currentPageName, language }) {
                         is an extra tap for no gain, and the whole list fits. */}
                     {item.company ? (
                       <>
-                        <span className="block py-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        <span className="block py-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
                           {item.label}
                         </span>
                         <ul className="ml-3 border-l border-gray-200 pl-3 list-none m-0">

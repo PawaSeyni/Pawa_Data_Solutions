@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cog, CheckCircle, ArrowRight, Bot, Workflow, Timer } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import { translations } from "@/components/translations";
+import { scrollToId } from "@/lib/motion";
 
 export default function ProcessAutomation({ language = "en" }) {
   const t = translations[language];
@@ -57,7 +58,7 @@ export default function ProcessAutomation({ language = "en" }) {
             </p>
 
             <Button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToId('contact')}
               className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
             >
               {t.processAutomationHeroCta}
@@ -125,7 +126,7 @@ export default function ProcessAutomation({ language = "en" }) {
 
             <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8">
               <div className="bg-white rounded-xl p-6 shadow-lg">
-                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                   {t.caseStudyLabel}
                 </span>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
