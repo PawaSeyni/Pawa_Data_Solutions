@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Layout from "./Layout.jsx";
 import { LANGUAGES, DEFAULT_LANGUAGE, parsePath, prefixFor } from "@/lib/i18n";
+import { PAGES } from "@/lib/pages";
 import { trackScrollDepth } from "@/lib/analytics";
 
 // Home is the landing page — load it eagerly so the first paint needs no extra request.
@@ -20,27 +21,18 @@ const DoNotSellOrShare = lazy(() => import("./DoNotSellOrShare"));
 const Careers = lazy(() => import("./Careers"));
 const NotFound = lazy(() => import("./NotFound"));
 
-// slug -> page name. The slug is what appears in the URL; the page name is the
-// key used by src/lib/seo.js and by the active-nav highlight.
-const PAGES = [
-    ["workshop", "Workshop", Workshop],
-    ["dataintegration", "DataIntegration", DataIntegration],
-    ["pipelinearchitecture", "PipelineArchitecture", PipelineArchitecture],
-    ["datagovernance", "DataGovernance", DataGovernance],
-    ["aireadiness", "AIReadiness", AIReadiness],
-    ["analyticsenablement", "AnalyticsEnablement", AnalyticsEnablement],
-    ["processautomation", "ProcessAutomation", ProcessAutomation],
-    ["privacypolicy", "PrivacyPolicy", PrivacyPolicy],
-    ["donotsellorshare", "DoNotSellOrShare", DoNotSellOrShare],
-    ["careers", "Careers", Careers],
-];
+// Route table built from the shared page definitions, so a slug change lands in
+// the router, the sitemap, the canonical tags and the redirects at once.
+const COMPONENTS = {
+    Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
+    AIReadiness, AnalyticsEnablement, ProcessAutomation,
+    PrivacyPolicy, DoNotSellOrShare, Careers,
+};
+const ROUTED = PAGES.filter((p) => p.name !== 'Home').map((p) => [p.slug, p.name, COMPONENTS[p.name]]);
 
-// Page name from the path, with any language prefix already stripped. An unknown
-// slug is NOT the home page — returning "Home" here is what once gave every 404
-// the homepage's title, description and canonical.
 function pageNameFor(slug) {
     if (!slug) return "Home";
-    const match = PAGES.find(([s]) => s === slug);
+    const match = ROUTED.find(([s]) => s === slug);
     return match ? match[1] : "NotFound";
 }
 
@@ -71,7 +63,7 @@ function PagesContent() {
     // URLs already indexed keep resolving exactly as before.
     const routesForPrefix = (prefix) => ([
         <Route key={`${prefix}/`} path={`${prefix}/`} element={<Home language={language} />} />,
-        ...PAGES.map(([slugPart, name, Component]) => (
+        ...ROUTED.map(([slugPart, name, Component]) => (
             <Route
                 key={`${prefix}/${slugPart}`}
                 path={`${prefix}/${slugPart}`}

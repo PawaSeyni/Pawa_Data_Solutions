@@ -31,37 +31,10 @@
 # trailing-slash form, so links, sitemap and canonicals agree with what the CDN
 # actually serves and no rule is needed.
 
-# /Home and /home both duplicated "/" at HTTP 200. Both spellings need a rule:
-# `from` matching IS case-sensitive (it was Netlify's own path normalization,
-# not the matcher, that caused the earlier redirect loop), and there is no
-# /home file for the normalizer to find, so /Home would otherwise 404.
-[[redirects]]
-  from = "/home"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/Home"
-  to = "/"
-  status = 301
-
-# Same for each locale. Nothing links to these — the locale prefixes are new — but
-# leaving /fr/home as a 404 while /home redirects is an inconsistency someone will
-# eventually trip over.
-[[redirects]]
-  from = "/fr/home"
-  to = "/fr/"
-  status = 301
-
-[[redirects]]
-  from = "/es/home"
-  to = "/es/"
-  status = 301
-
-[[redirects]]
-  from = "/pt/home"
-  to = "/pt/"
-  status = 301
+# Redirects are GENERATED into public/_redirects by scripts/gen-redirects.mjs
+# from src/lib/pages.js. They are not kept here, because a hand-maintained list
+# beside a generated one is exactly how the URL casing drifted and took every
+# service page down with a redirect loop.
 
 [[headers]]
   for = "/*"

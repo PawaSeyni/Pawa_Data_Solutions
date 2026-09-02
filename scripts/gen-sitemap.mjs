@@ -12,6 +12,9 @@
 import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+// Same table the app uses — importing it is what stops the sitemap drifting
+// from the router, which has already happened twice.
+import { PAGES } from '../src/lib/pages.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_URL = 'https://pawadata.com';
@@ -19,27 +22,11 @@ const SITE_URL = 'https://pawadata.com';
 const DEFAULT_LANGUAGE = 'en';
 const LANGUAGES = ['en', 'fr', 'es', 'pt'];
 
-// [page name, changefreq, priority] — page name maps to the lowercase slug.
-const PAGES = [
-  ['Home', 'monthly', '1.0'],
-  ['DataIntegration', 'monthly', '0.8'],
-  ['PipelineArchitecture', 'monthly', '0.8'],
-  ['DataGovernance', 'monthly', '0.8'],
-  ['AIReadiness', 'monthly', '0.8'],
-  ['AnalyticsEnablement', 'monthly', '0.8'],
-  ['ProcessAutomation', 'monthly', '0.8'],
-  ['Workshop', 'monthly', '0.7'],
-  ['Careers', 'monthly', '0.7'],
-  ['PrivacyPolicy', 'yearly', '0.3'],
-  ['DoNotSellOrShare', 'yearly', '0.3'],
-];
-
 const prefixFor = (lang) => (lang === DEFAULT_LANGUAGE ? '' : `/${lang}`);
 
-function localizedPath(pageName, language) {
+function localizedPath(page, language) {
   const prefix = prefixFor(language);
-  if (pageName === 'Home') return `${prefix}/`;
-  return `${prefix}/${pageName.toLowerCase()}/`;
+  return page.slug === '' ? `${prefix}/` : `${prefix}/${page.slug}/`;
 }
 
 const lines = [
@@ -48,7 +35,7 @@ const lines = [
   '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
 ];
 
-for (const [page, changefreq, priority] of PAGES) {
+for (const page of PAGES) {
   for (const language of LANGUAGES) {
     lines.push('  <url>');
     lines.push(`    <loc>${SITE_URL}${localizedPath(page, language)}</loc>`);
@@ -60,8 +47,8 @@ for (const [page, changefreq, priority] of PAGES) {
     lines.push(
       `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${localizedPath(page, DEFAULT_LANGUAGE)}"/>`,
     );
-    lines.push(`    <changefreq>${changefreq}</changefreq>`);
-    lines.push(`    <priority>${priority}</priority>`);
+    lines.push(`    <changefreq>${page.changefreq}</changefreq>`);
+    lines.push(`    <priority>${page.priority}</priority>`);
     lines.push('  </url>');
   }
 }

@@ -12,6 +12,8 @@
 // Paths are lowercase with a trailing slash because that is what Netlify serves —
 // see src/utils/index.ts for the redirect-loop this shape exists to avoid.
 
+import { SLUG_BY_NAME } from '@/lib/pages';
+
 export const DEFAULT_LANGUAGE = 'en';
 export const LANGUAGES = ['en', 'fr', 'es', 'pt'];
 
@@ -38,14 +40,20 @@ export function parsePath(pathname) {
   if (segments.length && LANGUAGES.includes(segments[0]) && segments[0] !== DEFAULT_LANGUAGE) {
     language = segments.shift();
   }
+  // Joined rather than taking the first segment: slugs are multi-part now
+  // ("solutions/data-integration"), and splitting on the first "/" would
+  // resolve every solution page to the same route.
   return { language, slug: segments.join('/').toLowerCase() };
 }
 
-// Page name ("DataIntegration") + language -> path ("/fr/dataintegration/").
+// Page name ("DataIntegration") + language -> path ("/fr/solutions/data-integration/").
+// The slug comes from src/lib/pages.js rather than being derived from the name,
+// so a page can be renamed or moved in exactly one place.
 export function localizedPath(pageName, language = DEFAULT_LANGUAGE) {
   const prefix = prefixFor(language);
-  if (!pageName || pageName === 'Home') return `${prefix}/`;
-  return `${prefix}/${pageName.toLowerCase().replace(/ /g, '-')}/`;
+  const slug = SLUG_BY_NAME[pageName];
+  if (slug === undefined) return `${prefix}/`;
+  return slug === '' ? `${prefix}/` : `${prefix}/${slug}/`;
 }
 
 // Every language variant of one page, for the reciprocal hreflang set.
