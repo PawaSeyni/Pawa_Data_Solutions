@@ -3,49 +3,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Database, GitBranch, Shield, Zap, BarChart3, Cog } from "lucide-react";
+import { SOLUTIONS } from "@/lib/solutions";
 import { translations } from "@/components/translations";
 
 export default function Services({ language = "en" }) {
   const t = translations[language];
-  const services = [
-    {
-      icon: Database,
-      title: t.service1Title,
-      description: t.service1Desc,
-      page: "DataIntegration"
-    },
-    {
-      icon: GitBranch,
-      title: t.service2Title, 
-      description: t.service2Desc,
-      page: "PipelineArchitecture"
-    },
-    {
-      icon: Shield,
-      title: t.service3Title,
-      description: t.service3Desc,
-      page: "DataGovernance"
-    },
-    {
-      icon: Zap,
-      title: t.service4Title,
-      description: t.service4Desc,
-      page: "AIReadiness"
-    },
-    {
-      icon: BarChart3,
-      title: t.service5Title,
-      description: t.service5Desc,
-      page: "AnalyticsEnablement"
-    },
-    {
-      icon: Cog,
-      title: t.service6Title,
-      description: t.service6Desc,
-      page: "ProcessAutomation"
-    }
-  ];
+  // Shared with the /solutions/ hub — see src/lib/solutions.js.
+  const services = SOLUTIONS.map(({ icon, titleKey, descKey, page }) => ({
+    icon,
+    title: t[titleKey],
+    description: t[descKey],
+    page,
+  }));
 
   return (
     <section id="services" className="py-20 bg-gray-50/30">

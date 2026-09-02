@@ -20,6 +20,13 @@ export const translations = {
     // Services
     servicesTitle: "Where we usually start",
     servicesSubtitle: "Six problems we are called in to fix. Most engagements begin with one of them and expand once the first result lands.",
+    // /solutions/ hub
+    solutionsEyebrow: "Solutions",
+    solutionsTitle: "Six problems we are called in to fix",
+    solutionsSubtitle: "Most engagements start with one of these and widen once the first result lands. Each page covers the problem, what it costs to leave alone, and how we approach it.",
+    solutionsCardCta: "Read more",
+    solutionsCtaTitle: "Not sure which one you need?",
+    solutionsCtaBody: "That is what the Data Health Check is for. Two to three weeks, and you leave knowing what to fix and in what order — whether or not you work with us.",
     service1Title: "Data Integration",
     service1Desc: "Unify sources with cloud-native patterns (ELT/CDC, APIs, streaming) and a modern data foundation so the right data lands in governed platforms reliably and fast.",
     service2Title: "Pipeline Architecture",
@@ -385,6 +392,13 @@ export const translations = {
     // Services - From the attached file
     servicesTitle: "Par où nous commençons",
     servicesSubtitle: "Six problèmes pour lesquels on nous appelle. La plupart des missions démarrent sur l'un d'eux, puis s'élargissent une fois le premier résultat obtenu.",
+    // Hub /solutions/
+    solutionsEyebrow: "Solutions",
+    solutionsTitle: "Six problèmes pour lesquels on nous appelle",
+    solutionsSubtitle: "La plupart des missions démarrent sur l'un d'eux, puis s'élargissent une fois le premier résultat obtenu. Chaque page présente le problème, ce qu'il coûte de le laisser en l'état, et notre façon de l'aborder.",
+    solutionsCardCta: "En savoir plus",
+    solutionsCtaTitle: "Vous ne savez pas par où commencer ?",
+    solutionsCtaBody: "C'est précisément l'objet du diagnostic de données. Deux à trois semaines, et vous repartez en sachant quoi corriger et dans quel ordre — que vous travailliez avec nous ou non.",
     service1Title: "Intégration des Données",
     service1Desc: "Connectez facilement des sources de données disparates avec des pipelines robustes et évolutifs qui garantissent la qualité et la cohérence des données.",
     service2Title: "Architecture de Pipeline",
@@ -753,6 +767,13 @@ export const translations = {
     // Services
     servicesTitle: "Por dónde solemos empezar",
     servicesSubtitle: "Seis problemas para los que nos llaman. La mayoría de los proyectos empiezan por uno de ellos y se amplían cuando llega el primer resultado.",
+    // Hub /solutions/
+    solutionsEyebrow: "Soluciones",
+    solutionsTitle: "Seis problemas para los que nos llaman",
+    solutionsSubtitle: "La mayoría de los proyectos empiezan por uno de ellos y se amplían cuando llega el primer resultado. Cada página explica el problema, lo que cuesta dejarlo como está y cómo lo abordamos.",
+    solutionsCardCta: "Leer más",
+    solutionsCtaTitle: "¿No sabes por dónde empezar?",
+    solutionsCtaBody: "Para eso está el diagnóstico de datos. De dos a tres semanas, y te vas sabiendo qué arreglar y en qué orden — trabajes con nosotros o no.",
     service1Title: "Integración de Datos",
     service1Desc: "Conecta sin problemas fuentes de datos dispares con pipelines robustos y escalables que garantizan la calidad y consistencia de los datos.",
     service2Title: "Arquitectura de Pipeline",
@@ -1121,6 +1142,13 @@ export const translations = {
     // Services
     servicesTitle: "Por onde costumamos começar",
     servicesSubtitle: "Seis problemas para os quais nos chamam. A maioria dos projetos começa por um deles e se amplia quando chega o primeiro resultado.",
+    // Hub /solutions/
+    solutionsEyebrow: "Soluções",
+    solutionsTitle: "Seis problemas para os quais nos chamam",
+    solutionsSubtitle: "A maioria dos projetos começa por um deles e se amplia quando chega o primeiro resultado. Cada página apresenta o problema, o que custa deixá-lo como está e como o abordamos.",
+    solutionsCardCta: "Saiba mais",
+    solutionsCtaTitle: "Não sabe por onde começar?",
+    solutionsCtaBody: "É exatamente para isso que serve o diagnóstico de dados. Duas a três semanas, e você sai sabendo o que corrigir e em que ordem — trabalhando conosco ou não.",
     service1Title: "Integração de Dados",
     service1Desc: "Conecte facilmente fontes de dados díspares com pipelines robustos e escaláveis que garantem qualidade e consistência dos dados.",
     service2Title: "Arquitetura de Pipeline",

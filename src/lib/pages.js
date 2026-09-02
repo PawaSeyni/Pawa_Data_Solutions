@@ -24,6 +24,11 @@
 export const PAGES = [
   { name: 'Home',                 slug: '',                                legacySlug: null,                 changefreq: 'monthly', priority: '1.0' },
 
+  // Hub for the six pages below. Added 2 Sep because moving them under
+  // /solutions/ made that path a 404 for anyone who trims the URL — and a
+  // section index is real internal linking, which the redesign plan asks for.
+  { name: 'Solutions',            slug: 'solutions',                       legacySlug: null,                 changefreq: 'monthly', priority: '0.9' },
+
   // The six capability pages now sit under /solutions/. The redesign plan lists
   // both a Solutions and a Services tier; its own SEO section uses only
   // /solutions/<service-slug>, and shipping both would put two pages of ours in

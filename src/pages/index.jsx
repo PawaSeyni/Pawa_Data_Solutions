@@ -19,12 +19,13 @@ const ProcessAutomation = lazy(() => import("./ProcessAutomation"));
 const PrivacyPolicy = lazy(() => import("./PrivacyPolicy"));
 const DoNotSellOrShare = lazy(() => import("./DoNotSellOrShare"));
 const Careers = lazy(() => import("./Careers"));
+const Solutions = lazy(() => import("./Solutions"));
 const NotFound = lazy(() => import("./NotFound"));
 
 // Route table built from the shared page definitions, so a slug change lands in
 // the router, the sitemap, the canonical tags and the redirects at once.
 const COMPONENTS = {
-    Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
+    Solutions, Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
     AIReadiness, AnalyticsEnablement, ProcessAutomation,
     PrivacyPolicy, DoNotSellOrShare, Careers,
 };

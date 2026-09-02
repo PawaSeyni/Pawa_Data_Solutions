@@ -27,6 +27,7 @@ function trim(text) {
 // Which translation keys supply each page's title and description.
 const SOURCES = {
   Home:                 { title: null,            desc: 'heroSubtitle' },
+  Solutions:            { title: 'solutionsEyebrow', desc: 'solutionsSubtitle' },
   DataIntegration:      { title: 'service1Title', desc: 'service1Desc' },
   PipelineArchitecture: { title: 'service2Title', desc: 'service2Desc' },
   DataGovernance:       { title: 'service3Title', desc: 'service3Desc' },
