@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { createPageUrl } from "@/utils";
 import { prefixFor } from "@/lib/i18n";
+import { trackCta } from "@/lib/analytics";
 
 // X ships no lucide glyph, so draw the wordmark directly.
 function XIcon(props) {
@@ -159,6 +160,22 @@ export default function Footer({ language }) {
                 >
                   {t.navContact}
                 </button>
+              </li>
+              {/* Thought leadership lives on papanguer.com, not here — decided
+                  2 Sep. The writing is the founder's, published under his name
+                  with LinkedIn syndication already running, so a second hub on
+                  this domain would either split that effort or compete with it
+                  for the same searches. Linking out is the honest version. */}
+              <li>
+                <a
+                  href="https://papanguer.com/writing/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackCta({ label: 'papanguer_writing', location: 'footer', page: 'any', language })}
+                  className="hover:text-white transition-colors"
+                >
+                  {t.footerWriting}
+                </a>
               </li>
               <li>
                 <Link to={createPageUrl('PrivacyPolicy', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">{t.footerPrivacy}</Link>
