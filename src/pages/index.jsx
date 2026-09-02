@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Layout from "./Layout.jsx";
 import { LANGUAGES, DEFAULT_LANGUAGE, parsePath, prefixFor } from "@/lib/i18n";
+import { trackScrollDepth } from "@/lib/analytics";
 
 // Home is the landing page — load it eagerly so the first paint needs no extra request.
 import Home from "./Home";
@@ -61,6 +62,10 @@ function PagesContent() {
     useEffect(() => {
         window.__PRERENDER_READY__ = true;
     }, []);
+
+    // Scroll depth per route. Re-armed on navigation so each page reports its own
+    // engagement rather than one figure for the whole session.
+    useEffect(() => trackScrollDepth({ page: currentPage, language }), [currentPage, language]);
 
     // Same route table mounted under every locale. English is unprefixed, so the
     // URLs already indexed keep resolving exactly as before.

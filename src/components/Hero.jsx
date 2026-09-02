@@ -3,11 +3,16 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, TrendingUp } from "lucide-react";
 import { translations } from "@/components/translations";
+import { trackCta } from "@/lib/analytics";
 
 export default function Hero({ language }) {
   const t = translations[language];
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  // Both CTAs are instrumented with their location, because the same label in
+  // the hero and in the footer are different results and averaging them hides
+  // which placement actually converts.
+  const goTo = (sectionId, label) => {
+    trackCta({ label, location: 'hero', page: 'Home', language });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -38,7 +43,7 @@ export default function Hero({ language }) {
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              onClick={scrollToContact}
+              onClick={() => goTo('contact', 'health_check_primary')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
             >
               {t.heroCtaPrimary}
@@ -47,10 +52,10 @@ export default function Hero({ language }) {
             
             <Button 
               variant="outline"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => goTo('process', 'see_how_we_work')}
               className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 text-lg rounded-xl"
             >
-              <Play className="w-5 h-5 mr-2" />
+              <Play className="w-5 h-5 mr-2" aria-hidden="true" />
               {t.heroCtaSecondary}
             </Button>
           </div>

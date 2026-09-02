@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { submitNetlifyForm } from "@/lib/netlifyForms";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { translations } from "@/components/translations";
+import { EVENTS, track, makeStartTracker } from "@/lib/analytics";
 import { Send, CheckCircle, Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactForm({ title, description, language }) {
@@ -17,6 +18,8 @@ export default function ContactForm({ title, description, language }) {
     email: '',
     company: '',
     phone: '',
+    role: '',
+    timeline: '',
     message: '',
     language: language
   });
@@ -31,6 +34,18 @@ export default function ContactForm({ title, description, language }) {
     pt: "Ocorreu um erro ao enviar sua mensagem. Tente novamente ou escreva para hello@pawadata.com.",
   };
 
+  // Fires once per mount, on first interaction. Paired with contact_submit this
+  // is what tells us whether the form is too long, rather than guessing.
+  //
+  // Held in a ref deliberately. Built in the component body it would be rebuilt
+  // on every render with its once-guard reset — and typing re-renders — so
+  // contact_start fired on every keystroke and the abandonment rate was noise.
+  const startTracker = useRef(null);
+  if (!startTracker.current) {
+    startTracker.current = makeStartTracker(EVENTS.CONTACT_START, { page: 'Home', language });
+  }
+  const trackStart = () => startTracker.current();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -38,17 +53,26 @@ export default function ContactForm({ title, description, language }) {
 
     try {
       await submitNetlifyForm("contact", formData);
+      track(EVENTS.CONTACT_SUBMIT, {
+        page: 'Home',
+        language,
+        role: formData.role,
+        timeline: formData.timeline,
+      });
       setIsSubmitted(true);
       setFormData({
         name: '',
         email: '',
         company: '',
         phone: '',
+        role: '',
+        timeline: '',
         message: '',
         language: language
       });
     } catch (error) {
       console.error('Error submitting form:', error);
+      track(EVENTS.CONTACT_ERROR, { page: 'Home', language });
       setHasError(true);
     } finally {
       setIsSubmitting(false);
@@ -56,6 +80,7 @@ export default function ContactForm({ title, description, language }) {
   };
 
   const handleChange = (field, value) => {
+    trackStart();
     setFormData(prev => ({ ...prev, [field]: value }));
   };
   
@@ -220,6 +245,47 @@ export default function ContactForm({ title, description, language }) {
                         className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="+1 (555) 123-4567"
                       />
+                    </div>
+                  </div>
+
+                  {/* Qualification. Both optional — the goal is a better first
+                      reply, not a longer form. Labels are wired to the Radix
+                      trigger ids, which renders as a button and is otherwise
+                      announced with no name at all. */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="role" className="text-sm font-medium text-gray-900 mb-2 block">
+                        {t.contactRole}
+                      </Label>
+                      <Select value={formData.role} onValueChange={(value) => handleChange('role', value)}>
+                        <SelectTrigger id="role" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                          <SelectValue placeholder={t.contactRolePlaceholder} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="data">{t.contactRoleData}</SelectItem>
+                          <SelectItem value="technology">{t.contactRoleTech}</SelectItem>
+                          <SelectItem value="operations">{t.contactRoleOps}</SelectItem>
+                          <SelectItem value="finance">{t.contactRoleFinance}</SelectItem>
+                          <SelectItem value="other">{t.contactRoleOther}</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="timeline" className="text-sm font-medium text-gray-900 mb-2 block">
+                        {t.contactTimeline}
+                      </Label>
+                      <Select value={formData.timeline} onValueChange={(value) => handleChange('timeline', value)}>
+                        <SelectTrigger id="timeline" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                          <SelectValue placeholder={t.contactTimelinePlaceholder} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="exploring">{t.contactTimelineExploring}</SelectItem>
+                          <SelectItem value="quarter">{t.contactTimelineQuarter}</SelectItem>
+                          <SelectItem value="active">{t.contactTimelineActive}</SelectItem>
+                          <SelectItem value="urgent">{t.contactTimelineUrgent}</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
 
