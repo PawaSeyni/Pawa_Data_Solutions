@@ -322,6 +322,46 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://pawadata.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/about/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/about/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/about/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/about/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://pawadata.com/workshop/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/workshop/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/workshop/"/>

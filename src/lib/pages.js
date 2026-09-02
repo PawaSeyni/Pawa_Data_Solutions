@@ -40,6 +40,10 @@ export const PAGES = [
   { name: 'AnalyticsEnablement',  slug: 'solutions/analytics-enablement',  legacySlug: 'analyticsenablement',  changefreq: 'monthly', priority: '0.8' },
   { name: 'ProcessAutomation',    slug: 'solutions/process-automation',    legacySlug: 'processautomation',    changefreq: 'monthly', priority: '0.8' },
 
+  // Added 2 Sep. The footer's "About Us" link had always scrolled to the
+  // services grid because no About page existed — audit finding CONTENT-01.
+  { name: 'About',                slug: 'about',                           legacySlug: null,                 changefreq: 'yearly',  priority: '0.6' },
+
   // Workshop and Careers stay top-level. Neither is a solution — one is an
   // offer, the other is hiring — and burying them under /solutions/ would make
   // the nav less honest, not more organised.

@@ -130,12 +130,11 @@ export default function Footer({ language }) {
             <h2 className="font-semibold text-white mb-4">{t.footerCompanyTitle}</h2>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <button 
-                  onClick={() => handleSectionClick('services')} 
-                  className="hover:text-white transition-colors text-left cursor-pointer"
-                >
+                {/* Was a scroll to the services grid, because no About page existed
+                    (audit CONTENT-01). Now it goes where the label promises. */}
+                <Link to={createPageUrl('About', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">
                   {t.footerAbout}
-                </button>
+                </Link>
               </li>
               <li>
                 <button 
