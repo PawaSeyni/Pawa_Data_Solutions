@@ -148,7 +148,7 @@ export const translations = {
     contactInfoEmail: "Email",
     contactInfoPhone: "Phone",
     contactInfoLocation: "Location",
-    contactInfoLocationValue: "North America & Europe",
+    contactInfoLocationValue: "North America, Africa & Europe",
     contactConsultationTitle: "Free Consultation",
     contactConsultationDesc: "Schedule a complimentary 30-minute consultation to discuss your data challenges and explore potential solutions.",
 
@@ -496,7 +496,7 @@ export const translations = {
     contactInfoEmail: "E-mail",
     contactInfoPhone: "Téléphone",
     contactInfoLocation: "Localisation",
-    contactInfoLocationValue: "Amérique du Nord et Europe",
+    contactInfoLocationValue: "Amérique du Nord, Afrique et Europe",
     contactConsultationTitle: "Consultation Gratuite",
     contactConsultationDesc: "Planifiez une consultation gratuite de 30 minutes pour discuter de vos défis de données et explorer les solutions potentielles.",
 
@@ -851,7 +851,7 @@ export const translations = {
     contactInfoEmail: "Correo",
     contactInfoPhone: "Teléfono",
     contactInfoLocation: "Ubicación",
-    contactInfoLocationValue: "Norteamérica y Europa",
+    contactInfoLocationValue: "Norteamérica, África y Europa",
     contactConsultationTitle: "Consulta Gratuita",
     contactConsultationDesc: "Programa una consulta gratuita de 30 minutos para discutir tus desafíos de datos y explorar soluciones potenciales.",
 
@@ -1206,7 +1206,7 @@ export const translations = {
     contactInfoEmail: "E-mail",
     contactInfoPhone: "Teléfono",
     contactInfoLocation: "Localização",
-    contactInfoLocationValue: "América do Norte e Europa",
+    contactInfoLocationValue: "América do Norte, África e Europa",
     contactConsultationTitle: "Consulta Gratuita",
     contactConsultationDesc: "Agende uma consulta gratuita de 30 minutos para discutir seus desafios de dados e explorar soluções potenciais.",
 
