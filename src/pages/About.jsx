@@ -1,9 +1,22 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight, Check, UserCheck, ShieldCheck, Scale, GraduationCap } from "lucide-react";
 import { translations } from "@/components/translations";
 import { prefixFor } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/jobPostings";
 import { trackCta } from "@/lib/analytics";
+
+// The four boutique differentiators from the Sprint 2 brief. Ordered as an
+// argument rather than a list: who does the work, who answers for it, whose
+// interest the advice serves, and what you keep afterwards.
+const BOUTIQUE = [
+  { icon: UserCheck,      titleKey: 'boutique1Title', descKey: 'boutique1Desc' },
+  { icon: ShieldCheck,    titleKey: 'boutique2Title', descKey: 'boutique2Desc' },
+  { icon: Scale,          titleKey: 'boutique3Title', descKey: 'boutique3Desc' },
+  { icon: GraduationCap,  titleKey: 'boutique4Title', descKey: 'boutique4Desc' },
+];
+
+const PRINCIPLES = ['aboutPrinciple1', 'aboutPrinciple2', 'aboutPrinciple3', 'aboutPrinciple4'];
 
 const CREDENTIALS = [
   "CISSP",
@@ -139,6 +152,54 @@ export default function About({ language }) {
                 ))}
               </ul>
             </div>
+          </div>
+
+          {/* Origin before model: the reason the firm works this way is more
+              persuasive than the way itself, and it is the part a large
+              competitor cannot copy. */}
+          <div className="mt-16 max-w-3xl">
+            <h2 className="mb-4 text-2xl font-bold text-gray-900">{t.aboutOriginTitle}</h2>
+            <p className="text-lg leading-relaxed text-gray-700">{t.aboutOriginBody}</p>
+          </div>
+
+          <div className="mt-14">
+            <h2 className="mb-3 text-2xl font-bold text-gray-900">{t.aboutModelTitle}</h2>
+            <p className="mb-8 max-w-3xl text-lg leading-relaxed text-gray-700">{t.aboutModelBody}</p>
+
+            <ul className="grid gap-6 sm:grid-cols-2 list-none p-0 m-0">
+              {BOUTIQUE.map(({ icon: Icon, titleKey, descKey }) => (
+                <li key={titleKey} className="rounded-xl border border-gray-200 bg-white p-6">
+                  <Icon className="mb-3 h-6 w-6 text-blue-600" aria-hidden="true" />
+                  <h3 className="mb-2 text-lg font-semibold text-gray-900">{t[titleKey]}</h3>
+                  <p className="text-gray-600 leading-relaxed">{t[descKey]}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-14 max-w-3xl">
+            <h2 className="mb-4 text-2xl font-bold text-gray-900">{t.aboutPrinciplesTitle}</h2>
+            <ul className="list-none p-0 m-0 space-y-3">
+              {PRINCIPLES.map((k) => (
+                <li key={k} className="flex gap-3 text-lg leading-relaxed text-gray-700">
+                  <Check className="mt-1.5 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
+                  <span>{t[k]}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-16 rounded-xl border border-gray-200 bg-gray-50/60 p-8 text-center">
+            <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.aboutCtaTitle}</h2>
+            <p className="mx-auto mb-6 max-w-2xl text-gray-600">{t.aboutCtaBody}</p>
+            <Link
+              to={`${prefixFor(language)}/#contact`}
+              onClick={() => trackCta({ label: 'health_check_about', location: 'about_cta', page: 'About', language })}
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
+            >
+              {t.heroCtaPrimary}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

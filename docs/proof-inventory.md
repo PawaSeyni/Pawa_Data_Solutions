@@ -8,7 +8,7 @@ maintains, not in a script that blocks a deploy. The script now checks only the
 two things the Sprint 1 brief actually names in §7: no bare numbers, and no
 anonymised study that names its client.
 
-Last reviewed: 2026-09-02
+Last reviewed: 2026-09-02 (Sprint 2)
 
 ---
 
@@ -66,7 +66,31 @@ contacting anyone: no client is identifiable and no number is asserted.
 3. Add numbers only with a `basis`. Record here who supplied them and when.
 4. Update the "Last reviewed" date above.
 
-## 6. Open items handed to the next sprint
+## 6. People and trust assets (Sprint 2)
+
+| Asset | State | Notes |
+|---|---|---|
+| Headshot | In place | `public/papa-nguer.jpg` + `.webp`, 400×400 |
+| Personal LinkedIn | In place | Linked from the homepage people block and the Person schema |
+| Credentials | Published | CISSP, TOGAF, Microsoft Azure, Informatica Certified, BSc Computer Science |
+| Role history | Published | About page, sourced from Papa's own record |
+| Team size | **One** | `src/lib/team.js` holds one entry. The site says so explicitly rather than implying a bench |
+
+**Scale claims corrected this sprint.** The people block makes team size visible,
+which turned two pieces of existing copy into contradictions:
+
+- "A focused, senior team" → "Senior practitioners" (all four locales)
+- "Contact our experts for a personalized consultation" → "Talk directly with the
+  practitioner who would lead it" (all four locales)
+
+**Differentiator swap.** `kpi2` was "End-to-End Expertise — one partner across
+integration, pipelines, governance, analytics, and AI readiness." For a
+one-person firm that is the closest thing on the site to the big-firm cosplay
+§5 rules out. Replaced with the brief's fourth pillar, "Built to Leave You
+Stronger" (knowledge transfer). The four homepage differentiators now match the
+four the brief names.
+
+## 7. Open items handed to the next sprint
 
 Per §8 of the brief, recorded rather than silently deferred:
 
@@ -77,3 +101,10 @@ Per §8 of the brief, recorded rather than silently deferred:
   practitioner background. This is disclosed, but it is the real gap.
 - **Client permission outreach drafted, unsent.** Would unlock named studies
   and quotes.
+- **"Team" is one person.** Every component reads `src/lib/team.js` and lays out
+  for its length, so adding people is a data change. If there are collaborators
+  who should be listed, they are not recorded anywhere I could find.
+- **Headshot is 400×400.** Adequate at the rendered size (128px) but there is no
+  larger original in the repo if a bigger treatment is ever wanted.
+- **Credentials are unverified from my side.** They were supplied directly and
+  are published as given. No certificate numbers or issue dates are held.

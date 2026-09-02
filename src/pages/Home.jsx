@@ -4,6 +4,7 @@ import Services from "../components/Services";
 import Process from "../components/Process";
 import KPIs from "../components/KPIs";
 import SelectedWork from "../components/SelectedWork";
+import Leadership from "../components/Leadership";
 import ContactForm from "../components/ContactForm";
 import { translations } from "@/components/translations";
 
@@ -15,6 +16,7 @@ export default function Home({ language }) {
       <Services language={language} />
       <Process language={language} />
       <KPIs language={language} />
+      <Leadership language={language} />
       <SelectedWork language={language} />
       <ContactForm
         title={t.contactTitleHome}
