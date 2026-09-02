@@ -4,17 +4,31 @@ import { ArrowRight, Check } from "lucide-react";
 import { translations } from "@/components/translations";
 import { caseStudyBySlug } from "@/lib/caseStudies";
 import { SOLUTIONS } from "@/lib/solutions";
-import { createPageUrl, } from "@/utils";
+import { createPageUrl } from "@/utils";
 import { prefixFor, parsePath } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/jobPostings";
 import { trackCta } from "@/lib/analytics";
 
-// One approved engagement. Structure follows the redesign plan's case-study
-// entity: challenge, approach, outcomes, verified metrics, related solutions.
+// One engagement, in the structure the Sprint 1 brief specifies:
+// challenge → why it mattered → approach → architecture → capability → outcome
+// → metrics.
 //
-// Metrics render their basis and who confirmed them, visible on the page rather
-// than buried in a data file. If a figure is ever challenged, the page itself
-// says how it was measured and who stood behind it.
+// The provenance line is not decoration. A case study on a consultancy's own
+// site reads as that firm's client work unless it says otherwise, and this work
+// predates PaWa. The About page already draws the distinction; repeating it here
+// keeps a study honest when it is reached directly from search.
+// Defined at module scope, not inside the render. A component declared in the
+// render body is a new type on every pass, so React remounts the whole subtree
+// each time instead of updating it.
+function Section({ title, children }) {
+  return (
+    <>
+      <h2 className="mb-3 text-2xl font-semibold text-gray-900">{title}</h2>
+      <div className="mb-10 text-lg leading-relaxed text-gray-700">{children}</div>
+    </>
+  );
+}
+
 export default function CaseStudy({ language }) {
   const t = translations[language];
   const { slug } = parsePath(useLocation().pathname);
@@ -27,9 +41,8 @@ export default function CaseStudy({ language }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: `${study.client} — ${study.sector}`,
+    headline: study.headline,
     description: study.challenge,
-    datePublished: study.approvedOn,
     author: { '@type': 'Organization', name: 'PaWa Data Solutions', url: SITE_URL },
     publisher: { '@type': 'Organization', name: 'PaWa Data Solutions', url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}${prefixFor(language)}/case-studies/${study.slug}/`,
@@ -42,7 +55,8 @@ export default function CaseStudy({ language }) {
       <section className="bg-gradient-to-b from-blue-50/50 via-white to-white">
         <div className="max-w-3xl mx-auto px-4 py-20 lg:py-24">
           <p className="text-sm font-semibold tracking-widest text-blue-600 uppercase mb-3">{study.sector}</p>
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-5 tracking-tight">{study.client}</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-3 tracking-tight">{study.headline}</h1>
+          <p className="mb-5 text-lg text-gray-500">{study.client}</p>
           <p className="text-xl text-gray-600 leading-relaxed">{study.challenge}</p>
         </div>
       </section>
@@ -57,37 +71,44 @@ export default function CaseStudy({ language }) {
                     <dd className="m-0 text-3xl font-bold text-gray-900 tabular-nums">{m.value}</dd>
                     <dt className="mt-1 font-medium text-gray-700">{m.label}</dt>
                     <p className="mt-1 text-sm text-gray-500">{m.basis}</p>
-                    <p className="mt-0.5 text-sm text-gray-400">
-                      {t.caseStudyConfirmedBy} {m.confirmedBy}
-                    </p>
                   </div>
                 ))}
               </dl>
             </div>
           )}
 
-          <h2 className="mb-3 text-2xl font-semibold text-gray-900">{t.caseStudyApproach}</h2>
-          <p className="mb-10 text-lg leading-relaxed text-gray-700">{study.approach}</p>
+          <Section title={t.caseStudyWhy}>{study.whyItMattered}</Section>
 
-          {study.outcomes?.length > 0 && (
-            <>
-              <h2 className="mb-3 text-2xl font-semibold text-gray-900">{t.caseStudyOutcomes}</h2>
-              <ul className="mb-10 list-none p-0 m-0 space-y-2">
-                {study.outcomes.map((o) => (
-                  <li key={o} className="flex gap-3 text-lg text-gray-700">
-                    <Check className="mt-1.5 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
-                    <span>{o}</span>
+          <Section title={t.caseStudyApproach}>{study.approach}</Section>
+
+          {study.architecture?.length > 0 && (
+            <Section title={t.caseStudyArchitecture}>
+              <ul className="list-none p-0 m-0 space-y-2">
+                {study.architecture.map((a) => (
+                  <li key={a} className="flex gap-3">
+                    <Check className="mt-2 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
+                    <span>{a}</span>
                   </li>
                 ))}
               </ul>
-            </>
+            </Section>
           )}
+
+          <Section title={t.caseStudyCapability}>{study.capability}</Section>
+
+          <Section title={t.caseStudyOutcome}>{study.outcome}</Section>
 
           {study.quote && (
             <blockquote className="mb-10 border-l-4 border-blue-200 pl-6">
               <p className="text-xl italic leading-relaxed text-gray-800">{study.quote}</p>
               <footer className="mt-2 text-gray-500">— {study.quoteAttribution}</footer>
             </blockquote>
+          )}
+
+          {study.provenance === 'informatica' && (
+            <p className="mb-12 rounded-lg border border-gray-200 bg-gray-50/60 p-4 text-sm leading-relaxed text-gray-500">
+              {t.caseStudyProvenance}
+            </p>
           )}
 
           {related.length > 0 && (

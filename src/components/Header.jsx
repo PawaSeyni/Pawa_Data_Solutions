@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import CompanyMenu from "@/components/CompanyMenu";
 import { trackCta } from "@/lib/analytics";
 import { translations } from "@/components/translations";
+import { hasCaseStudies } from "@/lib/caseStudies";
 import { Button } from "@/components/ui/button";
 
 export default function Header({ currentPageName, language }) {
@@ -56,9 +57,13 @@ export default function Header({ currentPageName, language }) {
     { id: 'careers',      label: t.navCareers,       page: 'Careers' },
   ];
 
+  // Selected Work sits in the main nav rather than under Company: it is proof,
+  // and proof is what a prospect is looking for. Gated on there being any, so the
+  // nav never points at an empty index.
   const navItems = [
     { label: t.navServices, id: "services" },
     { label: t.navProcess, id: "process" },
+    ...(hasCaseStudies() ? [{ label: t.caseStudiesEyebrow, page: "CaseStudies" }] : []),
     { label: t.navWorkshop, page: "Workshop" },
     { label: t.footerCompanyTitle, company: true },
     { label: t.navContact, id: "contact" }

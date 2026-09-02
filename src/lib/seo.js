@@ -65,7 +65,7 @@ export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
     if (study) {
       return {
         path: localizedPath(pageName, lang),
-        title: `${study.client} — ${SITE_NAME}`,
+        title: `${study.headline} — ${SITE_NAME}`,
         description: trim(study.challenge),
         noindex: false,
         alternates: alternatesFor(pageName),

@@ -641,4 +641,164 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://pawadata.com/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/case-studies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/case-studies/entity-resolution-financial-crime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/case-studies/entity-resolution-financial-crime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/case-studies/entity-resolution-financial-crime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/case-studies/integration-platform-consolidation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/case-studies/integration-platform-consolidation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/case-studies/integration-platform-consolidation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/case-studies/integration-platform-consolidation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/case-studies/governance-regulatory-reporting/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/case-studies/governance-regulatory-reporting/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/case-studies/governance-regulatory-reporting/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/case-studies/governance-regulatory-reporting/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

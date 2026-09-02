@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
 import { CASE_STUDIES } from "@/lib/caseStudies";
-import { createPageUrl } from "@/utils";
 import { prefixFor } from "@/lib/i18n";
 import { trackCta } from "@/lib/analytics";
 
@@ -28,8 +27,9 @@ export default function CaseStudies({ language }) {
           <ul className="list-none p-0 m-0 space-y-6">
             {CASE_STUDIES.map((c) => (
               <li key={c.slug} className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm">
-                <p className="mb-2 text-sm text-gray-500">{c.sector}</p>
-                <h2 className="mb-3 text-2xl font-semibold text-gray-900">{c.client}</h2>
+                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-blue-600">{c.sector}</p>
+                <h2 className="mb-1 text-2xl font-semibold text-gray-900">{c.headline}</h2>
+                <p className="mb-3 text-gray-500">{c.client}</p>
                 <p className="mb-4 text-lg leading-relaxed text-gray-700">{c.challenge}</p>
                 {c.metrics?.length > 0 && (
                   <dl className="mb-5 flex flex-wrap gap-x-10 gap-y-3">
@@ -55,6 +55,8 @@ export default function CaseStudies({ language }) {
               </li>
             ))}
           </ul>
+
+          <p className="mt-10 text-sm leading-relaxed text-gray-500">{t.caseStudyProvenance}</p>
 
           <div className="mt-14 rounded-xl border border-gray-200 bg-gray-50/60 p-8 text-center">
             <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.solutionsCtaTitle}</h2>
