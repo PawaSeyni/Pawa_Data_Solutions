@@ -83,12 +83,15 @@ which turned two pieces of existing copy into contradictions:
 - "Contact our experts for a personalized consultation" → "Talk directly with the
   practitioner who would lead it" (all four locales)
 
-**Differentiator swap.** `kpi2` was "End-to-End Expertise — one partner across
-integration, pipelines, governance, analytics, and AI readiness." For a
-one-person firm that is the closest thing on the site to the big-firm cosplay
-§5 rules out. Replaced with the brief's fourth pillar, "Built to Leave You
-Stronger" (knowledge transfer). The four homepage differentiators now match the
-four the brief names.
+**Differentiators: five, not four.** The brief's four pillars are all present
+(Weeks Not Months, Built to Leave You Stronger, Governance-First, Senior
+Hands-On Team). "End-to-End Expertise" was briefly dropped as over-claiming for a
+one-person firm, then restored on Papa's call as a fifth item — it is a real
+scope claim and the site was weaker without it.
+
+If it is ever challenged, the supporting position is that the six solution pages
+are all delivered by one senior practitioner rather than by separate teams, which
+is the boutique argument rather than a contradiction of it.
 
 ## 7. Open items handed to the next sprint
 

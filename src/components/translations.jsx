@@ -85,6 +85,8 @@ export const translations = {
     kpi3Desc: "Security, lineage, and controls built in from day one—not bolted on later.",
     kpi4Label: "Senior, Hands-On Team",
     kpi4Desc: "You work directly with experienced practitioners, not junior hand-offs.",
+    kpi5Label: "End-to-End Expertise",
+    kpi5Desc: "One partner across integration, pipelines, governance, analytics, and AI readiness.",
     
     // Careers
     careersEyebrow: "Join Our Team",
@@ -546,6 +548,8 @@ export const translations = {
     kpi3Desc: "Sécurité, traçabilité et contrôles intégrés dès le premier jour—pas ajoutés après coup.",
     kpi4Label: "Équipe Expérimentée et Engagée",
     kpi4Desc: "Vous travaillez directement avec des praticiens expérimentés, sans intermédiaires juniors.",
+    kpi5Label: "Expertise de Bout en Bout",
+    kpi5Desc: "Un seul partenaire pour l'intégration, les pipelines, la gouvernance, l'analytique et la préparation à l'IA.",
 
     // Careers
     careersEyebrow: "Rejoignez Notre Équipe",
@@ -1010,6 +1014,8 @@ export const translations = {
     kpi3Desc: "Seguridad, linaje y controles integrados desde el primer día—no añadidos después.",
     kpi4Label: "Equipo Senior y Práctico",
     kpi4Desc: "Trabajas directamente con profesionales experimentados, sin traspasos a personal junior.",
+    kpi5Label: "Experiencia Integral",
+    kpi5Desc: "Un solo socio para integración, pipelines, gobernanza, analítica y preparación para IA.",
 
     // Careers
     careersEyebrow: "Únete a Nuestro Equipo",
@@ -1474,6 +1480,8 @@ export const translations = {
     kpi3Desc: "Segurança, linhagem e controles integrados desde o primeiro dia—não acrescentados depois.",
     kpi4Label: "Equipe Sênior e Atuante",
     kpi4Desc: "Você trabalha diretamente com profissionais experientes, sem repasses a juniores.",
+    kpi5Label: "Expertise de Ponta a Ponta",
+    kpi5Desc: "Um único parceiro para integração, pipelines, governança, analytics e preparação para IA.",
 
     // Careers
     careersEyebrow: "Junte-se à Nossa Equipe",
