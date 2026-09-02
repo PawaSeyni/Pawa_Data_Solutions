@@ -23,6 +23,11 @@ export const EVENTS = {
   CONTACT_ERROR: 'contact_error',
   APPLICATION_START: 'application_start',
   APPLICATION_SUBMIT: 'application_submit',
+  // Fire only when a booking destination is configured (see lib/cta.js).
+  // Declared here because EVENTS is a closed list and a name invented at the
+  // call site is a silently lost funnel step.
+  CALENDAR_OPEN: 'calendar_open',
+  CALENDAR_BOOK: 'calendar_book',
   SCROLL_50: 'scroll_50',
   SCROLL_90: 'scroll_90',
 };

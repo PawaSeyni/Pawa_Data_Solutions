@@ -8,6 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { translations } from "@/components/translations";
+import PrimaryCta from "@/components/PrimaryCta";
+import { CTA_LOCATIONS, BOOKING_URL, hasBooking } from "@/lib/cta";
 import { EVENTS, track, makeStartTracker } from "@/lib/analytics";
 import { Send, CheckCircle, Mail, Phone, MapPin } from "lucide-react";
 
@@ -21,16 +23,16 @@ import { Send, CheckCircle, Mail, Phone, MapPin } from "lucide-react";
 // It also rides along as a hidden field, so the Netlify submission itself records
 // the origin. Plausible tells you the rate; the submission tells you which lead
 // came from where, and those need to agree.
-export default function ContactForm({ title, description, language, source = 'Home' }) {
+export default function ContactForm({ title, description, language, source = 'Home', showPrimary = true }) {
   const t = translations[language];
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    phone: '',
     role: '',
     timeline: '',
-    message: '',
+    challenge: '',
+    outcome: '',
     language: language,
     source,
   });
@@ -75,10 +77,10 @@ export default function ContactForm({ title, description, language, source = 'Ho
         name: '',
         email: '',
         company: '',
-        phone: '',
         role: '',
         timeline: '',
-        message: '',
+        challenge: '',
+        outcome: '',
         language: language,
         source,
       });
@@ -129,13 +131,43 @@ export default function ContactForm({ title, description, language, source = 'Ho
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-white to-blue-50/30">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
+        {/* Problem-first invitation, then ONE primary action. §5 forbids
+            competing primary CTAs, and this section used to be a second one: a
+            full form presented at the same weight as the hero's Health Check
+            button, asking a visitor to compose a message about an engagement
+            nothing had explained. The booking CTA leads; the form is offered
+            underneath as the alternative for people who would rather write. */}
+        <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
             {description}
           </p>
+          {showPrimary && (
+            <>
+              <div className="flex flex-col items-center gap-3">
+                <PrimaryCta
+                  language={language}
+                  page={source}
+                  location={CTA_LOCATIONS.CONTACT}
+                  size="lg"
+                />
+                {hasBooking() && (
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track(EVENTS.CALENDAR_OPEN, { page: source, location: CTA_LOCATIONS.CONTACT, language })}
+                    className="text-blue-600 hover:underline"
+                  >
+                    {t.contactBookCall}
+                  </a>
+                )}
+              </div>
+              <p className="mt-8 text-sm uppercase tracking-widest text-gray-400">{t.contactOrWrite}</p>
+            </>
+          )}
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
@@ -197,6 +229,14 @@ export default function ContactForm({ title, description, language, source = 'Ho
                 >
                   <input type="hidden" name="form-name" value="contact" />
                   <input type="hidden" name="source" value={source} />
+                  {/* Radix Selects render as buttons, not form controls, so
+                      Netlify's deploy-time form parser has never seen role,
+                      timeline or language. The submission carried them (the POST
+                      body is built from state) but they were not registered
+                      fields. These mirrors fix the detection. */}
+                  <input type="hidden" name="role" value={formData.role} />
+                  <input type="hidden" name="timeline" value={formData.timeline} />
+                  <input type="hidden" name="language" value={formData.language} />
                   <p className="hidden">
                     <label>
                       Don't fill this out: <input name="bot-field" />
@@ -209,6 +249,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
                       </Label>
                       <Input
                         id="name"
+                        name="name"
                         required
                         value={formData.name}
                         onChange={(e) => handleChange('name', e.target.value)}
@@ -223,6 +264,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
                       </Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         required
                         value={formData.email}
@@ -233,32 +275,21 @@ export default function ContactForm({ title, description, language, source = 'Ho
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <Label htmlFor="company" className="text-sm font-medium text-gray-900 mb-2 block">
-                        {t.contactCompany}
-                      </Label>
-                      <Input
-                        id="company"
-                        value={formData.company}
-                        onChange={(e) => handleChange('company', e.target.value)}
-                        className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="phone" className="text-sm font-medium text-gray-900 mb-2 block">
-                        {t.contactPhone}
-                      </Label>
-                      <Input
-                        id="phone"
-                        value={formData.phone}
-                        onChange={(e) => handleChange('phone', e.target.value)}
-                        className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
+                  {/* Phone removed in Sprint 5. §7 rules out collecting fields
+                      sales will not use, and it is not in the brief's field list.
+                      Every removed field is a measurable drop in abandonment. */}
+                  <div>
+                    <Label htmlFor="company" className="text-sm font-medium text-gray-900 mb-2 block">
+                      {t.contactCompany}
+                    </Label>
+                    <Input
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={(e) => handleChange('company', e.target.value)}
+                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      placeholder={t.contactCompanyPlaceholder}
+                    />
                   </div>
 
                   {/* Qualification. Both optional — the goal is a better first
@@ -303,16 +334,36 @@ export default function ContactForm({ title, description, language, source = 'Ho
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-sm font-medium text-gray-900 mb-2 block">
-                      {t.contactMessage}
+                    <Label htmlFor="challenge" className="text-sm font-medium text-gray-900 mb-2 block">
+                      {t.contactChallenge}
                     </Label>
                     <Textarea
-                      id="message"
+                      id="challenge"
+                      name="challenge"
                       required
-                      value={formData.message}
-                      onChange={(e) => handleChange('message', e.target.value)}
-                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 min-h-[120px] resize-y"
-                      placeholder={t.contactMessagePlaceholder}
+                      value={formData.challenge}
+                      onChange={(e) => handleChange('challenge', e.target.value)}
+                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 min-h-[110px] resize-y"
+                      placeholder={t.contactChallengePlaceholder}
+                    />
+                  </div>
+
+                  {/* Optional, and labelled as such. Splitting "tell us about
+                      your challenges" into problem and desired outcome is the
+                      one addition that earns its friction: the two answers are
+                      routinely different, and the gap between them is the
+                      engagement. */}
+                  <div>
+                    <Label htmlFor="outcome" className="text-sm font-medium text-gray-900 mb-2 block">
+                      {t.contactOutcome}
+                    </Label>
+                    <Textarea
+                      id="outcome"
+                      name="outcome"
+                      value={formData.outcome}
+                      onChange={(e) => handleChange('outcome', e.target.value)}
+                      className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 min-h-[80px] resize-y"
+                      placeholder={t.contactOutcomePlaceholder}
                     />
                   </div>
 

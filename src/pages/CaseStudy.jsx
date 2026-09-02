@@ -1,13 +1,14 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { translations } from "@/components/translations";
+import PrimaryCta from "@/components/PrimaryCta";
+import { CTA_LOCATIONS } from "@/lib/cta";
 import { caseStudyBySlug } from "@/lib/caseStudies";
 import { SOLUTIONS } from "@/lib/solutions";
 import { createPageUrl } from "@/utils";
 import { prefixFor, parsePath } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/jobPostings";
-import { trackCta } from "@/lib/analytics";
 
 // One engagement, in the structure the Sprint 1 brief specifies:
 // challenge → why it mattered → approach → architecture → capability → outcome
@@ -135,14 +136,7 @@ export default function CaseStudy({ language }) {
           <div className="rounded-xl border border-gray-200 bg-gray-50/60 p-8 text-center">
             <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.solutionsCtaTitle}</h2>
             <p className="mx-auto mb-6 max-w-2xl text-gray-600">{t.solutionsCtaBody}</p>
-            <Link
-              to={createPageUrl('HealthCheck', language)}
-              onClick={() => trackCta({ label: 'health_check_case', location: 'case_study', page: 'CaseStudy', language })}
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
-            >
-              {t.heroCtaPrimary}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <PrimaryCta language={language} page="CaseStudy" location={CTA_LOCATIONS.PAGE_END} />
           </div>
         </div>
       </section>

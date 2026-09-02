@@ -85,15 +85,23 @@
       The live React forms submit via AJAX to these form names.
       https://docs.netlify.com/forms/setup/#javascript-forms
     -->
+    <!--
+      Must mirror src/components/ContactForm.jsx exactly. Netlify registers a
+      form's fields from THIS declaration at deploy time, not from the React
+      component, so a field added to the component and not added here is not a
+      registered field. Sprint 5: phone dropped, message split into challenge and
+      outcome, source added (which page the enquiry came from).
+    -->
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="text" name="company" />
-      <input type="text" name="phone" />
       <input type="text" name="role" />
       <input type="text" name="timeline" />
-      <textarea name="message"></textarea>
+      <textarea name="challenge"></textarea>
+      <textarea name="outcome"></textarea>
       <input type="text" name="language" />
+      <input type="text" name="source" />
     </form>
 
     <form name="job-application" netlify netlify-honeypot="bot-field" hidden>

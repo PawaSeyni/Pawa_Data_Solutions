@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
+import PrimaryCta from "@/components/PrimaryCta";
+import { CTA_LOCATIONS } from "@/lib/cta";
 import { CASE_STUDIES } from "@/lib/caseStudies";
-import { createPageUrl } from "@/utils";
 import { prefixFor } from "@/lib/i18n";
 import { trackCta } from "@/lib/analytics";
 
@@ -62,14 +63,7 @@ export default function CaseStudies({ language }) {
           <div className="mt-14 rounded-xl border border-gray-200 bg-gray-50/60 p-8 text-center">
             <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.solutionsCtaTitle}</h2>
             <p className="mx-auto mb-6 max-w-2xl text-gray-600">{t.solutionsCtaBody}</p>
-            <Link
-              to={createPageUrl('HealthCheck', language)}
-              onClick={() => trackCta({ label: 'health_check_cases', location: 'case_studies_index', page: 'CaseStudies', language })}
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
-            >
-              {t.heroCtaPrimary}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <PrimaryCta language={language} page="CaseStudies" location={CTA_LOCATIONS.PAGE_END} />
           </div>
         </div>
       </section>

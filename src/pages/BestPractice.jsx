@@ -1,12 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, AlertTriangle } from "lucide-react";
 import { translations } from "@/components/translations";
+import PrimaryCta from "@/components/PrimaryCta";
+import { CTA_LOCATIONS } from "@/lib/cta";
 import { bestPracticeBySlug } from "@/lib/bestPractices";
 import { SOLUTIONS } from "@/lib/solutions";
 import { createPageUrl } from "@/utils";
 import { prefixFor, parsePath } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/jobPostings";
-import { trackCta } from "@/lib/analytics";
 
 // Best practice template — the structure the brief specifies: purpose, audience,
 // principles, implementation guidance, checklist, pitfalls, references.
@@ -163,14 +164,7 @@ export default function BestPractice({ language }) {
           <div className="rounded-xl border border-gray-200 bg-gray-50/60 p-8 text-center">
             <h2 className="mb-2 text-2xl font-semibold text-gray-900">{t.solutionsCtaTitle}</h2>
             <p className="mx-auto mb-6 max-w-2xl text-gray-600">{t.solutionsCtaBody}</p>
-            <Link
-              to={createPageUrl('HealthCheck', language)}
-              onClick={() => trackCta({ label: 'health_check_bp', location: 'best_practice', page: 'BestPractice', language })}
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
-            >
-              {t.heroCtaPrimary}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <PrimaryCta language={language} page="BestPractice" location={CTA_LOCATIONS.PAGE_END} />
           </div>
         </div>
       </section>

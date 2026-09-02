@@ -2,6 +2,7 @@ import { ArrowRight, Check, Clock, X } from "lucide-react";
 import { translations } from "@/components/translations";
 import ContactForm from "@/components/ContactForm";
 import { TRIGGERS, SCOPE, OUTPUTS, TIMELINE, NOT_INCLUDED, FAQ, MATRIX_EXAMPLE } from "@/lib/healthCheck";
+import { CTA_PRIMARY, CTA_LOCATIONS } from "@/lib/cta";
 import { SITE_URL } from "@/lib/jobPostings";
 import { trackCta } from "@/lib/analytics";
 
@@ -16,7 +17,7 @@ export default function HealthCheck({ language }) {
   const t = translations[language];
 
   const scrollToForm = () => {
-    trackCta({ label: 'health_check_book', location: 'health_check', page: 'HealthCheck', language });
+    trackCta({ label: CTA_PRIMARY, location: CTA_LOCATIONS.HEALTH_CHECK, page: 'HealthCheck', language });
     document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -216,6 +217,9 @@ export default function HealthCheck({ language }) {
           description={t.hcFormBody}
           language={language}
           source="HealthCheck"
+          /* No primary CTA here: it would link to the page you are already on.
+             This form IS the conversion action for this page. */
+          showPrimary={false}
         />
       </div>
     </>

@@ -1,10 +1,10 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, TrendingUp } from "lucide-react";
+import { Play, TrendingUp } from "lucide-react";
 import { translations } from "@/components/translations";
-import { createPageUrl } from "@/utils";
+import PrimaryCta from "@/components/PrimaryCta";
+import { CTA_LOCATIONS } from "@/lib/cta";
 import { trackCta } from "@/lib/analytics";
 
 export default function Hero({ language }) {
@@ -48,18 +48,7 @@ export default function Hero({ language }) {
               contact form asks them to enquire about something the site has not
               explained yet. The page explains it and converts at the bottom. */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
-              <Link
-                to={createPageUrl('HealthCheck', language)}
-                onClick={() => {
-                  trackCta({ label: 'health_check_primary', location: 'hero', page: 'Home', language });
-                  window.scrollTo(0, 0);
-                }}
-              >
-                {t.heroCtaPrimary}
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </Button>
+            <PrimaryCta language={language} page="Home" location={CTA_LOCATIONS.HERO} size="lg" className="shadow-lg hover:shadow-xl" />
             
             <Button 
               variant="outline"
