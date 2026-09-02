@@ -11,7 +11,8 @@
     "build:spa": "vite build",
     "prerender": "node scripts/prerender.mjs",
     "gen:sitemap": "node scripts/gen-sitemap.mjs",
-    "gen:redirects": "node scripts/gen-redirects.mjs"
+    "gen:redirects": "node scripts/gen-redirects.mjs",
+    "sync:writing": "node scripts/sync-writing.mjs"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.2",

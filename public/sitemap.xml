@@ -362,6 +362,86 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://pawadata.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/publications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://pawadata.com/locations/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/locations/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/locations/"/>

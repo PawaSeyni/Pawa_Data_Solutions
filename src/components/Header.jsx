@@ -45,14 +45,14 @@ export default function Header({ currentPageName, language }) {
   // Each item has a real destination. Awards & Recognition from the reference
   // design was dropped on Papa's call — there are none to list, and an empty
   // awards page invites the kind of invention this site has removed once.
-  // Blog and Publications both point at papanguer.com, which is deliberate:
-  // thought leadership was settled there, so linking out keeps one canonical
-  // home for it rather than splitting the effort across two domains.
+  // Blog and Publications are index pages here; the articles and books stay
+  // canonical on papanguer.com. Indexing on this domain, publishing on that one,
+  // keeps the thought-leadership decision intact without a dead-end menu.
   const companyItems = [
     { id: 'about',        label: t.footerAbout,      page: 'About' },
     { id: 'locations',    label: t.navLocations,     page: 'Locations' },
-    { id: 'blog',         label: t.navBlog,          href: 'https://papanguer.com/writing/', external: true },
-    { id: 'publications', label: t.navPublications,  href: 'https://papanguer.com/#books',   external: true },
+    { id: 'blog',         label: t.navBlog,          page: 'Blog' },
+    { id: 'publications', label: t.navPublications,  page: 'Publications' },
     { id: 'careers',      label: t.navCareers,       page: 'Careers' },
   ];
 
