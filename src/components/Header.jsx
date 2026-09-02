@@ -46,14 +46,13 @@ export default function Header({ currentPageName, language }) {
   // Each item has a real destination. Awards & Recognition from the reference
   // design was dropped on Papa's call — there are none to list, and an empty
   // awards page invites the kind of invention this site has removed once.
-  // Blog and Publications are index pages here; the articles and books stay
-  // canonical on papanguer.com. Indexing on this domain, publishing on that one,
-  // keeps the thought-leadership decision intact without a dead-end menu.
+  // Blog and Publications merged into Insights (Sprint 3) and moved to the main
+  // nav. Articles remain canonical on papanguer.com — this domain indexes and
+  // links, that one publishes — which keeps the thought-leadership decision
+  // intact while giving the section a single front door.
   const companyItems = [
     { id: 'about',        label: t.footerAbout,      page: 'About' },
     { id: 'locations',    label: t.navLocations,     page: 'Locations' },
-    { id: 'blog',         label: t.navBlog,          page: 'Blog' },
-    { id: 'publications', label: t.navPublications,  page: 'Publications' },
     { id: 'careers',      label: t.navCareers,       page: 'Careers' },
   ];
 
@@ -64,6 +63,10 @@ export default function Header({ currentPageName, language }) {
     { label: t.navServices, id: "services" },
     { label: t.navProcess, id: "process" },
     ...(hasCaseStudies() ? [{ label: t.caseStudiesEyebrow, page: "CaseStudies" }] : []),
+    // Insights left the Company dropdown in Sprint 3. Blog and Publications were
+    // two thin entries buried a level down; one hub at the top level is both the
+    // consolidation the brief asks for and a fairer reflection of the section.
+    { label: t.insightsEyebrow, page: "Insights" },
     { label: t.navWorkshop, page: "Workshop" },
     { label: t.footerCompanyTitle, company: true },
     { label: t.navContact, id: "contact" }

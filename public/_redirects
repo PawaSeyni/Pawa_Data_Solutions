@@ -64,6 +64,15 @@
 /pt/processautomation      /pt/solutions/process-automation/   301
 /pt/processautomation/     /pt/solutions/process-automation/   301
 
+/blog      /insights/   301
+/blog/     /insights/   301
+/fr/blog      /fr/insights/   301
+/fr/blog/     /fr/insights/   301
+/es/blog      /es/insights/   301
+/es/blog/     /es/insights/   301
+/pt/blog      /pt/insights/   301
+/pt/blog/     /pt/insights/   301
+
 /privacypolicy      /privacy-policy/   301
 /privacypolicy/     /privacy-policy/   301
 /fr/privacypolicy      /fr/privacy-policy/   301
@@ -81,6 +90,15 @@
 /es/donotsellorshare/     /es/do-not-sell/   301
 /pt/donotsellorshare      /pt/do-not-sell/   301
 /pt/donotsellorshare/     /pt/do-not-sell/   301
+
+/publications      /insights/   301
+/publications/     /insights/   301
+/fr/publications      /fr/insights/   301
+/fr/publications/     /fr/insights/   301
+/es/publications      /es/insights/   301
+/es/publications/     /es/insights/   301
+/pt/publications      /pt/insights/   301
+/pt/publications/     /pt/insights/   301
 
 # --- One home URL per locale --------------------------------------------
 # Both cases: Netlify normalizes paths when SERVING a file but not when

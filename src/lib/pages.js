@@ -24,6 +24,8 @@
 // Relative, not the @/ alias: scripts/gen-sitemap.mjs and friends import this
 // file directly with Node, which does not resolve Vite's alias.
 import { CASE_STUDIES } from './caseStudies.js';
+import { PUBLICATIONS } from './writing.js';
+import { BEST_PRACTICES } from './bestPractices.js';
 
 const BASE_PAGES = [
   { name: 'Home',                 slug: '',                                legacySlug: null,                 changefreq: 'monthly', priority: '1.0' },
@@ -48,8 +50,11 @@ const BASE_PAGES = [
   // services grid because no About page existed — audit finding CONTENT-01.
   { name: 'About',                slug: 'about',                           legacySlug: null,                 changefreq: 'yearly',  priority: '0.6' },
 
-  { name: 'Blog',                 slug: 'blog',                            legacySlug: null,                 changefreq: 'weekly',  priority: '0.6' },
-  { name: 'Publications',         slug: 'publications',                    legacySlug: null,                 changefreq: 'monthly', priority: '0.6' },
+  // Sprint 3 consolidated /blog/ and /publications/ into one Insights hub.
+  // Two thin index pages competing for the same intent is worse than one hub
+  // with filters, and it split what little authority this section has.
+  // /blog/ redirects via legacySlug below; /publications/ via ALSO_MOVED.
+  { name: 'Insights',             slug: 'insights',                        legacySlug: 'blog',               changefreq: 'weekly',  priority: '0.7' },
   { name: 'Locations',            slug: 'locations',                       legacySlug: null,                 changefreq: 'yearly',  priority: '0.5' },
 
   // Workshop and Careers stay top-level. Neither is a solution — one is an
@@ -66,6 +71,26 @@ const BASE_PAGES = [
 // empty this adds nothing: no index page, no routes, no sitemap entries, no nav
 // item. The moment a real entry lands, the route, canonical, hreflang and
 // sitemap line all appear on the next build with no other file touched.
+// One page per book. Books are real, published IP with ISBNs, so unlike best
+// practices these are never empty.
+const BOOK_PAGES = PUBLICATIONS.map((b) => ({
+  name: `Book:${b.slug}`,
+  slug: `insights/books/${b.slug}`,
+  legacySlug: null,
+  changefreq: 'yearly',
+  priority: '0.6',
+}));
+
+// Gated the same way case studies are: nothing written yet means no routes and
+// no empty index behind a nav link.
+const BEST_PRACTICE_PAGES = BEST_PRACTICES.map((b) => ({
+  name: `BestPractice:${b.slug}`,
+  slug: `insights/best-practices/${b.slug}`,
+  legacySlug: null,
+  changefreq: 'yearly',
+  priority: '0.7',
+}));
+
 const CASE_STUDY_PAGES = CASE_STUDIES.length === 0 ? [] : [
   { name: 'CaseStudies', slug: 'case-studies', legacySlug: null, changefreq: 'monthly', priority: '0.7' },
   ...CASE_STUDIES.map((c) => ({
@@ -77,7 +102,7 @@ const CASE_STUDY_PAGES = CASE_STUDIES.length === 0 ? [] : [
   })),
 ];
 
-export const PAGES = [...BASE_PAGES, ...CASE_STUDY_PAGES];
+export const PAGES = [...BASE_PAGES, ...BOOK_PAGES, ...BEST_PRACTICE_PAGES, ...CASE_STUDY_PAGES];
 
 /** name -> slug, for path building. */
 export const SLUG_BY_NAME = Object.fromEntries(PAGES.map((p) => [p.name, p.slug]));
@@ -87,3 +112,14 @@ export const NAME_BY_SLUG = Object.fromEntries(PAGES.map((p) => [p.slug, p.name]
 
 /** Every page that moved, for generating redirects from old inbound links. */
 export const MOVED = PAGES.filter((p) => p.legacySlug);
+
+// Paths with no page of their own any more. legacySlug is one-to-one, and the
+// Sprint 3 consolidation folded two old pages into one hub, so /publications/
+// needs its redirect declared here instead.
+//
+// Safe because old and new are genuinely different strings: Netlify normalises
+// the request before these rules run, and a rule whose target it would rewrite
+// back to the source is the infinite loop that took this site down in June.
+export const ALSO_MOVED = [
+  { from: 'publications', to: 'insights' },
+];

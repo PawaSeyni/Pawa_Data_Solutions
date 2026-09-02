@@ -55,10 +55,27 @@ export const ARTICLES = [
 // Books change a few times a year, so this stays hand-maintained. Every field
 // is taken from papanguer.com rather than written fresh — ISBNs, page counts and
 // publishers are the kind of detail that must not be approximated.
+//
+// Sprint 3 gave each book its own page under /insights/books/, because §5 asks
+// that books and long-form IP get stronger treatment than an ordinary post.
+// `thesis` and `audience` are the two things a buyer wants before a description:
+// what the book argues, and whether it is aimed at them. Both are drawn from the
+// existing description rather than invented — no new claims about the books.
+//
+// `cover` is only set where a real cover file exists. The two forthcoming
+// editions have none, and a mocked-up cover for an unpublished book would be a
+// fabrication of exactly the kind this site has already had to remove once.
 export const PUBLICATIONS = [
   {
     id: 'winning-the-moments',
+    slug: 'winning-the-moments-that-matter',
     status: 'available',
+    cover: '/book-winning-the-moments.jpg',
+    coverWebp: '/book-winning-the-moments.webp',
+    thesis:
+      'Enterprise deals are not won across the whole cycle. They turn on a handful of specific moments, and most sellers cannot name which ones they are.',
+    audience: 'Sales engineers, solution consultants and presales leaders.',
+    relatedSolutions: [],
     title: 'Winning the Moments That Matter',
     subtitle: "A Sales Engineer's Playbook for Mastering Every Stage of the Deal",
     description:
@@ -71,7 +88,13 @@ export const PUBLICATIONS = [
   },
   {
     id: 'accountability-gap',
+    slug: 'the-accountability-gap',
     status: 'forthcoming',
+    cover: null,
+    thesis:
+      'Stalled transformations rarely fail on strategy. They fail because agreement was mistaken for ownership, and nobody was accountable for the difference.',
+    audience: 'Executives, transformation leaders and boards.',
+    relatedSolutions: ['DataGovernance'],
     title: 'The Accountability Gap',
     subtitle: 'Closing the distance between agreement and ownership',
     description:
@@ -81,7 +104,14 @@ export const PUBLICATIONS = [
   },
   {
     id: 'winning-the-moments-hardcover',
+    slug: 'winning-the-moments-that-matter-hardcover',
     status: 'forthcoming',
+    cover: '/book-winning-the-moments.jpg',
+    coverWebp: '/book-winning-the-moments.webp',
+    thesis:
+      'The same argument as the paperback, in an edition built for the desk of a presales leader who reaches for it before a deal review.',
+    audience: 'Sales engineers, solution consultants and presales leaders.',
+    relatedSolutions: [],
     title: 'Winning the Moments That Matter — Hardcover edition',
     subtitle: 'The playbook, built for the shelf it will actually live on',
     description:
@@ -90,3 +120,5 @@ export const PUBLICATIONS = [
     links: [],
   },
 ];
+
+export const bookBySlug = (slug) => PUBLICATIONS.find((b) => b.slug === slug);

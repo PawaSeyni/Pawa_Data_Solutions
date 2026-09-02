@@ -15,7 +15,7 @@
 import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PAGES, MOVED } from '../src/lib/pages.js';
+import { PAGES, MOVED, ALSO_MOVED } from '../src/lib/pages.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_LANGUAGE = 'en';
@@ -44,6 +44,18 @@ for (const page of MOVED) {
     const to = `${prefixFor(lang)}/${page.slug}/`;
     lines.push(`${from}      ${to}   301`);
     lines.push(`${from}/     ${to}   301`);
+    count += 2;
+  }
+  lines.push('');
+}
+
+// Pages folded into another page rather than renamed.
+for (const { from, to } of ALSO_MOVED) {
+  for (const lang of LANGUAGES) {
+    const src = `${prefixFor(lang)}/${from}`;
+    const dst = `${prefixFor(lang)}/${to}/`;
+    lines.push(`${src}      ${dst}   301`);
+    lines.push(`${src}/     ${dst}   301`);
     count += 2;
   }
   lines.push('');

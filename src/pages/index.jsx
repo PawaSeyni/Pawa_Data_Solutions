@@ -22,8 +22,9 @@ const Careers = lazy(() => import("./Careers"));
 const Solutions = lazy(() => import("./Solutions"));
 const About = lazy(() => import("./About"));
 const Locations = lazy(() => import("./Locations"));
-const Blog = lazy(() => import("./Blog"));
-const Publications = lazy(() => import("./Publications"));
+const Insights = lazy(() => import("./Insights"));
+const Book = lazy(() => import("./Book"));
+const BestPractice = lazy(() => import("./BestPractice"));
 const CaseStudies = lazy(() => import("./CaseStudies"));
 const CaseStudy = lazy(() => import("./CaseStudy"));
 const NotFound = lazy(() => import("./NotFound"));
@@ -31,7 +32,7 @@ const NotFound = lazy(() => import("./NotFound"));
 // Route table built from the shared page definitions, so a slug change lands in
 // the router, the sitemap, the canonical tags and the redirects at once.
 const COMPONENTS = {
-    Solutions, About, Locations, Blog, Publications, CaseStudies, Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
+    Solutions, About, Locations, Insights, CaseStudies, Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
     AIReadiness, AnalyticsEnablement, ProcessAutomation,
     PrivacyPolicy, DoNotSellOrShare, Careers,
 };
@@ -40,7 +41,10 @@ const ROUTED = PAGES.filter((p) => p.name !== 'Home').map((p) => [
     p.name,
     // Every individual case study renders through the same template, resolved
     // from the slug — one component, one page per approved engagement.
-    p.name.startsWith('CaseStudy:') ? CaseStudy : COMPONENTS[p.name],
+    p.name.startsWith('CaseStudy:') ? CaseStudy
+        : p.name.startsWith('Book:') ? Book
+        : p.name.startsWith('BestPractice:') ? BestPractice
+        : COMPONENTS[p.name],
 ]);
 
 function pageNameFor(slug) {

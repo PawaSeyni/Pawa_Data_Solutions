@@ -362,84 +362,44 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://pawadata.com/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <loc>https://pawadata.com/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/"/>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pawadata.com/fr/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <loc>https://pawadata.com/fr/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/"/>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pawadata.com/es/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <loc>https://pawadata.com/es/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/"/>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pawadata.com/pt/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/blog/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/blog/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/blog/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/blog/"/>
+    <loc>https://pawadata.com/pt/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/"/>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://pawadata.com/publications/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://pawadata.com/fr/publications/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://pawadata.com/es/publications/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://pawadata.com/pt/publications/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/publications/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/publications/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/publications/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/publications/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/publications/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://pawadata.com/locations/</loc>
@@ -640,6 +600,126 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/do-not-sell/"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/insights/books/winning-the-moments-that-matter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/insights/books/winning-the-moments-that-matter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/insights/books/winning-the-moments-that-matter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/insights/books/winning-the-moments-that-matter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/insights/books/the-accountability-gap/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/insights/books/the-accountability-gap/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/insights/books/the-accountability-gap/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/insights/books/the-accountability-gap/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/the-accountability-gap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/the-accountability-gap/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/insights/books/winning-the-moments-that-matter-hardcover/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/insights/books/winning-the-moments-that-matter-hardcover/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/insights/books/winning-the-moments-that-matter-hardcover/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/insights/books/winning-the-moments-that-matter-hardcover/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://pawadata.com/case-studies/</loc>
