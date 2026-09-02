@@ -3,7 +3,7 @@ import React from 'react';
 const contentHtml = `
     <h1>Do Not Sell or Share My Personal Information (CPRA) / Ne pas vendre/partager mes renseignements (CPRA)</h1>
     <p class="meta"><strong>Effective / Date d’entrée en vigueur:</strong> August 10, 2025<br>
-    <strong>Contact:</strong> <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a> • 628 Fleet Street, Suite 2803, Toronto, Ontario, Canada</p>
+    <strong>Contact:</strong> <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a> • 628 Fleet Street, Toronto, Ontario, Canada</p>
 
     <h2 id="en">EN — California Consumer Privacy Rights (CPRA)</h2>
     <p>This page applies only to California residents. PaWa Data Solutions <strong>does not sell</strong> personal information. If activities ever qualify as “selling” or “sharing” (for cross-context behavioral advertising) under the CPRA, you can use the options below to opt out.</p>

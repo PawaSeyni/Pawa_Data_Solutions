@@ -5,7 +5,7 @@ const policyHtml = `
     <h1>Privacy Policy — PaWa Data Solutions</h1>
     <p class="meta"><strong>Effective date:</strong> September 1, 2026<br>
     <strong>Website:</strong> <a href="/">pawadata.com</a><br>
-    <strong>Contact:</strong> <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a> • 628 Fleet Street, Suite 2803, Toronto, Ontario, Canada</p>
+    <strong>Contact:</strong> <a href="mailto:privacy@pawadata.com">privacy@pawadata.com</a> • 628 Fleet Street, Toronto, Ontario, Canada</p>
 
     <div class="toc">
       <strong>On this page:</strong>
