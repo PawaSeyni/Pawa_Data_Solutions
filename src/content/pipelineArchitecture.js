@@ -17,99 +17,115 @@ export const IDENTITY = {
 
 export const LOCALES = {
   en: {
-    "seoTitle": "Data Engineering Consulting",
-    "seoDescription": "Reliable, observable data pipelines with DataOps practice. Inventory what actually runs, add tests and alerting per flow, and make a pipeline change a routine release instead of an event.",
+    "seoTitle": "Data Engineering & Pipeline Consulting",
+    "seoDescription": "Batch, CDC and streaming pipelines with testing, observability, lineage and DataOps built into the operating model. Reliability your team can run, change and recover.",
     "eyebrow": "DATA ENGINEERING & PIPELINE ARCHITECTURE",
-    "h1": "Pipelines your team can change without holding their breath.",
-    "subhead": "Data delivery is fragile, opaque or expensive to operate. We rebuild it as a practice: what runs is inventoried, every flow has tests and alerting that names an owner, and shipping a change stops being an event.",
-    "transformation": "Fragile → Reliable",
+    "h1": "Build data pipelines your team can trust in production.",
+    "subhead": "We design and modernise batch, CDC and streaming pipelines with testing, observability, lineage and DataOps built into the operating model — not added after go-live.",
+    "transformation": "Fragile → Reliable and operable",
     "signals": [
-      "A pipeline change is estimated by the risk of breaking something, not by the work.",
-      "Failures are found by business users on a Monday morning.",
-      "Nobody is confident which jobs are still needed, so nothing gets switched off.",
-      "Dependencies are discovered when something downstream breaks.",
-      "The operating burden grows every quarter and nobody can point to why.",
-      "The person who built it has left, or is the only one who can safely touch it."
+      "Pipeline failures are discovered by report users rather than by monitoring.",
+      "Small source changes break downstream jobs unexpectedly.",
+      "Retries, backfills and recovery depend on a few experienced engineers.",
+      "Batch and streaming paths have grown side by side without consistent patterns.",
+      "Release cycles are slow because testing and dependency impact are unclear.",
+      "Nobody can answer whether the data is late, incomplete or simply wrong."
     ],
     "consequenceFlow": [
-      "Pipelines accumulate without inventory, tests or ownership",
-      "Every change is priced for the risk of breaking something undocumented",
-      "Releases slow down and the backlog moves to workarounds instead",
-      "Incidents are found by users, so trust in the data drops",
-      "Operating cost rises while delivery speed falls"
+      "Fragile pipelines with no contracts, tests or ownership",
+      "Failures stay hidden until someone downstream notices, then recovery is manual",
+      "Downstream data becomes unreliable, and people start keeping their own copies",
+      "Releases slow down while the operational burden rises every quarter",
+      "Trust in analytics and AI falls, because both inherit the same defects"
     ],
-    "consequenceNote": "Fragility is rarely one bad pipeline. It is the absence of the things that make change safe: an inventory, a test per flow, an alert with an owner on it, and a decommissioning step that someone actually signs.",
+    "consequenceNote": "Fragility is rarely one bad pipeline. It is the absence of the things that make change safe: a contract, a test per flow, an alert with an owner on it, and a recovery path someone has actually rehearsed.",
     "transformationRows": [
       {
-        "before": "Unknown inventory of running jobs",
-        "after": "A current inventory with consumers identified per output"
+        "before": "One-off pipeline patterns",
+        "after": "Reusable engineering patterns and data contracts"
       },
       {
-        "before": "Failures found by users",
-        "after": "Alerting on freshness, volume and schema drift, with an owner"
+        "before": "Manual testing",
+        "after": "Automated data and pipeline tests"
       },
       {
-        "before": "Every change is a risk event",
-        "after": "Tests per flow, so a change is a routine release"
+        "before": "Failures found downstream",
+        "after": "Freshness, volume, schema and dependency signals"
       },
       {
-        "before": "Dead jobs left running",
-        "after": "Decommissioning as a delivery step with sign-off"
+        "before": "Opaque dependencies",
+        "after": "Documented lineage and impact paths"
       },
       {
-        "before": "One person who can safely touch it",
-        "after": "Documented runbooks a second engineer can follow"
+        "before": "Heroic recovery",
+        "after": "Runbooks, retries, backfills and named ownership"
       },
       {
-        "before": "Operating burden rising quietly",
-        "after": "Cost and failure patterns visible enough to act on"
+        "before": "Risky releases",
+        "after": "CI/CD, environment controls and deployment discipline"
       }
     ],
     "capabilities": [
       {
-        "title": "Pipeline inventory and dependency mapping",
-        "body": "What actually runs, what consumes each output, and which jobs everyone assumes are dead but are not. This is unglamorous and it is where every reliability programme has to start."
+        "title": "Pipeline architecture",
+        "body": "Batch, CDC, micro-batch and streaming chosen by business latency and operating need. Streaming a feed consumed once a day is a cost, not an achievement, and the reverse is a missed obligation."
       },
       {
-        "title": "Ingestion patterns",
-        "body": "Batch, change data capture, API and streaming, chosen per use case rather than per fashion. One documented pattern applied per source beats a bespoke design per project."
+        "title": "Data contracts and schema change",
+        "body": "An agreement between producer and consumer about shape, semantics and notice — so a column rename becomes a conversation before deployment rather than an incident after it."
       },
       {
-        "title": "Testing and data contracts",
-        "body": "Tests that run on the data, not only on the code: row counts, referential expectations, schema stability. A contract between producer and consumer that fails loudly when it is broken."
+        "title": "Layered transformation patterns",
+        "body": "Raw, tested and curated layers with reusable patterns, so a new source follows an established path instead of inventing one per project."
       },
       {
-        "title": "Observability and alerting",
-        "body": "Freshness, volume, schema drift, failures and anomalies, routed to a named owner. Implemented here, but owned by the Data Governance practice — quality and observability are governance concerns wherever the code lives."
+        "title": "Automated tests and reconciliation",
+        "body": "Tests that run on the data, not only the code: row counts, referential expectations, schema stability and reconciliation against source."
+      },
+      {
+        "title": "Operational observability",
+        "body": "Freshness, volume, schema drift, failures and dependency signals with alerts that name an owner. Implemented here; the trust and ownership expectations behind it belong to the Governance & MDM practice."
       },
       {
         "title": "DataOps",
-        "body": "Version control, environments, automated deployment and rollback for pipelines. The point is that a change becomes reversible, which is what makes it routine."
+        "body": "Source control, CI/CD, environment promotion and release discipline. The point is that a change becomes reversible, which is what makes it routine."
       },
       {
-        "title": "Decommissioning",
-        "body": "Retiring the pipeline you replaced, treated as a delivery step with its own sign-off. Consolidations fail here more often than they fail in the build."
+        "title": "Recovery design",
+        "body": "Idempotency, retries, backfills, replay and graceful degradation, decided during design rather than improvised at 2am. Most estates can rerun a job; far fewer can rerun it safely twice."
+      },
+      {
+        "title": "Lineage tied to ownership",
+        "body": "Documentation and lineage that connect a flow to the person accountable for it, so impact analysis has somewhere to land."
       }
     ],
     "architecture": {
       "title": "Reference architecture",
-      "description": "Raw source data is ingested into a landing layer where nothing is assumed and everything is retained. Transformation and testing produce curated datasets, and only tested data reaches the serving layer that analytics, applications and AI consume. DataOps and observability run across every stage rather than sitting at the end: a test at the point of transformation is what stops a defect reaching a user, and an alert only helps if it fires before someone notices. Governance and quality ownership stay with the Data Governance & MDM practice, even though the controls are implemented here.",
+      "description": "Sources feed ingestion — batch, CDC or events — into a raw landing layer where nothing is assumed and everything is retained. Transformation and testing run together, so a defect is caught where it enters rather than found three systems downstream. Tested data becomes curated data products, exposed through a serving, semantic or API layer to analytics, operations and AI. Orchestration, observability, lineage, security and data quality span every stage rather than sitting at the end. Data quality and observability are implemented here; the policy, critical-element definitions and issue-management model behind them are owned by the Governance & MDM practice, which is why they are drawn across the flow rather than as a stage in it.",
       "layers": [
         {
-          "name": "Raw & source",
+          "name": "Sources",
           "items": [
             "Operational systems",
-            "Files and APIs",
-            "Event streams"
+            "SaaS",
+            "Files",
+            "APIs"
           ]
         },
         {
           "name": "Ingestion",
           "items": [
             "Batch",
-            "Change data capture",
-            "Streaming",
-            "Landing zone"
+            "CDC",
+            "Events and streaming"
+          ]
+        },
+        {
+          "name": "Raw / landing",
+          "items": [
+            "Immutable landing",
+            "Retention",
+            "Replay source"
           ]
         },
         {
@@ -122,7 +138,7 @@ export const LOCALES = {
           ]
         },
         {
-          "name": "Curated",
+          "name": "Curated data products",
           "items": [
             "Modelled datasets",
             "Conformed dimensions",
@@ -130,42 +146,48 @@ export const LOCALES = {
           ]
         },
         {
-          "name": "Serve",
+          "name": "Serving",
+          "items": [
+            "Semantic layer",
+            "APIs",
+            "Operational feeds"
+          ]
+        },
+        {
+          "name": "Consumers",
           "items": [
             "Analytics",
-            "Applications",
-            "AI and agents",
-            "Operational feeds"
+            "Operations",
+            "AI and agents"
           ]
         }
       ],
       "crossCutting": [
-        "DataOps: version control, environments, rollback",
-        "Observability and alerting",
-        "Governance and quality ownership",
+        "Orchestration",
+        "Observability",
         "Lineage",
-        "Security and access"
+        "Security",
+        "Data quality and governance (owned by Governance & MDM)"
       ]
     },
     "deliverables": [
-      "Inventory of running pipelines with consumers and owners per output",
-      "Dependency map, including the jobs nobody could account for",
-      "One documented ingestion pattern, applied per source rather than per project",
-      "Tests and data contracts per flow, running in the pipeline rather than beside it",
-      "Observability, alerting and on-call routing that names an owner",
-      "DataOps setup: version control, environments, deployment and rollback",
-      "Operational runbooks a second engineer can follow",
-      "A decommissioning list with owners and sign-off per item",
-      "Knowledge transfer to your engineering team"
+      "Current-state pipeline and dependency map, with a failure-risk inventory",
+      "Target pipeline architecture and written engineering standards",
+      "Production pipelines within the agreed scope",
+      "Automated tests and reconciliation controls, running in the pipeline rather than beside it",
+      "Monitoring, alerting and service-level expectations with named owners",
+      "CI/CD, environment promotion and deployment pattern",
+      "Recovery and backfill runbooks, plus the ownership model",
+      "Modernisation backlog and knowledge transfer to your engineers"
     ],
     "process": [
       {
         "step": "Discover",
-        "body": "Inventory what runs and who consumes it. Expect surprises here — undocumented jobs feeding something important is the normal finding, not the exceptional one."
+        "body": "Inventory what actually runs and who consumes each output. Undocumented jobs feeding something important is the normal finding here, not the exceptional one."
       },
       {
         "step": "Design",
-        "body": "Agree the ingestion pattern, the test strategy and what good alerting looks like for your team's on-call reality rather than an ideal one."
+        "body": "Agree the ingestion patterns, the contracts, the test strategy and what good alerting looks like for your team's real on-call rota rather than an ideal one."
       },
       {
         "step": "Deliver",
@@ -178,30 +200,37 @@ export const LOCALES = {
     ],
     "proof": [
       {
-        "proofType": "representative",
-        "title": "Representative pattern: pipelines nobody can change safely",
-        "body": "A pipeline estate where failures are reported by business users rather than monitoring, and every change is priced for the risk of breaking something undocumented. The work starts with an inventory of what actually runs, including the jobs everyone assumes are dead, because you cannot make safe a thing you cannot list.",
-        "outcome": "What the engagement leaves behind: one documented ingestion pattern, tests and alerting per flow, and a decommissioning list with owners."
-      },
-      {
         "proofType": "priorExperience",
         "title": "Consolidating overlapping integration stacks",
         "body": "A North American insurer running several integration stacks side by side after years of acquisitions, with the same policy data moving between the same two systems by three different routes. Consolidation was sequenced by business risk rather than technical convenience, and decommissioning was treated as a delivery step with its own sign-off rather than as cleanup — which is the usual reason duplicate routes survive their own replacement."
+      },
+      {
+        "proofType": "representative",
+        "title": "Representative architecture: pipeline modernisation",
+        "body": "A pipeline estate where failures are reported by business users rather than monitoring, and every change is priced for the risk of breaking something undocumented. The pattern is inventory first — including the jobs everyone assumes are dead — then contracts, tests and alerting per flow, then recovery design, then decommissioning as a signed step.",
+        "outcome": "What the engagement leaves behind: engineering standards, tests and alerting per flow, recovery runbooks, and a decommissioning list with owners."
       }
     ],
     "technologies": [
       {
-        "group": "Orchestration & transformation",
+        "group": "Orchestration",
         "items": [
           "Airflow",
-          "dbt",
           "Dagster",
           "Azure Data Factory",
           "Informatica"
         ]
       },
       {
-        "group": "Streaming & CDC",
+        "group": "Transformation",
+        "items": [
+          "dbt",
+          "Spark",
+          "SQL frameworks"
+        ]
+      },
+      {
+        "group": "Streaming and CDC",
         "items": [
           "Kafka",
           "Debezium",
@@ -210,7 +239,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Testing & observability",
+        "group": "Observability and testing",
         "items": [
           "dbt tests",
           "Great Expectations",
@@ -219,7 +248,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Platforms",
+        "group": "Cloud and platform",
         "items": [
           "Snowflake",
           "Databricks",
@@ -238,7 +267,7 @@ export const LOCALES = {
       },
       {
         "kind": "Assessment",
-        "label": "Data Health Check — the two to three week review",
+        "label": "Data Health Check — the broader two to three week estate review",
         "href": "/data-health-check/"
       }
     ],
@@ -251,18 +280,18 @@ export const LOCALES = {
       {
         "label": "Data Governance & MDM",
         "href": "/solutions/data-governance/",
-        "why": "Where quality and observability are owned, even when built here."
+        "why": "Owns quality policy and trust expectations; implemented here."
       },
       {
-        "label": "Analytics Enablement",
-        "href": "/solutions/analytics-enablement/",
-        "why": "What the curated layer is ultimately serving."
+        "label": "AI Readiness",
+        "href": "/solutions/ai-readiness/",
+        "why": "What reliable, tested data is ultimately being prepared for."
       }
     ],
     "faqs": [
       {
         "q": "Do we need to move to a new platform to get reliability?",
-        "a": "Almost never. Reliability comes from inventory, tests, alerting and a deployment practice, and all four can be added to the platform you already run. A migration undertaken to fix reliability usually carries the same absences across to a more expensive home."
+        "a": "Almost never. Reliability comes from contracts, tests, alerting and a deployment practice, and all four can be added to the platform you already run. A migration undertaken to fix reliability usually carries the same absences across to a more expensive home."
       },
       {
         "q": "How do you decide what to fix first?",
@@ -270,19 +299,19 @@ export const LOCALES = {
       },
       {
         "q": "Can you work with our existing engineering team?",
-        "a": "That is the usual arrangement. We often set up the pattern, the tests and the DataOps practice while your engineers do the bulk of the rebuild, which is also the fastest route to them owning it afterwards."
+        "a": "That is the usual arrangement. We often set up the patterns, contracts, tests and DataOps practice while your engineers do the bulk of the rebuild, which is also the fastest route to them owning it afterwards."
       },
       {
         "q": "What about the pipelines nobody understands any more?",
-        "a": "They get inventoried like everything else, then either documented, rebuilt or retired. The one thing we will not do is leave a job running because nobody is sure what it does — that uncertainty is the risk, not the job."
+        "a": "They get inventoried like everything else, then documented, rebuilt or retired. The one thing we will not do is leave a job running because nobody is sure what it does — that uncertainty is the risk, not the job."
       },
       {
         "q": "Is this the same as data integration work?",
-        "a": "Related but not identical. Integration is about the architecture and the patterns between systems; engineering is about building and operating the flows reliably. Most engagements touch both, and we will tell you which one your problem actually is."
+        "a": "Related but not identical, and they are two pages for that reason. Integration is the architecture and patterns between systems; engineering is building and operating the flows reliably. Most engagements touch both, and we will tell you which one your problem actually is."
       },
       {
-        "q": "How does this connect to governance?",
-        "a": "Quality and observability controls are implemented in pipelines, but they are owned by the Data Governance & MDM practice. That distinction matters: a quality rule with no business owner is a monitoring job, and monitoring jobs get muted."
+        "q": "How does this relate to data quality and governance?",
+        "a": "Quality and observability controls are implemented in pipelines, but the policy, the critical data elements and the issue-management model are owned by the Governance & MDM practice. That distinction matters: a quality rule with no business owner is a monitoring job, and monitoring jobs get muted."
       },
       {
         "q": "What happens to our operating cost?",
@@ -290,108 +319,123 @@ export const LOCALES = {
       }
     ],
     "entryOffer": {
-      "id": "data_health_check",
-      "title": "Data Health Check",
-      "cta": "Book a Data Health Check",
-      "href": "/data-health-check/",
-      "body": "A two to three week review across architecture, integration, data quality, governance and operating risk. You finish with a written current-state view, prioritised findings and a sequenced roadmap.",
+      "id": "data_engineering_health_check",
+      "title": "Data Engineering Health Check",
+      "cta": "Book a Data Engineering Health Check",
+      "body": "A focused review of pipeline reliability, dependencies, testing, observability, recovery and delivery practice. You finish with a failure-risk inventory, engineering standards worth adopting, and a sequenced modernisation backlog.",
       "note": "Scope and commercial terms are agreed in writing before the review starts."
     }
   },
   fr: {
-    "seoTitle": "Conseil en ingénierie des données",
-    "seoDescription": "Des pipelines fiables et observables avec une pratique DataOps. Inventorier ce qui tourne, ajouter tests et alertes par flux, et faire d'une modification de pipeline une mise en production de routine.",
+    "seoTitle": "Conseil en ingénierie des données et pipelines",
+    "seoDescription": "Pipelines batch, CDC et streaming avec tests, observabilité, traçabilité et DataOps intégrés au modèle d'exploitation. Une fiabilité que votre équipe peut opérer, modifier et rétablir.",
     "eyebrow": "INGÉNIERIE DES DONNÉES ET ARCHITECTURE DE PIPELINE",
-    "h1": "Des pipelines que votre équipe peut modifier sans retenir son souffle.",
-    "subhead": "La livraison des données est fragile, opaque ou coûteuse à exploiter. Nous la reconstruisons comme une pratique : ce qui tourne est inventorié, chaque flux dispose de tests et d'alertes désignant un responsable, et livrer un changement cesse d'être un événement.",
-    "transformation": "Fragile → Fiable",
+    "h1": "Des pipelines auxquels votre équipe peut se fier en production.",
+    "subhead": "Nous concevons et modernisons des pipelines batch, CDC et streaming avec tests, observabilité, traçabilité et DataOps intégrés au modèle d'exploitation — et non ajoutés après la mise en production.",
+    "transformation": "Fragile → Fiable et exploitable",
     "signals": [
-      "Une modification de pipeline est estimée d'après le risque de casser quelque chose, pas d'après le travail.",
-      "Les incidents sont découverts par les utilisateurs métier un lundi matin.",
-      "Personne n'est sûr des traitements encore nécessaires, donc rien n'est éteint.",
-      "Les dépendances se découvrent quand quelque chose casse en aval.",
-      "La charge d'exploitation croît chaque trimestre sans que personne sache dire pourquoi.",
-      "La personne qui l'a construit est partie, ou reste la seule à pouvoir y toucher sans risque."
+      "Les incidents de pipeline sont découverts par les utilisateurs des rapports plutôt que par la supervision.",
+      "De petits changements en amont cassent des traitements avals sans prévenir.",
+      "Reprises, rattrapages et rétablissement dépendent de quelques ingénieurs expérimentés.",
+      "Les chemins batch et streaming ont grandi côte à côte sans schémas cohérents.",
+      "Les cycles de livraison sont lents car tests et impact des dépendances restent flous.",
+      "Personne ne sait dire si la donnée est en retard, incomplète ou simplement fausse."
     ],
     "consequenceFlow": [
-      "Les pipelines s'accumulent sans inventaire, tests ni propriétaire",
-      "Chaque changement est chiffré au regard du risque de casser quelque chose de non documenté",
-      "Les livraisons ralentissent et le backlog se déplace vers des contournements",
-      "Les incidents sont trouvés par les utilisateurs, donc la confiance dans les données baisse",
-      "Le coût d'exploitation monte pendant que la vitesse de livraison descend"
+      "Des pipelines fragiles, sans contrats, sans tests, sans propriétaire",
+      "Les incidents restent invisibles jusqu'à ce que quelqu'un en aval s'en aperçoive, puis le rétablissement est manuel",
+      "La donnée aval devient peu fiable et chacun se met à garder sa propre copie",
+      "Les livraisons ralentissent tandis que la charge d'exploitation monte chaque trimestre",
+      "La confiance dans l'analytique et l'IA baisse, car toutes deux héritent des mêmes défauts"
     ],
-    "consequenceNote": "La fragilité vient rarement d'un mauvais pipeline. Elle vient de l'absence de ce qui rend le changement sûr : un inventaire, un test par flux, une alerte avec un responsable, et une étape de décommissionnement que quelqu'un valide réellement.",
+    "consequenceNote": "La fragilité vient rarement d'un mauvais pipeline. Elle vient de l'absence de ce qui rend le changement sûr : un contrat, un test par flux, une alerte avec un responsable, et un chemin de rétablissement que quelqu'un a réellement répété.",
     "transformationRows": [
       {
-        "before": "Inventaire inconnu des traitements en cours",
-        "after": "Un inventaire à jour, avec les consommateurs identifiés par sortie"
+        "before": "Des schémas de pipeline au cas par cas",
+        "after": "Des schémas d'ingénierie réutilisables et des contrats de données"
       },
       {
-        "before": "Incidents découverts par les utilisateurs",
-        "after": "Alertes sur fraîcheur, volumétrie et dérive de schéma, avec un responsable"
+        "before": "Tests manuels",
+        "after": "Tests automatisés des données et des pipelines"
       },
       {
-        "before": "Chaque changement est un événement à risque",
-        "after": "Des tests par flux : un changement devient une livraison de routine"
+        "before": "Incidents découverts en aval",
+        "after": "Signaux de fraîcheur, volumétrie, schéma et dépendances"
       },
       {
-        "before": "Traitements morts laissés en marche",
-        "after": "Décommissionnement comme étape de livraison, avec validation"
+        "before": "Dépendances opaques",
+        "after": "Traçabilité documentée et chemins d'impact"
       },
       {
-        "before": "Une seule personne peut y toucher sans risque",
-        "after": "Des procédures documentées qu'un second ingénieur peut suivre"
+        "before": "Rétablissement héroïque",
+        "after": "Procédures, reprises, rattrapages et propriété nommée"
       },
       {
-        "before": "Charge d'exploitation qui monte discrètement",
-        "after": "Coûts et schémas de panne assez visibles pour agir"
+        "before": "Livraisons risquées",
+        "after": "CI/CD, contrôles d'environnement et discipline de déploiement"
       }
     ],
     "capabilities": [
       {
-        "title": "Inventaire des pipelines et cartographie des dépendances",
-        "body": "Ce qui tourne réellement, ce qui consomme chaque sortie, et les traitements que tout le monde croit morts sans l'être. C'est peu spectaculaire, et c'est par là que tout programme de fiabilité doit commencer."
+        "title": "Architecture de pipeline",
+        "body": "Batch, CDC, micro-batch et streaming choisis selon la latence métier et le besoin d'exploitation. Diffuser en continu un flux consommé une fois par jour est un coût ; l'inverse est une obligation manquée."
       },
       {
-        "title": "Schémas d'ingestion",
-        "body": "Batch, capture de changements, API et streaming, choisis selon l'usage et non selon la mode. Un schéma documenté appliqué par source vaut mieux qu'une conception sur mesure par projet."
+        "title": "Contrats de données et changements de schéma",
+        "body": "Un accord entre producteur et consommateur sur la forme, la sémantique et le préavis — pour qu'un renommage de colonne devienne une conversation avant déploiement plutôt qu'un incident après."
       },
       {
-        "title": "Tests et contrats de données",
-        "body": "Des tests qui portent sur les données et pas seulement sur le code : volumétrie, intégrité référentielle, stabilité du schéma. Un contrat entre producteur et consommateur qui échoue bruyamment lorsqu'il est rompu."
+        "title": "Transformations par couches",
+        "body": "Couches brutes, testées et organisées avec des schémas réutilisables : une nouvelle source suit un chemin établi au lieu d'en inventer un par projet."
       },
       {
-        "title": "Observabilité et alertes",
-        "body": "Fraîcheur, volumétrie, dérive de schéma, incidents et anomalies, routés vers un responsable nommé. Implémenté ici, mais relevant de la pratique Gouvernance des données — qualité et observabilité sont des sujets de gouvernance quel que soit l'endroit où vit le code."
+        "title": "Tests automatisés et réconciliation",
+        "body": "Des tests qui portent sur les données et pas seulement sur le code : volumétrie, intégrité référentielle, stabilité du schéma et réconciliation avec la source."
+      },
+      {
+        "title": "Observabilité opérationnelle",
+        "body": "Fraîcheur, volumétrie, dérive de schéma, incidents et signaux de dépendance, avec des alertes qui désignent un responsable. Implémentée ici ; les attentes de confiance et de propriété qui la sous-tendent relèvent de la pratique Gouvernance et MDM."
       },
       {
         "title": "DataOps",
-        "body": "Gestion de versions, environnements, déploiement automatisé et retour arrière pour les pipelines. L'intérêt est qu'un changement devienne réversible, ce qui le rend routinier."
+        "body": "Gestion de versions, CI/CD, promotion d'environnements et discipline de livraison. L'intérêt est qu'un changement devienne réversible, ce qui le rend routinier."
       },
       {
-        "title": "Décommissionnement",
-        "body": "Retirer le pipeline remplacé, traité comme une étape de livraison avec sa propre validation. Les consolidations échouent plus souvent ici que dans la construction."
+        "title": "Conception du rétablissement",
+        "body": "Idempotence, reprises, rattrapages, rejeu et dégradation maîtrisée, décidés à la conception plutôt qu'improvisés à 2h du matin. La plupart des parcs savent relancer un traitement ; beaucoup moins savent le relancer deux fois sans risque."
+      },
+      {
+        "title": "Traçabilité rattachée à la propriété",
+        "body": "Une documentation et une traçabilité qui relient un flux à la personne qui en répond, pour que l'analyse d'impact ait un destinataire."
       }
     ],
     "architecture": {
       "title": "Architecture de référence",
-      "description": "Les données sources brutes sont ingérées dans une zone d'atterrissage où rien n'est présumé et tout est conservé. Transformation et tests produisent des jeux de données organisés, et seules des données testées atteignent la couche de service que consomment l'analytique, les applications et l'IA. DataOps et observabilité traversent chaque étape plutôt que de se placer à la fin : un test au moment de la transformation est ce qui empêche un défaut d'atteindre un utilisateur, et une alerte n'aide que si elle se déclenche avant que quelqu'un ne remarque. La propriété de la gouvernance et de la qualité reste à la pratique Gouvernance des données et MDM, même si les contrôles sont implémentés ici.",
+      "description": "Les sources alimentent l'ingestion — batch, CDC ou événements — vers une zone d'atterrissage brute où rien n'est présumé et tout est conservé. Transformation et tests s'exécutent ensemble : un défaut est détecté là où il entre plutôt que découvert trois systèmes plus loin. Les données testées deviennent des produits de données organisés, exposés via une couche de service, sémantique ou API vers l'analytique, les opérations et l'IA. Orchestration, observabilité, traçabilité, sécurité et qualité traversent chaque étape au lieu de se placer à la fin. Qualité et observabilité sont implémentées ici ; la politique, la définition des données critiques et le modèle de gestion des anomalies relèvent de la pratique Gouvernance et MDM, d'où leur représentation transversale plutôt qu'en étape.",
       "layers": [
         {
-          "name": "Brut et sources",
+          "name": "Sources",
           "items": [
             "Systèmes opérationnels",
-            "Fichiers et API",
-            "Flux d'événements"
+            "SaaS",
+            "Fichiers",
+            "API"
           ]
         },
         {
           "name": "Ingestion",
           "items": [
             "Batch",
-            "Capture de changements",
-            "Streaming",
-            "Zone d'atterrissage"
+            "CDC",
+            "Événements et streaming"
+          ]
+        },
+        {
+          "name": "Brut / atterrissage",
+          "items": [
+            "Atterrissage immuable",
+            "Rétention",
+            "Source de rejeu"
           ]
         },
         {
@@ -404,50 +448,56 @@ export const LOCALES = {
           ]
         },
         {
-          "name": "Organisé",
+          "name": "Produits de données organisés",
           "items": [
-            "Jeux de données modélisés",
+            "Jeux modélisés",
             "Dimensions conformées",
             "Historisation"
           ]
         },
         {
-          "name": "Service",
+          "name": "Mise à disposition",
+          "items": [
+            "Couche sémantique",
+            "API",
+            "Flux opérationnels"
+          ]
+        },
+        {
+          "name": "Consommateurs",
           "items": [
             "Analytique",
-            "Applications",
-            "IA et agents",
-            "Flux opérationnels"
+            "Opérations",
+            "IA et agents"
           ]
         }
       ],
       "crossCutting": [
-        "DataOps : versions, environnements, retour arrière",
-        "Observabilité et alertes",
-        "Propriété de la gouvernance et de la qualité",
+        "Orchestration",
+        "Observabilité",
         "Traçabilité",
-        "Sécurité et accès"
+        "Sécurité",
+        "Qualité et gouvernance (détenues par Gouvernance et MDM)"
       ]
     },
     "deliverables": [
-      "Inventaire des pipelines en production avec consommateurs et responsables par sortie",
-      "Cartographie des dépendances, y compris les traitements que personne ne savait expliquer",
-      "Un schéma d'ingestion documenté, appliqué par source plutôt que par projet",
-      "Tests et contrats de données par flux, exécutés dans le pipeline et non à côté",
-      "Observabilité, alertes et routage d'astreinte désignant un responsable",
-      "Mise en place DataOps : versions, environnements, déploiement et retour arrière",
-      "Procédures d'exploitation qu'un second ingénieur peut suivre",
-      "Une liste de décommissionnement avec responsables et validation par élément",
-      "Transfert de compétences vers votre équipe d'ingénierie"
+      "Cartographie des pipelines et dépendances actuels, avec un inventaire des risques de défaillance",
+      "Architecture cible des pipelines et standards d'ingénierie écrits",
+      "Pipelines en production dans le périmètre convenu",
+      "Tests automatisés et contrôles de réconciliation, exécutés dans le pipeline et non à côté",
+      "Supervision, alertes et niveaux de service attendus, avec des responsables nommés",
+      "CI/CD, promotion d'environnements et schéma de déploiement",
+      "Procédures de rétablissement et de rattrapage, plus le modèle de propriété",
+      "Backlog de modernisation et transfert de compétences à vos ingénieurs"
     ],
     "process": [
       {
         "step": "Découvrir",
-        "body": "Inventorier ce qui tourne et qui le consomme. Attendez-vous à des surprises : un traitement non documenté alimentant quelque chose d'important est le constat normal, pas l'exception."
+        "body": "Inventorier ce qui tourne réellement et qui consomme chaque sortie. Un traitement non documenté alimentant quelque chose d'important est ici le constat normal, pas l'exception."
       },
       {
         "step": "Concevoir",
-        "body": "Convenir du schéma d'ingestion, de la stratégie de test et de ce qu'est une bonne alerte pour la réalité d'astreinte de votre équipe plutôt que pour une réalité idéale."
+        "body": "Convenir des schémas d'ingestion, des contrats, de la stratégie de test et de ce qu'est une bonne alerte pour l'astreinte réelle de votre équipe plutôt qu'idéale."
       },
       {
         "step": "Livrer",
@@ -460,26 +510,33 @@ export const LOCALES = {
     ],
     "proof": [
       {
-        "proofType": "representative",
-        "title": "Schéma représentatif : des pipelines que personne ne peut modifier sereinement",
-        "body": "Un parc de pipelines où les incidents sont signalés par les utilisateurs métier plutôt que par la supervision, et où chaque changement est chiffré au regard du risque de casser quelque chose de non documenté. Le travail commence par un inventaire de ce qui tourne réellement, y compris les traitements que tout le monde croit éteints, car on ne peut pas sécuriser ce qu'on ne sait pas lister.",
-        "outcome": "Ce que la mission laisse derrière elle : un schéma d'ingestion documenté, des tests et des alertes par flux, et une liste de décommissionnement avec ses responsables."
-      },
-      {
         "proofType": "priorExperience",
         "title": "Consolider des piles d'intégration qui se chevauchent",
         "body": "Un assureur nord-américain exploitant plusieurs piles d'intégration côte à côte après des années d'acquisitions, les mêmes données de contrats circulant entre les deux mêmes systèmes par trois routes différentes. La consolidation a été séquencée par risque métier plutôt que par commodité technique, et le décommissionnement traité comme une étape de livraison avec sa propre validation plutôt que comme du nettoyage — ce qui explique habituellement pourquoi les routes en double survivent à leur propre remplacement."
+      },
+      {
+        "proofType": "representative",
+        "title": "Architecture représentative : modernisation de pipelines",
+        "body": "Un parc de pipelines où les incidents sont signalés par les utilisateurs métier plutôt que par la supervision, et où chaque changement est chiffré au regard du risque de casser quelque chose de non documenté. Le schéma commence par l'inventaire — y compris les traitements que tout le monde croit éteints — puis contrats, tests et alertes par flux, puis conception du rétablissement, puis décommissionnement comme étape validée.",
+        "outcome": "Ce que la mission laisse derrière elle : des standards d'ingénierie, des tests et alertes par flux, des procédures de rétablissement, et une liste de décommissionnement avec ses responsables."
       }
     ],
     "technologies": [
       {
-        "group": "Orchestration et transformation",
+        "group": "Orchestration",
         "items": [
           "Airflow",
-          "dbt",
           "Dagster",
           "Azure Data Factory",
           "Informatica"
+        ]
+      },
+      {
+        "group": "Transformation",
+        "items": [
+          "dbt",
+          "Spark",
+          "Frameworks SQL"
         ]
       },
       {
@@ -492,7 +549,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Tests et observabilité",
+        "group": "Observabilité et tests",
         "items": [
           "tests dbt",
           "Great Expectations",
@@ -501,7 +558,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Plateformes",
+        "group": "Cloud et plateformes",
         "items": [
           "Snowflake",
           "Databricks",
@@ -520,7 +577,7 @@ export const LOCALES = {
       },
       {
         "kind": "Évaluation",
-        "label": "Diagnostic de données — la revue de deux à trois semaines",
+        "label": "Diagnostic de données — la revue élargie de deux à trois semaines",
         "href": "/fr/data-health-check/"
       }
     ],
@@ -533,18 +590,18 @@ export const LOCALES = {
       {
         "label": "Gouvernance des données et MDM",
         "href": "/solutions/data-governance/",
-        "why": "Où qualité et observabilité sont détenues, même construites ici."
+        "why": "Détient la politique qualité et les attentes de confiance ; implémentées ici."
       },
       {
-        "label": "Activation de l'analytique",
-        "href": "/solutions/analytics-enablement/",
-        "why": "Ce que la couche organisée sert en définitive."
+        "label": "Préparation à l'IA",
+        "href": "/solutions/ai-readiness/",
+        "why": "Ce à quoi des données fiables et testées sont finalement destinées."
       }
     ],
     "faqs": [
       {
         "q": "Faut-il changer de plateforme pour gagner en fiabilité ?",
-        "a": "Presque jamais. La fiabilité vient de l'inventaire, des tests, des alertes et d'une pratique de déploiement, et ces quatre éléments s'ajoutent à la plateforme que vous exploitez déjà. Une migration entreprise pour régler la fiabilité transporte généralement les mêmes absences vers un hébergement plus coûteux."
+        "a": "Presque jamais. La fiabilité vient des contrats, des tests, des alertes et d'une pratique de déploiement, et ces quatre éléments s'ajoutent à la plateforme que vous exploitez déjà. Une migration entreprise pour régler la fiabilité transporte généralement les mêmes absences vers un hébergement plus coûteux."
       },
       {
         "q": "Comment décidez-vous par quoi commencer ?",
@@ -552,7 +609,7 @@ export const LOCALES = {
       },
       {
         "q": "Pouvez-vous travailler avec notre équipe d'ingénierie ?",
-        "a": "C'est l'arrangement habituel. Nous mettons souvent en place le schéma, les tests et la pratique DataOps pendant que vos ingénieurs réalisent l'essentiel de la reconstruction, ce qui est aussi la voie la plus rapide pour qu'ils s'en approprient la suite."
+        "a": "C'est l'arrangement habituel. Nous mettons souvent en place les schémas, les contrats, les tests et la pratique DataOps pendant que vos ingénieurs réalisent l'essentiel de la reconstruction, ce qui est aussi la voie la plus rapide pour qu'ils s'en approprient la suite."
       },
       {
         "q": "Et les pipelines que plus personne ne comprend ?",
@@ -560,11 +617,11 @@ export const LOCALES = {
       },
       {
         "q": "Est-ce la même chose que l'intégration de données ?",
-        "a": "Lié mais différent. L'intégration porte sur l'architecture et les schémas entre systèmes ; l'ingénierie porte sur la construction et l'exploitation fiable des flux. La plupart des missions touchent aux deux, et nous vous dirons de quel côté se situe réellement votre problème."
+        "a": "Lié mais différent, et c'est pourquoi ce sont deux pages. L'intégration porte sur l'architecture et les schémas entre systèmes ; l'ingénierie porte sur la construction et l'exploitation fiable des flux. La plupart des missions touchent aux deux, et nous vous dirons de quel côté se situe réellement votre problème."
       },
       {
-        "q": "Quel est le lien avec la gouvernance ?",
-        "a": "Les contrôles de qualité et d'observabilité sont implémentés dans les pipelines, mais ils relèvent de la pratique Gouvernance des données et MDM. La distinction compte : une règle de qualité sans propriétaire métier est un simple job de supervision, et les jobs de supervision finissent en sourdine."
+        "q": "Quel est le lien avec la qualité et la gouvernance des données ?",
+        "a": "Les contrôles de qualité et d'observabilité sont implémentés dans les pipelines, mais la politique, les données critiques et le modèle de gestion des anomalies relèvent de la pratique Gouvernance et MDM. La distinction compte : une règle de qualité sans propriétaire métier est un simple job de supervision, et les jobs de supervision finissent en sourdine."
       },
       {
         "q": "Qu'advient-il de notre coût d'exploitation ?",
@@ -572,108 +629,123 @@ export const LOCALES = {
       }
     ],
     "entryOffer": {
-      "id": "data_health_check",
-      "title": "Diagnostic de données",
-      "cta": "Réserver un diagnostic de données",
-      "href": "/data-health-check/",
-      "body": "Une revue de deux à trois semaines couvrant architecture, intégration, qualité des données, gouvernance et risque opérationnel. Vous repartez avec un état des lieux écrit, des constats priorisés et une feuille de route séquencée.",
+      "id": "data_engineering_health_check",
+      "title": "Diagnostic d'ingénierie des données",
+      "cta": "Réserver un diagnostic d'ingénierie",
+      "body": "Une revue ciblée de la fiabilité des pipelines, des dépendances, des tests, de l'observabilité, du rétablissement et des pratiques de livraison. Vous repartez avec un inventaire des risques de défaillance, des standards d'ingénierie à adopter, et un backlog de modernisation séquencé.",
       "note": "Le périmètre et les conditions commerciales sont convenus par écrit avant le démarrage."
     }
   },
   es: {
-    "seoTitle": "Consultoría en ingeniería de datos",
-    "seoDescription": "Pipelines fiables y observables con práctica DataOps. Inventariar lo que se ejecuta, añadir pruebas y alertas por flujo, y convertir un cambio de pipeline en una entrega rutinaria.",
+    "seoTitle": "Consultoría en ingeniería de datos y pipelines",
+    "seoDescription": "Pipelines batch, CDC y streaming con pruebas, observabilidad, linaje y DataOps integrados en el modelo operativo. Fiabilidad que tu equipo puede operar, cambiar y recuperar.",
     "eyebrow": "INGENIERÍA DE DATOS Y ARQUITECTURA DE PIPELINES",
-    "h1": "Pipelines que tu equipo puede cambiar sin contener la respiración.",
-    "subhead": "La entrega de datos es frágil, opaca o cara de operar. La reconstruimos como práctica: lo que se ejecuta está inventariado, cada flujo tiene pruebas y alertas que nombran a un responsable, y publicar un cambio deja de ser un acontecimiento.",
-    "transformation": "Frágil → Fiable",
+    "h1": "Construye pipelines en los que tu equipo pueda confiar en producción.",
+    "subhead": "Diseñamos y modernizamos pipelines batch, CDC y streaming con pruebas, observabilidad, linaje y DataOps integrados en el modelo operativo, no añadidos después del arranque.",
+    "transformation": "Frágil → Fiable y operable",
     "signals": [
-      "Un cambio de pipeline se estima por el riesgo de romper algo, no por el trabajo.",
-      "Los fallos los encuentran los usuarios de negocio un lunes por la mañana.",
-      "Nadie está seguro de qué procesos siguen siendo necesarios, así que no se apaga nada.",
-      "Las dependencias se descubren cuando algo se rompe aguas abajo.",
-      "La carga operativa crece cada trimestre y nadie sabe señalar por qué.",
-      "Quien lo construyó se fue, o es la única persona que puede tocarlo con seguridad."
+      "Los fallos de pipeline los descubren los usuarios de los informes y no la monitorización.",
+      "Cambios pequeños en el origen rompen procesos aguas abajo sin previo aviso.",
+      "Reintentos, recargas y recuperación dependen de unos pocos ingenieros con experiencia.",
+      "Las rutas batch y streaming han crecido en paralelo sin patrones consistentes.",
+      "Los ciclos de entrega son lentos porque las pruebas y el impacto de dependencias no están claros.",
+      "Nadie sabe decir si el dato llega tarde, incompleto o simplemente mal."
     ],
     "consequenceFlow": [
-      "Los pipelines se acumulan sin inventario, pruebas ni propiedad",
-      "Cada cambio se presupuesta por el riesgo de romper algo no documentado",
-      "Las entregas se ralentizan y el backlog se desplaza hacia apaños",
-      "Los incidentes los encuentran los usuarios, así que baja la confianza en los datos",
-      "El coste operativo sube mientras la velocidad de entrega baja"
+      "Pipelines frágiles sin contratos, pruebas ni propiedad",
+      "Los fallos quedan ocultos hasta que alguien aguas abajo los nota, y entonces la recuperación es manual",
+      "El dato aguas abajo pierde fiabilidad y la gente empieza a guardar sus propias copias",
+      "Las entregas se ralentizan mientras la carga operativa sube cada trimestre",
+      "La confianza en la analítica y la IA cae, porque ambas heredan los mismos defectos"
     ],
-    "consequenceNote": "La fragilidad rara vez es un pipeline malo. Es la ausencia de lo que hace seguro el cambio: un inventario, una prueba por flujo, una alerta con un responsable y un paso de baja que alguien firma de verdad.",
+    "consequenceNote": "La fragilidad rara vez es un pipeline malo. Es la ausencia de lo que hace segura la mudanza: un contrato, una prueba por flujo, una alerta con un responsable y una ruta de recuperación que alguien haya ensayado de verdad.",
     "transformationRows": [
       {
-        "before": "Inventario desconocido de procesos activos",
-        "after": "Un inventario actual con consumidores identificados por salida"
+        "before": "Patrones de pipeline improvisados",
+        "after": "Patrones de ingeniería reutilizables y contratos de datos"
       },
       {
-        "before": "Fallos encontrados por usuarios",
-        "after": "Alertas de frescura, volumen y deriva de esquema, con responsable"
+        "before": "Pruebas manuales",
+        "after": "Pruebas automatizadas de datos y de pipeline"
       },
       {
-        "before": "Cada cambio es un evento de riesgo",
-        "after": "Pruebas por flujo: un cambio es una entrega rutinaria"
+        "before": "Fallos detectados aguas abajo",
+        "after": "Señales de frescura, volumen, esquema y dependencias"
       },
       {
-        "before": "Procesos muertos que siguen corriendo",
-        "after": "La baja como paso de entrega con firma"
+        "before": "Dependencias opacas",
+        "after": "Linaje documentado y rutas de impacto"
       },
       {
-        "before": "Una sola persona puede tocarlo con seguridad",
-        "after": "Procedimientos documentados que otro ingeniero puede seguir"
+        "before": "Recuperación heroica",
+        "after": "Procedimientos, reintentos, recargas y propiedad nombrada"
       },
       {
-        "before": "Carga operativa subiendo en silencio",
-        "after": "Costes y patrones de fallo visibles lo bastante para actuar"
+        "before": "Entregas arriesgadas",
+        "after": "CI/CD, control de entornos y disciplina de despliegue"
       }
     ],
     "capabilities": [
       {
-        "title": "Inventario de pipelines y mapa de dependencias",
-        "body": "Qué se ejecuta realmente, qué consume cada salida y qué procesos todos dan por muertos sin estarlo. Es poco vistoso y es por donde tiene que empezar cualquier programa de fiabilidad."
+        "title": "Arquitectura de pipelines",
+        "body": "Batch, CDC, micro-batch y streaming elegidos según la latencia de negocio y la necesidad operativa. Transmitir en streaming un flujo que se consume una vez al día es un coste; lo contrario es una obligación incumplida."
       },
       {
-        "title": "Patrones de ingesta",
-        "body": "Batch, captura de cambios, API y streaming, elegidos por caso de uso y no por moda. Un patrón documentado aplicado por origen vale más que un diseño a medida por proyecto."
+        "title": "Contratos de datos y cambio de esquema",
+        "body": "Un acuerdo entre productor y consumidor sobre forma, semántica y preaviso, para que renombrar una columna sea una conversación antes del despliegue y no un incidente después."
       },
       {
-        "title": "Pruebas y contratos de datos",
-        "body": "Pruebas sobre los datos y no solo sobre el código: recuentos, expectativas referenciales, estabilidad de esquema. Un contrato entre productor y consumidor que falla ruidosamente cuando se rompe."
+        "title": "Transformaciones por capas",
+        "body": "Capas cruda, probada y curada con patrones reutilizables, de modo que un origen nuevo siga un camino establecido en lugar de inventar uno por proyecto."
       },
       {
-        "title": "Observabilidad y alertas",
-        "body": "Frescura, volumen, deriva de esquema, fallos y anomalías, dirigidos a un responsable nombrado. Se implementa aquí, pero pertenece a la práctica de Gobernanza de Datos: calidad y observabilidad son asuntos de gobernanza esté donde esté el código."
+        "title": "Pruebas automatizadas y reconciliación",
+        "body": "Pruebas sobre los datos y no solo sobre el código: recuentos, expectativas referenciales, estabilidad de esquema y reconciliación contra el origen."
+      },
+      {
+        "title": "Observabilidad operativa",
+        "body": "Frescura, volumen, deriva de esquema, fallos y señales de dependencia con alertas que nombran a un responsable. Se implementa aquí; las expectativas de confianza y propiedad detrás pertenecen a la práctica de Gobernanza y MDM."
       },
       {
         "title": "DataOps",
-        "body": "Control de versiones, entornos, despliegue automatizado y rollback para pipelines. El objetivo es que un cambio sea reversible, que es lo que lo vuelve rutinario."
+        "body": "Control de versiones, CI/CD, promoción de entornos y disciplina de entrega. El objetivo es que un cambio sea reversible, que es lo que lo vuelve rutinario."
       },
       {
-        "title": "Baja de procesos",
-        "body": "Retirar el pipeline que se sustituyó, tratado como un paso de entrega con su propia firma. Las consolidaciones fallan aquí más a menudo que en la construcción."
+        "title": "Diseño de recuperación",
+        "body": "Idempotencia, reintentos, recargas, reproceso y degradación controlada, decididos en el diseño y no improvisados de madrugada. Casi todos los entornos pueden relanzar un proceso; muy pocos pueden relanzarlo dos veces con seguridad."
+      },
+      {
+        "title": "Linaje ligado a la propiedad",
+        "body": "Documentación y linaje que conectan un flujo con la persona responsable, para que el análisis de impacto tenga destinatario."
       }
     ],
     "architecture": {
       "title": "Arquitectura de referencia",
-      "description": "Los datos de origen se ingieren en una zona de aterrizaje donde nada se presupone y todo se conserva. La transformación y las pruebas producen conjuntos curados, y solo datos probados llegan a la capa de servicio que consumen analítica, aplicaciones e IA. DataOps y observabilidad atraviesan cada etapa en lugar de situarse al final: una prueba en el momento de la transformación es lo que impide que un defecto llegue a un usuario, y una alerta solo ayuda si se dispara antes de que alguien lo note. La propiedad de gobernanza y calidad permanece en la práctica de Gobernanza de Datos y MDM, aunque los controles se implementen aquí.",
+      "description": "Los orígenes alimentan la ingesta — batch, CDC o eventos — hacia una capa cruda de aterrizaje donde nada se presupone y todo se conserva. Transformación y pruebas se ejecutan juntas, de modo que un defecto se detecta donde entra en lugar de encontrarse tres sistemas más abajo. El dato probado pasa a productos de datos curados, expuestos por una capa de servicio, semántica o API a analítica, operaciones e IA. Orquestación, observabilidad, linaje, seguridad y calidad atraviesan todas las etapas en lugar de quedarse al final. Calidad y observabilidad se implementan aquí; la política, la definición de datos críticos y el modelo de gestión de incidencias pertenecen a la práctica de Gobernanza y MDM, y por eso se dibujan cruzando el flujo en vez de como una etapa.",
       "layers": [
         {
-          "name": "Crudo y orígenes",
+          "name": "Orígenes",
           "items": [
             "Sistemas operativos",
-            "Ficheros y API",
-            "Flujos de eventos"
+            "SaaS",
+            "Ficheros",
+            "API"
           ]
         },
         {
           "name": "Ingesta",
           "items": [
             "Batch",
-            "Captura de cambios",
-            "Streaming",
-            "Zona de aterrizaje"
+            "CDC",
+            "Eventos y streaming"
+          ]
+        },
+        {
+          "name": "Crudo / aterrizaje",
+          "items": [
+            "Aterrizaje inmutable",
+            "Retención",
+            "Origen de reproceso"
           ]
         },
         {
@@ -686,7 +758,7 @@ export const LOCALES = {
           ]
         },
         {
-          "name": "Curado",
+          "name": "Productos de datos curados",
           "items": [
             "Conjuntos modelados",
             "Dimensiones conformadas",
@@ -696,44 +768,50 @@ export const LOCALES = {
         {
           "name": "Servicio",
           "items": [
-            "Analítica",
-            "Aplicaciones",
-            "IA y agentes",
+            "Capa semántica",
+            "API",
             "Feeds operativos"
+          ]
+        },
+        {
+          "name": "Consumidores",
+          "items": [
+            "Analítica",
+            "Operaciones",
+            "IA y agentes"
           ]
         }
       ],
       "crossCutting": [
-        "DataOps: versiones, entornos, rollback",
-        "Observabilidad y alertas",
-        "Propiedad de gobernanza y calidad",
+        "Orquestación",
+        "Observabilidad",
         "Linaje",
-        "Seguridad y acceso"
+        "Seguridad",
+        "Calidad y gobernanza (propiedad de Gobernanza y MDM)"
       ]
     },
     "deliverables": [
-      "Inventario de pipelines activos con consumidores y responsables por salida",
-      "Mapa de dependencias, incluidos los procesos que nadie sabía explicar",
-      "Un patrón de ingesta documentado, aplicado por origen y no por proyecto",
-      "Pruebas y contratos de datos por flujo, ejecutándose dentro del pipeline y no al lado",
-      "Observabilidad, alertas y enrutado de guardia que nombra a un responsable",
-      "Montaje de DataOps: versiones, entornos, despliegue y rollback",
-      "Procedimientos operativos que otro ingeniero pueda seguir",
-      "Una lista de bajas con responsables y firma por elemento",
-      "Transferencia de conocimiento a tu equipo de ingeniería"
+      "Mapa de pipelines y dependencias del estado actual, con inventario de riesgo de fallo",
+      "Arquitectura objetivo de pipelines y estándares de ingeniería por escrito",
+      "Pipelines en producción dentro del alcance acordado",
+      "Pruebas automatizadas y controles de reconciliación, ejecutándose en el pipeline y no al lado",
+      "Monitorización, alertas y expectativas de nivel de servicio con responsables nombrados",
+      "CI/CD, promoción de entornos y patrón de despliegue",
+      "Procedimientos de recuperación y recarga, más el modelo de propiedad",
+      "Backlog de modernización y transferencia de conocimiento a tus ingenieros"
     ],
     "process": [
       {
         "step": "Descubrir",
-        "body": "Inventariar lo que se ejecuta y quién lo consume. Espera sorpresas: un proceso sin documentar alimentando algo importante es el hallazgo normal, no la excepción."
+        "body": "Inventariar lo que realmente se ejecuta y quién consume cada salida. Un proceso sin documentar alimentando algo importante es aquí el hallazgo normal, no la excepción."
       },
       {
         "step": "Diseñar",
-        "body": "Acordar el patrón de ingesta, la estrategia de pruebas y qué es una buena alerta para la realidad de guardia de tu equipo y no para una ideal."
+        "body": "Acordar los patrones de ingesta, los contratos, la estrategia de pruebas y qué es una buena alerta para la guardia real de tu equipo y no para una ideal."
       },
       {
         "step": "Entregar",
-        "body": "Reconstruir flujos por prioridad, ejecutarlos en paralelo con lo que sustituyen, comparar salidas y después dar de baja la ruta antigua como paso firmado."
+        "body": "Reconstruir flujos por prioridad, ejecutarlos en paralelo con lo que sustituyen, comparar salidas y luego dar de baja la ruta antigua como paso firmado."
       },
       {
         "step": "Habilitar",
@@ -742,26 +820,33 @@ export const LOCALES = {
     ],
     "proof": [
       {
-        "proofType": "representative",
-        "title": "Patrón representativo: pipelines que nadie puede cambiar con seguridad",
-        "body": "Un parque de pipelines donde los fallos los reportan los usuarios de negocio y no la monitorización, y donde cada cambio se presupuesta por el riesgo de romper algo no documentado. El trabajo empieza por inventariar lo que realmente se ejecuta, incluidos los procesos que todos dan por muertos, porque no puedes asegurar lo que no puedes listar.",
-        "outcome": "Lo que deja el proyecto: un patrón de ingesta documentado, pruebas y alertas por flujo, y una lista de bajas con responsables."
-      },
-      {
         "proofType": "priorExperience",
         "title": "Consolidar pilas de integración solapadas",
         "body": "Una aseguradora norteamericana con varias pilas de integración funcionando en paralelo tras años de adquisiciones, y los mismos datos de póliza moviéndose entre los mismos dos sistemas por tres rutas distintas. La consolidación se secuenció por riesgo de negocio y no por conveniencia técnica, y la baja se trató como un paso de entrega con su propia firma en lugar de como limpieza, que es la razón habitual por la que las rutas duplicadas sobreviven a su propio reemplazo."
+      },
+      {
+        "proofType": "representative",
+        "title": "Arquitectura representativa: modernización de pipelines",
+        "body": "Un parque de pipelines donde los fallos los reportan los usuarios de negocio y no la monitorización, y donde cada cambio se presupuesta por el riesgo de romper algo no documentado. El patrón es inventario primero — incluidos los procesos que todos dan por muertos — luego contratos, pruebas y alertas por flujo, después diseño de recuperación, y por último la baja como paso firmado.",
+        "outcome": "Lo que deja el proyecto: estándares de ingeniería, pruebas y alertas por flujo, procedimientos de recuperación y una lista de bajas con responsables."
       }
     ],
     "technologies": [
       {
-        "group": "Orquestación y transformación",
+        "group": "Orquestación",
         "items": [
           "Airflow",
-          "dbt",
           "Dagster",
           "Azure Data Factory",
           "Informatica"
+        ]
+      },
+      {
+        "group": "Transformación",
+        "items": [
+          "dbt",
+          "Spark",
+          "Frameworks SQL"
         ]
       },
       {
@@ -774,7 +859,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Pruebas y observabilidad",
+        "group": "Observabilidad y pruebas",
         "items": [
           "tests de dbt",
           "Great Expectations",
@@ -783,7 +868,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Plataformas",
+        "group": "Cloud y plataforma",
         "items": [
           "Snowflake",
           "Databricks",
@@ -802,7 +887,7 @@ export const LOCALES = {
       },
       {
         "kind": "Evaluación",
-        "label": "Diagnóstico de datos — la revisión de dos a tres semanas",
+        "label": "Diagnóstico de datos — la revisión más amplia de dos a tres semanas",
         "href": "/es/data-health-check/"
       }
     ],
@@ -815,18 +900,18 @@ export const LOCALES = {
       {
         "label": "Gobernanza de datos y MDM",
         "href": "/solutions/data-governance/",
-        "why": "Donde residen calidad y observabilidad, aunque se construyan aquí."
+        "why": "Posee la política de calidad y las expectativas de confianza; se implementan aquí."
       },
       {
-        "label": "Habilitación de análisis",
-        "href": "/solutions/analytics-enablement/",
-        "why": "Lo que la capa curada sirve en última instancia."
+        "label": "Preparación para IA",
+        "href": "/solutions/ai-readiness/",
+        "why": "Para lo que en última instancia se prepara un dato fiable y probado."
       }
     ],
     "faqs": [
       {
         "q": "¿Hay que cambiar de plataforma para ganar fiabilidad?",
-        "a": "Casi nunca. La fiabilidad viene del inventario, las pruebas, las alertas y una práctica de despliegue, y las cuatro cosas se añaden a la plataforma que ya operas. Una migración emprendida para arreglar la fiabilidad suele trasladar las mismas ausencias a un hogar más caro."
+        "a": "Casi nunca. La fiabilidad viene de los contratos, las pruebas, las alertas y una práctica de despliegue, y las cuatro cosas se añaden a la plataforma que ya operas. Una migración emprendida para arreglar la fiabilidad suele trasladar las mismas ausencias a un hogar más caro."
       },
       {
         "q": "¿Cómo decidís qué arreglar primero?",
@@ -834,7 +919,7 @@ export const LOCALES = {
       },
       {
         "q": "¿Podéis trabajar con nuestro equipo de ingeniería?",
-        "a": "Es el arreglo habitual. Solemos montar el patrón, las pruebas y la práctica DataOps mientras tus ingenieros hacen el grueso de la reconstrucción, que además es la vía más rápida para que después sea suyo."
+        "a": "Es el arreglo habitual. Solemos montar los patrones, contratos, pruebas y la práctica DataOps mientras tus ingenieros hacen el grueso de la reconstrucción, que además es la vía más rápida para que después sea suyo."
       },
       {
         "q": "¿Y los pipelines que ya nadie entiende?",
@@ -842,11 +927,11 @@ export const LOCALES = {
       },
       {
         "q": "¿Es lo mismo que el trabajo de integración de datos?",
-        "a": "Relacionado pero no idéntico. La integración va de la arquitectura y los patrones entre sistemas; la ingeniería va de construir y operar los flujos con fiabilidad. La mayoría de proyectos tocan ambos, y te diremos cuál es realmente tu problema."
+        "a": "Relacionado pero no idéntico, y por eso son dos páginas. La integración es la arquitectura y los patrones entre sistemas; la ingeniería es construir y operar los flujos con fiabilidad. La mayoría de proyectos tocan ambos, y te diremos cuál es realmente tu problema."
       },
       {
-        "q": "¿Cómo se conecta esto con la gobernanza?",
-        "a": "Los controles de calidad y observabilidad se implementan en pipelines, pero pertenecen a la práctica de Gobernanza de Datos y MDM. Esa distinción importa: una regla de calidad sin dueño de negocio es un trabajo de monitorización, y los trabajos de monitorización acaban silenciados."
+        "q": "¿Cómo se relaciona esto con la calidad y la gobernanza?",
+        "a": "Los controles de calidad y observabilidad se implementan en pipelines, pero la política, los datos críticos y el modelo de gestión de incidencias pertenecen a la práctica de Gobernanza y MDM. Esa distinción importa: una regla de calidad sin dueño de negocio es un trabajo de monitorización, y los trabajos de monitorización acaban silenciados."
       },
       {
         "q": "¿Qué pasa con nuestro coste operativo?",
@@ -854,108 +939,123 @@ export const LOCALES = {
       }
     ],
     "entryOffer": {
-      "id": "data_health_check",
-      "title": "Diagnóstico de datos",
-      "cta": "Reservar un diagnóstico de datos",
-      "href": "/data-health-check/",
-      "body": "Una revisión de dos a tres semanas de arquitectura, integración, calidad de datos, gobernanza y riesgo operativo. Terminas con una visión escrita del estado actual, hallazgos priorizados y una hoja de ruta secuenciada.",
+      "id": "data_engineering_health_check",
+      "title": "Diagnóstico de Ingeniería de Datos",
+      "cta": "Reservar un diagnóstico de ingeniería",
+      "body": "Una revisión focalizada de fiabilidad de pipelines, dependencias, pruebas, observabilidad, recuperación y práctica de entrega. Terminas con un inventario de riesgo de fallo, estándares de ingeniería que merece adoptar y un backlog de modernización secuenciado.",
       "note": "El alcance y las condiciones comerciales se acuerdan por escrito antes de empezar."
     }
   },
   pt: {
-    "seoTitle": "Consultoria em engenharia de dados",
-    "seoDescription": "Pipelines confiáveis e observáveis com prática de DataOps. Inventariar o que roda, adicionar testes e alertas por fluxo, e tornar uma mudança de pipeline uma entrega de rotina.",
+    "seoTitle": "Consultoria em engenharia de dados e pipelines",
+    "seoDescription": "Pipelines batch, CDC e streaming com testes, observabilidade, linhagem e DataOps embutidos no modelo operacional. Confiabilidade que sua equipe consegue operar, mudar e recuperar.",
     "eyebrow": "ENGENHARIA DE DADOS E ARQUITETURA DE PIPELINES",
-    "h1": "Pipelines que sua equipe consegue mudar sem prender a respiração.",
-    "subhead": "A entrega de dados é frágil, opaca ou cara de operar. Reconstruímos isso como prática: o que roda está inventariado, cada fluxo tem testes e alertas que nomeiam um responsável, e publicar uma mudança deixa de ser um evento.",
-    "transformation": "Frágil → Confiável",
+    "h1": "Construa pipelines em que sua equipe possa confiar em produção.",
+    "subhead": "Projetamos e modernizamos pipelines batch, CDC e streaming com testes, observabilidade, linhagem e DataOps embutidos no modelo operacional, não adicionados depois do go-live.",
+    "transformation": "Frágil → Confiável e operável",
     "signals": [
-      "Uma mudança de pipeline é estimada pelo risco de quebrar algo, não pelo trabalho.",
-      "As falhas são encontradas por usuários de negócio numa segunda-feira de manhã.",
-      "Ninguém tem certeza de quais rotinas ainda são necessárias, então nada é desligado.",
-      "Dependências são descobertas quando algo quebra a jusante.",
-      "A carga operacional cresce a cada trimestre e ninguém sabe apontar por quê.",
-      "Quem construiu saiu, ou é a única pessoa que consegue mexer com segurança."
+      "As falhas de pipeline são descobertas por usuários de relatórios, não pelo monitoramento.",
+      "Pequenas mudanças na origem quebram rotinas a jusante sem aviso.",
+      "Retentativas, recargas e recuperação dependem de poucos engenheiros experientes.",
+      "Os caminhos batch e streaming cresceram lado a lado sem padrões consistentes.",
+      "Os ciclos de entrega são lentos porque testes e impacto de dependências não estão claros.",
+      "Ninguém sabe dizer se o dado está atrasado, incompleto ou simplesmente errado."
     ],
     "consequenceFlow": [
-      "Pipelines se acumulam sem inventário, testes ou dono",
-      "Cada mudança é precificada pelo risco de quebrar algo não documentado",
-      "As entregas desaceleram e o backlog migra para contornos",
-      "Incidentes são achados por usuários, então a confiança nos dados cai",
-      "O custo operacional sobe enquanto a velocidade de entrega desce"
+      "Pipelines frágeis sem contratos, testes ou dono",
+      "As falhas ficam ocultas até alguém a jusante notar, e então a recuperação é manual",
+      "O dado a jusante perde confiabilidade e as pessoas passam a guardar cópias próprias",
+      "As entregas desaceleram enquanto a carga operacional sobe a cada trimestre",
+      "A confiança em analytics e IA cai, porque ambos herdam os mesmos defeitos"
     ],
-    "consequenceNote": "Fragilidade raramente é um pipeline ruim. É a ausência do que torna a mudança segura: um inventário, um teste por fluxo, um alerta com um responsável, e um passo de descomissionamento que alguém de fato assina.",
+    "consequenceNote": "Fragilidade raramente é um pipeline ruim. É a ausência do que torna a mudança segura: um contrato, um teste por fluxo, um alerta com um responsável, e um caminho de recuperação que alguém de fato ensaiou.",
     "transformationRows": [
       {
-        "before": "Inventário desconhecido de rotinas em execução",
-        "after": "Um inventário atual, com consumidores identificados por saída"
+        "before": "Padrões de pipeline improvisados",
+        "after": "Padrões de engenharia reutilizáveis e contratos de dados"
       },
       {
-        "before": "Falhas encontradas por usuários",
-        "after": "Alertas de frescor, volume e desvio de esquema, com um responsável"
+        "before": "Testes manuais",
+        "after": "Testes automatizados de dados e de pipeline"
       },
       {
-        "before": "Toda mudança é um evento de risco",
-        "after": "Testes por fluxo: uma mudança vira entrega de rotina"
+        "before": "Falhas encontradas a jusante",
+        "after": "Sinais de frescor, volume, esquema e dependências"
       },
       {
-        "before": "Rotinas mortas deixadas rodando",
-        "after": "Descomissionamento como passo de entrega, com assinatura"
+        "before": "Dependências opacas",
+        "after": "Linhagem documentada e caminhos de impacto"
       },
       {
-        "before": "Uma só pessoa mexe com segurança",
-        "after": "Runbooks documentados que um segundo engenheiro consegue seguir"
+        "before": "Recuperação heroica",
+        "after": "Runbooks, retentativas, recargas e propriedade nomeada"
       },
       {
-        "before": "Carga operacional subindo em silêncio",
-        "after": "Custos e padrões de falha visíveis o bastante para agir"
+        "before": "Entregas arriscadas",
+        "after": "CI/CD, controle de ambientes e disciplina de deploy"
       }
     ],
     "capabilities": [
       {
-        "title": "Inventário de pipelines e mapa de dependências",
-        "body": "O que de fato roda, o que consome cada saída, e quais rotinas todos supõem mortas sem estarem. É pouco glamouroso e é por onde todo programa de confiabilidade precisa começar."
+        "title": "Arquitetura de pipelines",
+        "body": "Batch, CDC, micro-batch e streaming escolhidos pela latência de negócio e pela necessidade operacional. Transmitir em streaming um fluxo consumido uma vez por dia é custo; o contrário é uma obrigação não cumprida."
       },
       {
-        "title": "Padrões de ingestão",
-        "body": "Batch, captura de mudanças, API e streaming, escolhidos por caso de uso e não por moda. Um padrão documentado aplicado por origem vale mais do que um desenho sob medida por projeto."
+        "title": "Contratos de dados e mudança de esquema",
+        "body": "Um acordo entre produtor e consumidor sobre forma, semântica e aviso prévio, para que renomear uma coluna vire uma conversa antes do deploy em vez de um incidente depois."
       },
       {
-        "title": "Testes e contratos de dados",
-        "body": "Testes sobre os dados e não só sobre o código: contagens, expectativas referenciais, estabilidade de esquema. Um contrato entre produtor e consumidor que falha alto quando é quebrado."
+        "title": "Transformações em camadas",
+        "body": "Camadas bruta, testada e curada com padrões reutilizáveis, para que uma origem nova siga um caminho estabelecido em vez de inventar um por projeto."
       },
       {
-        "title": "Observabilidade e alertas",
-        "body": "Frescor, volume, desvio de esquema, falhas e anomalias, roteados para um responsável nomeado. Implementado aqui, mas pertencente à prática de Governança de Dados — qualidade e observabilidade são temas de governança onde quer que o código viva."
+        "title": "Testes automatizados e reconciliação",
+        "body": "Testes sobre os dados e não apenas sobre o código: contagens, expectativas referenciais, estabilidade de esquema e reconciliação com a origem."
+      },
+      {
+        "title": "Observabilidade operacional",
+        "body": "Frescor, volume, desvio de esquema, falhas e sinais de dependência com alertas que nomeiam um responsável. Implementada aqui; as expectativas de confiança e propriedade por trás pertencem à prática de Governança e MDM."
       },
       {
         "title": "DataOps",
-        "body": "Controle de versão, ambientes, deploy automatizado e rollback para pipelines. O ponto é que a mudança se torne reversível, e é isso que a torna rotineira."
+        "body": "Controle de versão, CI/CD, promoção de ambientes e disciplina de release. O ponto é que a mudança se torne reversível, e é isso que a torna rotineira."
       },
       {
-        "title": "Descomissionamento",
-        "body": "Aposentar o pipeline que você substituiu, tratado como passo de entrega com assinatura própria. Consolidações falham mais aqui do que na construção."
+        "title": "Desenho de recuperação",
+        "body": "Idempotência, retentativas, recargas, replay e degradação controlada, decididos no desenho em vez de improvisados de madrugada. Quase todo ambiente consegue reexecutar uma rotina; bem menos conseguem reexecutá-la duas vezes com segurança."
+      },
+      {
+        "title": "Linhagem ligada à propriedade",
+        "body": "Documentação e linhagem que conectam um fluxo à pessoa responsável, para que a análise de impacto tenha a quem chegar."
       }
     ],
     "architecture": {
       "title": "Arquitetura de referência",
-      "description": "Os dados de origem são ingeridos numa camada de pouso onde nada é presumido e tudo é retido. Transformação e testes produzem conjuntos curados, e apenas dados testados chegam à camada de serviço que analytics, aplicações e IA consomem. DataOps e observabilidade atravessam todas as etapas em vez de ficarem no fim: um teste no momento da transformação é o que impede um defeito de chegar ao usuário, e um alerta só ajuda se disparar antes de alguém perceber. A propriedade de governança e qualidade permanece com a prática de Governança de Dados e MDM, mesmo com os controles implementados aqui.",
+      "description": "As origens alimentam a ingestão — batch, CDC ou eventos — para uma camada bruta de pouso onde nada é presumido e tudo é retido. Transformação e testes rodam juntos, de modo que um defeito é pego onde entra em vez de encontrado três sistemas adiante. O dado testado vira produtos de dados curados, expostos por uma camada de serviço, semântica ou API para analytics, operações e IA. Orquestração, observabilidade, linhagem, segurança e qualidade atravessam todas as etapas em vez de ficarem no fim. Qualidade e observabilidade são implementadas aqui; a política, a definição de dados críticos e o modelo de gestão de ocorrências pertencem à prática de Governança e MDM, e por isso aparecem cruzando o fluxo e não como uma etapa.",
       "layers": [
         {
-          "name": "Bruto e origens",
+          "name": "Origens",
           "items": [
             "Sistemas operacionais",
-            "Arquivos e APIs",
-            "Fluxos de eventos"
+            "SaaS",
+            "Arquivos",
+            "APIs"
           ]
         },
         {
           "name": "Ingestão",
           "items": [
             "Batch",
-            "Captura de mudanças",
-            "Streaming",
-            "Zona de pouso"
+            "CDC",
+            "Eventos e streaming"
+          ]
+        },
+        {
+          "name": "Bruto / pouso",
+          "items": [
+            "Pouso imutável",
+            "Retenção",
+            "Origem de replay"
           ]
         },
         {
@@ -968,7 +1068,7 @@ export const LOCALES = {
           ]
         },
         {
-          "name": "Curado",
+          "name": "Produtos de dados curados",
           "items": [
             "Conjuntos modelados",
             "Dimensões conformadas",
@@ -978,40 +1078,46 @@ export const LOCALES = {
         {
           "name": "Servir",
           "items": [
-            "Analytics",
-            "Aplicações",
-            "IA e agentes",
+            "Camada semântica",
+            "APIs",
             "Feeds operacionais"
+          ]
+        },
+        {
+          "name": "Consumidores",
+          "items": [
+            "Analytics",
+            "Operações",
+            "IA e agentes"
           ]
         }
       ],
       "crossCutting": [
-        "DataOps: versão, ambientes, rollback",
-        "Observabilidade e alertas",
-        "Propriedade de governança e qualidade",
+        "Orquestração",
+        "Observabilidade",
         "Linhagem",
-        "Segurança e acesso"
+        "Segurança",
+        "Qualidade e governança (de Governança e MDM)"
       ]
     },
     "deliverables": [
-      "Inventário de pipelines em execução com consumidores e responsáveis por saída",
-      "Mapa de dependências, incluindo as rotinas que ninguém sabia explicar",
-      "Um padrão de ingestão documentado, aplicado por origem e não por projeto",
-      "Testes e contratos de dados por fluxo, rodando dentro do pipeline e não ao lado",
-      "Observabilidade, alertas e roteamento de plantão que nomeia um responsável",
-      "Montagem de DataOps: versão, ambientes, deploy e rollback",
-      "Runbooks operacionais que um segundo engenheiro consiga seguir",
-      "Uma lista de descomissionamento com responsáveis e assinatura por item",
-      "Transferência de conhecimento para sua equipe de engenharia"
+      "Mapa de pipelines e dependências do estado atual, com inventário de risco de falha",
+      "Arquitetura-alvo de pipelines e padrões de engenharia escritos",
+      "Pipelines em produção dentro do escopo acordado",
+      "Testes automatizados e controles de reconciliação, rodando no pipeline e não ao lado",
+      "Monitoramento, alertas e expectativas de nível de serviço com responsáveis nomeados",
+      "CI/CD, promoção de ambientes e padrão de deploy",
+      "Runbooks de recuperação e recarga, mais o modelo de propriedade",
+      "Backlog de modernização e transferência de conhecimento para seus engenheiros"
     ],
     "process": [
       {
         "step": "Descobrir",
-        "body": "Inventariar o que roda e quem consome. Espere surpresas: uma rotina não documentada alimentando algo importante é o achado normal, não a exceção."
+        "body": "Inventariar o que de fato roda e quem consome cada saída. Uma rotina não documentada alimentando algo importante é aqui o achado normal, não a exceção."
       },
       {
         "step": "Projetar",
-        "body": "Acordar o padrão de ingestão, a estratégia de testes e o que é um bom alerta para a realidade de plantão da sua equipe, não para uma ideal."
+        "body": "Acordar os padrões de ingestão, os contratos, a estratégia de testes e o que é um bom alerta para o plantão real da sua equipe, não para um ideal."
       },
       {
         "step": "Entregar",
@@ -1024,26 +1130,33 @@ export const LOCALES = {
     ],
     "proof": [
       {
-        "proofType": "representative",
-        "title": "Padrão representativo: pipelines que ninguém consegue mudar com segurança",
-        "body": "Um parque de pipelines onde as falhas são relatadas por usuários de negócio e não pelo monitoramento, e onde cada mudança é precificada pelo risco de quebrar algo não documentado. O trabalho começa pelo inventário do que de fato roda, inclusive as rotinas que todos supõem mortas, porque não dá para tornar seguro o que não se consegue listar.",
-        "outcome": "O que o projeto deixa: um padrão de ingestão documentado, testes e alertas por fluxo, e uma lista de descomissionamento com responsáveis."
-      },
-      {
         "proofType": "priorExperience",
         "title": "Consolidar pilhas de integração sobrepostas",
         "body": "Uma seguradora norte-americana rodando várias pilhas de integração lado a lado após anos de aquisições, com os mesmos dados de apólice indo entre os mesmos dois sistemas por três rotas diferentes. A consolidação foi sequenciada por risco de negócio e não por conveniência técnica, e o descomissionamento tratado como passo de entrega com assinatura própria em vez de limpeza — que é a razão habitual pela qual rotas duplicadas sobrevivem à própria substituição."
+      },
+      {
+        "proofType": "representative",
+        "title": "Arquitetura representativa: modernização de pipelines",
+        "body": "Um parque de pipelines onde as falhas são relatadas por usuários de negócio e não pelo monitoramento, e onde cada mudança é precificada pelo risco de quebrar algo não documentado. O padrão é inventário primeiro — inclusive as rotinas que todos supõem mortas — depois contratos, testes e alertas por fluxo, então desenho de recuperação, e por fim descomissionamento como passo assinado.",
+        "outcome": "O que o projeto deixa: padrões de engenharia, testes e alertas por fluxo, runbooks de recuperação e uma lista de descomissionamento com responsáveis."
       }
     ],
     "technologies": [
       {
-        "group": "Orquestração e transformação",
+        "group": "Orquestração",
         "items": [
           "Airflow",
-          "dbt",
           "Dagster",
           "Azure Data Factory",
           "Informatica"
+        ]
+      },
+      {
+        "group": "Transformação",
+        "items": [
+          "dbt",
+          "Spark",
+          "Frameworks SQL"
         ]
       },
       {
@@ -1056,7 +1169,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Testes e observabilidade",
+        "group": "Observabilidade e testes",
         "items": [
           "testes dbt",
           "Great Expectations",
@@ -1065,7 +1178,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Plataformas",
+        "group": "Cloud e plataforma",
         "items": [
           "Snowflake",
           "Databricks",
@@ -1084,7 +1197,7 @@ export const LOCALES = {
       },
       {
         "kind": "Avaliação",
-        "label": "Diagnóstico de dados — a revisão de duas a três semanas",
+        "label": "Diagnóstico de dados — a revisão mais ampla de duas a três semanas",
         "href": "/pt/data-health-check/"
       }
     ],
@@ -1097,18 +1210,18 @@ export const LOCALES = {
       {
         "label": "Governança de dados e MDM",
         "href": "/solutions/data-governance/",
-        "why": "Onde qualidade e observabilidade pertencem, mesmo construídas aqui."
+        "why": "Detém a política de qualidade e as expectativas de confiança; implementadas aqui."
       },
       {
-        "label": "Capacitação em Analytics",
-        "href": "/solutions/analytics-enablement/",
-        "why": "O que a camada curada serve no fim das contas."
+        "label": "Prontidão para IA",
+        "href": "/solutions/ai-readiness/",
+        "why": "Para o que dados confiáveis e testados são, no fim, preparados."
       }
     ],
     "faqs": [
       {
         "q": "Precisamos trocar de plataforma para ter confiabilidade?",
-        "a": "Quase nunca. Confiabilidade vem de inventário, testes, alertas e uma prática de deploy, e os quatro podem ser adicionados à plataforma que você já opera. Uma migração feita para resolver confiabilidade normalmente leva as mesmas ausências para uma casa mais cara."
+        "a": "Quase nunca. Confiabilidade vem de contratos, testes, alertas e uma prática de deploy, e os quatro podem ser adicionados à plataforma que você já opera. Uma migração feita para resolver confiabilidade normalmente leva as mesmas ausências para uma casa mais cara."
       },
       {
         "q": "Como vocês decidem o que corrigir primeiro?",
@@ -1116,7 +1229,7 @@ export const LOCALES = {
       },
       {
         "q": "Vocês conseguem trabalhar com nossa equipe de engenharia?",
-        "a": "É o arranjo usual. Normalmente montamos o padrão, os testes e a prática de DataOps enquanto seus engenheiros fazem o grosso da reconstrução, o que também é o caminho mais rápido para que depois seja deles."
+        "a": "É o arranjo usual. Normalmente montamos os padrões, contratos, testes e a prática de DataOps enquanto seus engenheiros fazem o grosso da reconstrução, o que também é o caminho mais rápido para que depois seja deles."
       },
       {
         "q": "E os pipelines que ninguém mais entende?",
@@ -1124,11 +1237,11 @@ export const LOCALES = {
       },
       {
         "q": "Isso é o mesmo que trabalho de integração de dados?",
-        "a": "Relacionado, mas não idêntico. Integração é sobre arquitetura e padrões entre sistemas; engenharia é sobre construir e operar os fluxos com confiabilidade. A maioria dos projetos toca os dois, e diremos qual é de fato o seu problema."
+        "a": "Relacionado, mas não idêntico, e por isso são duas páginas. Integração é a arquitetura e os padrões entre sistemas; engenharia é construir e operar os fluxos com confiabilidade. A maioria dos projetos toca os dois, e diremos qual é de fato o seu problema."
       },
       {
-        "q": "Como isso se conecta à governança?",
-        "a": "Controles de qualidade e observabilidade são implementados em pipelines, mas pertencem à prática de Governança de Dados e MDM. Essa distinção importa: uma regra de qualidade sem dono de negócio é uma rotina de monitoramento, e rotinas de monitoramento acabam silenciadas."
+        "q": "Como isso se relaciona com qualidade e governança?",
+        "a": "Controles de qualidade e observabilidade são implementados em pipelines, mas a política, os dados críticos e o modelo de gestão de ocorrências pertencem à prática de Governança e MDM. Essa distinção importa: uma regra de qualidade sem dono de negócio é uma rotina de monitoramento, e rotinas de monitoramento acabam silenciadas."
       },
       {
         "q": "O que acontece com nosso custo operacional?",
@@ -1136,11 +1249,10 @@ export const LOCALES = {
       }
     ],
     "entryOffer": {
-      "id": "data_health_check",
-      "title": "Diagnóstico de dados",
-      "cta": "Agendar um diagnóstico de dados",
-      "href": "/data-health-check/",
-      "body": "Uma revisão de duas a três semanas de arquitetura, integração, qualidade de dados, governança e risco operacional. Você termina com uma visão escrita do estado atual, achados priorizados e um roteiro sequenciado.",
+      "id": "data_engineering_health_check",
+      "title": "Diagnóstico de Engenharia de Dados",
+      "cta": "Agendar um diagnóstico de engenharia",
+      "body": "Uma revisão focada de confiabilidade de pipelines, dependências, testes, observabilidade, recuperação e prática de entrega. Você termina com um inventário de risco de falha, padrões de engenharia que valem adotar e um backlog de modernização sequenciado.",
       "note": "Escopo e condições comerciais são acordados por escrito antes do início."
     }
   },

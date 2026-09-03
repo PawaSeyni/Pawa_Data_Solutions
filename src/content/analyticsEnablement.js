@@ -15,107 +15,123 @@ export const IDENTITY = {
 
 export const LOCALES = {
   en: {
-    "seoTitle": "Analytics Enablement Consulting",
-    "seoDescription": "Turn reporting into decisions. Agreed metric definitions in a semantic layer, built on governed master and reference data, so two teams stop bringing two numbers to the same meeting.",
-    "eyebrow": "ANALYTICS ENABLEMENT",
-    "h1": "You have reporting. You are still slow to decide.",
-    "subhead": "Dashboards exist and nobody trusts them, because the same measure is calculated differently in two places and neither definition is written down. We fix the definition once, in a semantic layer built on governed data, and rebuild the reporting on top of it.",
-    "transformation": "Reporting → Decisions",
+    "seoTitle": "Analytics & Decision Intelligence Consulting",
+    "seoDescription": "Trusted metrics, governed semantic definitions and decision products, so people stop reconciling numbers and start acting on them. Lineage from metric to source.",
+    "eyebrow": "ANALYTICS & DECISION INTELLIGENCE",
+    "h1": "Give every decision the same trusted version of the business.",
+    "subhead": "We connect governed data, shared metric definitions and fit-for-purpose analytics so teams can explain a number, trust it and act on it, without rebuilding the logic in every report.",
+    "transformation": "Reporting → Trusted decisions",
     "signals": [
-      "Finance and operations bring different numbers for the same measure to the same meeting.",
-      "Meetings start by arguing about the data instead of deciding with it.",
-      "Analysts spend most of their week rebuilding the same figures by hand.",
-      "There are more dashboards than anyone uses, and no one will delete any.",
-      "A metric definition exists in three tools and matches in none of them.",
-      "Nobody can say who owns a number when it looks wrong."
+      "Executives receive different answers to the same business question.",
+      "Analysts spend more time reconciling metrics than interpreting them.",
+      "Critical KPI logic lives inside individual dashboards or spreadsheets.",
+      "Self-service has produced more reports, but not more consistency.",
+      "Nobody can easily trace a metric back to its source and its definition.",
+      "Analytics and AI teams inherit the same semantic ambiguity."
     ],
     "consequenceFlow": [
       "The same measure is defined differently in different tools",
-      "Every number arrives with a caveat about which version it is",
-      "Meetings spend their first half reconciling rather than deciding",
-      "People fall back on the report they personally trust",
-      "Decisions get slower and less consistent, while reporting volume grows"
+      "Meetings begin by reconciling dashboards instead of deciding",
+      "Decisions are delayed, and confidence in the numbers drops",
+      "Teams duplicate analytics effort to produce a version they trust",
+      "AI and decision automation inherit the ambiguity and scale it"
     ],
     "consequenceNote": "The problem is almost never the BI tool. It is that a definition was never agreed, so every tool encodes a slightly different one and the disagreement surfaces in the meeting rather than in the design.",
     "transformationRows": [
       {
-        "before": "Metric logic copied into each dashboard",
-        "after": "One definition in a semantic layer, reused everywhere"
+        "before": "Dashboard-specific KPI logic",
+        "after": "Governed shared metric definitions"
       },
       {
-        "before": "Definitions that differ by team",
-        "after": "Agreed definitions with a named owner each"
+        "before": "Multiple versions of truth",
+        "after": "Named business definitions with named owners"
       },
       {
-        "before": "Manual rebuilds before every cycle",
-        "after": "Governed pipelines feeding the metric layer"
+        "before": "Manual reconciliation",
+        "after": "A consistent semantic and metric layer"
       },
       {
-        "before": "Dashboards nobody trusts or retires",
-        "after": "A smaller set that is used, with the rest decommissioned"
+        "before": "Opaque calculations",
+        "after": "Navigable lineage from metric to source"
       },
       {
-        "before": "Numbers with no owner",
-        "after": "Ownership visible where the number is consumed"
+        "before": "Report proliferation",
+        "after": "Purpose-built decision products"
       },
       {
-        "before": "Reporting as an output",
-        "after": "Reporting attached to the decision it supports"
+        "before": "Analyst dependency",
+        "after": "Governed self-service with clear boundaries"
       }
     ],
     "capabilities": [
       {
-        "title": "Metric definition and ownership",
-        "body": "Getting finance, operations and the business to one written definition per measure, with an owner. This is a facilitation problem more than a technical one, and pretending otherwise is why semantic layers get built twice."
+        "title": "Metric inventory and rationalisation",
+        "body": "Find every place a measure is defined, and how many of those definitions actually differ. The overlap is usually smaller and more contested than anyone expects."
       },
       {
-        "title": "Semantic and metric layer",
-        "body": "The agreed definition encoded once, so every tool inherits it rather than reimplementing it. When the definition changes, it changes in one place and every consumer follows."
+        "title": "Business glossary and ownership",
+        "body": "Definitions tied to analytics, with one accountable owner per term rather than a committee. Shared ownership of a definition is precisely how two teams end up with two numbers."
       },
       {
-        "title": "Governed foundations",
-        "body": "Metrics built on mastered entities and reference data from the Governance & MDM practice. A revenue figure that silently counts one customer three times is not a reporting bug; it is an entity resolution bug wearing a reporting costume."
+        "title": "Semantic and metrics-layer architecture",
+        "body": "The agreed definition encoded once, so every tool inherits it instead of reimplementing it. When the definition changes it changes in one place and every consumer follows."
       },
       {
-        "title": "Data products for decisions",
-        "body": "Reporting scoped to the decision it supports, with the owner and the cadence written down. A dashboard with no decision attached is a maintenance liability."
+        "title": "Data product and curated model design",
+        "body": "Curated models built on governed sources and master data, so a per-customer figure is not silently counting one customer three times."
       },
       {
-        "title": "Self-service that stays trustworthy",
-        "body": "Enabling analysts to build without letting the definitions drift again: certified datasets, clear boundaries, and a path for a new metric to become official."
+        "title": "Lineage from source to reported measure",
+        "body": "The derivation path for a published number becomes navigable rather than reconstructed, which is what makes a figure explainable under challenge."
       },
       {
-        "title": "Rationalisation",
-        "body": "Retiring the dashboards nobody uses, which is genuinely difficult politically and is usually the fastest quality improvement available."
+        "title": "Quality rules on critical measures",
+        "body": "Data quality rules attached to the measures that matter, defined under the Governance & MDM practice and enforced where the metric is produced."
+      },
+      {
+        "title": "Report rationalisation and governed self-service",
+        "body": "Retiring what nobody uses, certifying what people depend on, and giving analysts a clear path to build without letting definitions drift again."
+      },
+      {
+        "title": "Decision workflow design",
+        "body": "What action a metric should enable, by whom, and when. A dashboard with no decision attached is a maintenance liability rather than an asset."
       }
     ],
     "architecture": {
       "title": "Reference architecture",
-      "description": "Governed sources — including mastered entities and reference data from the Governance & MDM practice — feed a semantic and metric layer where each measure is defined exactly once. BI tools and data products consume the metric layer rather than reimplementing the logic, which is what stops two tools from disagreeing. Those products are attached to specific decision workflows, so a report has a named owner and a cadence. Definitions, ownership and lineage span the whole path, so anyone looking at a number can find out what it means and who is accountable for it.",
+      "description": "Governed sources and master data — customer, product and reference domains from the Governance & MDM practice — feed curated data products. A semantic and metrics layer sits above them, defining each measure exactly once, and BI tools, embedded analytics and data apps consume that layer rather than reimplementing the logic. That is what stops two tools from disagreeing. Those products attach to specific decision workflows, so a report has a named owner and a cadence. Definitions, ownership, quality, lineage, access and observability span the whole path, so anyone looking at a number can find out what it means and who is accountable for it.",
       "layers": [
         {
-          "name": "Governed sources",
+          "name": "Governed sources & master data",
           "items": [
-            "Curated datasets",
+            "Curated source data",
             "Mastered entities",
-            "Reference data"
+            "Reference domains"
           ]
         },
         {
-          "name": "Semantic & metric layer",
+          "name": "Curated data products",
+          "items": [
+            "Modelled datasets",
+            "Conformed dimensions",
+            "Certified tables"
+          ]
+        },
+        {
+          "name": "Semantic / metrics layer",
           "items": [
             "Metric definitions",
             "Business logic",
-            "Certified datasets"
+            "Certified measures"
           ]
         },
         {
-          "name": "BI & data products",
+          "name": "BI, embedded analytics & data apps",
           "items": [
             "Dashboards",
             "Reports",
             "Embedded analytics",
-            "Extracts"
+            "Data apps"
           ]
         },
         {
@@ -129,26 +145,26 @@ export const LOCALES = {
       ],
       "crossCutting": [
         "Governance: definitions and ownership",
+        "Data quality on critical measures",
         "Lineage from metric to source",
-        "Data quality monitoring",
         "Access control",
-        "Change management for definitions"
+        "Observability and freshness status"
       ]
     },
     "deliverables": [
-      "Agreed metric definitions, written down, with a named owner each",
-      "A semantic or metric layer encoding those definitions once",
-      "Certified datasets analysts can build on without re-deriving logic",
-      "Rebuilt reporting for the priority decisions, attached to owners and cadence",
-      "Lineage from each published metric back to source",
-      "A rationalisation list: what is retired, what is kept, and why",
-      "A route for a new metric to become official rather than proliferate",
-      "Enablement for your analysts, so definitions do not drift again"
+      "Metric and KPI inventory, with the conflicts and ownership gaps named",
+      "Canonical metric definitions and the semantic model that encodes them",
+      "Target analytics architecture",
+      "Priority dashboards and data products redesigned around the decisions they support",
+      "Lineage and quality controls for the critical measures",
+      "Report rationalisation backlog: what is retired, what is kept, and why",
+      "Self-service governance rules and enablement material for your analysts",
+      "A route for a new metric to become official rather than proliferate"
     ],
     "process": [
       {
         "step": "Discover",
-        "body": "Find where the same measure is defined more than once, and which decisions actually depend on it. The overlap is usually smaller and more contested than expected."
+        "body": "Find where the same measure is defined more than once, and which decisions actually depend on it."
       },
       {
         "step": "Design",
@@ -165,20 +181,20 @@ export const LOCALES = {
     ],
     "proof": [
       {
-        "proofType": "representative",
-        "title": "Representative pattern: two teams, two numbers",
-        "body": "Dashboards exist and are not trusted, because finance and operations calculate the same measure differently and neither definition is written down. The work surfaces the disagreement rather than averaging it, then fixes the definition once in a semantic layer.",
-        "outcome": "What the engagement leaves behind: agreed metric definitions, a semantic layer that enforces them, and the reporting rebuilt on top."
+        "proofType": "priorExperience",
+        "title": "Making regulatory figures explainable",
+        "body": "A Canadian financial institution producing regulatory numbers on time but unable to demonstrate how a given figure had been derived. Each reported measure was traced through its transformations back to source, and the owning business definition captured with a named owner. Quality rules were attached to the definitions themselves, so a breach named a person rather than a table. Where two business areas disagreed on a definition, the disagreement surfaced during the work rather than during a review — which is the cheaper of the two moments to find it."
       },
       {
-        "proofType": "priorExperience",
-        "title": "Definitional disagreement surfaced during the work",
-        "body": "A Canadian financial institution where each reported measure was traced through its transformations back to source and the owning business definition captured with a named owner. Where two business areas disagreed on a definition, the disagreement surfaced during the engagement rather than during a review — which is the cheaper of the two moments to find it."
+        "proofType": "representative",
+        "title": "Representative pattern: two teams, two numbers",
+        "body": "Dashboards exist and are not trusted, because finance and operations calculate the same measure differently and neither definition is written down. The work surfaces the disagreement rather than averaging it, then fixes the definition once in a semantic layer and rebuilds the reporting on top.",
+        "outcome": "What the engagement leaves behind: agreed metric definitions with owners, a semantic layer that enforces them, and a rationalisation list with reasoning."
       }
     ],
     "technologies": [
       {
-        "group": "Semantic & metric layers",
+        "group": "Semantic and metrics layers",
         "items": [
           "dbt Semantic Layer",
           "Cube",
@@ -187,7 +203,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "BI & visualisation",
+        "group": "BI and visualisation",
         "items": [
           "Power BI",
           "Tableau",
@@ -196,7 +212,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Governance & catalog",
+        "group": "Governance and catalog",
         "items": [
           "Collibra",
           "Microsoft Purview",
@@ -205,7 +221,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Platforms",
+        "group": "Platform",
         "items": [
           "Snowflake",
           "Databricks",
@@ -247,7 +263,7 @@ export const LOCALES = {
     "faqs": [
       {
         "q": "Do we need to change BI tools?",
-        "a": "Usually not. Two tools disagreeing is a symptom of two definitions, not of the wrong tool. Once the definition lives in one place, most tools consume it happily, and a tool migration undertaken to fix trust generally reproduces the problem in a new interface."
+        "a": "Usually not. Two tools disagreeing is a symptom of two definitions, not of the wrong tool. Once the definition lives in one place most tools consume it happily, and a migration undertaken to fix trust generally reproduces the problem in a new interface."
       },
       {
         "q": "Who decides the definition when two teams disagree?",
@@ -267,7 +283,7 @@ export const LOCALES = {
       },
       {
         "q": "How long before anything changes?",
-        "a": "The Analytics Health Check runs in weeks and is deliberately narrow: where definitions diverge, which decisions depend on them, and what it would take to fix the top few. A full semantic layer is a longer piece of work and should be justified by that review, not assumed."
+        "a": "The Analytics Health Check runs in weeks and is deliberately narrow: where definitions diverge, which decisions depend on them, and what it would take to fix the top few. A full semantic layer is longer work and should be justified by that review rather than assumed."
       },
       {
         "q": "Can you work alongside our BI team?",
@@ -278,95 +294,111 @@ export const LOCALES = {
       "id": "analytics_health_check",
       "title": "Analytics Health Check",
       "cta": "Book an Analytics Health Check",
-      "body": "A focused review for teams whose reporting exists but is not trusted. Where the same measure is defined more than once, which decisions depend on it, what the disagreements actually are, and a sequence for fixing the ones that matter.",
+      "body": "A focused review of metric consistency, semantic architecture, report sprawl, lineage, data quality and decision usability. You finish with the conflicts named, the owners identified, and a sequence for fixing the ones that matter.",
       "note": "Scope and commercial terms are agreed in writing before the review starts."
     }
   },
   fr: {
-    "seoTitle": "Conseil en activation de l'analytique",
-    "seoDescription": "Transformer le reporting en décisions. Des définitions de mesures convenues dans une couche sémantique, bâties sur des données de référence gouvernées, pour que deux équipes cessent d'apporter deux chiffres à la même réunion.",
-    "eyebrow": "ACTIVATION DE L'ANALYTIQUE",
-    "h1": "Vous avez du reporting. Vous décidez toujours lentement.",
-    "subhead": "Les tableaux de bord existent et personne ne s'y fie, parce que la même mesure est calculée différemment à deux endroits et qu'aucune définition n'est écrite. Nous fixons la définition une fois, dans une couche sémantique bâtie sur des données gouvernées, et nous reconstruisons le reporting dessus.",
-    "transformation": "Reporting → Décisions",
+    "seoTitle": "Conseil en analytique et intelligence décisionnelle",
+    "seoDescription": "Des mesures fiables, des définitions sémantiques gouvernées et des produits de décision, pour que les équipes cessent de réconcilier des chiffres et se mettent à agir. Traçabilité de la mesure jusqu'à la source.",
+    "eyebrow": "ANALYTIQUE ET INTELLIGENCE DÉCISIONNELLE",
+    "h1": "Donnez à chaque décision la même version fiable de l'entreprise.",
+    "subhead": "Nous relions données gouvernées, définitions de mesures partagées et analytique adaptée à l'usage, pour que les équipes puissent expliquer un chiffre, s'y fier et agir, sans reconstruire la logique dans chaque rapport.",
+    "transformation": "Reporting → Décisions fiables",
     "signals": [
-      "La finance et les opérations apportent des chiffres différents pour la même mesure à la même réunion.",
-      "Les réunions commencent par débattre des données au lieu de décider avec elles.",
-      "Les analystes passent l'essentiel de leur semaine à reconstruire les mêmes chiffres à la main.",
-      "Il y a plus de tableaux de bord que personne n'en utilise, et personne n'accepte d'en supprimer.",
-      "Une définition de mesure existe dans trois outils et ne correspond dans aucun.",
-      "Personne ne peut dire qui possède un chiffre lorsqu'il paraît faux."
+      "Les dirigeants reçoivent des réponses différentes à la même question métier.",
+      "Les analystes passent plus de temps à réconcilier des mesures qu'à les interpréter.",
+      "La logique des indicateurs critiques vit dans des tableaux de bord ou des tableurs isolés.",
+      "Le libre-service a produit davantage de rapports, mais pas plus de cohérence.",
+      "Personne ne peut facilement retracer une mesure jusqu'à sa source et sa définition.",
+      "Les équipes analytique et IA héritent de la même ambiguïté sémantique."
     ],
     "consequenceFlow": [
       "La même mesure est définie différemment selon les outils",
-      "Chaque chiffre arrive avec une réserve sur la version dont il s'agit",
-      "Les réunions passent leur première moitié à réconcilier plutôt qu'à décider",
-      "Chacun se rabat sur le rapport auquel il fait personnellement confiance",
-      "Les décisions ralentissent et se dispersent, pendant que le volume de reporting augmente"
+      "Les réunions commencent par réconcilier des tableaux de bord au lieu de décider",
+      "Les décisions sont retardées et la confiance dans les chiffres baisse",
+      "Les équipes dupliquent l'effort analytique pour produire une version à laquelle elles se fient",
+      "L'IA et l'automatisation des décisions héritent de l'ambiguïté et la démultiplient"
     ],
     "consequenceNote": "Le problème n'est presque jamais l'outil décisionnel. C'est qu'une définition n'a jamais été convenue : chaque outil en encode donc une légèrement différente, et le désaccord surgit en réunion plutôt qu'à la conception.",
     "transformationRows": [
       {
-        "before": "Logique de mesure copiée dans chaque tableau de bord",
-        "after": "Une définition dans une couche sémantique, réutilisée partout"
+        "before": "Logique d'indicateur propre à chaque tableau de bord",
+        "after": "Des définitions de mesures partagées et gouvernées"
       },
       {
-        "before": "Des définitions qui diffèrent selon l'équipe",
-        "after": "Des définitions convenues, chacune avec un propriétaire nommé"
+        "before": "Plusieurs versions de la vérité",
+        "after": "Des définitions métier nommées, avec des propriétaires nommés"
       },
       {
-        "before": "Reconstructions manuelles avant chaque cycle",
-        "after": "Des pipelines gouvernés alimentant la couche de mesures"
+        "before": "Réconciliation manuelle",
+        "after": "Une couche sémantique et de mesures cohérente"
       },
       {
-        "before": "Des tableaux de bord ni fiables ni retirés",
-        "after": "Un ensemble réduit et réellement utilisé, le reste décommissionné"
+        "before": "Calculs opaques",
+        "after": "Une traçabilité navigable de la mesure jusqu'à la source"
       },
       {
-        "before": "Des chiffres sans propriétaire",
-        "after": "Une propriété visible là où le chiffre est consommé"
+        "before": "Prolifération de rapports",
+        "after": "Des produits de décision conçus pour un usage"
       },
       {
-        "before": "Le reporting comme une sortie",
-        "after": "Le reporting rattaché à la décision qu'il soutient"
+        "before": "Dépendance aux analystes",
+        "after": "Un libre-service gouverné, aux frontières claires"
       }
     ],
     "capabilities": [
       {
-        "title": "Définition et propriété des mesures",
-        "body": "Amener la finance, les opérations et le métier à une définition écrite unique par mesure, avec un propriétaire. C'est davantage un problème d'animation que de technique, et prétendre le contraire est la raison pour laquelle les couches sémantiques se construisent deux fois."
+        "title": "Inventaire et rationalisation des mesures",
+        "body": "Trouver chaque endroit où une mesure est définie, et combien de ces définitions diffèrent réellement. Le recoupement est en général plus étroit et plus disputé qu'on ne l'imagine."
       },
       {
-        "title": "Couche sémantique et de mesures",
-        "body": "La définition convenue encodée une seule fois : chaque outil en hérite au lieu de la réimplémenter. Quand la définition change, elle change à un seul endroit et tous les consommateurs suivent."
+        "title": "Glossaire métier et propriété",
+        "body": "Des définitions rattachées à l'analytique, avec un propriétaire responsable par terme plutôt qu'un comité. La propriété partagée d'une définition est précisément ce qui produit deux chiffres."
       },
       {
-        "title": "Fondations gouvernées",
-        "body": "Des mesures bâties sur les entités maîtres et les données de référence issues de la pratique Gouvernance et MDM. Un chiffre de revenu qui compte silencieusement trois fois le même client n'est pas un bug de reporting : c'est un bug de résolution d'entités déguisé en reporting."
+        "title": "Architecture de couche sémantique",
+        "body": "La définition convenue encodée une seule fois : chaque outil en hérite au lieu de la réimplémenter. Quand elle change, elle change à un seul endroit."
       },
       {
-        "title": "Produits de données pour la décision",
-        "body": "Un reporting cadré sur la décision qu'il soutient, avec propriétaire et cadence écrits. Un tableau de bord sans décision rattachée est une dette de maintenance."
+        "title": "Conception des produits de données",
+        "body": "Des modèles organisés bâtis sur des sources gouvernées et des données maîtres, pour qu'un indicateur par client ne compte pas silencieusement trois fois le même client."
       },
       {
-        "title": "Un libre-service qui reste fiable",
-        "body": "Permettre aux analystes de construire sans laisser les définitions dériver à nouveau : jeux de données certifiés, frontières claires, et un chemin pour qu'une nouvelle mesure devienne officielle."
+        "title": "Traçabilité de la source à la mesure publiée",
+        "body": "Le chemin de dérivation d'un chiffre devient navigable au lieu d'être reconstitué, ce qui rend la mesure explicable en cas de contestation."
       },
       {
-        "title": "Rationalisation",
-        "body": "Retirer les tableaux de bord que personne n'utilise, ce qui est réellement difficile politiquement et constitue en général l'amélioration de qualité la plus rapide disponible."
+        "title": "Règles de qualité sur les mesures critiques",
+        "body": "Des règles rattachées aux mesures qui comptent, définies dans la pratique Gouvernance et MDM et appliquées là où la mesure est produite."
+      },
+      {
+        "title": "Rationalisation et libre-service gouverné",
+        "body": "Retirer ce que personne n'utilise, certifier ce dont les équipes dépendent, et donner aux analystes un chemin clair pour construire sans laisser dériver les définitions."
+      },
+      {
+        "title": "Conception des processus de décision",
+        "body": "Quelle action une mesure doit permettre, par qui et quand. Un tableau de bord sans décision rattachée est une dette de maintenance."
       }
     ],
     "architecture": {
       "title": "Architecture de référence",
-      "description": "Des sources gouvernées — y compris les entités maîtres et les données de référence issues de la pratique Gouvernance et MDM — alimentent une couche sémantique et de mesures où chaque indicateur est défini exactement une fois. Les outils décisionnels et les produits de données consomment cette couche au lieu de réimplémenter la logique, ce qui empêche deux outils de diverger. Ces produits sont rattachés à des processus de décision précis : un rapport a donc un propriétaire nommé et une cadence. Définitions, propriété et traçabilité traversent tout le parcours, de sorte que quiconque regarde un chiffre peut savoir ce qu'il signifie et qui en répond.",
+      "description": "Les sources gouvernées et les données maîtres — client, produit et domaines de référence issus de la pratique Gouvernance et MDM — alimentent des produits de données organisés. Une couche sémantique et de mesures se place au-dessus, définissant chaque indicateur exactement une fois ; les outils décisionnels, l'analytique embarquée et les applications de données consomment cette couche au lieu de réimplémenter la logique. C'est ce qui empêche deux outils de diverger. Ces produits se rattachent à des processus de décision précis : un rapport a donc un propriétaire nommé et une cadence. Définitions, propriété, qualité, traçabilité, accès et observabilité traversent tout le parcours.",
       "layers": [
         {
-          "name": "Sources gouvernées",
+          "name": "Sources gouvernées et données maîtres",
           "items": [
-            "Jeux de données organisés",
+            "Données sources organisées",
             "Entités maîtres",
-            "Données de référence"
+            "Domaines de référence"
+          ]
+        },
+        {
+          "name": "Produits de données organisés",
+          "items": [
+            "Jeux modélisés",
+            "Dimensions conformées",
+            "Tables certifiées"
           ]
         },
         {
@@ -374,16 +406,16 @@ export const LOCALES = {
           "items": [
             "Définitions de mesures",
             "Logique métier",
-            "Jeux certifiés"
+            "Mesures certifiées"
           ]
         },
         {
-          "name": "Décisionnel et produits de données",
+          "name": "Décisionnel, analytique embarquée et applications",
           "items": [
             "Tableaux de bord",
             "Rapports",
             "Analytique embarquée",
-            "Extractions"
+            "Applications de données"
           ]
         },
         {
@@ -397,26 +429,26 @@ export const LOCALES = {
       ],
       "crossCutting": [
         "Gouvernance : définitions et propriété",
-        "Traçabilité de la mesure jusqu'à la source",
-        "Supervision de la qualité",
+        "Qualité sur les mesures critiques",
+        "Traçabilité de la mesure à la source",
         "Contrôle d'accès",
-        "Gestion du changement des définitions"
+        "Observabilité et fraîcheur"
       ]
     },
     "deliverables": [
-      "Des définitions de mesures convenues, écrites, chacune avec un propriétaire nommé",
-      "Une couche sémantique ou de mesures encodant ces définitions une seule fois",
-      "Des jeux de données certifiés sur lesquels les analystes peuvent bâtir sans redériver la logique",
-      "Le reporting reconstruit pour les décisions prioritaires, rattaché à des propriétaires et une cadence",
-      "La traçabilité de chaque mesure publiée jusqu'à la source",
-      "Une liste de rationalisation : ce qui est retiré, ce qui est conservé, et pourquoi",
-      "Un parcours pour qu'une nouvelle mesure devienne officielle plutôt que de proliférer",
-      "L'accompagnement de vos analystes, pour que les définitions ne dérivent pas à nouveau"
+      "Inventaire des mesures et indicateurs, avec les conflits et les manques de propriété nommés",
+      "Définitions canoniques et le modèle sémantique qui les encode",
+      "Architecture analytique cible",
+      "Tableaux de bord et produits de données prioritaires reconçus autour des décisions qu'ils soutiennent",
+      "Traçabilité et contrôles de qualité pour les mesures critiques",
+      "Backlog de rationalisation : ce qui est retiré, ce qui est conservé, et pourquoi",
+      "Règles de gouvernance du libre-service et matériel d'accompagnement pour vos analystes",
+      "Un parcours pour qu'une nouvelle mesure devienne officielle plutôt que de proliférer"
     ],
     "process": [
       {
         "step": "Découvrir",
-        "body": "Trouver où la même mesure est définie plus d'une fois, et quelles décisions en dépendent réellement. Le recoupement est en général plus étroit et plus disputé qu'on ne l'imagine."
+        "body": "Trouver où la même mesure est définie plus d'une fois, et quelles décisions en dépendent réellement."
       },
       {
         "step": "Concevoir",
@@ -424,7 +456,7 @@ export const LOCALES = {
       },
       {
         "step": "Livrer",
-        "body": "Construire la couche sémantique et reconstruire le reporting prioritaire dessus, en parallèle de l'existant afin que les chiffres puissent être comparés avant toute extinction."
+        "body": "Construire la couche sémantique et reconstruire le reporting prioritaire dessus, en parallèle de l'existant afin de comparer les chiffres avant toute extinction."
       },
       {
         "step": "Autonomiser",
@@ -433,15 +465,15 @@ export const LOCALES = {
     ],
     "proof": [
       {
-        "proofType": "representative",
-        "title": "Schéma représentatif : deux équipes, deux chiffres",
-        "body": "Des tableaux de bord existent et n'inspirent pas confiance, parce que la finance et les opérations calculent différemment la même mesure et qu'aucune des deux définitions n'est écrite. Le travail fait émerger le désaccord plutôt que de le moyenner, puis fixe la définition une fois dans une couche sémantique.",
-        "outcome": "Ce que la mission laisse derrière elle : des définitions convenues, une couche sémantique qui les applique, et le reporting reconstruit dessus."
+        "proofType": "priorExperience",
+        "title": "Rendre explicables des chiffres réglementaires",
+        "body": "Une institution financière canadienne produisant ses chiffres réglementaires dans les délais sans pouvoir démontrer comment un chiffre donné avait été dérivé. Chaque mesure publiée a été retracée jusqu'à la source, et la définition métier associée capturée avec un propriétaire nommé. Les règles de qualité ont été rattachées aux définitions elles-mêmes, si bien qu'une violation désigne une personne plutôt qu'une table. Lorsque deux domaines divergeaient, le désaccord a émergé pendant les travaux plutôt qu'en revue — le moins coûteux des deux moments."
       },
       {
-        "proofType": "priorExperience",
-        "title": "Un désaccord de définition mis au jour pendant la mission",
-        "body": "Une institution financière canadienne où chaque mesure publiée a été retracée à travers ses transformations jusqu'à la source, la définition métier associée étant capturée avec un propriétaire nommé. Lorsque deux domaines divergeaient sur une définition, le désaccord a émergé pendant la mission plutôt que lors d'une revue — le moins coûteux des deux moments."
+        "proofType": "representative",
+        "title": "Schéma représentatif : deux équipes, deux chiffres",
+        "body": "Des tableaux de bord existent et n'inspirent pas confiance, parce que la finance et les opérations calculent différemment la même mesure et qu'aucune définition n'est écrite. Le travail fait émerger le désaccord plutôt que de le moyenner, puis fixe la définition une fois dans une couche sémantique.",
+        "outcome": "Ce que la mission laisse derrière elle : des définitions convenues avec propriétaires, une couche sémantique qui les applique, et une liste de rationalisation argumentée."
       }
     ],
     "technologies": [
@@ -473,7 +505,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Plateformes",
+        "group": "Plateforme",
         "items": [
           "Snowflake",
           "Databricks",
@@ -515,143 +547,159 @@ export const LOCALES = {
     "faqs": [
       {
         "q": "Devons-nous changer d'outil décisionnel ?",
-        "a": "En général non. Deux outils qui divergent sont le symptôme de deux définitions, pas d'un mauvais outil. Une fois la définition logée à un seul endroit, la plupart des outils la consomment sans difficulté, et une migration entreprise pour rétablir la confiance reproduit généralement le problème dans une nouvelle interface."
+        "a": "En général non. Deux outils qui divergent sont le symptôme de deux définitions, pas d'un mauvais outil. Une fois la définition logée à un seul endroit, la plupart des outils la consomment sans difficulté."
       },
       {
         "q": "Qui tranche la définition lorsque deux équipes divergent ?",
-        "a": "Vous. Notre travail est de rendre cette décision possible, pas de la prendre à votre place. Parfois la réponse honnête est que les deux mesures sont légitimes et méritent des noms différents — les fondre en une seule est le mode d'échec que nous voulons le plus éviter."
+        "a": "Vous. Notre travail est de rendre cette décision possible, pas de la prendre à votre place. Parfois la réponse honnête est que les deux mesures sont légitimes et méritent des noms différents."
       },
       {
         "q": "Quelle dépendance à la gouvernance et au MDM ?",
-        "a": "Forte. Une mesure bâtie sur des entités non résolues sera fausse d'une façon qu'aucun tableau de bord ne peut révéler : si un client apparaît trois fois, tout indicateur par client est faux et paraît correct. Nous dirons clairement quand le problème analytique est en réalité un problème d'entités."
+        "a": "Forte. Une mesure bâtie sur des entités non résolues sera fausse d'une façon qu'aucun tableau de bord ne révèle : si un client apparaît trois fois, tout indicateur par client est faux et paraît correct."
       },
       {
         "q": "Allez-vous supprimer nos tableaux de bord ?",
-        "a": "Nous produirons la liste et le raisonnement ; leur retrait vous appartient. La rationalisation est politiquement plus difficile que techniquement, et nous préférons vous remettre un dossier défendable qu'un fait accompli."
+        "a": "Nous produirons la liste et le raisonnement ; leur retrait vous appartient. La rationalisation est politiquement plus difficile que techniquement."
       },
       {
         "q": "Et le libre-service ? Nous ne voulons pas de goulot d'étranglement.",
-        "a": "Nous non plus. L'objectif est que les analystes construisent librement sur des jeux certifiés avec des définitions convenues, plus un parcours clair pour qu'une nouvelle mesure devienne officielle. Le goulot que l'on redoute vient généralement de l'absence d'un tel parcours, pas de la gouvernance."
+        "a": "Nous non plus. L'objectif est que les analystes construisent librement sur des jeux certifiés, plus un parcours clair pour officialiser une nouvelle mesure. Le goulot redouté vient de l'absence d'un tel parcours, pas de la gouvernance."
       },
       {
         "q": "En combien de temps quelque chose change-t-il ?",
-        "a": "Le Diagnostic Analytique se compte en semaines et reste délibérément étroit : où les définitions divergent, quelles décisions en dépendent, et ce qu'il faudrait pour corriger les principales. Une couche sémantique complète est un travail plus long, qui doit être justifié par cette revue et non présupposé."
+        "a": "Le Diagnostic Analytique se compte en semaines et reste délibérément étroit. Une couche sémantique complète est un travail plus long, qui doit être justifié par cette revue et non présupposé."
       },
       {
         "q": "Pouvez-vous travailler avec notre équipe décisionnelle ?",
-        "a": "Oui, et c'est en général la bonne forme. Votre équipe connaît le paysage du reporting et les enjeux politiques ; nous apportons la discipline de définition et de gouvernance. Les deux sont nécessaires, aucune ne suffit."
+        "a": "Oui, et c'est en général la bonne forme. Votre équipe connaît le paysage et les enjeux politiques ; nous apportons la discipline de définition et de gouvernance."
       }
     ],
     "entryOffer": {
       "id": "analytics_health_check",
       "title": "Diagnostic Analytique",
       "cta": "Réserver un diagnostic analytique",
-      "body": "Une revue ciblée pour les équipes dont le reporting existe mais n'inspire pas confiance. Où la même mesure est définie plusieurs fois, quelles décisions en dépendent, quels sont réellement les désaccords, et une séquence pour corriger ceux qui comptent.",
+      "body": "Une revue ciblée de la cohérence des mesures, de l'architecture sémantique, de la prolifération de rapports, de la traçabilité, de la qualité et de l'utilisabilité décisionnelle. Vous repartez avec les conflits nommés, les propriétaires identifiés et une séquence pour corriger ceux qui comptent.",
       "note": "Le périmètre et les conditions commerciales sont convenus par écrit avant le démarrage."
     }
   },
   es: {
-    "seoTitle": "Consultoría en habilitación de análisis",
-    "seoDescription": "Convertir el reporte en decisiones. Definiciones de métricas acordadas en una capa semántica, construidas sobre datos maestros y de referencia gobernados, para que dos equipos dejen de traer dos cifras a la misma reunión.",
-    "eyebrow": "HABILITACIÓN DE ANÁLISIS",
-    "h1": "Tienes informes. Sigues decidiendo despacio.",
-    "subhead": "Los cuadros de mando existen y nadie confía en ellos, porque la misma medida se calcula distinto en dos sitios y ninguna definición está escrita. Fijamos la definición una vez, en una capa semántica construida sobre datos gobernados, y reconstruimos el reporte encima.",
-    "transformation": "Informes → Decisiones",
+    "seoTitle": "Consultoría en analítica e inteligencia de decisión",
+    "seoDescription": "Métricas fiables, definiciones semánticas gobernadas y productos de decisión, para que la gente deje de reconciliar cifras y empiece a actuar. Linaje de la métrica al origen.",
+    "eyebrow": "ANALÍTICA E INTELIGENCIA DE DECISIÓN",
+    "h1": "Dale a cada decisión la misma versión fiable del negocio.",
+    "subhead": "Conectamos datos gobernados, definiciones de métricas compartidas y analítica adecuada al propósito, para que los equipos puedan explicar una cifra, confiar en ella y actuar, sin rehacer la lógica en cada informe.",
+    "transformation": "Informes → Decisiones fiables",
     "signals": [
-      "Finanzas y operaciones traen cifras distintas de la misma medida a la misma reunión.",
-      "Las reuniones empiezan discutiendo los datos en lugar de decidir con ellos.",
-      "Los analistas pasan casi toda la semana rehaciendo las mismas cifras a mano.",
-      "Hay más cuadros de mando de los que nadie usa, y nadie quiere borrar ninguno.",
-      "Una definición de métrica existe en tres herramientas y no coincide en ninguna.",
-      "Nadie sabe decir quién es dueño de un número cuando parece equivocado."
+      "Los directivos reciben respuestas distintas a la misma pregunta de negocio.",
+      "Los analistas dedican más tiempo a reconciliar métricas que a interpretarlas.",
+      "La lógica de los KPI críticos vive dentro de cuadros de mando u hojas de cálculo sueltas.",
+      "El autoservicio ha producido más informes, pero no más consistencia.",
+      "Nadie puede rastrear con facilidad una métrica hasta su origen y su definición.",
+      "Los equipos de analítica e IA heredan la misma ambigüedad semántica."
     ],
     "consequenceFlow": [
       "La misma medida se define de forma distinta en cada herramienta",
-      "Cada cifra llega con una advertencia sobre qué versión es",
-      "Las reuniones gastan su primera mitad reconciliando en vez de decidir",
-      "La gente recurre al informe en el que confía personalmente",
-      "Las decisiones se vuelven más lentas e inconsistentes mientras crece el volumen de informes"
+      "Las reuniones empiezan reconciliando cuadros de mando en lugar de decidir",
+      "Las decisiones se retrasan y baja la confianza en las cifras",
+      "Los equipos duplican el esfuerzo analítico para producir una versión en la que confían",
+      "La IA y la automatización de decisiones heredan la ambigüedad y la escalan"
     ],
     "consequenceNote": "El problema casi nunca es la herramienta de BI. Es que nunca se acordó una definición, así que cada herramienta codifica una ligeramente distinta y el desacuerdo aparece en la reunión en lugar de en el diseño.",
     "transformationRows": [
       {
-        "before": "Lógica de métrica copiada en cada cuadro de mando",
-        "after": "Una definición en una capa semántica, reutilizada en todas partes"
+        "before": "Lógica de KPI propia de cada cuadro de mando",
+        "after": "Definiciones de métricas compartidas y gobernadas"
       },
       {
-        "before": "Definiciones que difieren según el equipo",
-        "after": "Definiciones acordadas, cada una con un responsable nombrado"
+        "before": "Múltiples versiones de la verdad",
+        "after": "Definiciones de negocio nombradas, con responsables nombrados"
       },
       {
-        "before": "Reconstrucciones manuales antes de cada ciclo",
-        "after": "Pipelines gobernados alimentando la capa de métricas"
+        "before": "Reconciliación manual",
+        "after": "Una capa semántica y de métricas consistente"
       },
       {
-        "before": "Cuadros de mando sin confianza ni retirada",
-        "after": "Un conjunto menor que sí se usa, con el resto dado de baja"
+        "before": "Cálculos opacos",
+        "after": "Linaje navegable de la métrica al origen"
       },
       {
-        "before": "Cifras sin dueño",
-        "after": "Propiedad visible allí donde se consume la cifra"
+        "before": "Proliferación de informes",
+        "after": "Productos de decisión construidos con un propósito"
       },
       {
-        "before": "El informe como salida",
-        "after": "El informe ligado a la decisión que sostiene"
+        "before": "Dependencia del analista",
+        "after": "Autoservicio gobernado con límites claros"
       }
     ],
     "capabilities": [
       {
-        "title": "Definición y propiedad de métricas",
-        "body": "Llevar a finanzas, operaciones y negocio a una definición escrita por medida, con un responsable. Es más un problema de facilitación que técnico, y fingir lo contrario es por lo que las capas semánticas se construyen dos veces."
+        "title": "Inventario y racionalización de métricas",
+        "body": "Encontrar cada sitio donde se define una medida y cuántas de esas definiciones difieren de verdad. El solapamiento suele ser menor y más disputado de lo que nadie espera."
       },
       {
-        "title": "Capa semántica y de métricas",
-        "body": "La definición acordada codificada una sola vez, de modo que cada herramienta la hereda en lugar de reimplementarla. Cuando la definición cambia, cambia en un sitio y todos los consumidores siguen."
+        "title": "Glosario de negocio y propiedad",
+        "body": "Definiciones ligadas a la analítica, con un responsable por término y no un comité. La propiedad compartida de una definición es justo lo que produce dos cifras."
       },
       {
-        "title": "Fundamentos gobernados",
-        "body": "Métricas construidas sobre entidades maestras y datos de referencia de la práctica de Gobernanza y MDM. Una cifra de ingresos que cuenta en silencio tres veces al mismo cliente no es un fallo de reporte: es un fallo de resolución de entidades disfrazado de reporte."
+        "title": "Arquitectura de capa semántica",
+        "body": "La definición acordada codificada una sola vez, de modo que cada herramienta la hereda en lugar de reimplementarla. Cuando cambia, cambia en un sitio."
       },
       {
-        "title": "Productos de datos para decidir",
-        "body": "Reporte acotado a la decisión que sostiene, con dueño y cadencia por escrito. Un cuadro de mando sin decisión asociada es un pasivo de mantenimiento."
+        "title": "Diseño de productos de datos",
+        "body": "Modelos curados construidos sobre fuentes gobernadas y datos maestros, para que una cifra por cliente no cuente en silencio tres veces al mismo cliente."
       },
       {
-        "title": "Autoservicio que sigue siendo fiable",
-        "body": "Permitir a los analistas construir sin que las definiciones vuelvan a divergir: conjuntos certificados, límites claros y una ruta para que una métrica nueva se vuelva oficial."
+        "title": "Linaje del origen a la medida publicada",
+        "body": "La ruta de derivación de una cifra pasa a ser navegable en lugar de reconstruida, que es lo que la hace explicable bajo cuestionamiento."
       },
       {
-        "title": "Racionalización",
-        "body": "Retirar los cuadros de mando que nadie usa, políticamente difícil de verdad y normalmente la mejora de calidad más rápida disponible."
+        "title": "Reglas de calidad en medidas críticas",
+        "body": "Reglas ligadas a las medidas que importan, definidas en la práctica de Gobernanza y MDM y aplicadas donde se produce la métrica."
+      },
+      {
+        "title": "Racionalización y autoservicio gobernado",
+        "body": "Retirar lo que nadie usa, certificar aquello de lo que la gente depende y dar a los analistas una vía clara para construir sin que las definiciones vuelvan a divergir."
+      },
+      {
+        "title": "Diseño del flujo de decisión",
+        "body": "Qué acción debe habilitar una métrica, por parte de quién y cuándo. Un cuadro de mando sin decisión asociada es un pasivo de mantenimiento."
       }
     ],
     "architecture": {
       "title": "Arquitectura de referencia",
-      "description": "Fuentes gobernadas —incluidas entidades maestras y datos de referencia de la práctica de Gobernanza y MDM— alimentan una capa semántica y de métricas donde cada medida se define exactamente una vez. Las herramientas de BI y los productos de datos consumen la capa de métricas en lugar de reimplementar la lógica, que es lo que impide que dos herramientas discrepen. Esos productos se ligan a flujos de decisión concretos, de modo que un informe tiene dueño y cadencia. Definiciones, propiedad y linaje atraviesan todo el recorrido, así que quien mire una cifra puede averiguar qué significa y quién responde por ella.",
+      "description": "Las fuentes gobernadas y los datos maestros —cliente, producto y dominios de referencia de la práctica de Gobernanza y MDM— alimentan productos de datos curados. Encima se sitúa una capa semántica y de métricas que define cada medida exactamente una vez, y las herramientas de BI, la analítica embebida y las aplicaciones de datos consumen esa capa en lugar de reimplementar la lógica. Eso es lo que impide que dos herramientas discrepen. Esos productos se ligan a flujos de decisión concretos, así que un informe tiene dueño y cadencia. Definiciones, propiedad, calidad, linaje, acceso y observabilidad atraviesan todo el recorrido.",
       "layers": [
         {
-          "name": "Fuentes gobernadas",
+          "name": "Fuentes gobernadas y datos maestros",
           "items": [
-            "Conjuntos curados",
+            "Datos de origen curados",
             "Entidades maestras",
-            "Datos de referencia"
+            "Dominios de referencia"
           ]
         },
         {
-          "name": "Capa semántica y de métricas",
+          "name": "Productos de datos curados",
+          "items": [
+            "Conjuntos modelados",
+            "Dimensiones conformadas",
+            "Tablas certificadas"
+          ]
+        },
+        {
+          "name": "Capa semántica / de métricas",
           "items": [
             "Definiciones de métricas",
             "Lógica de negocio",
-            "Conjuntos certificados"
+            "Medidas certificadas"
           ]
         },
         {
-          "name": "BI y productos de datos",
+          "name": "BI, analítica embebida y data apps",
           "items": [
             "Cuadros de mando",
             "Informes",
             "Analítica embebida",
-            "Extracciones"
+            "Data apps"
           ]
         },
         {
@@ -665,26 +713,26 @@ export const LOCALES = {
       ],
       "crossCutting": [
         "Gobernanza: definiciones y propiedad",
+        "Calidad en medidas críticas",
         "Linaje de la métrica al origen",
-        "Monitorización de calidad",
         "Control de acceso",
-        "Gestión del cambio de definiciones"
+        "Observabilidad y frescura"
       ]
     },
     "deliverables": [
-      "Definiciones de métricas acordadas, escritas, cada una con un responsable nombrado",
-      "Una capa semántica o de métricas que codifica esas definiciones una sola vez",
-      "Conjuntos certificados sobre los que los analistas pueden construir sin rederivar lógica",
-      "Reporte reconstruido para las decisiones prioritarias, ligado a dueños y cadencia",
-      "Linaje de cada métrica publicada hasta el origen",
-      "Una lista de racionalización: qué se retira, qué se mantiene y por qué",
-      "Una ruta para que una métrica nueva se vuelva oficial en lugar de proliferar",
-      "Habilitación de tus analistas, para que las definiciones no vuelvan a divergir"
+      "Inventario de métricas y KPI, con los conflictos y las brechas de propiedad nombrados",
+      "Definiciones canónicas y el modelo semántico que las codifica",
+      "Arquitectura analítica objetivo",
+      "Cuadros de mando y productos de datos prioritarios rediseñados en torno a las decisiones que sostienen",
+      "Linaje y controles de calidad para las medidas críticas",
+      "Backlog de racionalización: qué se retira, qué se mantiene y por qué",
+      "Reglas de gobernanza del autoservicio y material de habilitación para tus analistas",
+      "Una vía para que una métrica nueva se vuelva oficial en lugar de proliferar"
     ],
     "process": [
       {
         "step": "Descubrir",
-        "body": "Encontrar dónde la misma medida está definida más de una vez y qué decisiones dependen realmente de ella. El solapamiento suele ser menor y más disputado de lo esperado."
+        "body": "Encontrar dónde la misma medida está definida más de una vez y qué decisiones dependen realmente de ella."
       },
       {
         "step": "Diseñar",
@@ -692,7 +740,7 @@ export const LOCALES = {
       },
       {
         "step": "Entregar",
-        "body": "Construir la capa semántica y reconstruir el reporte prioritario sobre ella, en paralelo con lo existente para poder comparar cifras antes de apagar nada."
+        "body": "Construir la capa semántica y rehacer el reporte prioritario sobre ella, en paralelo con lo existente para poder comparar cifras antes de apagar nada."
       },
       {
         "step": "Habilitar",
@@ -701,29 +749,29 @@ export const LOCALES = {
     ],
     "proof": [
       {
+        "proofType": "priorExperience",
+        "title": "Hacer explicables las cifras regulatorias",
+        "body": "Una institución financiera canadiense entregaba sus cifras regulatorias a tiempo pero no podía demostrar cómo se había derivado una cifra concreta. Cada medida reportada se rastreó hasta el origen y la definición de negocio propietaria se capturó con un responsable nombrado. Las reglas de calidad se ligaron a las propias definiciones, de modo que un incumplimiento nombra a una persona y no a una tabla. Donde dos áreas discrepaban, el desacuerdo salió durante el trabajo y no durante una revisión."
+      },
+      {
         "proofType": "representative",
         "title": "Patrón representativo: dos equipos, dos cifras",
         "body": "Existen cuadros de mando y no se confía en ellos, porque finanzas y operaciones calculan la misma medida de forma distinta y ninguna definición está escrita. El trabajo saca a la luz el desacuerdo en lugar de promediarlo, y luego fija la definición una vez en una capa semántica.",
-        "outcome": "Lo que deja el proyecto: definiciones de métricas acordadas, una capa semántica que las aplica y el reporte reconstruido encima."
-      },
-      {
-        "proofType": "priorExperience",
-        "title": "Un desacuerdo de definición sacado a la luz durante el trabajo",
-        "body": "Una institución financiera canadiense donde cada medida reportada se rastreó a través de sus transformaciones hasta el origen y la definición de negocio propietaria se capturó con un responsable nombrado. Donde dos áreas discrepaban sobre una definición, el desacuerdo salió durante el proyecto y no durante una revisión, que es el más barato de los dos momentos."
+        "outcome": "Lo que deja el proyecto: definiciones acordadas con responsables, una capa semántica que las aplica y una lista de racionalización razonada."
       }
     ],
     "technologies": [
       {
-        "group": "Capas semánticas y de métricas",
+        "group": "Semantic and metrics layers",
         "items": [
           "dbt Semantic Layer",
           "Cube",
           "LookML",
-          "Modelos de Power BI"
+          "Power BI models"
         ]
       },
       {
-        "group": "BI y visualización",
+        "group": "BI and visualisation",
         "items": [
           "Power BI",
           "Tableau",
@@ -732,7 +780,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Gobernanza y catálogo",
+        "group": "Governance and catalog",
         "items": [
           "Collibra",
           "Microsoft Purview",
@@ -741,7 +789,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Plataformas",
+        "group": "Platform",
         "items": [
           "Snowflake",
           "Databricks",
@@ -783,143 +831,159 @@ export const LOCALES = {
     "faqs": [
       {
         "q": "¿Hay que cambiar de herramienta de BI?",
-        "a": "Normalmente no. Que dos herramientas discrepen es síntoma de dos definiciones, no de la herramienta equivocada. Una vez la definición vive en un sitio, la mayoría de herramientas la consumen sin problema, y una migración emprendida para recuperar confianza suele reproducir el problema en una interfaz nueva."
+        "a": "Normalmente no. Que dos herramientas discrepen es síntoma de dos definiciones, no de la herramienta equivocada. Una vez la definición vive en un sitio, la mayoría de herramientas la consumen sin problema."
       },
       {
         "q": "¿Quién decide la definición cuando dos equipos discrepan?",
-        "a": "Vosotros, y nuestro trabajo es hacer posible esa decisión, no tomarla por vosotros. A veces la respuesta honesta es que ambas medidas son legítimas y necesitan nombres distintos; fundirlas en una es el modo de fallo que más queremos evitar."
+        "a": "Vosotros, y nuestro trabajo es hacer posible esa decisión, no tomarla por vosotros. A veces la respuesta honesta es que ambas medidas son legítimas y necesitan nombres distintos."
       },
       {
         "q": "¿Cuánto depende esto de gobernanza y MDM?",
-        "a": "Mucho. Una métrica construida sobre entidades sin resolver estará mal de una forma que ningún cuadro de mando revela: si un cliente aparece tres veces, toda cifra por cliente está mal y parece correcta. Diremos con claridad cuando el problema analítico sea en realidad un problema de entidades."
+        "a": "Mucho. Una métrica construida sobre entidades sin resolver estará mal de una forma que ningún cuadro de mando revela: si un cliente aparece tres veces, toda cifra por cliente está mal y parece correcta."
       },
       {
         "q": "¿Vais a borrar nuestros cuadros de mando?",
-        "a": "Produciremos la lista y el razonamiento; retirarlos es decisión vuestra. La racionalización es políticamente más difícil que técnicamente, así que preferimos entregaros un caso defendible antes que un hecho consumado."
+        "a": "Produciremos la lista y el razonamiento; retirarlos es decisión vuestra. La racionalización es políticamente más difícil que técnicamente."
       },
       {
         "q": "¿Y el autoservicio? No queremos un cuello de botella.",
-        "a": "Nosotros tampoco. El objetivo es que los analistas construyan con libertad sobre conjuntos certificados con definiciones acordadas, más una ruta clara para que una métrica nueva se vuelva oficial. El cuello de botella que se teme suele venir de no tener esa ruta, no de tener gobernanza."
+        "a": "Nosotros tampoco. El objetivo es que los analistas construyan con libertad sobre conjuntos certificados, más una ruta clara para oficializar una métrica nueva. El cuello de botella que se teme viene de no tener esa ruta, no de tener gobernanza."
       },
       {
         "q": "¿Cuánto tarda en cambiar algo?",
-        "a": "El Analytics Health Check dura semanas y es deliberadamente estrecho: dónde divergen las definiciones, qué decisiones dependen de ellas y qué haría falta para arreglar las principales. Una capa semántica completa es un trabajo más largo y debe justificarse con esa revisión, no darse por supuesta."
+        "a": "El Analytics Health Check dura semanas y es deliberadamente estrecho. Una capa semántica completa es un trabajo más largo y debe justificarse con esa revisión, no darse por supuesta."
       },
       {
         "q": "¿Podéis trabajar junto a nuestro equipo de BI?",
-        "a": "Sí, y suele ser la forma correcta. Vuestro equipo conoce el panorama de reporte y la política interna; nosotros aportamos la disciplina de definición y gobernanza. Ambas son necesarias y ninguna basta."
+        "a": "Sí, y suele ser la forma correcta. Vuestro equipo conoce el panorama y la política interna; nosotros aportamos la disciplina de definición y gobernanza."
       }
     ],
     "entryOffer": {
       "id": "analytics_health_check",
       "title": "Analytics Health Check",
       "cta": "Reservar un Analytics Health Check",
-      "body": "Una revisión focalizada para equipos cuyo reporte existe pero no se cree. Dónde la misma medida se define más de una vez, qué decisiones dependen de ella, cuáles son realmente los desacuerdos y una secuencia para arreglar los que importan.",
+      "body": "Una revisión focalizada de consistencia de métricas, arquitectura semántica, proliferación de informes, linaje, calidad de datos y usabilidad para decidir. Terminas con los conflictos nombrados, los responsables identificados y una secuencia para arreglar los que importan.",
       "note": "El alcance y las condiciones comerciales se acuerdan por escrito antes de empezar."
     }
   },
   pt: {
-    "seoTitle": "Consultoria em capacitação em analytics",
-    "seoDescription": "Transformar relatórios em decisões. Definições de métricas acordadas numa camada semântica, construídas sobre dados mestres e de referência governados, para que duas equipes parem de levar dois números à mesma reunião.",
-    "eyebrow": "CAPACITAÇÃO EM ANALYTICS",
-    "h1": "Você tem relatórios. E continua decidindo devagar.",
-    "subhead": "Os painéis existem e ninguém confia neles, porque a mesma medida é calculada de formas diferentes em dois lugares e nenhuma definição está escrita. Fixamos a definição uma vez, numa camada semântica construída sobre dados governados, e reconstruímos os relatórios em cima.",
-    "transformation": "Relatórios → Decisões",
+    "seoTitle": "Consultoria em analytics e inteligência de decisão",
+    "seoDescription": "Métricas confiáveis, definições semânticas governadas e produtos de decisão, para que as pessoas parem de reconciliar números e comecem a agir. Linhagem da métrica até a origem.",
+    "eyebrow": "ANALYTICS E INTELIGÊNCIA DE DECISÃO",
+    "h1": "Dê a cada decisão a mesma versão confiável do negócio.",
+    "subhead": "Conectamos dados governados, definições de métricas compartilhadas e analytics adequado ao propósito, para que as equipes consigam explicar um número, confiar nele e agir, sem refazer a lógica em cada relatório.",
+    "transformation": "Relatórios → Decisões confiáveis",
     "signals": [
-      "Financeiro e operações levam números diferentes da mesma medida à mesma reunião.",
-      "As reuniões começam discutindo os dados em vez de decidir com eles.",
-      "Analistas passam quase a semana refazendo os mesmos números à mão.",
-      "Há mais painéis do que alguém usa, e ninguém quer apagar nenhum.",
-      "Uma definição de métrica existe em três ferramentas e não bate em nenhuma.",
-      "Ninguém sabe dizer quem é dono de um número quando ele parece errado."
+      "Executivos recebem respostas diferentes para a mesma pergunta de negócio.",
+      "Analistas passam mais tempo reconciliando métricas do que interpretando.",
+      "A lógica dos KPIs críticos vive dentro de painéis ou planilhas isoladas.",
+      "O autosserviço produziu mais relatórios, mas não mais consistência.",
+      "Ninguém consegue rastrear com facilidade uma métrica até sua origem e definição.",
+      "As equipes de analytics e IA herdam a mesma ambiguidade semântica."
     ],
     "consequenceFlow": [
       "A mesma medida é definida de formas diferentes em cada ferramenta",
-      "Cada número chega com uma ressalva sobre qual versão é",
-      "As reuniões gastam a primeira metade reconciliando em vez de decidir",
-      "As pessoas recorrem ao relatório em que confiam pessoalmente",
-      "As decisões ficam mais lentas e inconsistentes enquanto o volume de relatórios cresce"
+      "As reuniões começam reconciliando painéis em vez de decidir",
+      "As decisões atrasam e a confiança nos números cai",
+      "As equipes duplicam o esforço de analytics para produzir uma versão em que confiam",
+      "IA e automação de decisão herdam a ambiguidade e a escalam"
     ],
     "consequenceNote": "O problema quase nunca é a ferramenta de BI. É que uma definição nunca foi acordada, então cada ferramenta codifica uma ligeiramente diferente e a divergência aparece na reunião em vez de no desenho.",
     "transformationRows": [
       {
-        "before": "Lógica de métrica copiada em cada painel",
-        "after": "Uma definição numa camada semântica, reutilizada em todo lugar"
+        "before": "Lógica de KPI própria de cada painel",
+        "after": "Definições de métricas compartilhadas e governadas"
       },
       {
-        "before": "Definições que variam por equipe",
-        "after": "Definições acordadas, cada uma com um dono nomeado"
+        "before": "Múltiplas versões da verdade",
+        "after": "Definições de negócio nomeadas, com donos nomeados"
       },
       {
-        "before": "Refazer tudo à mão antes de cada ciclo",
-        "after": "Pipelines governados alimentando a camada de métricas"
+        "before": "Reconciliação manual",
+        "after": "Uma camada semântica e de métricas consistente"
       },
       {
-        "before": "Painéis sem confiança e sem aposentadoria",
-        "after": "Um conjunto menor que é usado, com o resto descomissionado"
+        "before": "Cálculos opacos",
+        "after": "Linhagem navegável da métrica até a origem"
       },
       {
-        "before": "Números sem dono",
-        "after": "Propriedade visível onde o número é consumido"
+        "before": "Proliferação de relatórios",
+        "after": "Produtos de decisão construídos com propósito"
       },
       {
-        "before": "Relatório como saída",
-        "after": "Relatório ligado à decisão que sustenta"
+        "before": "Dependência do analista",
+        "after": "Autosserviço governado com limites claros"
       }
     ],
     "capabilities": [
       {
-        "title": "Definição e propriedade de métricas",
-        "body": "Levar financeiro, operações e negócio a uma definição escrita por medida, com um dono. É mais um problema de facilitação do que técnico, e fingir o contrário é o motivo pelo qual camadas semânticas são construídas duas vezes."
+        "title": "Inventário e racionalização de métricas",
+        "body": "Encontrar cada lugar onde uma medida é definida e quantas dessas definições de fato divergem. A sobreposição costuma ser menor e mais disputada do que se espera."
       },
       {
-        "title": "Camada semântica e de métricas",
-        "body": "A definição acordada codificada uma única vez, de modo que cada ferramenta a herda em vez de reimplementá-la. Quando a definição muda, muda num lugar só e todos os consumidores acompanham."
+        "title": "Glossário de negócio e propriedade",
+        "body": "Definições ligadas ao analytics, com um dono por termo e não um comitê. Propriedade compartilhada de uma definição é exatamente o que produz dois números."
       },
       {
-        "title": "Fundações governadas",
-        "body": "Métricas construídas sobre entidades mestras e dados de referência da prática de Governança e MDM. Um número de receita que conta silenciosamente o mesmo cliente três vezes não é um bug de relatório: é um bug de resolução de entidades fantasiado de relatório."
+        "title": "Arquitetura de camada semântica",
+        "body": "A definição acordada codificada uma única vez, de modo que cada ferramenta a herda em vez de reimplementá-la. Quando muda, muda num lugar só."
       },
       {
-        "title": "Produtos de dados para decisão",
-        "body": "Relatório delimitado pela decisão que sustenta, com dono e cadência por escrito. Um painel sem decisão associada é um passivo de manutenção."
+        "title": "Desenho de produtos de dados",
+        "body": "Modelos curados construídos sobre fontes governadas e dados mestres, para que um número por cliente não conte silenciosamente o mesmo cliente três vezes."
       },
       {
-        "title": "Autosserviço que continua confiável",
-        "body": "Permitir que analistas construam sem que as definições voltem a divergir: conjuntos certificados, fronteiras claras e um caminho para uma métrica nova se tornar oficial."
+        "title": "Linhagem da origem até a medida publicada",
+        "body": "O caminho de derivação de um número passa a ser navegável em vez de reconstruído, o que o torna explicável sob questionamento."
       },
       {
-        "title": "Racionalização",
-        "body": "Aposentar os painéis que ninguém usa, politicamente difícil de verdade e normalmente a melhoria de qualidade mais rápida disponível."
+        "title": "Regras de qualidade em medidas críticas",
+        "body": "Regras ligadas às medidas que importam, definidas na prática de Governança e MDM e aplicadas onde a métrica é produzida."
+      },
+      {
+        "title": "Racionalização e autosserviço governado",
+        "body": "Aposentar o que ninguém usa, certificar aquilo de que as pessoas dependem e dar aos analistas um caminho claro para construir sem que as definições voltem a divergir."
+      },
+      {
+        "title": "Desenho do fluxo de decisão",
+        "body": "Que ação uma métrica deve habilitar, por quem e quando. Um painel sem decisão associada é um passivo de manutenção."
       }
     ],
     "architecture": {
       "title": "Arquitetura de referência",
-      "description": "Fontes governadas — incluindo entidades mestras e dados de referência da prática de Governança e MDM — alimentam uma camada semântica e de métricas onde cada medida é definida exatamente uma vez. Ferramentas de BI e produtos de dados consomem a camada de métricas em vez de reimplementar a lógica, que é o que impede duas ferramentas de discordarem. Esses produtos são ligados a fluxos de decisão específicos, então um relatório tem dono e cadência. Definições, propriedade e linhagem atravessam todo o caminho, para que quem olha um número consiga descobrir o que ele significa e quem responde por ele.",
+      "description": "Fontes governadas e dados mestres — cliente, produto e domínios de referência da prática de Governança e MDM — alimentam produtos de dados curados. Acima deles fica uma camada semântica e de métricas que define cada medida exatamente uma vez, e ferramentas de BI, analytics embarcado e data apps consomem essa camada em vez de reimplementar a lógica. É isso que impede duas ferramentas de discordarem. Esses produtos se ligam a fluxos de decisão específicos, então um relatório tem dono e cadência. Definições, propriedade, qualidade, linhagem, acesso e observabilidade atravessam todo o caminho.",
       "layers": [
         {
-          "name": "Fontes governadas",
+          "name": "Fontes governadas e dados mestres",
           "items": [
-            "Conjuntos curados",
+            "Dados de origem curados",
             "Entidades mestras",
-            "Dados de referência"
+            "Domínios de referência"
           ]
         },
         {
-          "name": "Camada semântica e de métricas",
+          "name": "Produtos de dados curados",
+          "items": [
+            "Conjuntos modelados",
+            "Dimensões conformadas",
+            "Tabelas certificadas"
+          ]
+        },
+        {
+          "name": "Camada semântica / de métricas",
           "items": [
             "Definições de métricas",
             "Lógica de negócio",
-            "Conjuntos certificados"
+            "Medidas certificadas"
           ]
         },
         {
-          "name": "BI e produtos de dados",
+          "name": "BI, analytics embarcado e data apps",
           "items": [
             "Painéis",
             "Relatórios",
             "Analytics embarcado",
-            "Extrações"
+            "Data apps"
           ]
         },
         {
@@ -933,34 +997,34 @@ export const LOCALES = {
       ],
       "crossCutting": [
         "Governança: definições e propriedade",
+        "Qualidade em medidas críticas",
         "Linhagem da métrica até a origem",
-        "Monitoramento de qualidade",
         "Controle de acesso",
-        "Gestão de mudança de definições"
+        "Observabilidade e frescor"
       ]
     },
     "deliverables": [
-      "Definições de métricas acordadas, escritas, cada uma com um dono nomeado",
-      "Uma camada semântica ou de métricas que codifica essas definições uma única vez",
-      "Conjuntos certificados sobre os quais analistas podem construir sem rederivar lógica",
-      "Relatórios reconstruídos para as decisões prioritárias, ligados a donos e cadência",
-      "Linhagem de cada métrica publicada até a origem",
-      "Uma lista de racionalização: o que é aposentado, o que é mantido e por quê",
-      "Um caminho para uma métrica nova se tornar oficial em vez de proliferar",
-      "Capacitação dos seus analistas, para que as definições não voltem a divergir"
+      "Inventário de métricas e KPIs, com as divergências e lacunas de propriedade nomeadas",
+      "Definições canônicas e o modelo semântico que as codifica",
+      "Arquitetura-alvo de analytics",
+      "Painéis e produtos de dados prioritários redesenhados em torno das decisões que sustentam",
+      "Linhagem e controles de qualidade para as medidas críticas",
+      "Backlog de racionalização: o que é aposentado, o que é mantido e por quê",
+      "Regras de governança do autosserviço e material de capacitação para seus analistas",
+      "Um caminho para uma métrica nova se tornar oficial em vez de proliferar"
     ],
     "process": [
       {
         "step": "Descobrir",
-        "body": "Encontrar onde a mesma medida está definida mais de uma vez e quais decisões realmente dependem dela. A sobreposição costuma ser menor e mais disputada do que se espera."
+        "body": "Encontrar onde a mesma medida é definida mais de uma vez e quais decisões realmente dependem dela."
       },
       {
         "step": "Projetar",
-        "body": "Facilitar o acordo sobre definições e propriedade. Onde duas áreas realmente precisam de medidas diferentes, damos nomes diferentes em vez de fingir que uma está errada."
+        "body": "Facilitar o acordo sobre definições e propriedade. Onde duas áreas precisam de fato de medidas diferentes, damos nomes diferentes em vez de fingir que uma está errada."
       },
       {
         "step": "Entregar",
-        "body": "Construir a camada semântica e reconstruir os relatórios prioritários sobre ela, em paralelo com o que existe para que os números possam ser comparados antes de desligar qualquer coisa."
+        "body": "Construir a camada semântica e refazer os relatórios prioritários sobre ela, em paralelo com o que existe para comparar os números antes de desligar qualquer coisa."
       },
       {
         "step": "Habilitar",
@@ -969,29 +1033,29 @@ export const LOCALES = {
     ],
     "proof": [
       {
+        "proofType": "priorExperience",
+        "title": "Tornar explicáveis os números regulatórios",
+        "body": "Uma instituição financeira canadense entregava seus números regulatórios no prazo mas não conseguia demonstrar como um determinado número fora derivado. Cada medida reportada foi rastreada até a origem e a definição de negócio responsável capturada com um dono nomeado. As regras de qualidade foram ligadas às próprias definições, de modo que uma violação nomeia uma pessoa e não uma tabela. Onde duas áreas discordavam, a divergência apareceu durante o trabalho e não durante uma revisão."
+      },
+      {
         "proofType": "representative",
         "title": "Padrão representativo: duas equipes, dois números",
         "body": "Painéis existem e não são confiáveis, porque financeiro e operações calculam a mesma medida de formas diferentes e nenhuma definição está escrita. O trabalho traz a divergência à tona em vez de tirar a média, e então fixa a definição uma vez numa camada semântica.",
-        "outcome": "O que o projeto deixa: definições de métricas acordadas, uma camada semântica que as aplica e os relatórios reconstruídos em cima."
-      },
-      {
-        "proofType": "priorExperience",
-        "title": "Uma divergência de definição trazida à tona durante o trabalho",
-        "body": "Uma instituição financeira canadense onde cada medida reportada foi rastreada por suas transformações até a origem e a definição de negócio responsável capturada com um dono nomeado. Onde duas áreas discordavam de uma definição, a divergência apareceu durante o projeto e não durante uma revisão, que é o mais barato dos dois momentos."
+        "outcome": "O que o projeto deixa: definições acordadas com donos, uma camada semântica que as aplica e uma lista de racionalização fundamentada."
       }
     ],
     "technologies": [
       {
-        "group": "Camadas semânticas e de métricas",
+        "group": "Semantic and metrics layers",
         "items": [
           "dbt Semantic Layer",
           "Cube",
           "LookML",
-          "Modelos do Power BI"
+          "Power BI models"
         ]
       },
       {
-        "group": "BI e visualização",
+        "group": "BI and visualisation",
         "items": [
           "Power BI",
           "Tableau",
@@ -1000,7 +1064,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Governança e catálogo",
+        "group": "Governance and catalog",
         "items": [
           "Collibra",
           "Microsoft Purview",
@@ -1009,7 +1073,7 @@ export const LOCALES = {
         ]
       },
       {
-        "group": "Plataformas",
+        "group": "Platform",
         "items": [
           "Snowflake",
           "Databricks",
@@ -1051,38 +1115,38 @@ export const LOCALES = {
     "faqs": [
       {
         "q": "Precisamos trocar de ferramenta de BI?",
-        "a": "Normalmente não. Duas ferramentas discordando é sintoma de duas definições, não da ferramenta errada. Uma vez que a definição vive num lugar só, a maioria das ferramentas a consome sem problema, e uma migração feita para recuperar confiança costuma reproduzir o problema numa interface nova."
+        "a": "Normalmente não. Duas ferramentas discordando é sintoma de duas definições, não da ferramenta errada. Uma vez que a definição vive num lugar só, a maioria das ferramentas a consome sem problema."
       },
       {
         "q": "Quem decide a definição quando duas equipes discordam?",
-        "a": "Vocês, e o trabalho é tornar essa decisão possível, não tomá-la por vocês. Às vezes a resposta honesta é que ambas as medidas são legítimas e precisam de nomes diferentes; fundi-las numa só é o modo de falha que mais queremos evitar."
+        "a": "Vocês, e o trabalho é tornar essa decisão possível, não tomá-la por vocês. Às vezes a resposta honesta é que ambas as medidas são legítimas e precisam de nomes diferentes."
       },
       {
         "q": "O quanto isso depende de governança e MDM?",
-        "a": "Muito. Uma métrica construída sobre entidades não resolvidas estará errada de um jeito que nenhum painel revela: se um cliente aparece três vezes, todo número por cliente está errado e parece certo. Diremos com clareza quando o problema de analytics for, na verdade, um problema de entidades."
+        "a": "Muito. Uma métrica construída sobre entidades não resolvidas estará errada de um jeito que nenhum painel revela: se um cliente aparece três vezes, todo número por cliente está errado e parece certo."
       },
       {
         "q": "Vocês vão apagar nossos painéis?",
-        "a": "Produziremos a lista e o raciocínio; aposentá-los é decisão de vocês. Racionalização é politicamente mais difícil do que tecnicamente, então preferimos entregar um caso defensável a um fato consumado."
+        "a": "Produziremos a lista e o raciocínio; aposentá-los é decisão de vocês. Racionalização é politicamente mais difícil do que tecnicamente."
       },
       {
         "q": "E o autosserviço? Não queremos um gargalo.",
-        "a": "Nem nós. O objetivo é analistas construindo livremente sobre conjuntos certificados com definições acordadas, mais um caminho claro para uma métrica nova se tornar oficial. O gargalo que se teme costuma vir de não existir esse caminho, não de existir governança."
+        "a": "Nem nós. O objetivo é analistas construindo livremente sobre conjuntos certificados, mais um caminho claro para oficializar uma métrica nova. O gargalo temido vem de não existir esse caminho, não de existir governança."
       },
       {
         "q": "Em quanto tempo algo muda?",
-        "a": "O Analytics Health Check dura semanas e é deliberadamente estreito: onde as definições divergem, quais decisões dependem delas e o que seria preciso para corrigir as principais. Uma camada semântica completa é um trabalho mais longo e deve ser justificada por essa revisão, não presumida."
+        "a": "O Analytics Health Check dura semanas e é deliberadamente estreito. Uma camada semântica completa é um trabalho mais longo e deve ser justificada por essa revisão, não presumida."
       },
       {
         "q": "Vocês conseguem trabalhar ao lado da nossa equipe de BI?",
-        "a": "Sim, e normalmente é o formato certo. Sua equipe conhece o cenário de relatórios e a política interna; nós trazemos a disciplina de definição e governança. Ambas são necessárias e nenhuma é suficiente."
+        "a": "Sim, e normalmente é o formato certo. Sua equipe conhece o cenário e a política interna; nós trazemos a disciplina de definição e governança."
       }
     ],
     "entryOffer": {
       "id": "analytics_health_check",
       "title": "Analytics Health Check",
       "cta": "Agendar um Analytics Health Check",
-      "body": "Uma revisão focada para equipes cujos relatórios existem mas não são confiáveis. Onde a mesma medida é definida mais de uma vez, quais decisões dependem dela, quais são de fato as divergências e uma sequência para corrigir as que importam.",
+      "body": "Uma revisão focada de consistência de métricas, arquitetura semântica, proliferação de relatórios, linhagem, qualidade de dados e usabilidade para decidir. Você termina com as divergências nomeadas, os donos identificados e uma sequência para corrigir as que importam.",
       "note": "Escopo e condições comerciais são acordados por escrito antes do início."
     }
   },
