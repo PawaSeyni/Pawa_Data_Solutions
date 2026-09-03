@@ -293,15 +293,19 @@ export default function DeepSolution({ language }) {
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
                 </a>
               )}
+              {/* Sprint 8 §10 made "Talk to a Practitioner" the secondary CTA
+                  tier and gave it a destination — /contact/. This pointed at
+                  About until Sprint 7C caught it: a secondary conversion CTA was
+                  sending people to a biography instead of a way to make contact. */}
               <Link
-                to={createPageUrl('About', language)}
+                to={createPageUrl('Contact', language)}
                 onClick={() => {
-                  trackCta({ label: 'talk_to_practitioner', location: 'page_end', page: c.pageName, language });
+                  trackCta({ label: 'talk_to_practitioner', location: CTA_LOCATIONS.PAGE_END, page: c.pageName, language });
                   window.scrollTo(0, 0);
                 }}
                 className="font-medium text-gray-700 hover:text-blue-600"
               >
-                {t.solutionTalkToPractitioner}
+                {t.ctaTalkToPractitioner}
               </Link>
             </div>
           </div>

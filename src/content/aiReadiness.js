@@ -2,7 +2,18 @@
 //
 // Content only; DeepSolution.jsx renders it. See src/lib/solutionSchema.js.
 //
-// Five architecture stages rather than six or seven, and the cross-cutting plane
+// Rewritten to the Sprint 7C page specification. Six architecture layers now,
+// not five: "Trust & context" became its own stage rather than being folded into
+// governed data, and a "Human & business layer" was added — review and approval
+// are part of the architecture, not something that happens beside it. Monitoring
+// moved into the cross-cutting plane where it belongs.
+//
+// The spec's critical message (§8) is that MDM is NOT mandatory for every AI use
+// case. The previous copy read as though it were. Mastering now appears as
+// conditional authoritative context, and the FAQ says plainly that we would
+// rather tell you MDM is not your constraint than sell a programme for it.
+//
+// Original note: the cross-cutting plane
 // covers agent ACTIONS as well as data — an agent that can act is a different
 // governance problem from one that can only answer. §12A puts the AI governance
 // framework on the Governance & MDM page; this page applies it to real use cases.
@@ -15,177 +26,213 @@ export const IDENTITY = {
 
 export const LOCALES = {
   en: {
-    "seoTitle": "AI Readiness Consulting",
-    "seoDescription": "Assess whether your data can support AI in production: entity resolution, provenance, permitted use, retrieval and access governance, plus the AI governance controls around models and agents.",
-    "eyebrow": "AI READINESS",
-    "h1": "Your AI ambition is ahead of your data. Most are.",
-    "subhead": "Pilots work and production stalls, because the model was never the constraint. We assess whether your data is accurate, permitted, resolvable to a single entity and reachable under control — then build the governed context and access layer that AI systems and agents actually need.",
-    "transformation": "Experimentation → Production readiness",
+    "seoTitle": "AI Readiness & Governance Consulting",
+    "seoDescription": "Prepare trusted data, governed enterprise context and production controls for AI models and agents. Senior-led, vendor-neutral, with access governance and evaluation built in.",
+    "eyebrow": "AI READINESS & GOVERNANCE",
+    "h1": "Your AI is only as ready as the data and controls behind it.",
+    "subhead": "We help teams prepare trusted data, governed enterprise context and production controls for AI, so models and agents can use the right information, through the right access paths, with clear accountability.",
+    "transformation": "Experimentation → Governed production readiness",
     "signals": [
-      "Pilots demo well and never reach production, and nobody can name the blocker.",
-      "An assistant answers confidently from a document that was superseded months ago.",
-      "Nobody can say which data a use case is lawfully permitted to use.",
-      "The same customer appears three ways, so the model has no stable notion of who it is talking about.",
-      "Agents are being given broad access because scoping it properly is hard.",
-      "There is no inventory of AI use cases, owners or risk levels."
+      "Pilots work on curated samples and fail once connected to real enterprise data.",
+      "Nobody can say which customer, product or supplier record an AI system should trust.",
+      "Sensitive data can technically be reached, but permitted use by models or agents is unclear.",
+      "Different teams are building separate RAG, agent and model patterns with no common controls.",
+      "No one owns the approval path from experiment to production.",
+      "Model, prompt, retrieval and data changes are hard to reconstruct after deployment.",
+      "Human review happens by convention; escalation and override boundaries are not written down.",
+      "Leadership is asking for AI progress while quality, lineage and ownership remain unresolved."
     ],
     "consequenceFlow": [
-      "Enterprise data is inaccessible, ungoverned or unresolvable to a single entity",
-      "Teams work around it with copies, exports and broad access grants",
-      "Outputs cannot be traced to a trusted source record",
-      "Nobody will sign off the use case for production",
-      "The pilot is quietly retired and the ambition moves to the next one"
+      "Fragmented or poorly governed data",
+      "Ambiguous enterprise context — no agreed answer to who or what a record refers to",
+      "Uncontrolled AI access to that context",
+      "Inconsistent outputs and weak traceability",
+      "Production approval stalls, operational risk rises, trust falls"
     ],
-    "consequenceNote": "AI does not fail on model quality nearly as often as it fails on inputs and permission. An agent with broad access to inconsistent data is not an AI problem; it is a governance problem that now runs at machine speed.",
+    "consequenceNote": "None of these are model problems, which is why buying a better model does not move them. The constraint is what the model is allowed to see, whether that information is trustworthy, and who is accountable when it is wrong.",
     "transformationRows": [
       {
-        "before": "Pilots that stall before production",
-        "after": "Use cases with a named owner and a route to sign-off"
+        "before": "Pilots built around convenient data",
+        "after": "Use cases tied to governed data and knowledge sources"
       },
       {
-        "before": "Raw source access for models and agents",
-        "after": "Authoritative entity views exposed through controlled services"
+        "before": "Conflicting customer and product identities",
+        "after": "Authoritative mastered entities and controlled context, where the use case needs them"
       },
       {
-        "before": "Unknown provenance",
-        "after": "Outputs traceable to trusted enterprise records"
+        "before": "Broad or ad-hoc data access",
+        "after": "Purpose-based access paths and policy controls"
       },
       {
-        "before": "Broad, undocumented agent permissions",
-        "after": "Scoped access governance for data, tools and actions"
+        "before": "Unclear AI ownership",
+        "after": "Named use-case, data, model and control owners"
       },
       {
-        "before": "No AI inventory",
-        "after": "Use-case register with risk tiers and control requirements"
+        "before": "One-time pre-launch testing",
+        "after": "Evaluation gates plus ongoing monitoring"
       },
       {
-        "before": "Evaluation as a demo",
-        "after": "Evaluation gates, drift monitoring and incident response"
+        "before": "Prompt, model and data changes hard to reconstruct",
+        "after": "Versioning, lineage and retained evidence"
+      },
+      {
+        "before": "Human review by convention",
+        "after": "Defined human-in-the-loop and escalation boundaries"
+      },
+      {
+        "before": "AI governance as a policy document",
+        "after": "Controls embedded in the architecture and the lifecycle"
       }
     ],
     "capabilities": [
       {
-        "title": "AI data readiness assessment",
-        "body": "Whether the data behind each approved use case is accurate, complete, permitted and resolvable. Assessed per use case, because readiness is not a property of an organisation — it is a property of a specific use case and the data it touches."
+        "title": "Readiness assessment",
+        "body": "Inventory the priority use cases, then evaluate the data, context, access, governance, architecture and operating gaps each one actually has. Readiness is a property of a use case, not of an organisation."
       },
       {
-        "title": "Mastered entities as AI context",
-        "body": "AI systems need authoritative context, not more raw data. Trusted customer, product, supplier, organisation and location entities give consistent identity, relationships and attributes, so an agent knows that three records are one customer."
+        "title": "Trusted data foundation",
+        "body": "Identify the authoritative sources, the quality requirements, the transformations and the serving patterns a given AI use case depends on — and say plainly which of them do not exist yet."
       },
       {
-        "title": "Retrieval and knowledge access",
-        "body": "How content is chunked, indexed, refreshed and permissioned, and how superseded material is retired. Most confidently wrong answers are retrieval problems rather than model problems."
+        "title": "Mastered enterprise context",
+        "body": "Where a use case depends on consistent customer, product, supplier, organisation or location identity, MDM and entity resolution supply it. Where it does not, we say so rather than selling a mastering programme the use case cannot justify."
       },
       {
-        "title": "Access governance for agents",
-        "body": "Scoped access to data, tools and actions, with permitted-use rules applied to the attributes surfaced to a model. Broad access granted because scoping was hard is the most common finding we see."
+        "title": "Knowledge and retrieval architecture",
+        "body": "Governed retrieval and context patterns, metadata, refresh and retirement, and the access boundaries appropriate to the use case. Most confidently wrong answers are retrieval failures, not model failures."
       },
       {
-        "title": "AI governance in practice",
-        "body": "Use-case intake and approval, risk tiering, model and agent documentation, versioning and traceability, human-in-the-loop boundaries and escalation. The framework lives on the Governance & MDM page; this is where it meets a real use case."
+        "title": "AI governance",
+        "body": "Use-case intake, risk tiering, approvals, accountability, evidence and lifecycle controls. The enterprise framework lives on the Governance & MDM page; here it meets a real use case."
+      },
+      {
+        "title": "Agent and model access governance",
+        "body": "Which data, tools and actions a model or agent can reach, with least privilege and human approval boundaries defined before build. An agent that can act is a different governance problem from one that can only answer."
       },
       {
         "title": "Evaluation and monitoring",
-        "body": "Evaluation gates before release, then drift, quality and incident signals afterwards, with an owner. A model that was evaluated once at launch is unmonitored, not governed."
+        "body": "Pre-production evaluation gates, then production quality, safety and operational monitoring with an owner. A model evaluated once at launch is unmonitored, not governed."
+      },
+      {
+        "title": "Enablement and handover",
+        "body": "Architecture decisions, control mappings, runbooks and ownership left with your team. An AI governance function that depends on an external firm cannot make a timely decision."
       }
     ],
     "architecture": {
-      "title": "Reference architecture: governed context for AI",
-      "description": "Source systems and content feed a governed data and knowledge layer, where mastered entities supply authoritative identity and attributes rather than raw records. A retrieval and access layer exposes that context through controlled services, applying permitted-use rules per attribute, so a model or agent receives a scoped view rather than a database connection. AI services and agents sit above it, and everything they do is monitored and evaluated. AI governance, provenance, lineage, security and human oversight span the whole flow — including the actions an agent takes, which is the part most architectures leave out.",
+      "title": "Reference architecture",
+      "description": "Enterprise sources feed a trust and context layer — quality, entity resolution where identity matters, reference data, metadata and lineage. That produces governed data and knowledge: curated data products, semantic context and controlled retrieval. An AI access layer sits between that and the models: APIs, retrieval services, tool gateways, policy enforcement and identity. AI services consume it, and a human layer holds review, approval and escalation. AI governance, privacy and security, observability, evaluation and audit evidence span the whole stack, including the actions an agent takes. One thing this diagram does NOT say: that every AI use case needs a centralised MDM hub. Mastering earns its place where entity identity is what the use case turns on, and not otherwise.",
       "layers": [
         {
-          "name": "Sources & content",
+          "name": "Enterprise sources",
           "items": [
-            "Operational systems",
+            "CRM",
+            "ERP",
+            "Operational databases",
+            "SaaS",
             "Documents",
-            "Knowledge bases",
-            "External data"
+            "APIs",
+            "Event streams"
+          ]
+        },
+        {
+          "name": "Trust & context",
+          "items": [
+            "Data quality",
+            "MDM / entity resolution",
+            "Reference data",
+            "Metadata",
+            "Lineage"
           ]
         },
         {
           "name": "Governed data & knowledge",
           "items": [
-            "Mastered entities",
-            "Curated datasets",
-            "Indexed content",
-            "Provenance"
+            "Curated data products",
+            "Semantic context",
+            "Knowledge stores",
+            "Controlled retrieval"
           ]
         },
         {
-          "name": "Retrieval & access",
+          "name": "AI access layer",
           "items": [
-            "Controlled APIs",
-            "Entity views",
-            "Permitted-use rules",
-            "Scoped context"
+            "APIs",
+            "Retrieval services",
+            "Tool gateways",
+            "Policy enforcement",
+            "Identity and access"
           ]
         },
         {
-          "name": "AI services & agents",
+          "name": "AI services",
           "items": [
             "Models",
-            "Agents and tools",
-            "Orchestration",
-            "Human-in-the-loop"
+            "RAG applications",
+            "Copilots",
+            "Agents",
+            "Decision services"
           ]
         },
         {
-          "name": "Monitoring & evaluation",
+          "name": "Human & business layer",
           "items": [
-            "Evaluation gates",
-            "Drift and quality signals",
-            "Incident response"
+            "Review",
+            "Approval",
+            "Escalation",
+            "Operations",
+            "Business workflows"
           ]
         }
       ],
       "crossCutting": [
-        "AI governance and use-case risk tiering",
-        "Provenance and lineage",
-        "Access governance for data, tools and actions",
-        "Security",
-        "Human oversight and audit evidence"
+        "AI governance",
+        "Privacy and security",
+        "Observability",
+        "Evaluation",
+        "Audit evidence",
+        "Lifecycle management"
       ]
     },
     "deliverables": [
-      "AI use-case inventory with owners, risk tiers and control requirements per tier",
-      "Data readiness findings per use case, with the blockers named rather than scored",
-      "Entity resolution and mastered-context assessment for the entities the use cases depend on",
-      "Retrieval and knowledge design: chunking, refresh, retirement of superseded content",
-      "Access governance model for agents, covering data, tools and actions",
-      "Permitted-use rules for attributes surfaced to models and agents",
-      "Evaluation gate design and the monitoring signals to run afterwards",
-      "Human-in-the-loop and escalation boundaries, written down",
-      "A sequenced roadmap from the current state to a use case that can go to production"
+      "AI readiness scorecard by priority use case, with the blockers named rather than scored",
+      "Current-state risk and dependency map",
+      "Authoritative data and context map, including where MDM is genuinely needed and where it is not",
+      "Target AI data and knowledge architecture",
+      "AI access-control and governance design covering data, tools and actions",
+      "Use-case risk and control matrix with the approval flow",
+      "Evaluation and monitoring requirements",
+      "Prioritised remediation backlog and sequenced roadmap",
+      "Architecture decision records, ownership model and handover documentation"
     ],
     "process": [
       {
         "step": "Discover",
-        "body": "Inventory the AI use cases that already exist, including the ones running outside any programme, and identify what data each actually touches."
+        "body": "Prioritise the use cases, including the ones running outside any programme, then inspect the data, knowledge, architecture, governance and operating constraints each one meets."
       },
       {
         "step": "Design",
-        "body": "Risk-tier the use cases, then assess data readiness and access for the ones that matter. Governed context and permitted-use rules are designed per tier, not once for everything."
+        "body": "Define the target data and context architecture, the controls, the access patterns and the decision rights. Designed per risk tier, not once for everything."
       },
       {
-        "step": "Deliver",
-        "body": "Build the governed context and access layer for the highest-value use case that can realistically reach production, and the evaluation gate it has to pass."
+        "step": "Prove",
+        "body": "Where scope calls for it, validate a bounded architecture and control pattern against one priority use case, rather than asserting the design will hold."
       },
       {
         "step": "Enable",
-        "body": "Hand over the intake process, the risk tiering and the monitoring practice, so the next use case does not need us."
+        "body": "Transfer the decisions, artifacts, runbooks, ownership and the roadmap for what comes next."
       }
     ],
     "proof": [
       {
-        "proofType": "priorExperience",
-        "title": "Entity resolution as the foundation for a single customer view",
-        "body": "A Tier 1 North American bank where retail, commercial and wealth each held their own version of a customer. The mastered record and the lineage back to every contributing source are exactly what an AI system needs in order to answer a question about a customer consistently — the same work that served financial crime investigators serves an agent that has to know which records are one person."
+        "proofType": "representative",
+        "title": "Representative architecture: AI readiness in a regulated enterprise",
+        "body": "A financial institution with approved AI use cases and no agreed answer on whether the underlying data may lawfully be used. The pattern shows how the pieces interact: entity resolution supplies a stable notion of who a customer is, governed retrieval decides what an assistant may see, lineage lets an output be traced back to a real record, and a written human approval boundary governs anything that acts rather than answers. Each piece is ordinary; the readiness is in how they connect.",
+        "outcome": "What the engagement leaves behind: a use-case risk and control matrix, the access design agents will operate under, and a sequenced view of what must change before production."
       },
       {
-        "proofType": "representative",
-        "title": "Representative pattern: an assistant that is confidently wrong",
-        "body": "An internal assistant answering from a knowledge base where superseded policy documents were never retired and access was granted at the folder level. The finding is almost never the model: it is that retrieval has no notion of currency and no permission boundary, so the assistant is accurately reporting the wrong document to the wrong person.",
-        "outcome": "What the engagement leaves behind: a retrieval design with refresh and retirement rules, permission boundaries applied at query time, and an evaluation gate that tests for exactly this failure."
+        "proofType": "priorExperience",
+        "title": "Entity resolution as the foundation for a single customer view",
+        "body": "A Tier 1 North American bank where retail, commercial and wealth each held their own version of a customer. The mastered record and the lineage back to every contributing source are exactly what an AI system needs to answer a question about a customer consistently — the same work that served financial crime investigators serves an agent that has to know which records are one person."
       }
     ],
     "technologies": [
@@ -225,47 +272,17 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "AI readiness work is led by our principal, whose background is entity resolution, MDM, governance and lineage for Tier 1 financial institutions. That matters here because AI readiness is mostly those disciplines applied to a new consumer — the questions an auditor asks about a regulatory figure are the questions you should be asking about a model's inputs.",
+    "practitionerNote": "AI readiness work is led by our principal, whose background is enterprise data architecture, governance, MDM and entity resolution, lineage and financial-services controls — plus fifteen years translating vendor capability into production operating patterns. That matters here because the questions an auditor asks about a regulatory figure are the questions you should be asking about a model's inputs.",
     "relatedInsights": [
-      {
-        "kind": "Article",
-        "label": "The Governance Crisis: The Reckoning Deepens",
-        "href": "https://papanguer.com/writing/the-governance-crisis-the-reckoning-deepens/"
-      },
       {
         "kind": "Solution",
         "label": "Data Governance & MDM — where the AI governance framework lives",
         "href": "/solutions/data-governance/"
-      }
-    ],
-    "faqs": [
-      {
-        "q": "Do we need our data perfect before we start with AI?",
-        "a": "No, and waiting for that is its own failure mode. Readiness is per use case: a use case touching three well-understood entities can proceed while the rest of the estate is still messy. What you should not do is start with the use case that depends on your worst data because it has the most exciting demo."
       },
       {
-        "q": "Is this a model selection exercise?",
-        "a": "No. Model choice is the least durable decision in the stack and the easiest to change later. This work is about inputs, access, context and control, which is where production sign-off actually gets blocked."
-      },
-      {
-        "q": "How does MDM relate to AI readiness?",
-        "a": "Mastered entities are the authoritative context layer. An agent that cannot tell that three records are one customer will give three answers, and no amount of prompt work fixes that. Trusted entities also carry provenance and match confidence, so an output can be traced back to a real record."
-      },
-      {
-        "q": "What about agents that take actions, not just answer questions?",
-        "a": "That raises the stakes and the governance requirement. Access governance has to cover tools and actions, not only data, and the human-in-the-loop boundary has to be written down before build rather than discovered after an incident. We treat action-taking agents as a higher risk tier by default."
-      },
-      {
-        "q": "Who owns AI governance, us or you?",
-        "a": "You do. We build the intake process, risk tiering, evaluation gates and monitoring practice, and hand them over. An AI governance function that depends on an external firm cannot make a timely decision, which defeats the point of having one."
-      },
-      {
-        "q": "How is the AI Readiness Assessment different from the Data Health Check?",
-        "a": "The Data Health Check looks across the whole estate. The AI Readiness Assessment starts from your AI use cases and works backwards to the data, access and controls each one needs. If you have approved use cases and stalled pilots, start here; if you do not yet know where the problems are, start with the Health Check."
-      },
-      {
-        "q": "What if we have no AI use cases yet?",
-        "a": "Then this is early, and we will say so. The honest sequence is usually governance and mastered entities first, because they are what any future use case will need and they pay for themselves in reporting and risk regardless of whether the AI programme ever happens."
+        "kind": "Assessment",
+        "label": "Data Health Check — if you do not yet know whether the constraint is AI-specific",
+        "href": "/data-health-check/"
       }
     ],
     "relatedSolutions": [
@@ -275,9 +292,9 @@ export const LOCALES = {
         "why": "The AI governance framework and the mastered entities AI needs as context."
       },
       {
-        "label": "Data Integration",
+        "label": "Integration & Data Engineering",
         "href": "/solutions/data-integration/",
-        "why": "Getting the data reachable in the first place."
+        "why": "Getting the data reachable and reliable in the first place."
       },
       {
         "label": "Process Automation",
@@ -285,186 +302,252 @@ export const LOCALES = {
         "why": "Where agents that take actions meet human review boundaries."
       }
     ],
+    "faqs": [
+      {
+        "q": "Do we need an MDM platform before we can use AI?",
+        "a": "No. The question is whether your use case depends on authoritative entity identity — a customer assistant usually does, a document summariser usually does not. Where it does, we apply the lightest mastering pattern that meets the need, which is often not a platform purchase. We would rather tell you MDM is not your constraint than sell you a programme the use case cannot justify."
+      },
+      {
+        "q": "Is AI readiness the same as MLOps?",
+        "a": "No. MLOps is one operating capability within it. Readiness also covers the data, the enterprise context, access paths, governance, evaluation and ownership — and in our experience those are what actually block production approval, long after the deployment pipeline works fine."
+      },
+      {
+        "q": "Can you work with our existing AI and cloud stack?",
+        "a": "Yes, and we assess what is already in place rather than proposing a replacement. We have no reseller margin and no partner quota with any platform, which is what keeps that assessment honest."
+      },
+      {
+        "q": "Do you build models?",
+        "a": "Scope-dependent, and it is not the core offer. What we do is the enterprise data, context and governance foundation that production AI depends on. If you need a model-development team, that is a different firm, and we will say so rather than staffing it."
+      },
+      {
+        "q": "How do you govern AI agents?",
+        "a": "By controlling identity, data and tool access, permitted actions, approval boundaries, monitoring and evidence. An agent that can take an action is a higher risk tier by default, and the human approval boundary is written down before build rather than discovered after an incident."
+      },
+      {
+        "q": "What if our data governance is immature?",
+        "a": "Then that becomes part of the readiness roadmap rather than a reason to stop. Often the honest sequence is governance and mastered entities first, because any future use case will need them and they pay for themselves in reporting and risk regardless of whether the AI programme proceeds."
+      },
+      {
+        "q": "Can we start with one use case?",
+        "a": "Yes, and it is usually the better way in. A bounded priority use case exposes the reusable foundation and control requirements faster than an enterprise-wide assessment, and produces something you can act on rather than a document."
+      }
+    ],
     "entryOffer": {
       "id": "ai_readiness_assessment",
       "title": "AI Readiness Assessment",
-      "cta": "Book an AI Readiness Assessment",
-      "body": "Starts from your AI use cases and works backwards. You finish with a use-case inventory and risk tiers, data readiness findings per use case with the blockers named, an access governance model for agents, and a sequence to get one use case to production.",
+      "cta": "Request an AI Readiness Assessment",
+      "body": "A focused assessment of one or more priority AI use cases across data quality, authoritative context, access, governance, architecture, evaluation and operating readiness. You leave with a written gap view and a sequenced plan for what must change before production.",
       "note": "Scope and commercial terms are agreed in writing before the assessment starts."
     }
   },
   fr: {
-    "seoTitle": "Conseil en préparation à l'IA",
-    "seoDescription": "Évaluez si vos données peuvent soutenir l'IA en production : résolution d'entités, provenance, usage autorisé, récupération et gouvernance des accès, avec les contrôles de gouvernance autour des modèles et des agents.",
-    "eyebrow": "PRÉPARATION À L'IA",
-    "h1": "Votre ambition IA devance vos données. C'est le cas de presque tous.",
-    "subhead": "Les pilotes fonctionnent et la production cale, parce que le modèle n'a jamais été la contrainte. Nous évaluons si vos données sont exactes, autorisées, rattachables à une entité unique et accessibles sous contrôle, puis nous construisons la couche de contexte et d'accès gouvernée dont les systèmes et agents IA ont réellement besoin.",
-    "transformation": "Expérimentation → Prêt pour la production",
+    "seoTitle": "Conseil en préparation et gouvernance de l'IA",
+    "seoDescription": "Préparer des données fiables, un contexte d'entreprise gouverné et des contrôles de production pour vos modèles et agents IA. Conseil senior, neutre vis-à-vis des éditeurs.",
+    "eyebrow": "PRÉPARATION ET GOUVERNANCE DE L'IA",
+    "h1": "Votre IA ne vaut que les données et les contrôles qui la soutiennent.",
+    "subhead": "Nous aidons les équipes à préparer des données fiables, un contexte d'entreprise gouverné et des contrôles de production pour l'IA, afin que modèles et agents utilisent la bonne information, par les bons chemins d'accès, avec une responsabilité claire.",
+    "transformation": "Expérimentation → Production gouvernée",
     "signals": [
-      "Les pilotes démontrent bien et n'atteignent jamais la production, sans que personne sache nommer le blocage.",
-      "Un assistant répond avec assurance à partir d'un document périmé depuis des mois.",
-      "Personne ne peut dire quelles données un cas d'usage a légalement le droit d'utiliser.",
-      "Le même client apparaît de trois façons : le modèle n'a aucune notion stable de son interlocuteur.",
-      "On accorde des accès larges aux agents parce que les délimiter correctement est difficile.",
-      "Il n'existe aucun inventaire des cas d'usage IA, de leurs propriétaires ou de leurs niveaux de risque."
+      "Les pilotes fonctionnent sur des échantillons préparés et échouent une fois branchés aux données réelles.",
+      "Personne ne peut dire quelle fiche client, produit ou fournisseur un système IA devrait considérer comme fiable.",
+      "Les données sensibles sont techniquement atteignables, mais l'usage autorisé par les modèles ou agents reste flou.",
+      "Différentes équipes construisent des schémas RAG, agents et modèles séparés, sans contrôles communs.",
+      "Personne ne détient le chemin d'approbation de l'expérimentation vers la production.",
+      "Les changements de modèle, d'invite, de récupération et de données sont difficiles à reconstituer après déploiement.",
+      "La revue humaine se fait par convention ; les frontières d'escalade et de correction ne sont pas écrites.",
+      "La direction réclame des avancées IA alors que qualité, traçabilité et propriété restent non résolues."
     ],
     "consequenceFlow": [
-      "Les données d'entreprise sont inaccessibles, non gouvernées ou non rattachables à une entité unique",
-      "Les équipes contournent avec des copies, des exports et des accès larges",
-      "Les sorties ne peuvent être rattachées à un enregistrement source fiable",
-      "Personne ne valide le cas d'usage pour la production",
-      "Le pilote est discrètement abandonné et l'ambition passe au suivant"
+      "Des données éclatées ou mal gouvernées",
+      "Un contexte d'entreprise ambigu — aucune réponse convenue sur ce qu'une fiche désigne réellement",
+      "Un accès IA non contrôlé à ce contexte",
+      "Des sorties incohérentes et une traçabilité faible",
+      "L'approbation pour la production s'enlise, le risque opérationnel monte, la confiance baisse"
     ],
-    "consequenceNote": "L'IA échoue bien moins souvent sur la qualité du modèle que sur les données d'entrée et les autorisations. Un agent doté d'un accès large à des données incohérentes n'est pas un problème d'IA : c'est un problème de gouvernance qui tourne désormais à la vitesse de la machine.",
+    "consequenceNote": "Aucun de ces points n'est un problème de modèle, ce qui explique qu'acheter un meilleur modèle n'y change rien. La contrainte porte sur ce que le modèle a le droit de voir, la fiabilité de cette information, et la personne responsable lorsqu'elle est fausse.",
     "transformationRows": [
       {
-        "before": "Des pilotes qui calent avant la production",
-        "after": "Des cas d'usage avec un propriétaire et un chemin de validation"
+        "before": "Des pilotes bâtis sur les données les plus accessibles",
+        "after": "Des cas d'usage rattachés à des sources de données et de connaissances gouvernées"
       },
       {
-        "before": "Accès brut aux sources pour modèles et agents",
-        "after": "Vues d'entités faisant autorité, exposées via des services contrôlés"
+        "before": "Des identités client et produit contradictoires",
+        "after": "Des entités maîtres faisant autorité et un contexte contrôlé, lorsque le cas d'usage l'exige"
       },
       {
-        "before": "Provenance inconnue",
-        "after": "Sorties rattachables à des enregistrements d'entreprise fiables"
+        "before": "Des accès larges ou improvisés",
+        "after": "Des chemins d'accès par finalité et des contrôles de politique"
       },
       {
-        "before": "Permissions d'agents larges et non documentées",
-        "after": "Gouvernance d'accès délimitée pour données, outils et actions"
+        "before": "Une propriété de l'IA floue",
+        "after": "Des propriétaires nommés pour le cas d'usage, les données, le modèle et les contrôles"
       },
       {
-        "before": "Aucun inventaire IA",
-        "after": "Registre des cas d'usage avec niveaux de risque et exigences de contrôle"
+        "before": "Un test unique avant lancement",
+        "after": "Des seuils d'évaluation et une surveillance continue"
       },
       {
-        "before": "L'évaluation comme démonstration",
-        "after": "Seuils d'évaluation, surveillance de la dérive et réponse aux incidents"
+        "before": "Changements d'invite, de modèle et de données irreconstituables",
+        "after": "Versionnage, traçabilité et preuves conservées"
+      },
+      {
+        "before": "Une revue humaine par convention",
+        "after": "Des frontières définies de supervision humaine et d'escalade"
+      },
+      {
+        "before": "Une gouvernance de l'IA sous forme de document",
+        "after": "Des contrôles intégrés à l'architecture et au cycle de vie"
       }
     ],
     "capabilities": [
       {
-        "title": "Évaluation de la maturité des données pour l'IA",
-        "body": "Les données derrière chaque cas d'usage validé sont-elles exactes, complètes, autorisées et rattachables. Évaluées par cas d'usage, car la maturité n'est pas une propriété de l'organisation : c'est une propriété d'un cas d'usage précis et des données qu'il touche."
+        "title": "Évaluation de la maturité",
+        "body": "Inventorier les cas d'usage prioritaires, puis évaluer les écarts réels de chacun en matière de données, contexte, accès, gouvernance, architecture et exploitation. La maturité est une propriété d'un cas d'usage, pas d'une organisation."
       },
       {
-        "title": "Les entités maîtres comme contexte IA",
-        "body": "Les systèmes IA ont besoin d'un contexte faisant autorité, pas de plus de données brutes. Des entités client, produit, fournisseur, organisation et localisation fiables apportent identité, relations et attributs cohérents, pour qu'un agent sache que trois enregistrements ne font qu'un client."
+        "title": "Socle de données fiables",
+        "body": "Identifier les sources faisant autorité, les exigences de qualité, les transformations et les modes de mise à disposition dont un cas d'usage dépend — et dire clairement lesquels n'existent pas encore."
       },
       {
-        "title": "Récupération et accès à la connaissance",
-        "body": "Comment le contenu est découpé, indexé, rafraîchi et autorisé, et comment le matériel périmé est retiré. La plupart des réponses fausses mais assurées sont des problèmes de récupération, pas de modèle."
+        "title": "Contexte d'entreprise maîtrisé",
+        "body": "Lorsqu'un cas d'usage dépend d'une identité cohérente de client, produit, fournisseur, organisation ou localisation, le MDM et la résolution d'entités la fournissent. Dans le cas contraire, nous le disons plutôt que de vendre un programme de mastering que le cas d'usage ne justifie pas."
       },
       {
-        "title": "Gouvernance des accès pour les agents",
-        "body": "Accès délimité aux données, outils et actions, avec des règles d'usage autorisé appliquées aux attributs exposés à un modèle. Un accès large accordé parce que la délimitation était difficile est le constat le plus fréquent."
+        "title": "Architecture de connaissance et de récupération",
+        "body": "Des schémas de récupération et de contexte gouvernés, des métadonnées, un rafraîchissement et un retrait, et les frontières d'accès adaptées au cas d'usage. La plupart des réponses fausses mais assurées sont des échecs de récupération, pas de modèle."
       },
       {
-        "title": "La gouvernance de l'IA en pratique",
-        "body": "Admission et validation des cas d'usage, niveaux de risque, documentation des modèles et agents, versionnage et traçabilité, frontières de supervision humaine et escalade. Le cadre vit sur la page Gouvernance et MDM ; ici il rencontre un cas d'usage réel."
+        "title": "Gouvernance de l'IA",
+        "body": "Admission des cas d'usage, niveaux de risque, validations, responsabilités, preuves et contrôles de cycle de vie. Le cadre d'entreprise vit sur la page Gouvernance et MDM ; ici il rencontre un cas d'usage réel."
+      },
+      {
+        "title": "Gouvernance des accès des agents et modèles",
+        "body": "Quelles données, quels outils et quelles actions un modèle ou un agent peut atteindre, avec moindre privilège et frontières d'approbation humaine définies avant la construction. Un agent capable d'agir pose un problème de gouvernance différent de celui qui se contente de répondre."
       },
       {
         "title": "Évaluation et surveillance",
-        "body": "Des seuils d'évaluation avant mise en service, puis dérive, qualité et signaux d'incident ensuite, avec un responsable. Un modèle évalué une seule fois au lancement n'est pas gouverné : il est non surveillé."
+        "body": "Des seuils d'évaluation avant production, puis une surveillance de la qualité, de la sûreté et de l'exploitation, avec un responsable. Un modèle évalué une seule fois au lancement n'est pas gouverné : il est non surveillé."
+      },
+      {
+        "title": "Autonomisation et transfert",
+        "body": "Décisions d'architecture, cartographie des contrôles, procédures et propriété remises à vos équipes. Une fonction de gouvernance de l'IA qui dépend d'un cabinet externe ne peut pas décider à temps."
       }
     ],
     "architecture": {
-      "title": "Architecture de référence : un contexte gouverné pour l'IA",
-      "description": "Les systèmes sources et les contenus alimentent une couche de données et de connaissances gouvernée, où les entités maîtres fournissent identité et attributs faisant autorité plutôt que des enregistrements bruts. Une couche de récupération et d'accès expose ce contexte via des services contrôlés, en appliquant des règles d'usage autorisé par attribut : un modèle ou un agent reçoit une vue délimitée et non une connexion à la base. Les services IA et les agents se placent au-dessus, et tout ce qu'ils font est surveillé et évalué. Gouvernance de l'IA, provenance, traçabilité, sécurité et supervision humaine traversent l'ensemble du flux, y compris les actions que prend un agent, qui est la partie que la plupart des architectures omettent.",
+      "title": "Architecture de référence",
+      "description": "Les sources d'entreprise alimentent une couche de confiance et de contexte : qualité, résolution d'entités lorsque l'identité compte, données de référence, métadonnées et traçabilité. Elle produit des données et connaissances gouvernées : produits de données organisés, contexte sémantique et récupération contrôlée. Une couche d'accès IA s'intercale avant les modèles : API, services de récupération, passerelles d'outils, application des politiques et identité. Les services IA la consomment, et une couche humaine porte la revue, l'approbation et l'escalade. Gouvernance de l'IA, confidentialité et sécurité, observabilité, évaluation et preuves d'audit traversent l'ensemble, y compris les actions que prend un agent. Ce que ce schéma ne dit PAS : que chaque cas d'usage IA exige un référentiel MDM centralisé. Le mastering se justifie là où l'identité des entités est ce sur quoi repose le cas d'usage, et pas ailleurs.",
       "layers": [
         {
-          "name": "Sources et contenus",
+          "name": "Sources d'entreprise",
           "items": [
-            "Systèmes opérationnels",
+            "CRM",
+            "ERP",
+            "Bases opérationnelles",
+            "SaaS",
             "Documents",
-            "Bases de connaissances",
-            "Données externes"
+            "API",
+            "Flux d'événements"
+          ]
+        },
+        {
+          "name": "Confiance et contexte",
+          "items": [
+            "Qualité des données",
+            "MDM / résolution d'entités",
+            "Données de référence",
+            "Métadonnées",
+            "Traçabilité"
           ]
         },
         {
           "name": "Données et connaissances gouvernées",
           "items": [
-            "Entités maîtres",
-            "Jeux de données organisés",
-            "Contenu indexé",
-            "Provenance"
+            "Produits de données organisés",
+            "Contexte sémantique",
+            "Bases de connaissances",
+            "Récupération contrôlée"
           ]
         },
         {
-          "name": "Récupération et accès",
+          "name": "Couche d'accès IA",
           "items": [
-            "API contrôlées",
-            "Vues d'entités",
-            "Règles d'usage autorisé",
-            "Contexte délimité"
+            "API",
+            "Services de récupération",
+            "Passerelles d'outils",
+            "Application des politiques",
+            "Identité et accès"
           ]
         },
         {
-          "name": "Services IA et agents",
+          "name": "Services IA",
           "items": [
             "Modèles",
-            "Agents et outils",
-            "Orchestration",
-            "Supervision humaine"
+            "Applications RAG",
+            "Copilotes",
+            "Agents",
+            "Services de décision"
           ]
         },
         {
-          "name": "Surveillance et évaluation",
+          "name": "Couche humaine et métier",
           "items": [
-            "Seuils d'évaluation",
-            "Signaux de dérive et de qualité",
-            "Réponse aux incidents"
+            "Revue",
+            "Approbation",
+            "Escalade",
+            "Exploitation",
+            "Processus métier"
           ]
         }
       ],
       "crossCutting": [
-        "Gouvernance de l'IA et niveaux de risque",
-        "Provenance et traçabilité",
-        "Gouvernance des accès aux données, outils et actions",
-        "Sécurité",
-        "Supervision humaine et preuves d'audit"
+        "Gouvernance de l'IA",
+        "Confidentialité et sécurité",
+        "Observabilité",
+        "Évaluation",
+        "Preuves d'audit",
+        "Gestion du cycle de vie"
       ]
     },
     "deliverables": [
-      "Inventaire des cas d'usage IA avec propriétaires, niveaux de risque et exigences de contrôle par niveau",
-      "Constats de maturité des données par cas d'usage, avec les blocages nommés plutôt que notés",
-      "Évaluation de la résolution d'entités et du contexte maître pour les entités dont dépendent les cas d'usage",
-      "Conception de la récupération et des connaissances : découpage, rafraîchissement, retrait du contenu périmé",
-      "Modèle de gouvernance des accès pour les agents, couvrant données, outils et actions",
-      "Règles d'usage autorisé pour les attributs exposés aux modèles et aux agents",
-      "Conception des seuils d'évaluation et des signaux de surveillance à exploiter ensuite",
-      "Frontières de supervision humaine et d'escalade, écrites",
-      "Une feuille de route séquencée de l'état actuel jusqu'à un cas d'usage capable d'aller en production"
+      "Grille de maturité IA par cas d'usage prioritaire, avec les blocages nommés plutôt que notés",
+      "Cartographie des risques et dépendances de l'état actuel",
+      "Cartographie des données et du contexte faisant autorité, précisant où le MDM est réellement nécessaire et où il ne l'est pas",
+      "Architecture cible des données et connaissances pour l'IA",
+      "Conception des contrôles d'accès et de la gouvernance de l'IA, couvrant données, outils et actions",
+      "Matrice risque / contrôles par cas d'usage, avec le circuit d'approbation",
+      "Exigences d'évaluation et de surveillance",
+      "Backlog de remédiation priorisé et feuille de route séquencée",
+      "Décisions d'architecture consignées, modèle de propriété et documentation de transfert"
     ],
     "process": [
       {
         "step": "Découvrir",
-        "body": "Inventorier les cas d'usage IA déjà existants, y compris ceux qui tournent hors de tout programme, et identifier les données que chacun touche réellement."
+        "body": "Prioriser les cas d'usage, y compris ceux qui tournent hors de tout programme, puis examiner les contraintes de données, de connaissances, d'architecture, de gouvernance et d'exploitation que chacun rencontre."
       },
       {
         "step": "Concevoir",
-        "body": "Classer les cas d'usage par niveau de risque, puis évaluer maturité des données et accès pour ceux qui comptent. Contexte gouverné et règles d'usage autorisé se conçoivent par niveau, pas une fois pour tout."
+        "body": "Définir l'architecture cible des données et du contexte, les contrôles, les modes d'accès et les droits de décision. Conçus par niveau de risque, pas une fois pour tout."
       },
       {
-        "step": "Livrer",
-        "body": "Construire la couche de contexte et d'accès gouvernée pour le cas d'usage à plus forte valeur qui peut réellement atteindre la production, et le seuil d'évaluation qu'il doit franchir."
+        "step": "Éprouver",
+        "body": "Lorsque le périmètre le justifie, valider un schéma d'architecture et de contrôles délimité sur un cas d'usage prioritaire, plutôt que d'affirmer que la conception tiendra."
       },
       {
         "step": "Autonomiser",
-        "body": "Remettre le processus d'admission, la classification des risques et la pratique de surveillance, pour que le cas d'usage suivant n'ait pas besoin de nous."
+        "body": "Transférer décisions, artefacts, procédures, propriété et la feuille de route de la suite."
       }
     ],
     "proof": [
       {
+        "proofType": "representative",
+        "title": "Architecture représentative : maturité IA dans une entreprise réglementée",
+        "body": "Une institution financière disposant de cas d'usage IA validés et d'aucune réponse convenue sur la licéité d'usage des données sous-jacentes. Le schéma montre comment les pièces s'articulent : la résolution d'entités fournit une notion stable de qui est le client, la récupération gouvernée décide de ce qu'un assistant peut voir, la traçabilité permet de rattacher une sortie à un enregistrement réel, et une frontière d'approbation humaine écrite encadre tout ce qui agit au lieu de répondre. Chaque pièce est ordinaire ; la maturité tient à la façon dont elles se connectent.",
+        "outcome": "Ce que la mission laisse derrière elle : une matrice risque / contrôles par cas d'usage, la conception des accès sous lesquels les agents opéreront, et une vue séquencée de ce qui doit changer avant la production."
+      },
+      {
         "proofType": "priorExperience",
         "title": "La résolution d'entités comme socle d'une vue client unique",
         "body": "Une banque nord-américaine de premier plan où la banque de détail, l'entreprise et la gestion de patrimoine détenaient chacune leur version du client. L'enregistrement de référence et la traçabilité vers chaque source contributrice sont exactement ce dont un système IA a besoin pour répondre de façon cohérente à une question sur un client : le même travail qui servait les enquêteurs sert un agent qui doit savoir que trois enregistrements ne font qu'une personne."
-      },
-      {
-        "proofType": "representative",
-        "title": "Schéma représentatif : un assistant qui se trompe avec assurance",
-        "body": "Un assistant interne répondant à partir d'une base de connaissances où les documents de politique périmés n'ont jamais été retirés et où les accès étaient accordés au niveau du dossier. Le constat n'est presque jamais le modèle : c'est que la récupération n'a aucune notion d'actualité ni de frontière de permission, si bien que l'assistant rapporte fidèlement le mauvais document à la mauvaise personne.",
-        "outcome": "Ce que la mission laisse derrière elle : une conception de récupération avec règles de rafraîchissement et de retrait, des frontières de permission appliquées au moment de la requête, et un seuil d'évaluation qui teste précisément ce mode de défaillance."
       }
     ],
     "technologies": [
@@ -504,229 +587,282 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux de préparation à l'IA sont dirigés par notre associé principal, dont le parcours est la résolution d'entités, le MDM, la gouvernance et la traçabilité pour des institutions financières de premier plan. Cela compte ici, car la préparation à l'IA est surtout l'application de ces disciplines à un nouveau consommateur : les questions qu'un auditeur pose sur un chiffre réglementaire sont celles qu'il faut poser sur les données d'entrée d'un modèle.",
+    "practitionerNote": "Les travaux de préparation à l'IA sont dirigés par notre associé principal, dont le parcours couvre l'architecture de données d'entreprise, la gouvernance, le MDM et la résolution d'entités, la traçabilité et les contrôles en services financiers — plus quinze ans à traduire des capacités éditeurs en schémas d'exploitation en production. Cela compte ici : les questions qu'un auditeur pose sur un chiffre réglementaire sont celles qu'il faut poser sur les données d'entrée d'un modèle.",
     "relatedInsights": [
-      {
-        "kind": "Article",
-        "label": "The Governance Crisis: The Reckoning Deepens",
-        "href": "https://papanguer.com/writing/the-governance-crisis-the-reckoning-deepens/"
-      },
       {
         "kind": "Solution",
         "label": "Gouvernance des données et MDM — où vit le cadre de gouvernance de l'IA",
         "href": "/fr/solutions/data-governance/"
+      },
+      {
+        "kind": "Évaluation",
+        "label": "Diagnostic de données — si vous ignorez encore si la contrainte est propre à l'IA",
+        "href": "/fr/data-health-check/"
+      }
+    ],
+    "relatedSolutions": [
+      {
+        "label": "Gouvernance des données et MDM",
+        "href": "/solutions/data-governance/",
+        "why": "Le cadre de gouvernance de l'IA et les entités maîtres dont l'IA a besoin comme contexte."
+      },
+      {
+        "label": "Intégration et ingénierie des données",
+        "href": "/solutions/data-integration/",
+        "why": "Rendre les données atteignables et fiables au départ."
+      },
+      {
+        "label": "Automatisation des processus",
+        "href": "/solutions/process-automation/",
+        "why": "Là où les agents qui agissent rencontrent les frontières de revue humaine."
       }
     ],
     "faqs": [
       {
-        "q": "Nos données doivent-elles être parfaites avant de commencer avec l'IA ?",
-        "a": "Non, et attendre cela est un mode d'échec en soi. La maturité s'évalue par cas d'usage : un cas reposant sur trois entités bien comprises peut avancer pendant que le reste du parc est encore désordonné. Ce qu'il ne faut pas faire, c'est commencer par le cas d'usage qui dépend de vos pires données parce qu'il fait la plus belle démonstration."
+        "q": "Faut-il une plateforme MDM avant de pouvoir utiliser l'IA ?",
+        "a": "Non. La question est de savoir si votre cas d'usage dépend d'une identité d'entité faisant autorité : un assistant client en dépend généralement, un résumeur de documents non. Lorsque c'est le cas, nous appliquons le schéma de mastering le plus léger qui réponde au besoin, et ce n'est souvent pas l'achat d'une plateforme. Nous préférons vous dire que le MDM n'est pas votre contrainte plutôt que de vous vendre un programme que le cas d'usage ne justifie pas."
       },
       {
-        "q": "S'agit-il d'un exercice de sélection de modèle ?",
-        "a": "Non. Le choix du modèle est la décision la moins durable de la pile et la plus facile à changer ensuite. Ce travail porte sur les données d'entrée, les accès, le contexte et le contrôle, c'est-à-dire là où la validation pour la production est réellement bloquée."
+        "q": "La préparation à l'IA, est-ce la même chose que le MLOps ?",
+        "a": "Non. Le MLOps en est une capacité d'exploitation parmi d'autres. La préparation couvre aussi les données, le contexte d'entreprise, les chemins d'accès, la gouvernance, l'évaluation et la propriété — et d'après notre expérience, ce sont ces éléments qui bloquent réellement l'approbation en production, bien après que la chaîne de déploiement fonctionne."
       },
       {
-        "q": "Quel est le lien entre le MDM et la préparation à l'IA ?",
-        "a": "Les entités maîtres constituent la couche de contexte faisant autorité. Un agent incapable de voir que trois enregistrements ne font qu'un client donnera trois réponses, et aucun travail sur les invites ne corrige cela. Les entités fiables portent aussi la provenance et le score de rapprochement, ce qui permet de rattacher une sortie à un enregistrement réel."
+        "q": "Pouvez-vous travailler avec notre pile IA et cloud existante ?",
+        "a": "Oui, et nous évaluons l'existant plutôt que de proposer un remplacement. Nous n'avons ni marge de revente ni quota partenaire avec aucune plateforme, ce qui garantit l'honnêteté de cette évaluation."
       },
       {
-        "q": "Et les agents qui exécutent des actions, pas seulement des réponses ?",
-        "a": "Cela relève l'enjeu et l'exigence de gouvernance. La gouvernance des accès doit couvrir outils et actions, pas seulement données, et la frontière de supervision humaine doit être écrite avant la construction plutôt que découverte après un incident. Nous classons par défaut les agents capables d'agir dans un niveau de risque supérieur."
+        "q": "Développez-vous des modèles ?",
+        "a": "Cela dépend du périmètre, et ce n'est pas le cœur de l'offre. Ce que nous faisons, c'est le socle de données, de contexte et de gouvernance dont dépend l'IA en production. S'il vous faut une équipe de développement de modèles, c'est un autre cabinet, et nous le dirons plutôt que de la staffer."
       },
       {
-        "q": "Qui possède la gouvernance de l'IA, vous ou nous ?",
-        "a": "Vous. Nous construisons le processus d'admission, la classification des risques, les seuils d'évaluation et la pratique de surveillance, puis nous les transmettons. Une fonction de gouvernance de l'IA qui dépend d'un cabinet externe ne peut pas décider à temps, ce qui en annule l'intérêt."
+        "q": "Comment gouvernez-vous les agents IA ?",
+        "a": "En contrôlant l'identité, l'accès aux données et aux outils, les actions autorisées, les frontières d'approbation, la surveillance et les preuves. Un agent capable d'agir relève par défaut d'un niveau de risque supérieur, et la frontière d'approbation humaine est écrite avant la construction plutôt que découverte après un incident."
       },
       {
-        "q": "En quoi l'Évaluation de préparation à l'IA diffère-t-elle du Diagnostic de données ?",
-        "a": "Le Diagnostic de données examine tout le patrimoine. L'Évaluation de préparation à l'IA part de vos cas d'usage et remonte vers les données, les accès et les contrôles dont chacun a besoin. Si vous avez des cas d'usage validés et des pilotes qui calent, commencez ici ; si vous ne savez pas encore où sont les problèmes, commencez par le Diagnostic."
+        "q": "Et si notre gouvernance des données est immature ?",
+        "a": "Cela devient une partie de la feuille de route plutôt qu'une raison de s'arrêter. La séquence honnête est souvent gouvernance et entités maîtres d'abord, car tout cas d'usage futur en aura besoin et cela se rentabilise en reporting et en risque, que le programme IA aboutisse ou non."
       },
       {
-        "q": "Et si nous n'avons pas encore de cas d'usage IA ?",
-        "a": "Alors il est tôt, et nous vous le dirons. La séquence honnête est généralement gouvernance et entités maîtres d'abord, car c'est ce dont tout cas d'usage futur aura besoin et cela se rentabilise en reporting et en risque, que le programme IA voie le jour ou non."
+        "q": "Peut-on commencer par un seul cas d'usage ?",
+        "a": "Oui, et c'est généralement la meilleure porte d'entrée. Un cas d'usage prioritaire délimité révèle les exigences de socle et de contrôles réutilisables plus vite qu'une évaluation à l'échelle de l'entreprise, et produit quelque chose d'actionnable plutôt qu'un document."
       }
     ],
     "entryOffer": {
       "id": "ai_readiness_assessment",
       "title": "Évaluation de préparation à l'IA",
-      "cta": "Réserver une évaluation de préparation à l'IA",
-      "body": "Elle part de vos cas d'usage IA et remonte. Vous repartez avec un inventaire des cas d'usage et leurs niveaux de risque, des constats de maturité des données par cas avec les blocages nommés, un modèle de gouvernance des accès pour les agents, et une séquence pour amener un cas d'usage en production.",
+      "cta": "Demander une évaluation de préparation à l'IA",
+      "body": "Une évaluation ciblée d'un ou plusieurs cas d'usage IA prioritaires, couvrant qualité des données, contexte faisant autorité, accès, gouvernance, architecture, évaluation et maturité d'exploitation. Vous repartez avec une vue écrite des écarts et un plan séquencé de ce qui doit changer avant la production.",
       "note": "Le périmètre et les conditions commerciales sont convenus par écrit avant le démarrage."
     }
   },
   es: {
-    "seoTitle": "Consultoría en preparación para IA",
-    "seoDescription": "Evalúa si tus datos pueden sostener IA en producción: resolución de entidades, procedencia, uso permitido, recuperación y gobernanza de accesos, más los controles de gobernanza sobre modelos y agentes.",
-    "eyebrow": "PREPARACIÓN PARA IA",
-    "h1": "Tu ambición de IA va por delante de tus datos. Le pasa a casi todos.",
-    "subhead": "Los pilotos funcionan y la producción se atasca, porque el modelo nunca fue la restricción. Evaluamos si tus datos son exactos, de uso permitido, resolubles a una entidad única y accesibles bajo control, y después construimos la capa de contexto y acceso gobernada que los sistemas y agentes de IA realmente necesitan.",
-    "transformation": "Experimentación → Listo para producción",
+    "seoTitle": "Consultoría en preparación y gobernanza de IA",
+    "seoDescription": "Prepara datos fiables, contexto empresarial gobernado y controles de producción para modelos y agentes de IA. Consultoría sénior y neutral respecto a proveedores.",
+    "eyebrow": "PREPARACIÓN Y GOBERNANZA DE IA",
+    "h1": "Tu IA vale lo que valen los datos y controles que hay detrás.",
+    "subhead": "Ayudamos a los equipos a preparar datos fiables, contexto empresarial gobernado y controles de producción para IA, de modo que modelos y agentes usen la información correcta, por las rutas de acceso correctas y con responsabilidad clara.",
+    "transformation": "Experimentación → Producción gobernada",
     "signals": [
-      "Los pilotos demuestran bien y nunca llegan a producción, y nadie sabe nombrar el bloqueo.",
-      "Un asistente responde con seguridad desde un documento que quedó obsoleto hace meses.",
-      "Nadie puede decir qué datos puede usar lícitamente un caso de uso.",
-      "El mismo cliente aparece de tres formas, así que el modelo no tiene una noción estable de con quién habla.",
-      "Se dan accesos amplios a los agentes porque acotarlos bien es difícil.",
-      "No hay inventario de casos de uso de IA, responsables ni niveles de riesgo."
+      "Los pilotos funcionan con muestras curadas y fallan al conectarse a los datos reales.",
+      "Nadie sabe decir en qué registro de cliente, producto o proveedor debería confiar un sistema de IA.",
+      "Los datos sensibles son técnicamente alcanzables, pero el uso permitido por modelos o agentes no está claro.",
+      "Distintos equipos construyen patrones de RAG, agentes y modelos separados, sin controles comunes.",
+      "Nadie es dueño de la ruta de aprobación del experimento a producción.",
+      "Los cambios de modelo, prompt, recuperación y datos son difíciles de reconstruir tras el despliegue.",
+      "La revisión humana ocurre por costumbre; las fronteras de escalado y anulación no están escritas.",
+      "La dirección pide avances en IA mientras calidad, linaje y propiedad siguen sin resolverse."
     ],
     "consequenceFlow": [
-      "Los datos corporativos son inaccesibles, no gobernados o no resolubles a una entidad única",
-      "Los equipos lo rodean con copias, exportaciones y permisos amplios",
-      "Las salidas no pueden rastrearse hasta un registro de origen fiable",
-      "Nadie firma el caso de uso para producción",
-      "El piloto se retira en silencio y la ambición pasa al siguiente"
+      "Datos fragmentados o mal gobernados",
+      "Contexto empresarial ambiguo — sin respuesta acordada sobre a qué se refiere un registro",
+      "Acceso de IA no controlado a ese contexto",
+      "Salidas inconsistentes y trazabilidad débil",
+      "La aprobación para producción se atasca, sube el riesgo operativo y baja la confianza"
     ],
-    "consequenceNote": "La IA falla mucho menos por calidad del modelo que por entradas y permisos. Un agente con acceso amplio a datos inconsistentes no es un problema de IA: es un problema de gobernanza que ahora corre a velocidad de máquina.",
+    "consequenceNote": "Ninguno de estos es un problema de modelo, y por eso comprar un modelo mejor no los mueve. La restricción está en lo que el modelo puede ver, en si esa información es fiable y en quién responde cuando es incorrecta.",
     "transformationRows": [
       {
-        "before": "Pilotos que se atascan antes de producción",
-        "after": "Casos de uso con responsable y una ruta de aprobación"
+        "before": "Pilotos construidos sobre los datos más cómodos",
+        "after": "Casos de uso ligados a fuentes de datos y conocimiento gobernadas"
       },
       {
-        "before": "Acceso crudo al origen para modelos y agentes",
-        "after": "Vistas de entidades autorizadas expuestas por servicios controlados"
+        "before": "Identidades de cliente y producto contradictorias",
+        "after": "Entidades maestras autorizadas y contexto controlado, cuando el caso de uso lo requiere"
       },
       {
-        "before": "Procedencia desconocida",
-        "after": "Salidas rastreables hasta registros corporativos fiables"
+        "before": "Acceso amplio o improvisado",
+        "after": "Rutas de acceso por finalidad y controles de política"
       },
       {
-        "before": "Permisos de agente amplios y sin documentar",
-        "after": "Gobernanza de acceso acotada para datos, herramientas y acciones"
+        "before": "Propiedad de la IA poco clara",
+        "after": "Responsables nombrados de caso de uso, datos, modelo y controles"
       },
       {
-        "before": "Sin inventario de IA",
-        "after": "Registro de casos de uso con niveles de riesgo y requisitos de control"
+        "before": "Una única prueba antes del lanzamiento",
+        "after": "Puertas de evaluación más monitorización continua"
       },
       {
-        "before": "Evaluación como demo",
-        "after": "Puertas de evaluación, monitorización de deriva y respuesta a incidentes"
+        "before": "Cambios de prompt, modelo y datos irreconstruibles",
+        "after": "Versionado, linaje y evidencia conservada"
+      },
+      {
+        "before": "Revisión humana por costumbre",
+        "after": "Fronteras definidas de supervisión humana y escalado"
+      },
+      {
+        "before": "Gobernanza de IA como documento de política",
+        "after": "Controles integrados en la arquitectura y el ciclo de vida"
       }
     ],
     "capabilities": [
       {
-        "title": "Evaluación de preparación de datos para IA",
-        "body": "Si los datos detrás de cada caso de uso aprobado son exactos, completos, permitidos y resolubles. Se evalúa por caso de uso, porque la preparación no es una propiedad de la organización: es una propiedad de un caso concreto y de los datos que toca."
+        "title": "Evaluación de preparación",
+        "body": "Inventariar los casos de uso prioritarios y evaluar las brechas reales de cada uno en datos, contexto, acceso, gobernanza, arquitectura y operación. La preparación es propiedad de un caso de uso, no de una organización."
       },
       {
-        "title": "Entidades maestras como contexto de IA",
-        "body": "Los sistemas de IA necesitan contexto autorizado, no más datos crudos. Entidades fiables de cliente, producto, proveedor, organización y ubicación aportan identidad, relaciones y atributos consistentes, para que un agente sepa que tres registros son un mismo cliente."
+        "title": "Base de datos fiables",
+        "body": "Identificar las fuentes autorizadas, los requisitos de calidad, las transformaciones y los patrones de servicio de los que depende un caso de uso, y decir con claridad cuáles todavía no existen."
       },
       {
-        "title": "Recuperación y acceso al conocimiento",
-        "body": "Cómo se trocea, indexa, refresca y permisiona el contenido, y cómo se retira el material obsoleto. La mayoría de las respuestas seguras pero erróneas son problemas de recuperación, no de modelo."
+        "title": "Contexto empresarial maestro",
+        "body": "Cuando un caso de uso depende de una identidad consistente de cliente, producto, proveedor, organización o ubicación, el MDM y la resolución de entidades la aportan. Cuando no, lo decimos en lugar de vender un programa de mastering que el caso de uso no justifica."
       },
       {
-        "title": "Gobernanza de acceso para agentes",
-        "body": "Acceso acotado a datos, herramientas y acciones, con reglas de uso permitido aplicadas a los atributos expuestos a un modelo. El acceso amplio concedido porque acotarlo era difícil es el hallazgo más frecuente."
+        "title": "Arquitectura de conocimiento y recuperación",
+        "body": "Patrones de recuperación y contexto gobernados, metadatos, refresco y retirada, y las fronteras de acceso apropiadas al caso de uso. La mayoría de respuestas seguras pero erróneas son fallos de recuperación, no de modelo."
       },
       {
-        "title": "Gobernanza de IA en la práctica",
-        "body": "Admisión y aprobación de casos de uso, niveles de riesgo, documentación de modelos y agentes, versionado y trazabilidad, fronteras de supervisión humana y escalado. El marco vive en la página de Gobernanza y MDM; aquí se encuentra con un caso de uso real."
+        "title": "Gobernanza de IA",
+        "body": "Admisión de casos de uso, niveles de riesgo, aprobaciones, responsabilidad, evidencia y controles de ciclo de vida. El marco corporativo vive en la página de Gobernanza y MDM; aquí se encuentra con un caso de uso real."
+      },
+      {
+        "title": "Gobernanza de acceso de agentes y modelos",
+        "body": "Qué datos, herramientas y acciones puede alcanzar un modelo o agente, con mínimo privilegio y fronteras de aprobación humana definidas antes de construir. Un agente que puede actuar es un problema de gobernanza distinto del que solo responde."
       },
       {
         "title": "Evaluación y monitorización",
-        "body": "Puertas de evaluación antes del lanzamiento y después señales de deriva, calidad e incidentes, con un responsable. Un modelo evaluado una sola vez al lanzarlo no está gobernado: está sin monitorizar."
+        "body": "Puertas de evaluación previas a producción y después monitorización de calidad, seguridad y operación con un responsable. Un modelo evaluado una sola vez al lanzarlo no está gobernado: está sin monitorizar."
+      },
+      {
+        "title": "Habilitación y traspaso",
+        "body": "Decisiones de arquitectura, mapeo de controles, procedimientos y propiedad entregados a tu equipo. Una función de gobernanza de IA que depende de una firma externa no puede decidir a tiempo."
       }
     ],
     "architecture": {
-      "title": "Arquitectura de referencia: contexto gobernado para IA",
-      "description": "Los sistemas origen y el contenido alimentan una capa gobernada de datos y conocimiento, donde las entidades maestras aportan identidad y atributos autorizados en lugar de registros crudos. Una capa de recuperación y acceso expone ese contexto mediante servicios controlados, aplicando reglas de uso permitido por atributo, de modo que un modelo o agente recibe una vista acotada y no una conexión a la base de datos. Los servicios de IA y los agentes se sitúan encima, y todo lo que hacen se monitoriza y evalúa. Gobernanza de IA, procedencia, linaje, seguridad y supervisión humana atraviesan todo el flujo, incluidas las acciones que ejecuta un agente, que es la parte que la mayoría de arquitecturas deja fuera.",
+      "title": "Arquitectura de referencia",
+      "description": "Las fuentes corporativas alimentan una capa de confianza y contexto: calidad, resolución de entidades cuando la identidad importa, datos de referencia, metadatos y linaje. De ahí salen datos y conocimiento gobernados: productos de datos curados, contexto semántico y recuperación controlada. Una capa de acceso de IA se sitúa entre eso y los modelos: API, servicios de recuperación, pasarelas de herramientas, aplicación de políticas e identidad. Los servicios de IA la consumen, y una capa humana sostiene revisión, aprobación y escalado. Gobernanza de IA, privacidad y seguridad, observabilidad, evaluación y evidencia de auditoría atraviesan toda la pila, incluidas las acciones que ejecuta un agente. Lo que este diagrama NO dice: que cada caso de uso de IA necesite un hub MDM centralizado. El mastering se gana su sitio donde la identidad de entidad es aquello sobre lo que gira el caso de uso, y no en otro caso.",
       "layers": [
         {
-          "name": "Orígenes y contenido",
+          "name": "Fuentes corporativas",
           "items": [
-            "Sistemas operativos",
+            "CRM",
+            "ERP",
+            "Bases operativas",
+            "SaaS",
             "Documentos",
-            "Bases de conocimiento",
-            "Datos externos"
+            "API",
+            "Flujos de eventos"
+          ]
+        },
+        {
+          "name": "Confianza y contexto",
+          "items": [
+            "Calidad de datos",
+            "MDM / resolución de entidades",
+            "Datos de referencia",
+            "Metadatos",
+            "Linaje"
           ]
         },
         {
           "name": "Datos y conocimiento gobernados",
           "items": [
-            "Entidades maestras",
-            "Conjuntos curados",
-            "Contenido indexado",
-            "Procedencia"
+            "Productos de datos curados",
+            "Contexto semántico",
+            "Bases de conocimiento",
+            "Recuperación controlada"
           ]
         },
         {
-          "name": "Recuperación y acceso",
+          "name": "Capa de acceso de IA",
           "items": [
-            "API controladas",
-            "Vistas de entidad",
-            "Reglas de uso permitido",
-            "Contexto acotado"
+            "API",
+            "Servicios de recuperación",
+            "Pasarelas de herramientas",
+            "Aplicación de políticas",
+            "Identidad y acceso"
           ]
         },
         {
-          "name": "Servicios de IA y agentes",
+          "name": "Servicios de IA",
           "items": [
             "Modelos",
-            "Agentes y herramientas",
-            "Orquestación",
-            "Humano en el bucle"
+            "Aplicaciones RAG",
+            "Copilotos",
+            "Agentes",
+            "Servicios de decisión"
           ]
         },
         {
-          "name": "Monitorización y evaluación",
+          "name": "Capa humana y de negocio",
           "items": [
-            "Puertas de evaluación",
-            "Señales de deriva y calidad",
-            "Respuesta a incidentes"
+            "Revisión",
+            "Aprobación",
+            "Escalado",
+            "Operaciones",
+            "Flujos de negocio"
           ]
         }
       ],
       "crossCutting": [
-        "Gobernanza de IA y niveles de riesgo",
-        "Procedencia y linaje",
-        "Gobernanza de acceso a datos, herramientas y acciones",
-        "Seguridad",
-        "Supervisión humana y evidencia de auditoría"
+        "Gobernanza de IA",
+        "Privacidad y seguridad",
+        "Observabilidad",
+        "Evaluación",
+        "Evidencia de auditoría",
+        "Gestión del ciclo de vida"
       ]
     },
     "deliverables": [
-      "Inventario de casos de uso de IA con responsables, niveles de riesgo y requisitos de control por nivel",
-      "Hallazgos de preparación de datos por caso de uso, con los bloqueos nombrados en lugar de puntuados",
-      "Evaluación de resolución de entidades y contexto maestro para las entidades de las que dependen los casos",
-      "Diseño de recuperación y conocimiento: troceado, refresco, retirada de contenido obsoleto",
-      "Modelo de gobernanza de acceso para agentes, cubriendo datos, herramientas y acciones",
-      "Reglas de uso permitido para los atributos expuestos a modelos y agentes",
-      "Diseño de puertas de evaluación y las señales de monitorización posteriores",
-      "Fronteras de supervisión humana y escalado, por escrito",
-      "Una hoja de ruta secuenciada del estado actual hasta un caso de uso que pueda ir a producción"
+      "Cuadro de preparación de IA por caso de uso prioritario, con los bloqueos nombrados en lugar de puntuados",
+      "Mapa de riesgos y dependencias del estado actual",
+      "Mapa de datos y contexto autorizado, incluyendo dónde el MDM es realmente necesario y dónde no",
+      "Arquitectura objetivo de datos y conocimiento para IA",
+      "Diseño de control de acceso y gobernanza de IA, cubriendo datos, herramientas y acciones",
+      "Matriz de riesgo y controles por caso de uso, con el flujo de aprobación",
+      "Requisitos de evaluación y monitorización",
+      "Backlog de remediación priorizado y hoja de ruta secuenciada",
+      "Registros de decisiones de arquitectura, modelo de propiedad y documentación de traspaso"
     ],
     "process": [
       {
         "step": "Descubrir",
-        "body": "Inventariar los casos de uso de IA que ya existen, incluidos los que corren fuera de cualquier programa, e identificar qué datos toca cada uno."
+        "body": "Priorizar los casos de uso, incluidos los que corren fuera de cualquier programa, y examinar las restricciones de datos, conocimiento, arquitectura, gobernanza y operación que encuentra cada uno."
       },
       {
         "step": "Diseñar",
-        "body": "Clasificar los casos por riesgo y después evaluar preparación de datos y acceso de los que importan. El contexto gobernado y las reglas de uso permitido se diseñan por nivel, no una vez para todo."
+        "body": "Definir la arquitectura objetivo de datos y contexto, los controles, los patrones de acceso y los derechos de decisión. Diseñados por nivel de riesgo, no una vez para todo."
       },
       {
-        "step": "Entregar",
-        "body": "Construir la capa de contexto y acceso gobernada para el caso de mayor valor que pueda llegar realmente a producción, y la puerta de evaluación que debe superar."
+        "step": "Probar",
+        "body": "Cuando el alcance lo justifique, validar un patrón acotado de arquitectura y controles contra un caso de uso prioritario, en lugar de afirmar que el diseño aguantará."
       },
       {
         "step": "Habilitar",
-        "body": "Entregar el proceso de admisión, la clasificación de riesgo y la práctica de monitorización, para que el siguiente caso no nos necesite."
+        "body": "Transferir decisiones, artefactos, procedimientos, propiedad y la hoja de ruta de lo que sigue."
       }
     ],
     "proof": [
       {
+        "proofType": "representative",
+        "title": "Arquitectura representativa: preparación para IA en una empresa regulada",
+        "body": "Una institución financiera con casos de uso de IA aprobados y sin respuesta acordada sobre si los datos subyacentes pueden usarse lícitamente. El patrón muestra cómo encajan las piezas: la resolución de entidades aporta una noción estable de quién es el cliente, la recuperación gobernada decide qué puede ver un asistente, el linaje permite rastrear una salida hasta un registro real, y una frontera escrita de aprobación humana gobierna todo lo que actúa en lugar de responder. Cada pieza es corriente; la preparación está en cómo se conectan.",
+        "outcome": "Lo que deja el proyecto: una matriz de riesgo y controles por caso de uso, el diseño de acceso bajo el que operarán los agentes, y una vista secuenciada de lo que debe cambiar antes de producción."
+      },
+      {
         "proofType": "priorExperience",
         "title": "Resolución de entidades como base de una vista única de cliente",
         "body": "Un banco norteamericano de primer nivel donde banca minorista, empresarial y patrimonial guardaban cada una su versión del cliente. El registro maestro y el linaje hacia cada origen contribuyente son exactamente lo que un sistema de IA necesita para responder de forma consistente sobre un cliente: el mismo trabajo que servía a los investigadores sirve a un agente que debe saber que tres registros son una persona."
-      },
-      {
-        "proofType": "representative",
-        "title": "Patrón representativo: un asistente que se equivoca con seguridad",
-        "body": "Un asistente interno que responde desde una base de conocimiento donde los documentos de política obsoletos nunca se retiraron y el acceso se concedía a nivel de carpeta. El hallazgo casi nunca es el modelo: es que la recuperación no tiene noción de vigencia ni frontera de permisos, así que el asistente reporta fielmente el documento equivocado a la persona equivocada.",
-        "outcome": "Lo que deja el proyecto: un diseño de recuperación con reglas de refresco y retirada, fronteras de permisos aplicadas en el momento de la consulta, y una puerta de evaluación que prueba exactamente ese fallo."
       }
     ],
     "technologies": [
@@ -766,229 +902,282 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de preparación para IA lo dirige nuestro socio principal, cuya trayectoria es resolución de entidades, MDM, gobernanza y linaje para instituciones financieras de primer nivel. Importa aquí porque la preparación para IA es sobre todo esas disciplinas aplicadas a un consumidor nuevo: las preguntas que un auditor hace sobre una cifra regulatoria son las que deberías hacer sobre las entradas de un modelo.",
+    "practitionerNote": "El trabajo de preparación para IA lo dirige nuestro socio principal, cuya trayectoria abarca arquitectura de datos corporativos, gobernanza, MDM y resolución de entidades, linaje y controles en servicios financieros, más quince años traduciendo capacidades de proveedores en patrones operativos de producción. Importa aquí porque las preguntas que un auditor hace sobre una cifra regulatoria son las que deberías hacer sobre las entradas de un modelo.",
     "relatedInsights": [
-      {
-        "kind": "Artículo",
-        "label": "The Governance Crisis: The Reckoning Deepens",
-        "href": "https://papanguer.com/writing/the-governance-crisis-the-reckoning-deepens/"
-      },
       {
         "kind": "Solución",
         "label": "Gobernanza de datos y MDM — donde vive el marco de gobernanza de IA",
         "href": "/es/solutions/data-governance/"
+      },
+      {
+        "kind": "Evaluación",
+        "label": "Diagnóstico de datos — si aún no sabes si la restricción es específica de IA",
+        "href": "/es/data-health-check/"
+      }
+    ],
+    "relatedSolutions": [
+      {
+        "label": "Gobernanza de datos y MDM",
+        "href": "/solutions/data-governance/",
+        "why": "El marco de gobernanza de IA y las entidades maestras que la IA necesita como contexto."
+      },
+      {
+        "label": "Integración e ingeniería de datos",
+        "href": "/solutions/data-integration/",
+        "why": "Hacer los datos alcanzables y fiables de entrada."
+      },
+      {
+        "label": "Automatización de procesos",
+        "href": "/solutions/process-automation/",
+        "why": "Donde los agentes que actúan se encuentran con las fronteras de revisión humana."
       }
     ],
     "faqs": [
       {
-        "q": "¿Necesitamos datos perfectos antes de empezar con IA?",
-        "a": "No, y esperar a eso es su propio modo de fallo. La preparación es por caso de uso: uno que toca tres entidades bien entendidas puede avanzar mientras el resto del entorno sigue desordenado. Lo que no conviene es empezar por el caso que depende de tus peores datos porque tiene la demo más llamativa."
+        "q": "¿Necesitamos una plataforma MDM antes de poder usar IA?",
+        "a": "No. La pregunta es si tu caso de uso depende de una identidad de entidad autorizada: un asistente de clientes suele depender, un resumidor de documentos no. Cuando depende, aplicamos el patrón de mastering más ligero que cubra la necesidad, y a menudo no es comprar una plataforma. Preferimos decirte que el MDM no es tu restricción antes que venderte un programa que el caso de uso no justifica."
       },
       {
-        "q": "¿Es esto un ejercicio de selección de modelo?",
-        "a": "No. La elección de modelo es la decisión menos duradera de la pila y la más fácil de cambiar después. Este trabajo va de entradas, acceso, contexto y control, que es donde realmente se bloquea la aprobación para producción."
+        "q": "¿La preparación para IA es lo mismo que MLOps?",
+        "a": "No. MLOps es una capacidad operativa dentro de ella. La preparación cubre además los datos, el contexto corporativo, las rutas de acceso, la gobernanza, la evaluación y la propiedad, y por experiencia eso es lo que realmente bloquea la aprobación para producción, mucho después de que el pipeline de despliegue funcione bien."
       },
       {
-        "q": "¿Qué relación tiene el MDM con la preparación para IA?",
-        "a": "Las entidades maestras son la capa de contexto autorizado. Un agente que no distingue que tres registros son un mismo cliente dará tres respuestas, y ningún trabajo de prompts lo arregla. Las entidades fiables además llevan procedencia y confianza de coincidencia, así que una salida puede rastrearse hasta un registro real."
+        "q": "¿Podéis trabajar con nuestra pila de IA y cloud actual?",
+        "a": "Sí, y evaluamos lo que ya existe en lugar de proponer un reemplazo. No tenemos margen de reventa ni cuota de partner con ninguna plataforma, que es lo que mantiene honesta esa evaluación."
       },
       {
-        "q": "¿Y los agentes que ejecutan acciones, no solo responden?",
-        "a": "Eso eleva el riesgo y la exigencia de gobernanza. La gobernanza de acceso debe cubrir herramientas y acciones, no solo datos, y la frontera de supervisión humana debe escribirse antes de construir en lugar de descubrirse tras un incidente. Tratamos a los agentes que actúan como un nivel de riesgo superior por defecto."
+        "q": "¿Desarrolláis modelos?",
+        "a": "Depende del alcance y no es el núcleo de la oferta. Lo que hacemos es la base de datos, contexto y gobernanza de la que depende la IA en producción. Si necesitas un equipo de desarrollo de modelos, esa es otra firma, y lo diremos en lugar de dotarla."
       },
       {
-        "q": "¿Quién es dueño de la gobernanza de IA, vosotros o nosotros?",
-        "a": "Vosotros. Construimos el proceso de admisión, la clasificación de riesgo, las puertas de evaluación y la práctica de monitorización, y los entregamos. Una función de gobernanza de IA que depende de una firma externa no puede decidir a tiempo, lo que anula su propósito."
+        "q": "¿Cómo gobernáis los agentes de IA?",
+        "a": "Controlando identidad, acceso a datos y herramientas, acciones permitidas, fronteras de aprobación, monitorización y evidencia. Un agente que puede actuar es un nivel de riesgo superior por defecto, y la frontera de aprobación humana se escribe antes de construir en lugar de descubrirse tras un incidente."
       },
       {
-        "q": "¿En qué se diferencia la Evaluación de Preparación para IA del Diagnóstico de Datos?",
-        "a": "El Diagnóstico de Datos mira todo el entorno. La Evaluación de Preparación para IA parte de tus casos de uso y va hacia atrás, hasta los datos, accesos y controles que cada uno necesita. Si tienes casos aprobados y pilotos atascados, empieza aquí; si aún no sabes dónde están los problemas, empieza por el Diagnóstico."
+        "q": "¿Y si nuestra gobernanza de datos es inmadura?",
+        "a": "Entonces pasa a formar parte de la hoja de ruta en lugar de ser motivo para parar. La secuencia honesta suele ser gobernanza y entidades maestras primero, porque cualquier caso futuro lo necesitará y se paga solo en reporte y riesgo, salga o no adelante el programa de IA."
       },
       {
-        "q": "¿Y si todavía no tenemos casos de uso de IA?",
-        "a": "Entonces es pronto, y te lo diremos. La secuencia honesta suele ser gobernanza y entidades maestras primero, porque es lo que cualquier caso futuro necesitará y se paga solo en reporte y riesgo, ocurra o no el programa de IA."
+        "q": "¿Podemos empezar con un solo caso de uso?",
+        "a": "Sí, y suele ser la mejor entrada. Un caso prioritario acotado expone los requisitos de base y de control reutilizables más rápido que una evaluación de toda la empresa, y produce algo accionable en vez de un documento."
       }
     ],
     "entryOffer": {
       "id": "ai_readiness_assessment",
       "title": "Evaluación de Preparación para IA",
-      "cta": "Reservar una Evaluación de Preparación para IA",
-      "body": "Parte de tus casos de uso de IA y va hacia atrás. Terminas con un inventario de casos y niveles de riesgo, hallazgos de preparación de datos por caso con los bloqueos nombrados, un modelo de gobernanza de acceso para agentes, y una secuencia para llevar un caso a producción.",
+      "cta": "Solicitar una Evaluación de Preparación para IA",
+      "body": "Una evaluación focalizada de uno o varios casos de uso de IA prioritarios en calidad de datos, contexto autorizado, acceso, gobernanza, arquitectura, evaluación y preparación operativa. Terminas con una vista escrita de las brechas y un plan secuenciado de lo que debe cambiar antes de producción.",
       "note": "El alcance y las condiciones comerciales se acuerdan por escrito antes de empezar."
     }
   },
   pt: {
-    "seoTitle": "Consultoria em prontidão para IA",
-    "seoDescription": "Avalie se seus dados sustentam IA em produção: resolução de entidades, procedência, uso permitido, recuperação e governança de acesso, mais os controles de governança sobre modelos e agentes.",
-    "eyebrow": "PRONTIDÃO PARA IA",
-    "h1": "Sua ambição de IA está à frente dos seus dados. Quase todas estão.",
-    "subhead": "Os pilotos funcionam e a produção trava, porque o modelo nunca foi a restrição. Avaliamos se seus dados são exatos, de uso permitido, resolvíveis para uma entidade única e acessíveis sob controle, e então construímos a camada de contexto e acesso governada de que sistemas e agentes de IA realmente precisam.",
-    "transformation": "Experimentação → Pronto para produção",
+    "seoTitle": "Consultoria em prontidão e governança de IA",
+    "seoDescription": "Prepare dados confiáveis, contexto corporativo governado e controles de produção para modelos e agentes de IA. Consultoria sênior e neutra em relação a fornecedores.",
+    "eyebrow": "PRONTIDÃO E GOVERNANÇA DE IA",
+    "h1": "Sua IA vale o que valem os dados e os controles por trás dela.",
+    "subhead": "Ajudamos equipes a preparar dados confiáveis, contexto corporativo governado e controles de produção para IA, para que modelos e agentes usem a informação certa, pelos caminhos de acesso certos, com responsabilidade clara.",
+    "transformation": "Experimentação → Produção governada",
     "signals": [
-      "Pilotos demonstram bem e nunca chegam à produção, e ninguém sabe nomear o bloqueio.",
-      "Um assistente responde com segurança a partir de um documento superado meses atrás.",
-      "Ninguém sabe dizer quais dados um caso de uso pode legalmente utilizar.",
-      "O mesmo cliente aparece de três formas, então o modelo não tem noção estável de com quem fala.",
-      "Agentes recebem acesso amplo porque delimitá-lo direito é difícil.",
-      "Não existe inventário de casos de uso de IA, responsáveis ou níveis de risco."
+      "Os pilotos funcionam com amostras curadas e falham ao serem ligados aos dados reais.",
+      "Ninguém sabe dizer em qual registro de cliente, produto ou fornecedor um sistema de IA deveria confiar.",
+      "Dados sensíveis são tecnicamente alcançáveis, mas o uso permitido por modelos ou agentes não está claro.",
+      "Equipes diferentes constroem padrões separados de RAG, agentes e modelos, sem controles comuns.",
+      "Ninguém é dono do caminho de aprovação do experimento até a produção.",
+      "Mudanças de modelo, prompt, recuperação e dados são difíceis de reconstruir após o deploy.",
+      "A revisão humana acontece por costume; as fronteiras de escalonamento e sobrescrita não estão escritas.",
+      "A liderança pede avanços em IA enquanto qualidade, linhagem e propriedade seguem sem solução."
     ],
     "consequenceFlow": [
-      "Os dados corporativos são inacessíveis, não governados ou não resolvíveis para uma entidade única",
-      "As equipes contornam com cópias, exportações e permissões amplas",
-      "As saídas não podem ser rastreadas até um registro de origem confiável",
-      "Ninguém assina o caso de uso para produção",
-      "O piloto é aposentado em silêncio e a ambição passa para o próximo"
+      "Dados fragmentados ou mal governados",
+      "Contexto corporativo ambíguo — sem resposta acordada sobre a que um registro se refere",
+      "Acesso de IA não controlado a esse contexto",
+      "Saídas inconsistentes e rastreabilidade fraca",
+      "A aprovação para produção trava, o risco operacional sobe e a confiança cai"
     ],
-    "consequenceNote": "A IA falha muito menos por qualidade de modelo do que por entradas e permissão. Um agente com acesso amplo a dados inconsistentes não é um problema de IA: é um problema de governança que agora roda em velocidade de máquina.",
+    "consequenceNote": "Nenhum desses é problema de modelo, e por isso comprar um modelo melhor não os resolve. A restrição está no que o modelo pode ver, em se aquela informação é confiável e em quem responde quando ela está errada.",
     "transformationRows": [
       {
-        "before": "Pilotos que travam antes da produção",
-        "after": "Casos de uso com responsável e um caminho de aprovação"
+        "before": "Pilotos construídos sobre os dados mais convenientes",
+        "after": "Casos de uso ligados a fontes de dados e conhecimento governadas"
       },
       {
-        "before": "Acesso bruto à origem para modelos e agentes",
-        "after": "Visões de entidades oficiais expostas por serviços controlados"
+        "before": "Identidades de cliente e produto conflitantes",
+        "after": "Entidades mestras oficiais e contexto controlado, quando o caso de uso exige"
       },
       {
-        "before": "Procedência desconhecida",
-        "after": "Saídas rastreáveis até registros corporativos confiáveis"
+        "before": "Acesso amplo ou improvisado",
+        "after": "Caminhos de acesso por finalidade e controles de política"
       },
       {
-        "before": "Permissões de agente amplas e não documentadas",
-        "after": "Governança de acesso delimitada para dados, ferramentas e ações"
+        "before": "Propriedade da IA pouco clara",
+        "after": "Donos nomeados de caso de uso, dados, modelo e controles"
       },
       {
-        "before": "Sem inventário de IA",
-        "after": "Registro de casos de uso com níveis de risco e requisitos de controle"
+        "before": "Um único teste antes do lançamento",
+        "after": "Portões de avaliação mais monitoramento contínuo"
       },
       {
-        "before": "Avaliação como demo",
-        "after": "Portões de avaliação, monitoramento de desvio e resposta a incidentes"
+        "before": "Mudanças de prompt, modelo e dados difíceis de reconstruir",
+        "after": "Versionamento, linhagem e evidência retida"
+      },
+      {
+        "before": "Revisão humana por costume",
+        "after": "Fronteiras definidas de supervisão humana e escalonamento"
+      },
+      {
+        "before": "Governança de IA como documento de política",
+        "after": "Controles embutidos na arquitetura e no ciclo de vida"
       }
     ],
     "capabilities": [
       {
-        "title": "Avaliação de prontidão dos dados para IA",
-        "body": "Se os dados por trás de cada caso de uso aprovado são exatos, completos, permitidos e resolvíveis. Avaliado por caso de uso, porque prontidão não é propriedade de uma organização: é propriedade de um caso específico e dos dados que ele toca."
+        "title": "Avaliação de prontidão",
+        "body": "Inventariar os casos de uso prioritários e avaliar as lacunas reais de cada um em dados, contexto, acesso, governança, arquitetura e operação. Prontidão é propriedade de um caso de uso, não de uma organização."
       },
       {
-        "title": "Entidades mestras como contexto de IA",
-        "body": "Sistemas de IA precisam de contexto oficial, não de mais dados brutos. Entidades confiáveis de cliente, produto, fornecedor, organização e localização dão identidade, relações e atributos consistentes, para que um agente saiba que três registros são um mesmo cliente."
+        "title": "Base de dados confiáveis",
+        "body": "Identificar as fontes oficiais, os requisitos de qualidade, as transformações e os padrões de entrega dos quais um caso de uso depende, e dizer com clareza quais ainda não existem."
       },
       {
-        "title": "Recuperação e acesso ao conhecimento",
-        "body": "Como o conteúdo é fatiado, indexado, atualizado e permissionado, e como o material superado é aposentado. A maioria das respostas confiantes e erradas são problemas de recuperação, não de modelo."
+        "title": "Contexto corporativo mestre",
+        "body": "Quando um caso de uso depende de identidade consistente de cliente, produto, fornecedor, organização ou localização, MDM e resolução de entidades a fornecem. Quando não, dizemos isso em vez de vender um programa de mastering que o caso de uso não justifica."
       },
       {
-        "title": "Governança de acesso para agentes",
-        "body": "Acesso delimitado a dados, ferramentas e ações, com regras de uso permitido aplicadas aos atributos expostos a um modelo. Acesso amplo concedido porque delimitar era difícil é o achado mais comum."
+        "title": "Arquitetura de conhecimento e recuperação",
+        "body": "Padrões governados de recuperação e contexto, metadados, atualização e aposentadoria, e as fronteiras de acesso adequadas ao caso de uso. A maioria das respostas confiantes e erradas são falhas de recuperação, não de modelo."
       },
       {
-        "title": "Governança de IA na prática",
-        "body": "Admissão e aprovação de casos de uso, níveis de risco, documentação de modelos e agentes, versionamento e rastreabilidade, fronteiras de supervisão humana e escalonamento. O arcabouço vive na página de Governança e MDM; aqui ele encontra um caso de uso real."
+        "title": "Governança de IA",
+        "body": "Admissão de casos de uso, níveis de risco, aprovações, responsabilidade, evidência e controles de ciclo de vida. O arcabouço corporativo vive na página de Governança e MDM; aqui ele encontra um caso de uso real."
+      },
+      {
+        "title": "Governança de acesso de agentes e modelos",
+        "body": "Quais dados, ferramentas e ações um modelo ou agente pode alcançar, com menor privilégio e fronteiras de aprovação humana definidas antes de construir. Um agente que pode agir é um problema de governança diferente do que apenas responde."
       },
       {
         "title": "Avaliação e monitoramento",
-        "body": "Portões de avaliação antes do lançamento e depois sinais de desvio, qualidade e incidentes, com um responsável. Um modelo avaliado uma única vez no lançamento não está governado: está sem monitoramento."
+        "body": "Portões de avaliação antes da produção e depois monitoramento de qualidade, segurança e operação com um responsável. Um modelo avaliado uma única vez no lançamento não está governado: está sem monitoramento."
+      },
+      {
+        "title": "Habilitação e repasse",
+        "body": "Decisões de arquitetura, mapeamento de controles, runbooks e propriedade entregues à sua equipe. Uma função de governança de IA que depende de uma firma externa não consegue decidir a tempo."
       }
     ],
     "architecture": {
-      "title": "Arquitetura de referência: contexto governado para IA",
-      "description": "Sistemas de origem e conteúdo alimentam uma camada governada de dados e conhecimento, onde entidades mestras fornecem identidade e atributos oficiais em vez de registros brutos. Uma camada de recuperação e acesso expõe esse contexto por serviços controlados, aplicando regras de uso permitido por atributo, de modo que um modelo ou agente recebe uma visão delimitada e não uma conexão ao banco. Serviços de IA e agentes ficam acima, e tudo o que fazem é monitorado e avaliado. Governança de IA, procedência, linhagem, segurança e supervisão humana atravessam todo o fluxo, inclusive as ações que um agente executa, que é a parte que a maioria das arquiteturas deixa de fora.",
+      "title": "Arquitetura de referência",
+      "description": "As fontes corporativas alimentam uma camada de confiança e contexto: qualidade, resolução de entidades quando a identidade importa, dados de referência, metadados e linhagem. Dali saem dados e conhecimento governados: produtos de dados curados, contexto semântico e recuperação controlada. Uma camada de acesso de IA fica entre isso e os modelos: APIs, serviços de recuperação, gateways de ferramentas, aplicação de políticas e identidade. Os serviços de IA consomem, e uma camada humana sustenta revisão, aprovação e escalonamento. Governança de IA, privacidade e segurança, observabilidade, avaliação e evidência de auditoria atravessam toda a pilha, inclusive as ações que um agente executa. O que este diagrama NÃO diz: que todo caso de uso de IA precisa de um hub de MDM centralizado. O mastering ganha seu lugar onde a identidade de entidade é aquilo em que o caso de uso se apoia, e não fora disso.",
       "layers": [
         {
-          "name": "Origens e conteúdo",
+          "name": "Fontes corporativas",
           "items": [
-            "Sistemas operacionais",
+            "CRM",
+            "ERP",
+            "Bancos operacionais",
+            "SaaS",
             "Documentos",
-            "Bases de conhecimento",
-            "Dados externos"
+            "APIs",
+            "Fluxos de eventos"
+          ]
+        },
+        {
+          "name": "Confiança e contexto",
+          "items": [
+            "Qualidade de dados",
+            "MDM / resolução de entidades",
+            "Dados de referência",
+            "Metadados",
+            "Linhagem"
           ]
         },
         {
           "name": "Dados e conhecimento governados",
           "items": [
-            "Entidades mestras",
-            "Conjuntos curados",
-            "Conteúdo indexado",
-            "Procedência"
+            "Produtos de dados curados",
+            "Contexto semântico",
+            "Bases de conhecimento",
+            "Recuperação controlada"
           ]
         },
         {
-          "name": "Recuperação e acesso",
+          "name": "Camada de acesso de IA",
           "items": [
-            "APIs controladas",
-            "Visões de entidade",
-            "Regras de uso permitido",
-            "Contexto delimitado"
+            "APIs",
+            "Serviços de recuperação",
+            "Gateways de ferramentas",
+            "Aplicação de políticas",
+            "Identidade e acesso"
           ]
         },
         {
-          "name": "Serviços de IA e agentes",
+          "name": "Serviços de IA",
           "items": [
             "Modelos",
-            "Agentes e ferramentas",
-            "Orquestração",
-            "Humano no circuito"
+            "Aplicações RAG",
+            "Copilotos",
+            "Agentes",
+            "Serviços de decisão"
           ]
         },
         {
-          "name": "Monitoramento e avaliação",
+          "name": "Camada humana e de negócio",
           "items": [
-            "Portões de avaliação",
-            "Sinais de desvio e qualidade",
-            "Resposta a incidentes"
+            "Revisão",
+            "Aprovação",
+            "Escalonamento",
+            "Operações",
+            "Fluxos de negócio"
           ]
         }
       ],
       "crossCutting": [
-        "Governança de IA e níveis de risco",
-        "Procedência e linhagem",
-        "Governança de acesso a dados, ferramentas e ações",
-        "Segurança",
-        "Supervisão humana e evidência de auditoria"
+        "Governança de IA",
+        "Privacidade e segurança",
+        "Observabilidade",
+        "Avaliação",
+        "Evidência de auditoria",
+        "Gestão do ciclo de vida"
       ]
     },
     "deliverables": [
-      "Inventário de casos de uso de IA com responsáveis, níveis de risco e requisitos de controle por nível",
-      "Achados de prontidão de dados por caso de uso, com os bloqueios nomeados em vez de pontuados",
-      "Avaliação de resolução de entidades e contexto mestre para as entidades de que os casos dependem",
-      "Desenho de recuperação e conhecimento: fatiamento, atualização, aposentadoria de conteúdo superado",
-      "Modelo de governança de acesso para agentes, cobrindo dados, ferramentas e ações",
-      "Regras de uso permitido para os atributos expostos a modelos e agentes",
-      "Desenho dos portões de avaliação e os sinais de monitoramento posteriores",
-      "Fronteiras de supervisão humana e escalonamento, por escrito",
-      "Um roteiro sequenciado do estado atual até um caso de uso capaz de ir à produção"
+      "Painel de prontidão para IA por caso de uso prioritário, com os bloqueios nomeados em vez de pontuados",
+      "Mapa de riscos e dependências do estado atual",
+      "Mapa de dados e contexto oficial, incluindo onde o MDM é realmente necessário e onde não é",
+      "Arquitetura-alvo de dados e conhecimento para IA",
+      "Desenho de controle de acesso e governança de IA, cobrindo dados, ferramentas e ações",
+      "Matriz de risco e controles por caso de uso, com o fluxo de aprovação",
+      "Requisitos de avaliação e monitoramento",
+      "Backlog de remediação priorizado e roteiro sequenciado",
+      "Registros de decisões de arquitetura, modelo de propriedade e documentação de repasse"
     ],
     "process": [
       {
         "step": "Descobrir",
-        "body": "Inventariar os casos de uso de IA que já existem, inclusive os que rodam fora de qualquer programa, e identificar quais dados cada um realmente toca."
+        "body": "Priorizar os casos de uso, inclusive os que rodam fora de qualquer programa, e examinar as restrições de dados, conhecimento, arquitetura, governança e operação que cada um encontra."
       },
       {
         "step": "Projetar",
-        "body": "Classificar os casos por risco e então avaliar prontidão de dados e acesso dos que importam. Contexto governado e regras de uso permitido são desenhados por nível, não uma vez para tudo."
+        "body": "Definir a arquitetura-alvo de dados e contexto, os controles, os padrões de acesso e os direitos de decisão. Projetados por nível de risco, não uma vez para tudo."
       },
       {
-        "step": "Entregar",
-        "body": "Construir a camada de contexto e acesso governada para o caso de maior valor que pode realmente chegar à produção, e o portão de avaliação que ele precisa passar."
+        "step": "Provar",
+        "body": "Quando o escopo justificar, validar um padrão delimitado de arquitetura e controles contra um caso de uso prioritário, em vez de afirmar que o desenho vai se sustentar."
       },
       {
         "step": "Habilitar",
-        "body": "Entregar o processo de admissão, a classificação de risco e a prática de monitoramento, para que o próximo caso não precise de nós."
+        "body": "Transferir decisões, artefatos, runbooks, propriedade e o roteiro do que vem depois."
       }
     ],
     "proof": [
       {
+        "proofType": "representative",
+        "title": "Arquitetura representativa: prontidão para IA numa empresa regulada",
+        "body": "Uma instituição financeira com casos de uso de IA aprovados e sem resposta acordada sobre se os dados subjacentes podem ser usados licitamente. O padrão mostra como as peças se conectam: a resolução de entidades dá uma noção estável de quem é o cliente, a recuperação governada decide o que um assistente pode ver, a linhagem permite rastrear uma saída até um registro real, e uma fronteira escrita de aprovação humana governa tudo o que age em vez de responder. Cada peça é comum; a prontidão está em como elas se ligam.",
+        "outcome": "O que o projeto deixa: uma matriz de risco e controles por caso de uso, o desenho de acesso sob o qual os agentes vão operar, e uma visão sequenciada do que precisa mudar antes da produção."
+      },
+      {
         "proofType": "priorExperience",
         "title": "Resolução de entidades como base para uma visão única do cliente",
         "body": "Um banco norte-americano de primeira linha onde varejo, corporativo e wealth guardavam cada um a sua versão do cliente. O registro mestre e a linhagem até cada origem contribuinte são exatamente o que um sistema de IA precisa para responder de forma consistente sobre um cliente: o mesmo trabalho que serviu aos investigadores serve a um agente que precisa saber que três registros são uma pessoa."
-      },
-      {
-        "proofType": "representative",
-        "title": "Padrão representativo: um assistente confiantemente errado",
-        "body": "Um assistente interno respondendo a partir de uma base de conhecimento onde documentos de política superados nunca foram aposentados e o acesso era concedido no nível da pasta. O achado quase nunca é o modelo: é que a recuperação não tem noção de vigência nem fronteira de permissão, então o assistente relata fielmente o documento errado para a pessoa errada.",
-        "outcome": "O que o projeto deixa: um desenho de recuperação com regras de atualização e aposentadoria, fronteiras de permissão aplicadas no momento da consulta, e um portão de avaliação que testa exatamente essa falha."
       }
     ],
     "technologies": [
@@ -1028,54 +1217,71 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de prontidão para IA é liderado pelo nosso sócio principal, cuja trajetória é resolução de entidades, MDM, governança e linhagem para instituições financeiras de primeira linha. Isso importa aqui porque prontidão para IA é sobretudo essas disciplinas aplicadas a um consumidor novo: as perguntas que um auditor faz sobre um número regulatório são as que você deveria fazer sobre as entradas de um modelo.",
+    "practitionerNote": "O trabalho de prontidão para IA é liderado pelo nosso sócio principal, cuja trajetória cobre arquitetura de dados corporativos, governança, MDM e resolução de entidades, linhagem e controles em serviços financeiros, além de quinze anos traduzindo capacidade de fornecedores em padrões operacionais de produção. Isso importa aqui porque as perguntas que um auditor faz sobre um número regulatório são as que você deveria fazer sobre as entradas de um modelo.",
     "relatedInsights": [
-      {
-        "kind": "Artigo",
-        "label": "The Governance Crisis: The Reckoning Deepens",
-        "href": "https://papanguer.com/writing/the-governance-crisis-the-reckoning-deepens/"
-      },
       {
         "kind": "Solução",
         "label": "Governança de dados e MDM — onde vive o arcabouço de governança de IA",
         "href": "/pt/solutions/data-governance/"
+      },
+      {
+        "kind": "Avaliação",
+        "label": "Diagnóstico de dados — se você ainda não sabe se a restrição é específica de IA",
+        "href": "/pt/data-health-check/"
+      }
+    ],
+    "relatedSolutions": [
+      {
+        "label": "Governança de dados e MDM",
+        "href": "/solutions/data-governance/",
+        "why": "O arcabouço de governança de IA e as entidades mestras que a IA precisa como contexto."
+      },
+      {
+        "label": "Integração e engenharia de dados",
+        "href": "/solutions/data-integration/",
+        "why": "Tornar os dados alcançáveis e confiáveis para começar."
+      },
+      {
+        "label": "Automação de processos",
+        "href": "/solutions/process-automation/",
+        "why": "Onde agentes que agem encontram as fronteiras de revisão humana."
       }
     ],
     "faqs": [
       {
-        "q": "Precisamos de dados perfeitos antes de começar com IA?",
-        "a": "Não, e esperar por isso é um modo de falha por si só. Prontidão é por caso de uso: um caso que toca três entidades bem compreendidas pode avançar enquanto o resto do ambiente ainda está bagunçado. O que não convém é começar pelo caso que depende dos seus piores dados porque tem a demo mais empolgante."
+        "q": "Precisamos de uma plataforma de MDM antes de usar IA?",
+        "a": "Não. A pergunta é se o seu caso de uso depende de identidade de entidade oficial: um assistente de clientes geralmente depende, um sumarizador de documentos geralmente não. Quando depende, aplicamos o padrão de mastering mais leve que atenda à necessidade, e muitas vezes isso não é comprar uma plataforma. Preferimos dizer que o MDM não é a sua restrição a vender um programa que o caso de uso não justifica."
       },
       {
-        "q": "Isto é um exercício de seleção de modelo?",
-        "a": "Não. A escolha do modelo é a decisão menos duradoura da pilha e a mais fácil de mudar depois. Este trabalho é sobre entradas, acesso, contexto e controle, que é onde a aprovação para produção realmente trava."
+        "q": "Prontidão para IA é o mesmo que MLOps?",
+        "a": "Não. MLOps é uma capacidade operacional dentro dela. A prontidão cobre também os dados, o contexto corporativo, os caminhos de acesso, a governança, a avaliação e a propriedade — e, pela nossa experiência, é isso que de fato trava a aprovação para produção, muito depois de o pipeline de deploy já funcionar."
       },
       {
-        "q": "Como o MDM se relaciona com prontidão para IA?",
-        "a": "As entidades mestras são a camada de contexto oficial. Um agente que não percebe que três registros são um mesmo cliente dará três respostas, e nenhum trabalho de prompt resolve isso. Entidades confiáveis também carregam procedência e confiança de correspondência, então uma saída pode ser rastreada até um registro real."
+        "q": "Vocês conseguem trabalhar com nossa pilha de IA e cloud atual?",
+        "a": "Sim, e avaliamos o que já existe em vez de propor substituição. Não temos margem de revenda nem cota de parceiro com nenhuma plataforma, e é isso que mantém essa avaliação honesta."
       },
       {
-        "q": "E os agentes que executam ações, não apenas respondem?",
-        "a": "Isso eleva o risco e a exigência de governança. A governança de acesso precisa cobrir ferramentas e ações, não só dados, e a fronteira de supervisão humana precisa ser escrita antes da construção em vez de descoberta após um incidente. Tratamos agentes que agem como um nível de risco superior por padrão."
+        "q": "Vocês desenvolvem modelos?",
+        "a": "Depende do escopo e não é o núcleo da oferta. O que fazemos é a base de dados, contexto e governança da qual a IA em produção depende. Se você precisa de um time de desenvolvimento de modelos, essa é outra firma, e diremos isso em vez de alocá-la."
       },
       {
-        "q": "Quem é dono da governança de IA, nós ou vocês?",
-        "a": "Vocês. Construímos o processo de admissão, a classificação de risco, os portões de avaliação e a prática de monitoramento, e entregamos. Uma função de governança de IA que depende de uma firma externa não consegue decidir a tempo, o que anula o propósito."
+        "q": "Como vocês governam agentes de IA?",
+        "a": "Controlando identidade, acesso a dados e ferramentas, ações permitidas, fronteiras de aprovação, monitoramento e evidência. Um agente que pode agir é um nível de risco superior por padrão, e a fronteira de aprovação humana é escrita antes de construir em vez de descoberta após um incidente."
       },
       {
-        "q": "Qual a diferença entre a Avaliação de Prontidão para IA e o Diagnóstico de Dados?",
-        "a": "O Diagnóstico de Dados olha todo o ambiente. A Avaliação de Prontidão para IA parte dos seus casos de uso e volta para trás, até os dados, acessos e controles que cada um precisa. Se você tem casos aprovados e pilotos travados, comece aqui; se ainda não sabe onde estão os problemas, comece pelo Diagnóstico."
+        "q": "E se nossa governança de dados for imatura?",
+        "a": "Então ela entra no roteiro em vez de ser motivo para parar. A sequência honesta costuma ser governança e entidades mestras primeiro, porque qualquer caso futuro vai precisar disso e se paga em relatórios e risco, aconteça ou não o programa de IA."
       },
       {
-        "q": "E se ainda não temos casos de uso de IA?",
-        "a": "Então é cedo, e vamos dizer isso. A sequência honesta costuma ser governança e entidades mestras primeiro, porque é o que qualquer caso futuro vai precisar e se paga em relatórios e risco, aconteça ou não o programa de IA."
+        "q": "Podemos começar com um caso de uso só?",
+        "a": "Sim, e normalmente é a melhor porta de entrada. Um caso prioritário delimitado expõe os requisitos reutilizáveis de base e de controle mais rápido do que uma avaliação corporativa inteira, e produz algo acionável em vez de um documento."
       }
     ],
     "entryOffer": {
       "id": "ai_readiness_assessment",
       "title": "Avaliação de Prontidão para IA",
-      "cta": "Agendar uma Avaliação de Prontidão para IA",
-      "body": "Parte dos seus casos de uso de IA e volta para trás. Você termina com um inventário de casos e níveis de risco, achados de prontidão de dados por caso com os bloqueios nomeados, um modelo de governança de acesso para agentes, e uma sequência para levar um caso à produção.",
+      "cta": "Solicitar uma Avaliação de Prontidão para IA",
+      "body": "Uma avaliação focada de um ou mais casos de uso de IA prioritários em qualidade de dados, contexto oficial, acesso, governança, arquitetura, avaliação e prontidão operacional. Você termina com uma visão escrita das lacunas e um plano sequenciado do que precisa mudar antes da produção.",
       "note": "Escopo e condições comerciais são acordados por escrito antes do início."
     }
   },
