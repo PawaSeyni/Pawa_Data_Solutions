@@ -13,6 +13,7 @@ import { TEAM } from "@/lib/team";
 import { solutionFor } from "@/lib/deepSolutions";
 import { createPageUrl } from "@/utils";
 import { prefixFor, parsePath } from "@/lib/i18n";
+import { CTA_LOCATIONS } from "@/lib/cta";
 import { SITE_URL } from "@/lib/jobPostings";
 import { track, trackCta, EVENTS } from "@/lib/analytics";
 
