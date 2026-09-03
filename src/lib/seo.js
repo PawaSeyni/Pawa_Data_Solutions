@@ -42,7 +42,12 @@ function trim(text) {
 // Which translation keys supply each page's title and description.
 const SOURCES = {
   Home:                 { title: null,            desc: 'heroSubtitle' },
-  Solutions:            { title: 'solutionsEyebrow', desc: 'solutionsSubtitle' },
+  // The hub had been titled from its nav eyebrow, which produced
+  // "Solutions — PaWa Data Solutions" — the word twice, and identical in French
+  // where "Solutions" is the same word. A hub page should say what it covers,
+  // and its on-page subtitle opens with "Most engagements start with one of
+  // these", where "these" has no antecedent in a search result.
+  Solutions:            { title: 'solutionsSeoTitle', desc: 'solutionsSeoDesc' },
   About:                { title: 'aboutEyebrow',  desc: 'aboutIntro' },
   Locations:            { title: 'navLocations',  desc: 'locationsSubtitle' },
   Insights:             { title: 'insightsEyebrow', desc: 'insightsSubtitle' },
