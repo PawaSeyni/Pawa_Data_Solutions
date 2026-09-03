@@ -33,7 +33,7 @@ function Section({ title, children }) {
 export default function CaseStudy({ language }) {
   const t = translations[language];
   const { slug } = parsePath(useLocation().pathname);
-  const study = caseStudyBySlug(slug.replace(/^case-studies\//, ''));
+  const study = caseStudyBySlug(slug.replace(/^case-studies\//, ''), language);
 
   if (!study) return null;
 

@@ -17,7 +17,7 @@ import { trackCta } from "@/lib/analytics";
 export default function Book({ language }) {
   const t = translations[language];
   const { slug } = parsePath(useLocation().pathname);
-  const book = bookBySlug(slug.replace(/^insights\/books\//, ''));
+  const book = bookBySlug(slug.replace(/^insights\/books\//, ''), language);
 
   if (!book) return null;
 
@@ -85,7 +85,15 @@ export default function Book({ language }) {
           <p className="mb-10 text-lg leading-relaxed text-gray-700">{book.audience}</p>
 
           <h2 className="mb-3 text-2xl font-semibold text-gray-900">{t.bookAbout}</h2>
-          <p className="mb-10 text-lg leading-relaxed text-gray-700">{book.description}</p>
+          <p className="mb-4 text-lg leading-relaxed text-gray-700">{book.description}</p>
+          {/* The book itself is in English. Our copy about it is translated, so a
+              reader arriving in French would otherwise have no way to know that
+              until it turned up. */}
+          {language !== 'en' && (
+            <p className="mb-10 rounded-lg border border-gray-200 bg-gray-50/60 p-4 text-sm text-gray-600">
+              {t.bookLanguageNote}
+            </p>
+          )}
 
           <h2 className="mb-3 text-2xl font-semibold text-gray-900">{t.bookAuthor}</h2>
           <p className="mb-4 text-lg leading-relaxed text-gray-700">{t.bookAuthorBio}</p>

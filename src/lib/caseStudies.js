@@ -142,9 +142,27 @@ export const CASE_STUDIES = [
   },
 ];
 
+// Locale copy. Identity fields — slug, disclosure, provenance, solutions,
+// metrics — are NOT language and stay on the entry above, so a translation
+// cannot accidentally change which page it is or what kind of proof it claims.
+//
+// Everything here is our own writing about anonymised engagements, so unlike a
+// book title it translates without misrepresenting anything.
+import { CASE_STUDY_COPY } from '../content/caseStudyCopy.js';
+
 export const hasCaseStudies = () => CASE_STUDIES.length > 0;
 
-export const caseStudyBySlug = (slug) => CASE_STUDIES.find((c) => c.slug === slug);
+/** One study, in the requested language, falling back to the English copy. */
+export const caseStudyBySlug = (slug, language = 'en') => {
+  const base = CASE_STUDIES.find((c) => c.slug === slug);
+  if (!base) return undefined;
+  const copy = CASE_STUDY_COPY[language]?.[slug];
+  return copy ? { ...base, ...copy } : base;
+};
+
+/** The whole list, localised — used by the index page. */
+export const caseStudiesFor = (language = 'en') =>
+  CASE_STUDIES.map((c) => caseStudyBySlug(c.slug, language));
 
 /** Homepage proof block shows three. */
 export const featuredCaseStudies = () => CASE_STUDIES.slice(0, 3);

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
 import PrimaryCta from "@/components/PrimaryCta";
 import { CTA_LOCATIONS } from "@/lib/cta";
-import { CASE_STUDIES } from "@/lib/caseStudies";
+import { caseStudiesFor } from "@/lib/caseStudies";
 import { prefixFor } from "@/lib/i18n";
 import { trackCta } from "@/lib/analytics";
 
@@ -27,7 +27,7 @@ export default function CaseStudies({ language }) {
       <section className="py-14 lg:py-20">
         <div className="max-w-4xl mx-auto px-4">
           <ul className="list-none p-0 m-0 space-y-6">
-            {CASE_STUDIES.map((c) => (
+            {caseStudiesFor(language).map((c) => (
               <li key={c.slug} className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm">
                 <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-blue-600">{c.sector}</p>
                 <h2 className="mb-1 text-2xl font-semibold text-gray-900">{c.headline}</h2>

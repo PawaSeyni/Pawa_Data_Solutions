@@ -90,7 +90,7 @@ export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
   // from the approved entry rather than from a generic template.
   if (pageName?.startsWith('Book:')) {
     const lang = LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
-    const book = bookBySlug(pageName.slice('Book:'.length));
+    const book = bookBySlug(pageName.slice('Book:'.length), lang);
     if (book) {
       return {
         path: localizedPath(pageName, lang),
@@ -118,7 +118,7 @@ export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
 
   if (pageName?.startsWith('CaseStudy:')) {
     const lang = LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
-    const study = caseStudyBySlug(pageName.slice('CaseStudy:'.length));
+    const study = caseStudyBySlug(pageName.slice('CaseStudy:'.length), lang);
     if (study) {
       return {
         path: localizedPath(pageName, lang),

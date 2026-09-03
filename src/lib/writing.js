@@ -121,4 +121,19 @@ export const PUBLICATIONS = [
   },
 ];
 
-export const bookBySlug = (slug) => PUBLICATIONS.find((b) => b.slug === slug);
+import { BOOK_COPY } from '../content/bookCopy.js';
+
+/**
+ * A book in the requested language. Only our own copy about it is localised —
+ * title, subtitle, meta, ISBN and purchase links stay as published.
+ */
+export const bookBySlug = (slug, language = 'en') => {
+  const base = PUBLICATIONS.find((b) => b.slug === slug);
+  if (!base) return undefined;
+  const copy = BOOK_COPY[language]?.[slug];
+  return copy ? { ...base, ...copy } : base;
+};
+
+/** All books, localised — used by the Insights index. */
+export const booksFor = (language = 'en') =>
+  PUBLICATIONS.map((b) => bookBySlug(b.slug, language));

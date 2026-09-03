@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, BookOpen, FileText, ListChecks } from "lucide-react";
 import { translations } from "@/components/translations";
-import { ARTICLES, PUBLICATIONS, WRITING_INDEX } from "@/lib/writing";
+import { ARTICLES, booksFor, WRITING_INDEX } from "@/lib/writing";
 import { BEST_PRACTICES } from "@/lib/bestPractices";
 import { prefixFor } from "@/lib/i18n";
 import { trackCta } from "@/lib/analytics";
@@ -55,7 +55,7 @@ export default function Insights({ language }) {
       meta: a.readingTime,
       href: a.href,
     })),
-    ...PUBLICATIONS.map((b) => ({
+    ...booksFor(language).map((b) => ({
       key: `bk-${b.slug}`,
       type: 'books',
       title: b.title,
@@ -74,7 +74,8 @@ export default function Insights({ language }) {
   ];
 
   const typeLabel = { articles: t.insightsFilterArticles, practices: t.insightsFilterPractices, books: t.insightsFilterBooks };
-  const featured = PUBLICATIONS.find((b) => b.status === 'available');
+  // Localised too — the featured card shows the book's thesis, which is our copy.
+  const featured = booksFor(language).find((b) => b.status === 'available');
   const counts = items.reduce((acc, i) => ({ ...acc, [i.type]: (acc[i.type] || 0) + 1 }), {});
 
   return (
