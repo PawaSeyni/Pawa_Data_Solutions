@@ -7,8 +7,14 @@
 // as if it were finished.
 
 import { IDENTITY as DI_ID, LOCALES as DI } from '../content/dataIntegration.js';
+import { IDENTITY as GOV_ID, LOCALES as GOV } from '../content/dataGovernanceMdm.js';
+import { IDENTITY as AIR_ID, LOCALES as AIR } from '../content/aiReadiness.js';
 
-const REGISTRY = [{ identity: DI_ID, locales: DI }];
+const REGISTRY = [
+  { identity: DI_ID, locales: DI },
+  { identity: GOV_ID, locales: GOV },
+  { identity: AIR_ID, locales: AIR },
+];
 
 export const DEEP_SLUGS = REGISTRY.map((r) => r.identity.slug);
 

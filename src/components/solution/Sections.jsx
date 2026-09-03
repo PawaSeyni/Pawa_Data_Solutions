@@ -146,20 +146,39 @@ export function CapabilityGrid({ items }) {
  * the same thing in a sentence.
  */
 export function ReferenceArchitecture({ layers, crossCutting, crossCuttingLabel, description }) {
+  // Six layers fit one desktop row at ~170px each and read fine. Seven do not:
+  // measured on the Governance & MDM page, boxes fell to 96-135px and 14 of 26
+  // items wrapped onto multiple lines. So past six, the flow wraps to a grid
+  // instead of being squeezed.
+  //
+  // When it wraps, the arrows stop being true — the last box in a row does not
+  // flow into the one below it visually — so the stages are numbered instead.
+  // The number carries the order in both layouts, and it is an <ol> either way.
+  const wraps = layers.length > 6;
+
   return (
     <>
       <p className="mb-8 max-w-3xl leading-relaxed text-gray-600">{description}</p>
       <div className="rounded-xl border border-gray-200 bg-gray-50/60 p-5 sm:p-7">
-        <ol className="flex list-none flex-col gap-3 p-0 m-0 lg:flex-row lg:items-stretch">
+        <ol
+          className={
+            wraps
+              ? 'grid list-none gap-3 p-0 m-0 sm:grid-cols-2 lg:grid-cols-4'
+              : 'flex list-none flex-col gap-3 p-0 m-0 lg:flex-row lg:items-stretch'
+          }
+        >
           {layers.map((l, i) => (
-            <li key={l.name} className="flex flex-1 items-stretch gap-3">
-              <div className="flex-1 rounded-lg border border-gray-200 bg-white p-4">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-blue-600">{l.name}</p>
+            <li key={l.name} className={wraps ? '' : 'flex flex-1 items-stretch gap-3'}>
+              <div className="h-full flex-1 rounded-lg border border-gray-200 bg-white p-4">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-blue-600">
+                  <span className="mr-1.5 text-gray-400 tabular-nums">{i + 1}</span>
+                  {l.name}
+                </p>
                 <ul className="list-none space-y-1 p-0 m-0 text-sm text-gray-700">
                   {l.items.map((it) => <li key={it}>{it}</li>)}
                 </ul>
               </div>
-              {i < layers.length - 1 && (
+              {!wraps && i < layers.length - 1 && (
                 <div className="hidden shrink-0 items-center lg:flex" aria-hidden="true">
                   <ArrowRight className="h-5 w-5 text-gray-400" />
                 </div>
@@ -172,7 +191,7 @@ export function ReferenceArchitecture({ layers, crossCutting, crossCuttingLabel,
             not a box in the middle of the flow. */}
         <div className="mt-4 rounded-lg border border-dashed border-blue-300 bg-blue-50/50 p-4">
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-blue-700">{crossCuttingLabel}</p>
-          <p className="text-sm text-gray-700">{crossCutting.join(' · ')}</p>
+          <p className="text-sm text-gray-700">{crossCutting.join(' \u00b7 ')}</p>
         </div>
       </div>
     </>
