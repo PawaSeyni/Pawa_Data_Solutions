@@ -53,8 +53,15 @@ for (const p of paths) {
   if (!title) fail(p, 'no <title>');
   else {
     if (title.length > 65) warn(p, `title ${title.length} chars: "${title}"`);
-    if (seenTitles.has(title)) warn(p, `duplicate title with ${seenTitles.get(title)}`);
-    else seenTitles.set(title, p);
+    // Book pages SHOULD share a title across locales: the book is a published
+    // English product and translating its name would imply an edition that does
+    // not exist. Flagging that every run is noise, and noise is how a real
+    // duplicate stops being noticed.
+    const intentionalDuplicate = /\/insights\/books\//.test(p);
+    if (!intentionalDuplicate) {
+      if (seenTitles.has(title)) warn(p, `duplicate title with ${seenTitles.get(title)}`);
+      else seenTitles.set(title, p);
+    }
   }
   if (!desc) fail(p, 'no meta description');
   else {

@@ -76,7 +76,7 @@ export const CASE_STUDY_COPY = {
   },
   "es": {
     "entity-resolution-financial-crime": {
-      "headline": "Resolución de entidades para investigaciones de delitos financieros",
+      "headline": "Resolución de entidades en delitos financieros",
       "client": "Un banco norteamericano de primer nivel",
       "sector": "Servicios financieros",
       "challenge": "El banco no podía determinar de forma fiable cuándo dos registros de cliente eran la misma persona. Banca minorista, empresarial y patrimonial guardaban cada una su propia versión de un cliente, y el equipo de delitos financieros las reconciliaba a mano durante las investigaciones.",
