@@ -48,7 +48,9 @@ export default function Contact({ language }) {
       <ContactForm
         source="Contact"
         title={t.contactFormTitle}
-        description={t.contactPageSubtitle}
+        /* The hero already carries the invitation; repeating it directly above
+           the form was the duplicated introduction the audit flags. */
+        description=""
         language={language}
         showPrimary={false}
       />

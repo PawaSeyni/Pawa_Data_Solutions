@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
 import PrimaryCta from "@/components/PrimaryCta";
 import { CTA_LOCATIONS } from "@/lib/cta";
-import { SOLUTIONS } from "@/lib/solutions";
-import { createPageUrl } from "@/utils";
+import { PRACTICES } from "@/lib/practices";
+import { prefixFor } from "@/lib/i18n";
 import { trackCta } from "@/lib/analytics";
 
 // Index for the six pages under /solutions/.
@@ -38,27 +38,42 @@ export default function Solutions({ language }) {
 
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
-            {SOLUTIONS.map(({ page, icon: Icon, titleKey, descKey }) => (
-              <li key={page}>
-                <Link
-                  to={createPageUrl(page, language)}
-                  onClick={() => {
-                    trackCta({ label: page, location: 'solutions_hub', page: 'Solutions', language });
-                    window.scrollTo(0, 0);
-                  }}
-                  className="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-7 shadow-sm transition-all hover:border-blue-300 hover:shadow-lg focus-visible:border-blue-500"
-                >
-                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-                    <Icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
-                  </span>
-                  <h2 className="mb-2 text-xl font-semibold text-gray-900">{t[titleKey]}</h2>
-                  <p className="mb-5 flex-grow text-gray-600">{t[descKey]}</p>
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-blue-600">
-                    {t.solutionsCardCta}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </span>
-                </Link>
+          {/* Five practices, matching the header, homepage and footer. This page
+              still listed six peer services after Sprint 8 introduced the
+              five-practice model — an indexed discovery page contradicting the
+              navigation a visitor had just used to arrive. Integration & Data
+              Engineering carries its second deep page as a secondary link rather
+              than appearing as a sixth practice. */}
+          <ul className="grid list-none gap-6 p-0 m-0 md:grid-cols-2">
+            {PRACTICES.map((pr, i) => (
+              <li key={pr.id} className={i === PRACTICES.length - 1 ? 'md:col-span-2' : ''}>
+                <div className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-7 shadow-sm transition-colors hover:border-blue-300">
+                  <h2 className="mb-2 text-xl font-semibold text-gray-900">{t[pr.labelKey]}</h2>
+                  <p className="mb-3 text-gray-600">{t[pr.blurbKey]}</p>
+                  <p className="mb-6 flex-grow text-sm leading-relaxed text-gray-500">{t[pr.capabilityKey]}</p>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                    <Link
+                      to={`${prefixFor(language)}${pr.href}`}
+                      onClick={() => {
+                        trackCta({ label: pr.id, location: 'solutions_hub', page: 'Solutions', language });
+                        window.scrollTo(0, 0);
+                      }}
+                      className="inline-flex items-center gap-2 font-medium text-blue-600 hover:underline"
+                    >
+                      {t.ctaExplore}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                    {pr.alsoHref && (
+                      <Link
+                        to={`${prefixFor(language)}${pr.alsoHref}`}
+                        onClick={() => window.scrollTo(0, 0)}
+                        className="text-sm text-gray-600 hover:text-blue-600 hover:underline"
+                      >
+                        {t[pr.alsoKey]}
+                      </Link>
+                    )}
+                  </div>
+                </div>
               </li>
             ))}
           </ul>

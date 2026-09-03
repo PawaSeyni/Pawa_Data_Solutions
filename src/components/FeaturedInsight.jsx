@@ -36,7 +36,13 @@ export default function FeaturedInsight({ language }) {
               <h3 className="mb-2 text-xl font-semibold text-gray-900 group-hover:text-blue-600">
                 {article.title}
               </h3>
-              <p className="mb-4 leading-relaxed text-gray-600">{article.excerpt}</p>
+              <p className="mb-3 leading-relaxed text-gray-600">{article.excerpt}</p>
+              {/* The essays are published in English on the author's own site and
+                  are not ours to machine-translate. A non-English reader gets the
+                  label rather than a silent switch of language mid-page. */}
+              {language !== 'en' && (
+                <p className="mb-3 text-xs uppercase tracking-wider text-gray-500">{t.insightsEnglishLabel}</p>
+              )}
               <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600">
                 {t.insightsReadOn}
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

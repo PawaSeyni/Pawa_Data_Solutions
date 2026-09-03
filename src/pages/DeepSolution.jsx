@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { translations } from "@/components/translations";
-import ContactForm from "@/components/ContactForm";
 import ProofCard from "@/components/solution/ProofCard";
 import {
   Section, SectionHead, ProblemSignals, ConsequenceFlow, TransformationTable,
@@ -313,13 +312,11 @@ export default function DeepSolution({ language }) {
         </div>
       </Section>
 
-      <ContactForm
-        source={c.pageName}
-        title={c.entryOffer.title}
-        description={c.entryOffer.body}
-        language={language}
-        showPrimary={false}
-      />
+      {/* No form here. The page ends at the contextual entry offer plus Talk to
+          a Practitioner; the full qualification form lives on /contact/. Having
+          both meant a visitor reached a specific assessment CTA and was then
+          asked, immediately below, to fill in a general enquiry form — two
+          decisions where the page had earned one. */}
     </>
   );
 }

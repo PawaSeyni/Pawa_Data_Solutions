@@ -11,7 +11,7 @@ import { translations } from "@/components/translations";
 import PrimaryCta from "@/components/PrimaryCta";
 import { CTA_LOCATIONS, BOOKING_URL, hasBooking } from "@/lib/cta";
 import { EVENTS, track, makeStartTracker } from "@/lib/analytics";
-import { Send, CheckCircle, Mail, Phone, MapPin } from "lucide-react";
+import { Send, CheckCircle } from "lucide-react";
 
 // `source` says which page the enquiry came from. It used to be hardcoded to
 // 'Home' in all three track calls even though this form is mounted on the
@@ -170,50 +170,16 @@ export default function ContactForm({ title, description, language, source = 'Ho
           )}
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                {t.contactGetInTouch}
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Mail className="w-6 h-6 text-blue-600 mt-1" />
-                  <div>
-                    <p className="font-medium text-gray-900">{t.contactInfoEmail}</p>
-                    <p className="text-gray-600">hello@pawadata.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone className="w-6 h-6 text-blue-600 mt-1" />
-                  <div>
-                    <p className="font-medium text-gray-900">{t.contactInfoPhone}</p>
-                    <p className="text-gray-600">416 887 2811</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-6 h-6 text-blue-600 mt-1" />
-                  <div>
-                    <p className="font-medium text-gray-900">{t.contactInfoLocation}</p>
-                    <p className="text-gray-600">{t.contactInfoLocationValue}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-blue-50 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-2">
-                {t.contactConsultationTitle}
-              </h4>
-              <p className="text-gray-600 text-sm">
-                {t.contactConsultationDesc}
-              </p>
-            </div>
-          </div>
-
+        {/* Single column. The legacy left column — "Get In Touch" plus email,
+            phone, location and a "Free Consultation" box — was rendering on every
+            page that mounts this form: six deep solution pages, the Data Health
+            Check, Workshop and Contact. That is the duplicated conversion block
+            and the reintroduced consultation language the acceptance audit flags
+            as P0. Contact carries its own email and location in its hero, which
+            is the one place those belong. */}
+        <div className="mx-auto max-w-3xl">
           {/* Contact Form */}
-          <div className="lg:col-span-2">
+          <div>
             <Card className="border-0 shadow-xl bg-white">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl text-gray-900">

@@ -18,7 +18,7 @@ export default function SelectedWork({ language }) {
   const t = translations[language];
   if (!hasCaseStudies()) return null;
 
-  const studies = featuredCaseStudies();
+  const studies = featuredCaseStudies(language);
 
   return (
     <section id="selected-work" className="py-20 bg-white">

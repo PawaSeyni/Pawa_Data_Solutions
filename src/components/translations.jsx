@@ -193,7 +193,7 @@ export const translations = {
     contactConsultationDesc: "Schedule a complimentary 30-minute consultation to discuss your data challenges and explore potential solutions.",
 
     // Footer
-    footerDesc: "PaWa Data Solutions is a Toronto-based boutique consultancy that helps mid-market teams turn siloed data into governed, analytics-ready assets. We design and run cloud-native data platforms, build reliable pipelines, and get organizations AI-ready—with measurable outcomes in weeks.",
+    footerDesc: "PaWa Data Solutions is a Toronto-based boutique consultancy that helps mid-market teams turn siloed data into governed, analytics-ready assets. We design and run cloud-native data platforms, build reliable pipelines, and get organizations AI-ready, with work scoped in weeks rather than quarters.",
     footerServicesTitle: "Services",
     footerCompanyTitle: "Company",
     footerAbout: "About Us",
@@ -441,6 +441,7 @@ export const translations = {
     contactPageEyebrow: "Contact",
     breadcrumbHome: "Home",
     footerRights: "All rights reserved.",
+    insightsEnglishLabel: "Published in English",
     caseStudiesEyebrow: "Selected Work",
     caseStudiesTitle: "Work we can show you",
     caseStudiesSubtitle: "Engagements described by sector rather than by client name, so they can be told in full without breaching a confidence. Outcomes are described in kind; no figures are claimed that have not been confirmed.",
@@ -706,7 +707,7 @@ export const translations = {
     contactConsultationDesc: "Planifiez une consultation gratuite de 30 minutes pour discuter de vos défis de données et explorer les solutions potentielles.",
 
     // Footer - From the attached file
-    footerDesc: "PaWa Data Solutions est un cabinet-conseil boutique basé à Toronto qui aide les équipes du marché intermédiaire à transformer des données cloisonnées en actifs gouvernés et prêts pour l'analyse. Nous concevons et gérons des plateformes de données cloud-natives, construisons des pipelines fiables et préparons les organisations pour l'IA—avec des résultats mesurables en quelques semaines.",
+    footerDesc: "PaWa Data Solutions est un cabinet-conseil boutique basé à Toronto qui aide les équipes du marché intermédiaire à transformer des données cloisonnées en actifs gouvernés et prêts pour l'analyse. Nous concevons et gérons des plateformes de données cloud-natives, construisons des pipelines fiables et préparons les organisations pour l'IA, avec des missions cadrées en semaines plutôt qu'en trimestres.",
     footerServicesTitle: "Services",
     footerCompanyTitle: "Entreprise",
     footerAbout: "À Propos de Nous",
@@ -954,6 +955,7 @@ export const translations = {
     contactPageEyebrow: "Contact",
     breadcrumbHome: "Accueil",
     footerRights: "Tous droits réservés.",
+    insightsEnglishLabel: "Article en anglais",
     caseStudiesEyebrow: "Travaux sélectionnés",
     caseStudiesTitle: "Des travaux que nous pouvons montrer",
     caseStudiesSubtitle: "Des missions décrites par secteur plutôt que par nom de client, afin de pouvoir être racontées en entier sans trahir de confidentialité. Les résultats sont décrits en nature ; aucun chiffre non confirmé n'est avancé.",
@@ -1219,7 +1221,7 @@ export const translations = {
     contactConsultationDesc: "Programa una consulta gratuita de 30 minutos para discutir tus desafíos de datos y explorar soluciones potenciales.",
 
     // Footer
-    footerDesc: "PaWa Data Solutions es una consultoría boutique con sede en Toronto que ayuda a equipos del mercado medio a convertir datos aislados en activos gobernados y listos para análisis. Diseñamos y operamos plataformas de datos nativas de la nube, construimos pipelines confiables y preparamos organizaciones para IA—con resultados medibles en semanas.",
+    footerDesc: "PaWa Data Solutions es una consultoría boutique con sede en Toronto que ayuda a equipos del mercado medio a convertir datos aislados en activos gobernados y listos para análisis. Diseñamos y operamos plataformas de datos nativas de la nube, construimos pipelines confiables y preparamos organizaciones para IA, con trabajo acotado en semanas y no en trimestres.",
     footerServicesTitle: "Servicios",
     footerCompanyTitle: "Empresa",
     footerAbout: "Acerca de Nosotros",
@@ -1467,6 +1469,7 @@ export const translations = {
     contactPageEyebrow: "Contacto",
     breadcrumbHome: "Inicio",
     footerRights: "Todos los derechos reservados.",
+    insightsEnglishLabel: "Artículo en inglés",
     caseStudiesEyebrow: "Trabajo seleccionado",
     caseStudiesTitle: "Trabajo que podemos mostrarte",
     caseStudiesSubtitle: "Proyectos descritos por sector en lugar de por nombre del cliente, para poder contarlos por completo sin romper una confidencialidad. Los resultados se describen en su naturaleza; no se afirma ninguna cifra sin confirmar.",
@@ -1732,7 +1735,7 @@ export const translations = {
     contactConsultationDesc: "Agende uma consulta gratuita de 30 minutos para discutir seus desafios de dados e explorar soluções potenciais.",
 
     // Footer
-    footerDesc: "A PaWa Data Solutions é uma consultoria boutique sediada em Toronto que ajuda equipes de médio mercado a transformar dados isolados em ativos governados e prontos para análise. Projetamos e operamos plataformas de dados nativas da nuvem, construímos pipelines confiáveis e preparamos organizações para IA—com resultados mensuráveis em semanas.",
+    footerDesc: "A PaWa Data Solutions é uma consultoria boutique sediada em Toronto que ajuda equipes de médio mercado a transformar dados isolados em ativos governados e prontos para análise. Projetamos e operamos plataformas de dados nativas da nuvem, construímos pipelines confiáveis e preparamos organizações para IA, com trabalho delimitado em semanas e não em trimestres.",
     footerServicesTitle: "Serviços",
     footerCompanyTitle: "Empresa",
     footerAbout: "Sobre Nós",
@@ -1980,6 +1983,7 @@ export const translations = {
     contactPageEyebrow: "Contato",
     breadcrumbHome: "Início",
     footerRights: "Todos os direitos reservados.",
+    insightsEnglishLabel: "Artigo em inglês",
     caseStudiesEyebrow: "Trabalho selecionado",
     caseStudiesTitle: "Trabalho que podemos mostrar",
     caseStudiesSubtitle: "Projetos descritos por setor em vez de por nome do cliente, para que possam ser contados por inteiro sem quebrar uma confidencialidade. Os resultados são descritos em natureza; nenhum número não confirmado é afirmado.",

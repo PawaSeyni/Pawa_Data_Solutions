@@ -164,5 +164,13 @@ export const caseStudyBySlug = (slug, language = 'en') => {
 export const caseStudiesFor = (language = 'en') =>
   CASE_STUDIES.map((c) => caseStudyBySlug(c.slug, language));
 
-/** Homepage proof block shows three. */
-export const featuredCaseStudies = () => CASE_STUDIES.slice(0, 3);
+/**
+ * Homepage proof block shows three, in the reader's language.
+ *
+ * This took no language argument until the production acceptance audit found
+ * English problem/intervention/outcome text on the French and Spanish
+ * homepages. The studies had been translated; the homepage component was still
+ * reading the untranslated array — a visible localisation failure in the one
+ * section whose whole job is trust.
+ */
+export const featuredCaseStudies = (language = 'en') => caseStudiesFor(language).slice(0, 3);
