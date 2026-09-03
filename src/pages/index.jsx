@@ -11,12 +11,6 @@ import Home from "./Home";
 
 // Every other route is code-split into its own chunk, fetched on navigation.
 const Workshop = lazy(() => import("./Workshop"));
-const DataIntegration = lazy(() => import("./DataIntegration"));
-const PipelineArchitecture = lazy(() => import("./PipelineArchitecture"));
-const DataGovernance = lazy(() => import("./DataGovernance"));
-const AIReadiness = lazy(() => import("./AIReadiness"));
-const AnalyticsEnablement = lazy(() => import("./AnalyticsEnablement"));
-const ProcessAutomation = lazy(() => import("./ProcessAutomation"));
 const PrivacyPolicy = lazy(() => import("./PrivacyPolicy"));
 const DoNotSellOrShare = lazy(() => import("./DoNotSellOrShare"));
 const Careers = lazy(() => import("./Careers"));
@@ -36,8 +30,13 @@ const NotFound = lazy(() => import("./NotFound"));
 // Route table built from the shared page definitions, so a slug change lands in
 // the router, the sitemap, the canonical tags and the redirects at once.
 const COMPONENTS = {
-    Solutions, About, Locations, Insights, HealthCheck, Contact, CaseStudies, Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
-    AIReadiness, AnalyticsEnablement, ProcessAutomation,
+    // The six legacy solution page components were deleted in Sprint 7D. They had
+    // been unreachable since Sprint 7 — DEEP_PAGE_NAMES intercepts every one of
+    // these names and renders DeepSolution instead — but the files, their lazy
+    // imports and ~550 translation keys were still being carried, including the
+    // 'Enterprise-Grafe' typo §11 lists as a release blocker. The typo was real;
+    // it just lived in code nothing could reach.
+    Solutions, About, Locations, Insights, HealthCheck, Contact, CaseStudies, Workshop,
     PrivacyPolicy, DoNotSellOrShare, Careers,
 };
 const ROUTED = PAGES.filter((p) => p.name !== 'Home').map((p) => [
