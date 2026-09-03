@@ -36,6 +36,41 @@
 # beside a generated one is exactly how the URL casing drifted and took every
 # service page down with a redirect loop.
 
+# Canonical host. Netlify serves this site on five hostnames: the apex, www
+# (already 301'd at DNS), the bare pawa-data-solutions.netlify.app, the branch
+# alias main--pawa-data-solutions.netlify.app, and one permalink per deploy.
+#
+# The two netlify.app hosts answered 200 for all 96 pages with NO X-Robots-Tag,
+# and the robots.txt they serve says "Allow: /" — a fully indexable second copy
+# of the whole site. The canonical tags point at pawadata.com, which mitigates
+# but does not remove it, and during a deploy the hosts can briefly disagree.
+#
+# Deploy permalinks are NOT covered and do not need to be: Netlify sets
+# x-robots-tag: noindex on those itself. They stay reachable on purpose, which is
+# what makes rollback instant.
+#
+# Why force = true is safe here, given that it caused the June outage:
+# that outage was same-host casing rules fighting Netlify's own path
+# normalisation, so the rule's target kept re-matching its own source. These
+# rules match on HOST. The source host is pawa-data-solutions.netlify.app and the
+# target host is pawadata.com, so a redirected request can never match the rule
+# again. Requests to the apex do not match the pattern at all and are untouched.
+#
+# force is required rather than optional: without it a redirect only fires when
+# no file matches, and every one of these paths has a file.
+
+[[redirects]]
+  from = "https://pawa-data-solutions.netlify.app/*"
+  to = "https://pawadata.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://main--pawa-data-solutions.netlify.app/*"
+  to = "https://pawadata.com/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
