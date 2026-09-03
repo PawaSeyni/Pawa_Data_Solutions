@@ -377,6 +377,9 @@ export const translations = {
     contactChallengePlaceholder: "The thing that made you get in touch. Plain terms are fine.",
     contactOutcome: "What would good look like? (optional)",
     contactOutcomePlaceholder: "What you would want to be true in six months.",
+    proofDisclosureRepresentative: "Representative engagement — a realistic pattern used to explain our approach, not a client result.",
+    proofDisclosurePawadata: "PaWa Data Solutions engagement, published with the client’s approval.",
+    proofDisclosurePrior: "Delivered by our principal in a previous role, before PaWa Data Solutions.",
     caseStudiesEyebrow: "Selected Work",
     caseStudiesTitle: "Work we can show you",
     caseStudiesSubtitle: "Engagements described by sector rather than by client name, so they can be told in full without breaching a confidence. Outcomes are described in kind; no figures are claimed that have not been confirmed.",
@@ -462,9 +465,9 @@ export const translations = {
     dataIntegrationFeature3: "Standardize on reusable templates/accelerators for patterns (batch, CDC, streaming) to cut delivery time and defects.",
     dataIntegrationFeature4: "Embed catalog/lineage so producers and consumers can discover, trust, and reuse data products.",
     dataIntegrationFeature5: "Build for sovereignty & compliance (PII, residency) from day one—region-aware storage, policies, and controls.",
-    dataIntegrationCaseStudyTitle: "Manufacturing Success Story",
-    dataIntegrationCaseStudyDesc: "A leading manufacturer unified 15 disparate systems, reducing reporting time from days to minutes.",
-    dataIntegrationCaseStudyResult: "Up to 70% less data preparation time",
+    dataIntegrationCaseStudyTitle: "Representative pattern: systems that disagree",
+    dataIntegrationCaseStudyDesc: "A manufacturer whose ERP, MES and three regional finance systems each hold a different version of the same product and customer. The work is not connecting endpoints: it is profiling why records fail to match, agreeing one integration pattern, and retiring the duplicate routes instead of leaving them running beside their replacement.",
+    dataIntegrationCaseStudyResult: "What the engagement leaves behind: target architecture, quality controls at ingestion, lineage documentation and operational runbooks.",
 
     // Pipeline Architecture Service Page
     pipelineArchitectureEyebrow: "Modern Pipeline Architecture",
@@ -486,9 +489,9 @@ export const translations = {
     pipelineArchitectureFeature3: "Mix batch + streaming where it fits (CDC for change, micro-batches for cost control).",
     pipelineArchitectureFeature4: "Use orchestrators to enforce retries, backoffs, and dependency health; design for graceful degradation.",
     pipelineArchitectureFeature5: "Adopt lakehouse governance (e.g., centralized catalogs) to simplify access and compliance at scale.",
-    pipelineArchitectureCaseStudyTitle: "Financial Services Transformation",
-    pipelineArchitectureCaseStudyDesc: "A regional bank modernized their data infrastructure, enabling real-time fraud detection and customer analytics.",
-    pipelineArchitectureCaseStudyResult: "Near real-time processing",
+    pipelineArchitectureCaseStudyTitle: "Representative pattern: pipelines nobody can change safely",
+    pipelineArchitectureCaseStudyDesc: "A pipeline estate where failures are reported by business users rather than monitoring, and every change is priced for the risk of breaking something undocumented. The work starts with an inventory of what actually runs, including the jobs everyone assumes are dead.",
+    pipelineArchitectureCaseStudyResult: "What the engagement leaves behind: one documented ingestion pattern, tests and alerting per flow, and a decommissioning list with owners.",
 
     // Data Governance Service Page
     dataGovernanceEyebrow: "Trusted Data Governance",
@@ -509,9 +512,9 @@ export const translations = {
     dataGovernanceFeature2: "Stand up a practical operating model (stewards, councils, RACI) and measure progress with maturity assessments.",
     dataGovernanceFeature3: "Catalog, classify, and trace lineage to enable discoverability, impact analysis, and auditability.",
     dataGovernanceFeature4: "Govern where the data lives (multi-cloud, on-prem) including sovereignty/residency constraints. Promote literacy and adoption—governance is continuous change, not a one-off project.",
-    dataGovernanceCaseStudyTitle: "Healthcare Compliance Success",
-    dataGovernanceCaseStudyDesc: "A healthcare network implemented comprehensive governance, achieving HIPAA compliance while improving data accessibility.",
-    dataGovernanceCaseStudyResult: "Passed HIPAA compliance audit",
+    dataGovernanceCaseStudyTitle: "Representative pattern: figures nobody can explain",
+    dataGovernanceCaseStudyDesc: "Regulatory numbers produced on time, but the derivation lives in analysts’ heads and spreadsheet logic. The work treats definitions as the deliverable: each reported measure traced to source, each term given one accountable owner rather than a committee.",
+    dataGovernanceCaseStudyResult: "What the engagement leaves behind: business glossary with named owners, automated lineage, quality rules attached to the definitions they protect.",
 
     // AI Readiness Service Page
     aiReadinessEyebrow: "AI-Ready Data Foundation",
@@ -533,9 +536,9 @@ export const translations = {
     aiReadinessFeature3: "Capture “model facts” (lineage, data sources, metrics) via governance toolkits to support audit and lifecycle risk.",
     aiReadinessFeature4: "Implement CI/CD/CT for models with drift, performance, and safety monitoring in production.",
     aiReadinessFeature5: "Train and enable humans-in-the-loop; define escalation, override, and accountability paths.",
-    aiReadinessCaseStudyTitle: "Retail AI Implementation",
-    aiReadinessCaseStudyDesc: "A retail chain implemented AI-ready infrastructure, enabling personalized recommendations and dynamic pricing.",
-    aiReadinessCaseStudyResult: "25% increase in conversion rates",
+    aiReadinessCaseStudyTitle: "Representative pattern: AI blocked by its inputs",
+    aiReadinessCaseStudyDesc: "An organisation with approved AI use cases and no clear answer on whether the underlying data is accurate, permitted or resolvable to a single entity. The work assesses inputs and access before models: entity resolution, provenance, permitted use and the governance around agents.",
+    aiReadinessCaseStudyResult: "What the engagement leaves behind: use-case inventory with risk tiers, data-readiness findings per use case, and the access controls agents will operate under.",
 
     // Analytics Enablement Service Page
     analyticsEnablementEyebrow: "Advanced Analytics",
@@ -557,9 +560,9 @@ export const translations = {
     analyticsEnablementFeature3: "Enable MDM/common ontology so entities and definitions are consistent across domains.",
     analyticsEnablementFeature4: "Track adoption and value with analytics KPIs (trust, latency, usage, decision impact).",
     analyticsEnablementFeature5: "Accelerate discovery with cataloging and stewards; document lineage from sources to dashboards.",
-    analyticsEnablementCaseStudyTitle: "Marketing Analytics Success",
-    analyticsEnablementCaseStudyDesc: "A marketing team increased campaign ROI by implementing advanced attribution modeling and customer analytics.",
-    analyticsEnablementCaseStudyResult: "~30% improvement in marketing ROI",
+    analyticsEnablementCaseStudyTitle: "Representative pattern: two teams, two numbers",
+    analyticsEnablementCaseStudyDesc: "Dashboards exist and are not trusted, because finance and operations calculate the same measure differently and neither definition is written down. The work surfaces the disagreement rather than averaging it, then fixes the definition once in a semantic layer.",
+    analyticsEnablementCaseStudyResult: "What the engagement leaves behind: agreed metric definitions, a semantic layer that enforces them, and the reporting rebuilt on top.",
 
     // Process Automation Service Page
     processAutomationEyebrow: "Intelligent Automation",
@@ -581,9 +584,9 @@ export const translations = {
     processAutomationFeature3: "Use process mining to baseline, target bottlenecks, and verify benefits post-automation.",
     processAutomationFeature4: "Embed governance and security (access controls, audit trails, privacy) in workflows.",
     processAutomationFeature5: "Measure and continuously optimize key performance indicators (throughput, error rates, cycle time, satisfaction) while managing the people side of change.",
-    processAutomationCaseStudyTitle: "Operations Transformation",
-    processAutomationCaseStudyDesc: "A logistics company automated their entire reporting pipeline, reducing processing time from hours to minutes.",
-    processAutomationCaseStudyResult: "55% reduction in manual work",
+    processAutomationCaseStudyTitle: "Representative pattern: the exception queue",
+    processAutomationCaseStudyDesc: "A cross-system process where the happy path is already automated and skilled people spend their week on exceptions. The work maps where exceptions actually originate, which is usually upstream data rather than the process itself.",
+    processAutomationCaseStudyResult: "What the engagement leaves behind: process and exception map, orchestration for the repeatable cases, and a human review boundary that is written down.",
     caseStudyLabel: "Illustrative example",
   },
   fr: {
@@ -959,6 +962,9 @@ export const translations = {
     contactChallengePlaceholder: "Ce qui vous a poussé à nous écrire. Des mots simples suffisent.",
     contactOutcome: "À quoi ressemblerait la réussite ? (facultatif)",
     contactOutcomePlaceholder: "Ce que vous aimeriez pouvoir constater dans six mois.",
+    proofDisclosureRepresentative: "Mission représentative — un schéma réaliste servant à expliquer notre approche, et non un résultat client.",
+    proofDisclosurePawadata: "Mission PaWa Data Solutions, publiée avec l'accord du client.",
+    proofDisclosurePrior: "Réalisée par notre associé principal dans un poste précédent, avant PaWa Data Solutions.",
     caseStudiesEyebrow: "Travaux sélectionnés",
     caseStudiesTitle: "Des travaux que nous pouvons montrer",
     caseStudiesSubtitle: "Des missions décrites par secteur plutôt que par nom de client, afin de pouvoir être racontées en entier sans trahir de confidentialité. Les résultats sont décrits en nature ; aucun chiffre non confirmé n'est avancé.",
@@ -1045,9 +1051,9 @@ export const translations = {
     dataIntegrationFeature4: "Gestion automatisée des erreurs et récupération",
     dataIntegrationFeature5: "Sécurité et conformité de niveau entreprise",
     dataIntegrationFeature6: "Architecture cloud-native évolutive",
-    dataIntegrationCaseStudyTitle: "Succès Manufacturing",
-    dataIntegrationCaseStudyDesc: "Un fabricant de premier plan a unifié 15 systèmes disparates, réduisant le temps de reporting de jours à minutes.",
-    dataIntegrationCaseStudyResult: "Jusqu'à 70% de temps de préparation des données en moins",
+    dataIntegrationCaseStudyTitle: "Schéma représentatif : des systèmes qui se contredisent",
+    dataIntegrationCaseStudyDesc: "Un industriel dont l'ERP, le MES et trois systèmes financiers régionaux détiennent chacun une version différente du même produit et du même client. Le travail ne consiste pas à relier des points de terminaison : il consiste à analyser pourquoi les enregistrements ne se rapprochent pas, à convenir d'un seul schéma d'intégration, et à retirer les routes en double plutôt que de les laisser tourner à côté de leur remplaçante.",
+    dataIntegrationCaseStudyResult: "Ce que la mission laisse derrière elle : architecture cible, contrôles qualité à l'ingestion, documentation de traçabilité et procédures d'exploitation.",
 
     // Pipeline Architecture Service Page French
     pipelineArchitectureEyebrow: "Architecture de Pipeline Moderne",
@@ -1070,9 +1076,9 @@ export const translations = {
     pipelineArchitectureFeature4: "Surveillance et alertes intégrées",
     pipelineArchitectureFeature5: "Reprise après sinistre et sauvegarde",
     pipelineArchitectureFeature6: "Principes de conception API-first",
-    pipelineArchitectureCaseStudyTitle: "Transformation des Services Financiers",
-    pipelineArchitectureCaseStudyDesc: "Une banque régionale a modernisé son infrastructure de données, permettant la détection de fraudes en temps réel et l'analyse des clients.",
-    pipelineArchitectureCaseStudyResult: "Traitement en temps quasi réel",
+    pipelineArchitectureCaseStudyTitle: "Schéma représentatif : des pipelines que personne ne peut modifier sereinement",
+    pipelineArchitectureCaseStudyDesc: "Un parc de pipelines où les incidents sont signalés par les utilisateurs métier plutôt que par la supervision, et où chaque changement est chiffré au regard du risque de casser quelque chose de non documenté. Le travail commence par un inventaire de ce qui tourne réellement, y compris les traitements que tout le monde croit éteints.",
+    pipelineArchitectureCaseStudyResult: "Ce que la mission laisse derrière elle : un schéma d'ingestion documenté, des tests et des alertes par flux, et une liste de décommissionnement avec ses responsables.",
 
     // Data Governance Service Page French
     dataGovernanceEyebrow: "Gouvernance de Données Fiable",
@@ -1095,9 +1101,9 @@ export const translations = {
     dataGovernanceFeature4: "Surveillance et alertes de qualité des données",
     dataGovernanceFeature5: "Pistes d'audit et rapports de conformité",
     dataGovernanceFeature6: "Gestion et application des politiques",
-    dataGovernanceCaseStudyTitle: "Succès de Conformité en Soins de Santé",
-    dataGovernanceCaseStudyDesc: "Un réseau de soins de santé a mis en œuvre une gouvernance complète, atteignant la conformité HIPAA tout en améliorant l'accessibilité des données.",
-    dataGovernanceCaseStudyResult: "Audit de conformité HIPAA réussi",
+    dataGovernanceCaseStudyTitle: "Schéma représentatif : des chiffres que personne ne sait expliquer",
+    dataGovernanceCaseStudyDesc: "Des chiffres réglementaires produits dans les délais, mais dont la dérivation vit dans la tête des analystes et dans des formules de tableur. Le travail traite les définitions comme le livrable : chaque mesure publiée tracée jusqu'à la source, chaque terme doté d'un propriétaire responsable plutôt que d'un comité.",
+    dataGovernanceCaseStudyResult: "Ce que la mission laisse derrière elle : un glossaire métier avec propriétaires nommés, une traçabilité automatisée, des règles de qualité rattachées aux définitions qu'elles protègent.",
 
     // AI Readiness Service Page French
     aiReadinessEyebrow: "Fondation de Données Prête pour l'IA",
@@ -1120,9 +1126,9 @@ export const translations = {
     aiReadinessFeature4: "Gestion des versions de modèles et suivi des expériences",
     aiReadinessFeature5: "Infrastructure de calcul optimisée GPU",
     aiReadinessFeature6: "Annotation et étiquetage de données automatisés",
-    aiReadinessCaseStudyTitle: "Implémentation de l'IA dans le Commerce de Détail",
-    aiReadinessCaseStudyDesc: "Une chaîne de commerce de détail a mis en œuvre une infrastructure prête pour l'IA, permettant des recommandations personnalisées et une tarification dynamique.",
-    aiReadinessCaseStudyResult: "Augmentation de 25% des taux de conversion",
+    aiReadinessCaseStudyTitle: "Schéma représentatif : une IA bloquée par ses données d'entrée",
+    aiReadinessCaseStudyDesc: "Une organisation disposant de cas d'usage IA validés et d'aucune réponse claire sur l'exactitude, la licéité d'usage ou la résolution des données sous-jacentes vers une entité unique. Le travail évalue les entrées et les accès avant les modèles : résolution d'entités, provenance, usage autorisé et gouvernance autour des agents.",
+    aiReadinessCaseStudyResult: "Ce que la mission laisse derrière elle : un inventaire des cas d'usage avec niveaux de risque, des constats de maturité des données par cas d'usage, et les contrôles d'accès sous lesquels les agents opéreront.",
 
     // Analytics Enablement Service Page French
     analyticsEnablementEyebrow: "Analytique Avancée",
@@ -1145,9 +1151,9 @@ export const translations = {
     analyticsEnablementFeature4: "Génération automatisée d'informations",
     analyticsEnablementFeature5: "Tableaux de bord réactifs pour mobile",
     analyticsEnablementFeature6: "Rapports et alertes planifiés",
-    analyticsEnablementCaseStudyTitle: "Succès de l'Analytique Marketing",
-    analyticsEnablementCaseStudyDesc: "Une équipe marketing a augmenté le ROI de ses campagnes en implémentant une modélisation d'attribution avancée et l'analyse des clients.",
-    analyticsEnablementCaseStudyResult: "~30% d'amélioration du ROI marketing",
+    analyticsEnablementCaseStudyTitle: "Schéma représentatif : deux équipes, deux chiffres",
+    analyticsEnablementCaseStudyDesc: "Des tableaux de bord existent et n'inspirent pas confiance, parce que la finance et les opérations calculent différemment la même mesure et qu'aucune des deux définitions n'est écrite. Le travail fait émerger le désaccord plutôt que de le moyenner, puis fixe la définition une fois pour toutes dans une couche sémantique.",
+    analyticsEnablementCaseStudyResult: "Ce que la mission laisse derrière elle : des définitions de mesures convenues, une couche sémantique qui les applique, et le reporting reconstruit dessus.",
 
     // Process Automation Service Page French
     processAutomationEyebrow: "Automatisation Intelligente",
@@ -1170,9 +1176,9 @@ export const translations = {
     processAutomationFeature4: "Automatisation basée sur un calendrier",
     processAutomationFeature5: "Intégration avec plus de 200 outils",
     processAutomationFeature6: "Surveillance et optimisation des performances",
-    processAutomationCaseStudyTitle: "Transformation des Opérations",
-    processAutomationCaseStudyDesc: "Une entreprise de logistique a automatisé l'intégralité de son pipeline de reporting, réduisant le temps de traitement de plusieurs heures à quelques minutes.",
-    processAutomationCaseStudyResult: "55% de réduction du travail manuel",
+    processAutomationCaseStudyTitle: "Schéma représentatif : la file des exceptions",
+    processAutomationCaseStudyDesc: "Un processus inter-systèmes dont le chemin nominal est déjà automatisé et où des personnes qualifiées passent leur semaine sur les exceptions. Le travail cartographie l'origine réelle des exceptions, qui se situe généralement dans les données en amont plutôt que dans le processus lui-même.",
+    processAutomationCaseStudyResult: "Ce que la mission laisse derrière elle : une cartographie du processus et des exceptions, l'orchestration des cas répétables, et une frontière de revue humaine écrite noir sur blanc.",
     caseStudyLabel: "Exemple illustratif",
   },
   es: {
@@ -1548,6 +1554,9 @@ export const translations = {
     contactChallengePlaceholder: "Lo que te hizo escribirnos. Con palabras sencillas basta.",
     contactOutcome: "¿Cómo sería un buen resultado? (opcional)",
     contactOutcomePlaceholder: "Lo que te gustaría que fuera cierto dentro de seis meses.",
+    proofDisclosureRepresentative: "Proyecto representativo — un patrón realista para explicar nuestro enfoque, no un resultado de cliente.",
+    proofDisclosurePawadata: "Proyecto de PaWa Data Solutions, publicado con la aprobación del cliente.",
+    proofDisclosurePrior: "Realizado por nuestro socio principal en un puesto anterior, antes de PaWa Data Solutions.",
     caseStudiesEyebrow: "Trabajo seleccionado",
     caseStudiesTitle: "Trabajo que podemos mostrarte",
     caseStudiesSubtitle: "Proyectos descritos por sector en lugar de por nombre del cliente, para poder contarlos por completo sin romper una confidencialidad. Los resultados se describen en su naturaleza; no se afirma ninguna cifra sin confirmar.",
@@ -1634,9 +1643,9 @@ export const translations = {
     dataIntegrationFeature4: "Manejo automático de errores y recuperación",
     dataIntegrationFeature5: "Seguridad y cumplimiento de nivel empresarial",
     dataIntegrationFeature6: "Arquitectura nativa de la nube escalable",
-    dataIntegrationCaseStudyTitle: "Caso de Éxito en Manufactura",
-    dataIntegrationCaseStudyDesc: "Un fabricante líder unificó 15 sistemas dispares, reduciendo el tiempo de generación de informes de días a minutos.",
-    dataIntegrationCaseStudyResult: "Hasta 70% menos tiempo de preparación de datos",
+    dataIntegrationCaseStudyTitle: "Patrón representativo: sistemas que se contradicen",
+    dataIntegrationCaseStudyDesc: "Un fabricante cuyo ERP, MES y tres sistemas financieros regionales guardan cada uno una versión distinta del mismo producto y del mismo cliente. El trabajo no es conectar endpoints: es analizar por qué los registros no casan, acordar un único patrón de integración y retirar las rutas duplicadas en lugar de dejarlas funcionando junto a su sustituta.",
+    dataIntegrationCaseStudyResult: "Lo que deja el proyecto: arquitectura objetivo, controles de calidad en la ingesta, documentación de linaje y procedimientos de operación.",
 
     // Pipeline Architecture Service Page Spanish
     pipelineArchitectureEyebrow: "Arquitectura de Pipeline Moderna",
@@ -1659,9 +1668,9 @@ export const translations = {
     pipelineArchitectureFeature4: "Monitoreo y alertas integrados",
     pipelineArchitectureFeature5: "Recuperación ante desastres y respaldo",
     pipelineArchitectureFeature6: "Principios de diseño API-first",
-    pipelineArchitectureCaseStudyTitle: "Transformación de Servicios Financieros",
-    pipelineArchitectureCaseStudyDesc: "Un banco regional modernizó su infraestructura de datos, permitiendo la detección de fraude en tiempo real y el análisis de clientes.",
-    pipelineArchitectureCaseStudyResult: "Procesamiento casi en tiempo real",
+    pipelineArchitectureCaseStudyTitle: "Patrón representativo: pipelines que nadie puede cambiar con seguridad",
+    pipelineArchitectureCaseStudyDesc: "Un parque de pipelines donde los fallos los reportan los usuarios de negocio y no la monitorización, y donde cada cambio se presupuesta por el riesgo de romper algo no documentado. El trabajo empieza por inventariar lo que realmente se ejecuta, incluidos los procesos que todos dan por muertos.",
+    pipelineArchitectureCaseStudyResult: "Lo que deja el proyecto: un patrón de ingesta documentado, pruebas y alertas por flujo, y una lista de baja con responsables.",
 
     // Data Governance Service Page Spanish
     dataGovernanceEyebrow: "Gobernanza de Datos Confiable",
@@ -1684,9 +1693,9 @@ export const translations = {
     dataGovernanceFeature4: "Monitoreo y alertas de calidad de datos",
     dataGovernanceFeature5: "Auditorías y reportes de cumplimiento",
     dataGovernanceFeature6: "Gestión y aplicación de políticas",
-    dataGovernanceCaseStudyTitle: "Éxito de Cumplimiento en el Sector Salud",
-    dataGovernanceCaseStudyDesc: "Una red de atención médica implementó una gobernanza integral, logrando el cumplimiento de HIPAA mientras mejoraba la accesibilidad de los datos.",
-    dataGovernanceCaseStudyResult: "Auditoría de cumplimiento HIPAA superada",
+    dataGovernanceCaseStudyTitle: "Patrón representativo: cifras que nadie sabe explicar",
+    dataGovernanceCaseStudyDesc: "Cifras regulatorias entregadas a tiempo, pero cuya derivación vive en la cabeza de los analistas y en fórmulas de hoja de cálculo. El trabajo trata las definiciones como el entregable: cada medida reportada trazada hasta el origen, cada término con un responsable con nombre y no un comité.",
+    dataGovernanceCaseStudyResult: "Lo que deja el proyecto: glosario de negocio con responsables nombrados, linaje automatizado y reglas de calidad vinculadas a las definiciones que protegen.",
 
     // AI Readiness Service Page Spanish
     aiReadinessEyebrow: "Base de Datos Lista para IA",
@@ -1709,9 +1718,9 @@ export const translations = {
     aiReadinessFeature4: "Control de versiones de modelos y seguimiento de experimentos",
     aiReadinessFeature5: "Infraestructura de cómputo optimizada para GPU",
     aiReadinessFeature6: "Etiquetado y anotación de datos automatizados",
-    aiReadinessCaseStudyTitle: "Implementación de IA en el Comercio Minorista",
-    aiReadinessCaseStudyDesc: "Una cadena minorista implementó una infraestructura lista para IA, permitiendo recomendaciones personalizadas y precios dinámicos.",
-    aiReadinessCaseStudyResult: "25% de aumento en las tasas de conversión",
+    aiReadinessCaseStudyTitle: "Patrón representativo: IA bloqueada por sus datos de entrada",
+    aiReadinessCaseStudyDesc: "Una organización con casos de uso de IA aprobados y sin respuesta clara sobre si los datos subyacentes son exactos, de uso permitido o resolubles a una entidad única. El trabajo evalúa entradas y accesos antes que modelos: resolución de entidades, procedencia, uso permitido y la gobernanza en torno a los agentes.",
+    aiReadinessCaseStudyResult: "Lo que deja el proyecto: inventario de casos de uso con niveles de riesgo, hallazgos de preparación de datos por caso, y los controles de acceso bajo los que operarán los agentes.",
 
     // Analytics Enablement Service Page Spanish
     analyticsEnablementEyebrow: "Análisis Avanzado",
@@ -1734,9 +1743,9 @@ export const translations = {
     analyticsEnablementFeature4: "Generación automatizada de insights",
     analyticsEnablementFeature5: "Paneles adaptables a dispositivos móviles",
     analyticsEnablementFeature6: "Informes y alertas programados",
-    analyticsEnablementCaseStudyTitle: "Éxito en Análisis de Marketing",
-    analyticsEnablementCaseStudyDesc: "Un equipo de marketing aumentó el ROI de la campaña al implementar un modelado de atribución avanzado y análisis de clientes.",
-    analyticsEnablementCaseStudyResult: "~30% de mejora en el ROI de marketing",
+    analyticsEnablementCaseStudyTitle: "Patrón representativo: dos equipos, dos cifras",
+    analyticsEnablementCaseStudyDesc: "Existen cuadros de mando y no se confía en ellos, porque finanzas y operaciones calculan la misma medida de forma distinta y ninguna definición está escrita. El trabajo saca a la luz el desacuerdo en lugar de promediarlo, y luego fija la definición una sola vez en una capa semántica.",
+    analyticsEnablementCaseStudyResult: "Lo que deja el proyecto: definiciones de métricas acordadas, una capa semántica que las aplica y el reporte reconstruido encima.",
 
     // Process Automation Service Page Spanish
     processAutomationEyebrow: "Automatización Inteligente",
@@ -1759,9 +1768,9 @@ export const translations = {
     processAutomationFeature4: "Automatización basada en programación",
     processAutomationFeature5: "Integración con más de 200 herramientas",
     processAutomationFeature6: "Monitoreo y optimización del rendimiento",
-    processAutomationCaseStudyTitle: "Transformación de Operaciones",
-    processAutomationCaseStudyDesc: "Una empresa de logística automatizó todo su pipeline de informes, reduciendo el tiempo de procesamiento de horas a minutos.",
-    processAutomationCaseStudyResult: "55% de reducción en el trabajo manual",
+    processAutomationCaseStudyTitle: "Patrón representativo: la cola de excepciones",
+    processAutomationCaseStudyDesc: "Un proceso entre sistemas cuyo camino feliz ya está automatizado y donde personas cualificadas dedican la semana a las excepciones. El trabajo mapea dónde se originan realmente las excepciones, que suele ser en los datos de origen y no en el proceso.",
+    processAutomationCaseStudyResult: "Lo que deja el proyecto: mapa de proceso y excepciones, orquestación de los casos repetibles y una frontera de revisión humana puesta por escrito.",
     caseStudyLabel: "Ejemplo ilustrativo",
   },
   pt: {
@@ -2137,6 +2146,9 @@ export const translations = {
     contactChallengePlaceholder: "O que fez você entrar em contato. Palavras simples bastam.",
     contactOutcome: "Como seria um bom resultado? (opcional)",
     contactOutcomePlaceholder: "O que você gostaria que fosse verdade daqui a seis meses.",
+    proofDisclosureRepresentative: "Projeto representativo — um padrão realista para explicar nossa abordagem, não um resultado de cliente.",
+    proofDisclosurePawadata: "Projeto da PaWa Data Solutions, publicado com a aprovação do cliente.",
+    proofDisclosurePrior: "Realizado pelo nosso sócio principal em um cargo anterior, antes da PaWa Data Solutions.",
     caseStudiesEyebrow: "Trabalho selecionado",
     caseStudiesTitle: "Trabalho que podemos mostrar",
     caseStudiesSubtitle: "Projetos descritos por setor em vez de por nome do cliente, para que possam ser contados por inteiro sem quebrar uma confidencialidade. Os resultados são descritos em natureza; nenhum número não confirmado é afirmado.",
@@ -2223,9 +2235,9 @@ export const translations = {
     dataIntegrationFeature4: "Manuseio automático de erros e recuperação",
     dataIntegrationFeature5: "Segurança e conformidade de nível empresarial",
     dataIntegrationFeature6: "Arquitetura nativa da nuvem escalável",
-    dataIntegrationCaseStudyTitle: "Caso de Sucesso na Manufatura",
-    dataIntegrationCaseStudyDesc: "Um fabricante líder unificou 15 sistemas díspares, reduzindo o tempo de relatório de dias para minutos.",
-    dataIntegrationCaseStudyResult: "Até 70% menos tempo de preparação de dados",
+    dataIntegrationCaseStudyTitle: "Padrão representativo: sistemas que se contradizem",
+    dataIntegrationCaseStudyDesc: "Uma indústria cujo ERP, MES e três sistemas financeiros regionais guardam, cada um, uma versão diferente do mesmo produto e do mesmo cliente. O trabalho não é conectar endpoints: é analisar por que os registros não se cruzam, acordar um único padrão de integração e desativar as rotas duplicadas em vez de deixá-las rodando ao lado da substituta.",
+    dataIntegrationCaseStudyResult: "O que o projeto deixa: arquitetura-alvo, controles de qualidade na ingestão, documentação de linhagem e runbooks operacionais.",
 
     // Pipeline Architecture Service Page Portuguese
     pipelineArchitectureEyebrow: "Arquitetura de Pipeline Moderna",
@@ -2248,9 +2260,9 @@ export const translations = {
     pipelineArchitectureFeature4: "Monitoramento e alertas integrados",
     pipelineArchitectureFeature5: "Recuperação de desastres e backup",
     pipelineArchitectureFeature6: "Principios de design API-first",
-    pipelineArchitectureCaseStudyTitle: "Transformação de Serviços Financeiros",
-    pipelineArchitectureCaseStudyDesc: "Um banco regional modernizou sua infraestrutura de dados, permitindo a detecção de fraudes em tempo real e a análise de clientes.",
-    pipelineArchitectureCaseStudyResult: "Processamento quase em tempo real",
+    pipelineArchitectureCaseStudyTitle: "Padrão representativo: pipelines que ninguém consegue alterar com segurança",
+    pipelineArchitectureCaseStudyDesc: "Um parque de pipelines onde as falhas são relatadas por usuários de negócio e não pelo monitoramento, e onde cada mudança é precificada pelo risco de quebrar algo não documentado. O trabalho começa pelo inventário do que de fato roda, inclusive as rotinas que todos supõem mortas.",
+    pipelineArchitectureCaseStudyResult: "O que o projeto deixa: um padrão de ingestão documentado, testes e alertas por fluxo, e uma lista de descomissionamento com responsáveis.",
 
     // Data Governance Service Page Portuguese
     dataGovernanceEyebrow: "Governança de Dados Confiável",
@@ -2273,9 +2285,9 @@ export const translations = {
     dataGovernanceFeature4: "Monitoramento e alertas de qualidade de dados",
     dataGovernanceFeature5: "Trilhas de auditoria e relatórios de conformidade",
     dataGovernanceFeature6: "Gestão e aplicação de políticas",
-    dataGovernanceCaseStudyTitle: "Sucesso de Conformidade na Saúde",
-    dataGovernanceCaseStudyDesc: "Uma rede de saúde implementou governança abrangente, alcançando conformidade HIPAA enquanto melhorava a acessibilidade dos dados.",
-    dataGovernanceCaseStudyResult: "Auditoria de conformidade HIPAA aprovada",
+    dataGovernanceCaseStudyTitle: "Padrão representativo: números que ninguém sabe explicar",
+    dataGovernanceCaseStudyDesc: "Números regulatórios entregues no prazo, mas cuja derivação vive na cabeça dos analistas e em fórmulas de planilha. O trabalho trata as definições como a entrega: cada medida reportada rastreada até a origem, cada termo com um dono responsável em vez de um comitê.",
+    dataGovernanceCaseStudyResult: "O que o projeto deixa: glossário de negócio com donos nomeados, linhagem automatizada e regras de qualidade vinculadas às definições que protegem.",
 
     // AI Readiness Service Page Portuguese
     aiReadinessEyebrow: "Base de Dados Pronta para IA",
@@ -2298,9 +2310,9 @@ export const translations = {
     aiReadinessFeature4: "Versionamento de modelos e rastreamento de experimentos",
     aiReadinessFeature5: "Infraestrutura de computação otimizada para GPU",
     aiReadinessFeature6: "Rotulagem e anotação automatizadas de dados",
-    aiReadinessCaseStudyTitle: "Implementação de IA no Varejo",
-    aiReadinessCaseStudyDesc: "Uma rede de varejo implementou uma infraestrutura pronta para IA, permitindo recomendações personalizadas e precificação dinâmica.",
-    aiReadinessCaseStudyResult: "Aumento de 25% nas taxas de conversão",
+    aiReadinessCaseStudyTitle: "Padrão representativo: IA travada pelos seus dados de entrada",
+    aiReadinessCaseStudyDesc: "Uma organização com casos de uso de IA aprovados e nenhuma resposta clara sobre se os dados subjacentes são exatos, de uso permitido ou resolvíveis para uma única entidade. O trabalho avalia entradas e acessos antes dos modelos: resolução de entidades, procedência, uso permitido e a governança em torno dos agentes.",
+    aiReadinessCaseStudyResult: "O que o projeto deixa: inventário de casos de uso com níveis de risco, achados de prontidão de dados por caso, e os controles de acesso sob os quais os agentes vão operar.",
 
     // Analytics Enablement Service Page Portuguese
     analyticsEnablementEyebrow: "Análises Avançadas",
@@ -2323,9 +2335,9 @@ export const translations = {
     analyticsEnablementFeature4: "Geração automatizada de insights",
     analyticsEnablementFeature5: "Dashboards responsivos para celular",
     analyticsEnablementFeature6: "Relatórios e alertas agendados",
-    analyticsEnablementCaseStudyTitle: "Sucesso na Análise de Marketing",
-    analyticsEnablementCaseStudyDesc: "Uma equipe de marketing aumentou o ROI da campanha implementando modelagem de atribuição avançada e análise de clientes.",
-    analyticsEnablementCaseStudyResult: "~30% de melhoria no ROI de marketing",
+    analyticsEnablementCaseStudyTitle: "Padrão representativo: duas equipes, dois números",
+    analyticsEnablementCaseStudyDesc: "Existem painéis e não se confia neles, porque financeiro e operações calculam a mesma medida de formas diferentes e nenhuma definição está escrita. O trabalho traz o desacordo à tona em vez de tirar a média, e então fixa a definição uma única vez numa camada semântica.",
+    analyticsEnablementCaseStudyResult: "O que o projeto deixa: definições de métricas acordadas, uma camada semântica que as aplica e o reporte reconstruído sobre ela.",
 
     // Process Automation Service Page Portuguese
     processAutomationEyebrow: "Automação Inteligente",
@@ -2348,9 +2360,9 @@ export const translations = {
     processAutomationFeature4: "Automação baseada em agendamento",
     processAutomationFeature5: "Integração com mais de 200 ferramentas",
     processAutomationFeature6: "Monitoramento e otimização de desempenho",
-    processAutomationCaseStudyTitle: "Transformação de Operações",
-    processAutomationCaseStudyDesc: "Uma empresa de logística automatizou todo o seu pipeline de relatórios, reduzindo o tempo de processamento de horas para minutos.",
-    processAutomationCaseStudyResult: "55% de redução no trabalho manual",
+    processAutomationCaseStudyTitle: "Padrão representativo: a fila de exceções",
+    processAutomationCaseStudyDesc: "Um processo entre sistemas cujo caminho feliz já está automatizado e onde pessoas qualificadas passam a semana em exceções. O trabalho mapeia onde as exceções realmente nascem, o que costuma ser nos dados de origem e não no processo.",
+    processAutomationCaseStudyResult: "O que o projeto deixa: mapa de processo e exceções, orquestração dos casos repetíveis e uma fronteira de revisão humana colocada por escrito.",
     caseStudyLabel: "Exemplo ilustrativo",
   }
 };

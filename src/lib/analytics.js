@@ -26,6 +26,13 @@ export const EVENTS = {
   // Fire only when a booking destination is configured (see lib/cta.js).
   // Declared here because EVENTS is a closed list and a name invented at the
   // call site is a silently lost funnel step.
+  // Sprint 7 §8 — deep solution page funnel.
+  SOLUTION_VIEW: 'solution_view',
+  DEEP_SECTION_VIEW: 'deep_section_view',
+  PROOF_VIEW: 'proof_view',
+  INSIGHT_CLICK: 'insight_click',
+  ENTRY_OFFER_CLICK: 'entry_offer_click',
+  PRACTITIONER_CLICK: 'practitioner_click',
   CALENDAR_OPEN: 'calendar_open',
   CALENDAR_BOOK: 'calendar_book',
   SCROLL_50: 'scroll_50',

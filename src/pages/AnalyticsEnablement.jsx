@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart3, CheckCircle, ArrowRight, PieChart, LineChart, Target } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import { translations } from "@/components/translations";
+import ProofCard from "@/components/solution/ProofCard";
+import { PROOF_TYPES } from "@/lib/proof";
 import { scrollToId } from "@/lib/motion";
 
 export default function AnalyticsEnablement({ language = "en" }) {
@@ -125,21 +127,14 @@ export default function AnalyticsEnablement({ language = "en" }) {
             </div>
 
             <div className="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-8">
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
-                  {t.caseStudyLabel}
-                </span>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {t.analyticsEnablementCaseStudyTitle}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  {t.analyticsEnablementCaseStudyDesc}
-                </p>
-                <div className="flex items-center gap-2 text-green-600 font-medium">
-                  <BarChart3 className="w-5 h-5" />
-                  {t.analyticsEnablementCaseStudyResult}
-                </div>
-              </div>
+              <ProofCard
+                language={language}
+                solution="analyticsEnablement"
+                proofType={PROOF_TYPES.REPRESENTATIVE}
+                title={t.analyticsEnablementCaseStudyTitle}
+                body={t.analyticsEnablementCaseStudyDesc}
+                outcome={t.analyticsEnablementCaseStudyResult}
+              />
             </div>
           </div>
         </div>

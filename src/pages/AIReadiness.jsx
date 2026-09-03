@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap, CheckCircle, ArrowRight, Brain, Cpu, Sparkles } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import { translations } from "@/components/translations";
+import ProofCard from "@/components/solution/ProofCard";
+import { PROOF_TYPES } from "@/lib/proof";
 import { scrollToId } from "@/lib/motion";
 
 export default function AIReadiness({ language = "en" }) {
@@ -125,21 +127,14 @@ export default function AIReadiness({ language = "en" }) {
             </div>
 
             <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8">
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
-                  {t.caseStudyLabel}
-                </span>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {t.aiReadinessCaseStudyTitle}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  {t.aiReadinessCaseStudyDesc}
-                </p>
-                <div className="flex items-center gap-2 text-green-600 font-medium">
-                  <Brain className="w-5 h-5" />
-                  {t.aiReadinessCaseStudyResult}
-                </div>
-              </div>
+              <ProofCard
+                language={language}
+                solution="aiReadiness"
+                proofType={PROOF_TYPES.REPRESENTATIVE}
+                title={t.aiReadinessCaseStudyTitle}
+                body={t.aiReadinessCaseStudyDesc}
+                outcome={t.aiReadinessCaseStudyResult}
+              />
             </div>
           </div>
         </div>
