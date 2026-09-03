@@ -304,6 +304,23 @@ export const LOCALES = {
         "a": "Yes, and often the work is helping an existing team get traction rather than replacing it. Most governance programmes stall on decision rights rather than on tooling, and that is a different conversation from a platform selection."
       }
     ],
+    "relatedSolutions": [
+      {
+        "label": "Data Integration",
+        "href": "/solutions/data-integration/",
+        "why": "How source data arrives and mastered data is distributed."
+      },
+      {
+        "label": "AI Readiness",
+        "href": "/solutions/ai-readiness/",
+        "why": "Where this governance framework is applied to models and agents."
+      },
+      {
+        "label": "Analytics Enablement",
+        "href": "/solutions/analytics-enablement/",
+        "why": "Trusted metrics built on these definitions and entities."
+      }
+    ],
     "entryOffer": {
       "id": "governance_quickstart",
       "title": "Governance QuickStart",

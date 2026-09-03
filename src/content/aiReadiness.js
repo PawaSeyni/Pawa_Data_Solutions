@@ -268,6 +268,23 @@ export const LOCALES = {
         "a": "Then this is early, and we will say so. The honest sequence is usually governance and mastered entities first, because they are what any future use case will need and they pay for themselves in reporting and risk regardless of whether the AI programme ever happens."
       }
     ],
+    "relatedSolutions": [
+      {
+        "label": "Data Governance & MDM",
+        "href": "/solutions/data-governance/",
+        "why": "The AI governance framework and the mastered entities AI needs as context."
+      },
+      {
+        "label": "Data Integration",
+        "href": "/solutions/data-integration/",
+        "why": "Getting the data reachable in the first place."
+      },
+      {
+        "label": "Process Automation",
+        "href": "/solutions/process-automation/",
+        "why": "Where agents that take actions meet human review boundaries."
+      }
+    ],
     "entryOffer": {
       "id": "ai_readiness_assessment",
       "title": "AI Readiness Assessment",

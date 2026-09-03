@@ -38,6 +38,38 @@ for (const slug of DEEP_SLUGS) {
   }
 }
 
+// Cross-locale leakage. Building one locale by copying another and overriding
+// "the different bits" leaves whole fields in the wrong language — which is
+// worse than an English fallback, because it looks translated. I did exactly
+// this while writing the Analytics page: ten Portuguese fields were still
+// Spanish. English is the intended fallback, so only non-English pairs are
+// compared.
+// Only locales that actually HAVE their own copy are compared. Where several
+// locales are all falling back to English they are the same object by design,
+// and comparing them reports a leak that is really just the fallback.
+const coverage = Object.fromEntries(localeCoverage().map((c) => [c.slug, c.translated]));
+for (const slug of DEEP_SLUGS) {
+  const NON_EN = ['fr', 'es', 'pt'].filter((l) => (coverage[slug] || []).includes(l));
+  for (let i = 0; i < NON_EN.length; i++) {
+    for (let j = i + 1; j < NON_EN.length; j++) {
+      const a = solutionFor(slug, NON_EN[i]);
+      const b = solutionFor(slug, NON_EN[j]);
+      // Short strings can legitimately coincide between close languages —
+      // "Fragmentado → Conectado" is correct in both Spanish and Portuguese, and
+      // flagging it trains you to ignore this check. Only substantial matches
+      // count as evidence that one locale was copied from another.
+      const shared = Object.keys(a).filter((k) => {
+        if (['slug', 'pageName', 'category', 'technologies', 'transformation'].includes(k)) return false;
+        const av = JSON.stringify(a[k]);
+        return av === JSON.stringify(b[k]) && av.length > 60;
+      });
+      if (shared.length) {
+        problems.push(`${slug}: ${NON_EN[i]} and ${NON_EN[j]} share identical ${shared.join(', ')} — one locale was copied from the other`);
+      }
+    }
+  }
+}
+
 for (const { slug, missing } of localeCoverage()) {
   if (missing.length) notes.push(`${slug}: ${missing.join(', ')} fall back to English`);
 }

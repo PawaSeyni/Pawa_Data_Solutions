@@ -75,8 +75,11 @@ export default function DeepSolution({ language }) {
           <h1 className="mb-5 max-w-3xl text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl">{c.h1}</h1>
           <p className="mb-8 max-w-3xl text-xl leading-relaxed text-gray-600">{c.subhead}</p>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            {/* Some entry offers already have a page of their own — the Data
+                Health Check does. Sending those to a form anchor would ask the
+                visitor to enquire about something we have a page explaining. */}
             <Link
-              to={`${prefixFor(language)}/#contact`}
+              to={c.entryOffer.href ? `${prefixFor(language)}${c.entryOffer.href}` : `${prefixFor(language)}/#contact`}
               onClick={() => {
                 track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'hero', language });
                 window.scrollTo(0, 0);
@@ -225,6 +228,33 @@ export default function DeepSolution({ language }) {
         </div>
       </Section>
 
+      {/* 12b — cross-links. §12B places specific relationships between the
+          practices; a reader on Automation should be able to reach the mastered
+          entities that make its workflows unambiguous. */}
+      {c.relatedSolutions?.length > 0 && (
+        <Section id="related-solutions" solution={c.slug} language={language} className="py-14">
+          <div className={wrap}>
+            <h2 className="mb-5 text-sm font-semibold uppercase tracking-wider text-gray-500">
+              {t.solutionRelatedPractices}
+            </h2>
+            <ul className="grid list-none gap-4 p-0 m-0 sm:grid-cols-2 lg:grid-cols-3">
+              {c.relatedSolutions.map((r) => (
+                <li key={r.href}>
+                  <Link
+                    to={`${prefixFor(language)}${r.href}`}
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="block h-full rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:border-blue-400"
+                  >
+                    <p className="mb-1 font-medium text-gray-900">{r.label}</p>
+                    <p className="text-sm leading-relaxed text-gray-600">{r.why}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Section>
+      )}
+
       {/* 13 */}
       <Section id="faq" solution={c.slug} language={language} className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-3xl px-4">
@@ -241,14 +271,28 @@ export default function DeepSolution({ language }) {
             <p className="mx-auto mb-2 max-w-2xl leading-relaxed text-gray-600">{c.entryOffer.body}</p>
             <p className="mx-auto mb-7 max-w-2xl text-sm text-gray-500">{c.entryOffer.note}</p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href="#contact"
-                onClick={() => track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'page_end', language })}
-                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 font-medium text-white transition-colors hover:bg-blue-700"
-              >
-                {c.entryOffer.cta}
-                <ArrowRight className="h-5 w-5" aria-hidden="true" />
-              </a>
+              {c.entryOffer.href ? (
+                <Link
+                  to={`${prefixFor(language)}${c.entryOffer.href}`}
+                  onClick={() => {
+                    track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'page_end', language });
+                    window.scrollTo(0, 0);
+                  }}
+                  className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 font-medium text-white transition-colors hover:bg-blue-700"
+                >
+                  {c.entryOffer.cta}
+                  <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                </Link>
+              ) : (
+                <a
+                  href="#contact"
+                  onClick={() => track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'page_end', language })}
+                  className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 font-medium text-white transition-colors hover:bg-blue-700"
+                >
+                  {c.entryOffer.cta}
+                  <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                </a>
+              )}
               <Link
                 to={createPageUrl('About', language)}
                 onClick={() => {

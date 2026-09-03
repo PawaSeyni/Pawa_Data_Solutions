@@ -281,6 +281,23 @@ export const LOCALES = {
         "a": "The Data Health Check looks across the whole estate — architecture, integration, quality, governance and operating risk — in two to three weeks. The Architecture Review goes deep on the integration estate specifically, in one to two weeks, and suits a team that already knows integration is the problem."
       }
     ],
+    "relatedSolutions": [
+      {
+        "label": "Data Governance & MDM",
+        "href": "/solutions/data-governance/",
+        "why": "Where the mastered entities this architecture distributes are produced."
+      },
+      {
+        "label": "Data Engineering",
+        "href": "/solutions/pipeline-architecture/",
+        "why": "Building and operating the flows this architecture defines."
+      },
+      {
+        "label": "AI Readiness",
+        "href": "/solutions/ai-readiness/",
+        "why": "What governed, connected data is ultimately being made ready for."
+      }
+    ],
     "entryOffer": {
       "id": "integration_architecture_review",
       "title": "Integration Architecture Review",

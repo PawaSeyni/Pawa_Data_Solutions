@@ -9,11 +9,17 @@
 import { IDENTITY as DI_ID, LOCALES as DI } from '../content/dataIntegration.js';
 import { IDENTITY as GOV_ID, LOCALES as GOV } from '../content/dataGovernanceMdm.js';
 import { IDENTITY as AIR_ID, LOCALES as AIR } from '../content/aiReadiness.js';
+import { IDENTITY as PIPE_ID, LOCALES as PIPE } from '../content/pipelineArchitecture.js';
+import { IDENTITY as ANL_ID, LOCALES as ANL } from '../content/analyticsEnablement.js';
+import { IDENTITY as AUTO_ID, LOCALES as AUTO } from '../content/processAutomation.js';
 
 const REGISTRY = [
   { identity: DI_ID, locales: DI },
   { identity: GOV_ID, locales: GOV },
   { identity: AIR_ID, locales: AIR },
+  { identity: PIPE_ID, locales: PIPE },
+  { identity: ANL_ID, locales: ANL },
+  { identity: AUTO_ID, locales: AUTO },
 ];
 
 export const DEEP_SLUGS = REGISTRY.map((r) => r.identity.slug);
