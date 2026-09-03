@@ -53,6 +53,12 @@ const BASE_PAGES = [
   // the whole funnel now converges on.
   { name: 'HealthCheck',          slug: 'data-health-check',               legacySlug: null,                 changefreq: 'monthly', priority: '0.9' },
 
+  // Sprint 8: Contact becomes a real destination. The nav item used to scroll to
+  // a form on the homepage, which meant "Contact" was not a place you could link
+  // to, bookmark, or return to — and it put a second primary conversion in front
+  // of every homepage visitor.
+  { name: 'Contact',              slug: 'contact',                         legacySlug: null,                 changefreq: 'yearly',  priority: '0.7' },
+
   // Added 2 Sep. The footer's "About Us" link had always scrolled to the
   // services grid because no About page existed — audit finding CONTENT-01.
   { name: 'About',                slug: 'about',                           legacySlug: null,                 changefreq: 'yearly',  priority: '0.6' },

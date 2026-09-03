@@ -47,6 +47,7 @@ const SOURCES = {
   Locations:            { title: 'navLocations',  desc: 'locationsSubtitle' },
   Insights:             { title: 'insightsEyebrow', desc: 'insightsSubtitle' },
   HealthCheck:          { title: 'hcTitle',       desc: 'hcSubtitle' },
+  Contact:              { title: 'contactPageTitle', desc: 'contactPageSubtitle' },
   CaseStudies:          { title: 'caseStudiesEyebrow',   desc: 'caseStudiesSubtitle' },
   DataIntegration:      { title: 'service1Title', desc: 'service1Desc' },
   PipelineArchitecture: { title: 'service2Title', desc: 'service2Desc' },

@@ -1,12 +1,11 @@
 
-import React from "react";
 import { translations } from "@/components/translations";
-import { scrollToId } from "@/lib/motion";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Linkedin, Youtube, Instagram } from "lucide-react";
 import { createPageUrl } from "@/utils";
 import { prefixFor } from "@/lib/i18n";
-import { trackCta } from "@/lib/analytics";
+import { PRACTICES } from "@/lib/practices";
+import { hasCaseStudies } from "@/lib/caseStudies";
 
 // X ships no lucide glyph, so draw the wordmark directly.
 function XIcon(props) {
@@ -24,6 +23,14 @@ function XIcon(props) {
 // Watch the LinkedIn slug: /company/pawa is an unrelated farming business and
 // /company/pawadata does not exist. Ours is /company/pawa-data-solutions.
 //   Instagram: /pawadata is not a live profile
+
+// Every url here was opened and confirmed to be our account before being added —
+// LinkedIn and Instagram serve a "page not found" body under an HTTP 200, so a
+// status check alone will happily wire up a dead link. A link with no url never
+// renders, so leaving one null is always safe.
+// Watch the LinkedIn slug: /company/pawa is an unrelated farming business and
+// /company/pawadata does not exist. Ours is /company/pawa-data-solutions.
+//   Instagram: /pawadata is not a live profile
 const SOCIAL_LINKS = [
   { name: "LinkedIn", Icon: Linkedin, url: "https://www.linkedin.com/company/pawa-data-solutions" },
   { name: "X", Icon: XIcon, url: "https://x.com/pawadata" },
@@ -31,76 +38,78 @@ const SOCIAL_LINKS = [
   { name: "Instagram", Icon: Instagram, url: null },
 ].filter((s) => s.url);
 
+// Sprint 8 §12. Four columns mirroring the information architecture:
+// Practices · PaWa Data Solutions · Start · Utility.
+//
+// The generic transformation slogan is gone. A footer that shouts "Ready to
+// transform your data?" after a page that has already made its case is a second
+// conversion attempt at the quietest point on the page, and it read as the kind
+// of copy this positioning is meant to avoid. The footer closes the site; it
+// does not sell again.
 export default function Footer({ language }) {
   const t = translations[language];
-  const navigate = useNavigate();
+  const prefix = prefixFor(language);
+  const year = new Date().getFullYear();
 
-  const services = [
-    { title: t.service1Title, page: "DataIntegration" },
-    { title: t.service2Title, page: "PipelineArchitecture" },
-    { title: t.service3Title, page: "DataGovernance" },
-    { title: t.service4Title, page: "AIReadiness" },
-    { title: t.service5Title, page: "AnalyticsEnablement" },
-    { title: t.service6Title, page: "ProcessAutomation" },
+  const columns = [
+    {
+      title: t.footerPracticesTitle,
+      links: PRACTICES.map((p) => ({ label: t[p.labelKey], to: `${prefix}${p.href}` })),
+    },
+    {
+      title: t.footerPawadataTitle,
+      links: [
+        ...(hasCaseStudies() ? [{ label: t.navSelectedWork, page: 'CaseStudies' }] : []),
+        { label: t.insightsEyebrow, page: 'Insights' },
+        { label: t.navAbout, page: 'About' },
+        { label: t.navLocations, page: 'Locations' },
+        { label: t.navCareers, page: 'Careers' },
+        { label: t.navContact, page: 'Contact' },
+      ],
+    },
+    {
+      title: t.footerStartTitle,
+      links: [
+        { label: t.hcTitle, page: 'HealthCheck' },
+        { label: t.ctaTalkToPractitioner, page: 'Contact' },
+        { label: t.navWorkshop, page: 'Workshop' },
+      ],
+    },
+    {
+      title: t.footerUtilityTitle,
+      links: [
+        { label: t.footerPrivacy, page: 'PrivacyPolicy' },
+        { label: t.footerDoNotSell, page: 'DoNotSellOrShare' },
+      ],
+    },
   ];
 
-  // These targets live on the home page, so a click from any other route has to
-  // navigate first and scroll once the section exists. This used to wait a fixed
-  // 300ms, which is a race: arriving from a lazy-loaded route often takes longer,
-  // and the scroll then silently did nothing. Poll instead, and give up rather
-  // than spin forever if the id is genuinely absent.
-  const handleSectionClick = (sectionId) => {
-    navigate(`${prefixFor(language)}/`);
-
-    const deadline = Date.now() + 3000;
-    const tryScroll = () => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        scrollToId(sectionId);
-      } else if (Date.now() < deadline) {
-        requestAnimationFrame(tryScroll);
-      }
-    };
-    requestAnimationFrame(tryScroll);
-  };
-
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="mb-4">
-              <picture>
-                <source srcSet="/pawa-logo.webp" type="image/webp" />
-                <img
-                  src="/pawa-logo.png"
-                  alt="PaWa Data Solutions"
-                  width="240"
-                  height="360"
-                  className="h-40 w-auto filter brightness-0 invert"
-                />
-              </picture>
-            </div>
-            <p className="text-gray-300 max-w-md mb-4">
-              {t.footerDesc}
-            </p>
-            <div className="text-sm text-gray-400">
-              © {new Date().getFullYear()} PaWa Data Solutions. All rights reserved.
-            </div>
-
+    <footer className="bg-gray-900 py-14 text-white">
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-1">
+            <img
+              src="/pawa-logo-light.webp"
+              alt="PaWa Data Solutions"
+              width="120"
+              height="48"
+              className="mb-4 h-10 w-auto"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
+            <p className="max-w-xs text-sm leading-relaxed text-gray-400">{t.footerDesc}</p>
             {SOCIAL_LINKS.length > 0 && (
-              <ul className="flex gap-3 mt-5" aria-label={t.footerSocialLabel}>
+              <ul className="mt-5 flex list-none gap-4 p-0 m-0">
                 {SOCIAL_LINKS.map(({ name, Icon, url }) => (
                   <li key={name}>
                     <a
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`${name} — ${t.footerSocialLabel}`}
-                      className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 text-gray-300 hover:text-white hover:border-white focus-visible:text-white focus-visible:border-white transition-colors"
+                      aria-label={name}
+                      className="text-gray-400 transition-colors hover:text-white"
                     >
-                      <Icon className="w-5 h-5" aria-hidden="true" />
+                      <Icon className="h-5 w-5" aria-hidden="true" />
                     </a>
                   </li>
                 ))}
@@ -108,91 +117,31 @@ export default function Footer({ language }) {
             )}
           </div>
 
-          {/* Services */}
-          <div>
-            <h2 className="font-semibold text-white mb-4">{t.footerServicesTitle}</h2>
-            <ul className="space-y-2 text-sm text-gray-300">
-              {services.map((service) => (
-                <li key={service.page}>
-                  <Link
-                    to={createPageUrl(service.page, language)}
-                    className="hover:text-white transition-colors"
-                    onClick={() => window.scrollTo(0, 0)}
-                  >
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h2 className="font-semibold text-white mb-4">{t.footerCompanyTitle}</h2>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>
-                {/* Was a scroll to the services grid, because no About page existed
-                    (audit CONTENT-01). Now it goes where the label promises. */}
-                <Link to={createPageUrl('About', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">
-                  {t.footerAbout}
-                </Link>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleSectionClick('process')} 
-                  className="hover:text-white transition-colors text-left cursor-pointer"
-                >
-                  {t.navProcess}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleSectionClick('kpis')} 
-                  className="hover:text-white transition-colors text-left cursor-pointer"
-                >
-                  {t.footerCaseStudies}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleSectionClick('contact')} 
-                  className="hover:text-white transition-colors text-left cursor-pointer"
-                >
-                  {t.navContact}
-                </button>
-              </li>
-              {/* Insights: the on-site index, which links out to the canonical
-                  articles on papanguer.com. Indexing here, publishing there.
-                  This said 'Blog' and called createPageUrl('Blog') until Sprint 6
-                  — the page was renamed in Sprint 3 and createPageUrl falls back
-                  to "/" for an unknown name, so the footer link on all 92 pages
-                  quietly pointed at the homepage. scripts/check-page-names.mjs
-                  now fails the build on a dangling name. */}
-              <li>
-                <Link to={createPageUrl('Insights', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">
-                  {t.insightsEyebrow}
-                </Link>
-              </li>
-              <li>
-                <Link to={createPageUrl('PrivacyPolicy', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">{t.footerPrivacy}</Link>
-              </li>
-              <li>
-                <Link to={createPageUrl('DoNotSellOrShare', language)} onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">{t.footerDoNotSell}</Link>
-              </li>
-            </ul>
-          </div>
+          {columns.map((col) => (
+            <nav key={col.title} aria-label={col.title}>
+              <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
+                {col.title}
+              </h2>
+              <ul className="list-none space-y-2.5 p-0 m-0 text-sm">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      to={l.to || createPageUrl(l.page, language)}
+                      onClick={() => window.scrollTo(0, 0)}
+                      className="text-gray-300 transition-colors hover:text-white"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            {t.footerCta}{" "}
-            <button 
-              onClick={() => handleSectionClick('contact')} 
-              className="text-blue-400 hover:underline cursor-pointer"
-            >
-              {t.footerCtaLink}
-            </button>
-          </p>
+        <div className="mt-12 flex flex-col gap-4 border-t border-gray-800 pt-6 text-sm text-gray-400 sm:flex-row sm:items-center sm:justify-between">
+          <p className="m-0">© {year} PaWa Data Solutions. {t.footerRights}</p>
+          <a href="mailto:hello@pawadata.com" className="hover:text-white">hello@pawadata.com</a>
         </div>
       </div>
     </footer>

@@ -27,6 +27,7 @@ export const CTA_PRIMARY = 'health_check';
  * impossible to ask.
  */
 export const CTA_LOCATIONS = {
+  HEADER: 'header',
   HERO: 'hero',
   PAGE_END: 'page_end',
   CONTACT: 'contact_section',

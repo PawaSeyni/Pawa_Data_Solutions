@@ -26,6 +26,7 @@ const Locations = lazy(() => import("./Locations"));
 const Insights = lazy(() => import("./Insights"));
 const HealthCheck = lazy(() => import("./HealthCheck"));
 const DeepSolution = lazy(() => import("./DeepSolution"));
+const Contact = lazy(() => import("./Contact"));
 const Book = lazy(() => import("./Book"));
 const BestPractice = lazy(() => import("./BestPractice"));
 const CaseStudies = lazy(() => import("./CaseStudies"));
@@ -35,7 +36,7 @@ const NotFound = lazy(() => import("./NotFound"));
 // Route table built from the shared page definitions, so a slug change lands in
 // the router, the sitemap, the canonical tags and the redirects at once.
 const COMPONENTS = {
-    Solutions, About, Locations, Insights, HealthCheck, CaseStudies, Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
+    Solutions, About, Locations, Insights, HealthCheck, Contact, CaseStudies, Workshop, DataIntegration, PipelineArchitecture, DataGovernance,
     AIReadiness, AnalyticsEnablement, ProcessAutomation,
     PrivacyPolicy, DoNotSellOrShare, Careers,
 };
