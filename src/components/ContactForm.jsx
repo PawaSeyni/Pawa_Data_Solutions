@@ -216,6 +216,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
                       <Input
                         id="name"
                         name="name"
+                        autoComplete="name"
                         required
                         value={formData.name}
                         onChange={(e) => handleChange('name', e.target.value)}
@@ -231,6 +232,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
                       <Input
                         id="email"
                         name="email"
+                        autoComplete="email"
                         type="email"
                         required
                         value={formData.email}
@@ -251,6 +253,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
                     <Input
                       id="company"
                       name="company"
+                      autoComplete="organization"
                       value={formData.company}
                       onChange={(e) => handleChange('company', e.target.value)}
                       className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"

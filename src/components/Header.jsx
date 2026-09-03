@@ -63,7 +63,7 @@ export default function Header({ currentPageName, language }) {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="flex items-center justify-between gap-4 py-3">
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 py-3">
           <Link to={`${prefix}/`} onClick={() => window.scrollTo(0, 0)} className="shrink-0">
             <img src="/pawa-logo.webp" alt="PaWa Data Solutions" width="120" height="48" className="h-11 w-auto" />
           </Link>
@@ -87,7 +87,7 @@ export default function Header({ currentPageName, language }) {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
             <div className="hidden lg:block">
               <LanguageMenu language={language} currentSlug={slug} />
             </div>
@@ -99,7 +99,7 @@ export default function Header({ currentPageName, language }) {
                 trackCta({ label: CTA_PRIMARY, location: CTA_LOCATIONS.HEADER, page: currentPageName, language });
                 window.scrollTo(0, 0);
               }}
-              className="rounded-lg bg-blue-600 px-3 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-4"
+              className="min-w-0 truncate rounded-lg bg-blue-600 px-3 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-4"
             >
               <span className="hidden xl:inline">{t.heroCtaPrimary}</span>
               <span className="xl:hidden">{t.navHealthCheckShort}</span>

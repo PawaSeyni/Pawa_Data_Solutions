@@ -205,7 +205,7 @@ export function DeliverablesGrid({ items }) {
       {items.map((d) => (
         <li key={d} className="flex gap-3 leading-relaxed text-gray-700">
           <Check className="mt-1 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
-          <span>{d}</span>
+          <span className="min-w-0">{d}</span>
         </li>
       ))}
     </ul>

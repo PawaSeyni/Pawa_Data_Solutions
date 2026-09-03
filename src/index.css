@@ -199,3 +199,16 @@ footer :where(a, button):focus-visible {
   outline-color: #ffffff;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.6);
 }
+
+
+/* Reflow (WCAG 1.4.10). At a 320px viewport with 200% text zoom the page was
+   scrolling sideways: flex and grid children default to min-width:auto, so a
+   long unbreakable string refuses to shrink and drags the whole document wider.
+   Measured at 418px of content in a 320px viewport before this.
+   Belt and braces — individual components also set min-w-0 where it matters. */
+html, body {
+  overflow-x: hidden;
+}
+:where(p, li, h1, h2, h3, h4, dd, dt) {
+  overflow-wrap: break-word;
+}

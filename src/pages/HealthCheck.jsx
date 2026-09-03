@@ -78,7 +78,7 @@ export default function HealthCheck({ language }) {
             {TRIGGERS.map((k) => (
               <li key={k} className="flex gap-3 rounded-lg border border-gray-200 bg-white p-5 text-gray-700">
                 <Check className="mt-1 h-5 w-5 shrink-0 text-blue-600" aria-hidden="true" />
-                <span>{t[k]}</span>
+                <span className="min-w-0">{t[k]}</span>
               </li>
             ))}
           </ul>
