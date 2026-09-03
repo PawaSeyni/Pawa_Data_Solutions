@@ -30,7 +30,7 @@ function List({ title, items, icon: Icon, tone = 'text-blue-600' }) {
         {items.map((x) => (
           <li key={x} className="flex gap-3 text-lg leading-relaxed text-gray-700">
             <Icon className={`mt-1.5 h-4 w-4 shrink-0 ${tone}`} aria-hidden="true" />
-            <span>{x}</span>
+            <span className="min-w-0">{x}</span>
           </li>
         ))}
       </ul>
@@ -129,7 +129,7 @@ export default function BestPractice({ language }) {
                       href={r.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-blue-600 hover:underline"
+                      className="inline-flex max-w-full flex-wrap items-center gap-1.5 text-blue-600 hover:underline"
                     >
                       {r.label}
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

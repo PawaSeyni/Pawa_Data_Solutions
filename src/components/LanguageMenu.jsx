@@ -53,7 +53,7 @@ export default function LanguageMenu({ language, currentSlug }) {
         aria-haspopup="true"
         aria-label={`${t.navLanguageLabel}: ${NAMES[language]}`}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-blue-500 hover:text-blue-600"
+        className="inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-blue-500 hover:text-blue-600"
       >
         <Globe className="h-4 w-4" aria-hidden="true" />
         <span className="uppercase">{language}</span>

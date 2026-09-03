@@ -123,7 +123,7 @@ export default function Insights({ language }) {
                     trackCta({ label: `featured_${featured.slug}`, location: 'insights', page: 'Insights', language });
                     window.scrollTo(0, 0);
                   }}
-                  className="inline-flex items-center gap-2 font-medium text-blue-600 hover:underline"
+                  className="inline-flex max-w-full flex-wrap items-center gap-2 font-medium text-blue-600 hover:underline"
                 >
                   {t.insightsReadMore}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -194,7 +194,7 @@ export default function Insights({ language }) {
                       className="group block py-7"
                     >
                       {body}
-                      <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-blue-600">
+                      <span className="mt-3 inline-flex max-w-full flex-wrap items-center gap-1.5 text-sm font-medium text-blue-600">
                         {t.insightsReadOn}
                         <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                       </span>
@@ -209,7 +209,7 @@ export default function Insights({ language }) {
                       className="group block py-7"
                     >
                       {body}
-                      <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-blue-600">
+                      <span className="mt-3 inline-flex max-w-full flex-wrap items-center gap-1.5 text-sm font-medium text-blue-600">
                         {t.insightsReadMore}
                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
                       </span>

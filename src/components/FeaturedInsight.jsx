@@ -43,7 +43,7 @@ export default function FeaturedInsight({ language }) {
               {language !== 'en' && (
                 <p className="mb-3 text-xs uppercase tracking-wider text-gray-500">{t.insightsEnglishLabel}</p>
               )}
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600">
+              <span className="inline-flex max-w-full flex-wrap items-center gap-1.5 text-sm font-medium text-blue-600">
                 {t.insightsReadOn}
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </span>
@@ -56,7 +56,7 @@ export default function FeaturedInsight({ language }) {
                 track(EVENTS.INSIGHT_CLICK, { content_type: 'book', topic: 'selling', source_page: 'Home', language });
                 window.scrollTo(0, 0);
               }}
-              className="group flex gap-6 rounded-xl border border-gray-200 bg-white p-7 transition-colors hover:border-blue-300"
+              className="group flex flex-col gap-5 rounded-xl border border-gray-200 bg-white p-7 transition-colors hover:border-blue-300 sm:flex-row sm:gap-6"
             >
               {book.cover && (
                 <picture className="shrink-0">
@@ -64,7 +64,7 @@ export default function FeaturedInsight({ language }) {
                   <img src={book.cover} alt="" width="900" height="1350" loading="lazy" className="h-32 w-auto rounded shadow-sm" />
                 </picture>
               )}
-              <span>
+              <span className="min-w-0">
                 <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-gray-500">
                   {t.insightsFilterBooks}
                 </span>
@@ -72,7 +72,7 @@ export default function FeaturedInsight({ language }) {
                   {book.title}
                 </span>
                 <span className="mb-4 block leading-relaxed text-gray-600">{book.thesis}</span>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600">
+                <span className="inline-flex max-w-full flex-wrap items-center gap-1.5 text-sm font-medium text-blue-600">
                   {t.insightsReadMore}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>

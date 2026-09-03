@@ -54,7 +54,7 @@ export default function Leadership({ language }) {
                   {m.credentialKeys.map((k) => (
                     <li key={k} className="flex gap-2.5 text-sm leading-relaxed text-gray-700">
                       <Check className="mt-1 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
-                      <span>{t[k]}</span>
+                      <span className="min-w-0">{t[k]}</span>
                     </li>
                   ))}
                 </ul>
@@ -66,7 +66,7 @@ export default function Leadership({ language }) {
                       trackCta({ label: `profile_${m.id}`, location: 'home_team', page: 'Home', language });
                       window.scrollTo(0, 0);
                     }}
-                    className="inline-flex items-center gap-1.5 font-medium text-blue-600 hover:underline"
+                    className="inline-flex max-w-full flex-wrap items-center gap-1.5 font-medium text-blue-600 hover:underline"
                   >
                     {t.teamFullProfile}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -77,7 +77,7 @@ export default function Leadership({ language }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackCta({ label: `linkedin_${m.id}`, location: 'home_team', page: 'Home', language })}
-                      className="inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600"
+                      className="inline-flex max-w-full flex-wrap items-center gap-1.5 text-gray-500 hover:text-blue-600"
                     >
                       LinkedIn
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

@@ -48,9 +48,9 @@ export function ProblemSignals({ items }) {
   return (
     <ul className="grid list-none gap-4 p-0 m-0 sm:grid-cols-2">
       {items.map((s) => (
-        <li key={s} className="flex gap-3 rounded-lg border border-gray-200 bg-white p-5 leading-relaxed text-gray-700">
+        <li key={s} className="flex min-w-0 gap-3 rounded-lg border border-gray-200 bg-white p-5 leading-relaxed text-gray-700">
           <Check className="mt-1 h-5 w-5 shrink-0 text-blue-600" aria-hidden="true" />
-          <span>{s}</span>
+          <span className="min-w-0">{s}</span>
         </li>
       ))}
     </ul>
@@ -203,7 +203,7 @@ export function DeliverablesGrid({ items }) {
   return (
     <ul className="grid list-none gap-3 p-0 m-0 sm:grid-cols-2">
       {items.map((d) => (
-        <li key={d} className="flex gap-3 leading-relaxed text-gray-700">
+        <li key={d} className="flex min-w-0 gap-3 leading-relaxed text-gray-700">
           <Check className="mt-1 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
           <span className="min-w-0">{d}</span>
         </li>

@@ -206,9 +206,19 @@ footer :where(a, button):focus-visible {
    long unbreakable string refuses to shrink and drags the whole document wider.
    Measured at 418px of content in a 320px viewport before this.
    Belt and braces — individual components also set min-w-0 where it matters. */
-html, body {
-  overflow-x: hidden;
+/* Grid and flex children default to min-width:auto, which means a cell refuses
+   to shrink below its content and drags the document wider. Scoped to the list
+   rows this site actually builds — a blanket rule would flatten intentional
+   layouts elsewhere. */
+:where(ul, ol) > li,
+:where(.grid) > * {
+  min-width: 0;
 }
+
+/* Deliberately NOT overflow-x:hidden. That hides overflow instead of reflowing
+   it — the page stops scrolling sideways while the text is quietly clipped,
+   which is a worse failure than the one it conceals and invisible to testing.
+   Fix the layout instead; this rule only lets long words break. */
 :where(p, li, h1, h2, h3, h4, dd, dt) {
   overflow-wrap: break-word;
 }

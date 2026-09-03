@@ -61,7 +61,7 @@ export default function HealthCheck({ language }) {
           <button
             type="button"
             onClick={scrollToForm}
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 text-lg font-medium text-white transition-colors hover:bg-blue-700"
+            className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3.5 sm:px-7 text-lg font-medium text-white transition-colors hover:bg-blue-700"
           >
             {t.heroCtaPrimary}
             <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -111,7 +111,7 @@ export default function HealthCheck({ language }) {
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-100 font-semibold text-blue-700 tabular-nums">
                   {i + 1}
                 </span>
-                <div>
+                <div className="min-w-0">
                   <h3 className="mb-1 font-semibold text-gray-900">{t[`${k}Title`]}</h3>
                   <p className="leading-relaxed text-gray-600">{t[`${k}Desc`]}</p>
                 </div>
@@ -191,7 +191,7 @@ export default function HealthCheck({ language }) {
             {NOT_INCLUDED.map((k) => (
               <li key={k} className="flex gap-3 rounded-lg border border-gray-200 bg-gray-50/60 p-5 text-gray-700">
                 <X className="mt-1 h-5 w-5 shrink-0 text-gray-400" aria-hidden="true" />
-                <span>{t[k]}</span>
+                <span className="min-w-0">{t[k]}</span>
               </li>
             ))}
           </ul>

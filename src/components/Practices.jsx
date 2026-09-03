@@ -46,7 +46,7 @@ export default function Practices({ language }) {
                   track(EVENTS.PRACTICE_VIEW, { practice: p.id, landing_page: 'Home', language });
                   window.scrollTo(0, 0);
                 }}
-                className="inline-flex items-center gap-2 font-medium text-blue-600 hover:underline"
+                className="inline-flex max-w-full flex-wrap items-center gap-2 font-medium text-blue-600 hover:underline"
               >
                 {t.ctaExplore}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

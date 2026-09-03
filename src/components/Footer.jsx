@@ -141,7 +141,7 @@ export default function Footer({ language }) {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-gray-800 pt-6 text-sm text-gray-400 sm:flex-row sm:items-center sm:justify-between">
           <p className="m-0">© {year} PaWa Data Solutions. {t.footerRights}</p>
-          <a href="mailto:hello@pawadata.com" className="hover:text-white">hello@pawadata.com</a>
+          <a href="mailto:hello@pawadata.com" className="break-all hover:text-white">hello@pawadata.com</a>
         </div>
       </div>
     </footer>

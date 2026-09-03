@@ -18,8 +18,8 @@ import { trackCta } from "@/lib/analytics";
 export default function PrimaryCta({ language, page, location, size = 'md', className = '' }) {
   const t = translations[language];
   const sizes = {
-    md: 'px-6 py-3',
-    lg: 'px-7 py-3.5 text-lg',
+    md: 'px-5 py-3 sm:px-6',
+    lg: 'px-5 py-3.5 text-lg sm:px-7',
   };
 
   return (
@@ -29,7 +29,7 @@ export default function PrimaryCta({ language, page, location, size = 'md', clas
         trackCta({ label: CTA_PRIMARY, location, page, language });
         window.scrollTo(0, 0);
       }}
-      className={`inline-flex items-center gap-2 rounded-lg bg-blue-600 font-medium text-white transition-colors hover:bg-blue-700 ${sizes[size]} ${className}`}
+      className={`inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-lg bg-blue-600 font-medium text-white transition-colors hover:bg-blue-700 ${sizes[size]} ${className}`}
     >
       {t.heroCtaPrimary}
       <ArrowRight className={size === 'lg' ? 'h-5 w-5' : 'h-4 w-4'} aria-hidden="true" />

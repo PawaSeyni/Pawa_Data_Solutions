@@ -57,7 +57,7 @@ export default function Home({ language }) {
               trackCta({ label: 'talk_to_practitioner', location: CTA_LOCATIONS.PAGE_END, page: 'Home', language });
               window.scrollTo(0, 0);
             }}
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-7 py-3.5 font-medium text-gray-800 transition-colors hover:border-blue-500 hover:text-blue-600"
+            className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-lg border border-gray-300 px-5 py-3.5 sm:px-7 font-medium text-gray-800 transition-colors hover:border-blue-500 hover:text-blue-600"
           >
             {t.ctaTalkToPractitioner}
             <ArrowRight className="h-5 w-5" aria-hidden="true" />

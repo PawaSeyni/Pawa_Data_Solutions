@@ -84,7 +84,7 @@ export default function DeepSolution({ language }) {
                 track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'hero', language });
                 window.scrollTo(0, 0);
               }}
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 text-lg font-medium text-white transition-colors hover:bg-blue-700"
+              className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3.5 sm:px-7 text-lg font-medium text-white transition-colors hover:bg-blue-700"
             >
               {c.entryOffer.title}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -278,7 +278,7 @@ export default function DeepSolution({ language }) {
                     track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'page_end', language });
                     window.scrollTo(0, 0);
                   }}
-                  className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 font-medium text-white transition-colors hover:bg-blue-700"
+                  className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3.5 sm:px-7 font-medium text-white transition-colors hover:bg-blue-700"
                 >
                   {c.entryOffer.cta}
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -287,7 +287,7 @@ export default function DeepSolution({ language }) {
                 <a
                   href="#contact"
                   onClick={() => track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'page_end', language })}
-                  className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 font-medium text-white transition-colors hover:bg-blue-700"
+                  className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3.5 sm:px-7 font-medium text-white transition-colors hover:bg-blue-700"
                 >
                   {c.entryOffer.cta}
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />

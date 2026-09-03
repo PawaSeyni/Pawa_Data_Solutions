@@ -33,13 +33,13 @@ export default function Contact({ language }) {
           <ul className="mt-10 flex flex-wrap gap-x-10 gap-y-4 list-none p-0 m-0">
             <li className="flex items-center gap-2.5 text-gray-700">
               <Mail className="h-5 w-5 text-blue-600" aria-hidden="true" />
-              <a href="mailto:hello@pawadata.com" className="hover:text-blue-600 hover:underline">
+              <a href="mailto:hello@pawadata.com" className="break-all hover:text-blue-600 hover:underline">
                 hello@pawadata.com
               </a>
             </li>
             <li className="flex items-center gap-2.5 text-gray-700">
               <MapPin className="h-5 w-5 text-blue-600" aria-hidden="true" />
-              <span>{t.contactInfoLocationValue}</span>
+              <span className="min-w-0">{t.contactInfoLocationValue}</span>
             </li>
           </ul>
         </div>

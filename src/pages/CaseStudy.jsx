@@ -88,7 +88,7 @@ export default function CaseStudy({ language }) {
                 {study.architecture.map((a) => (
                   <li key={a} className="flex gap-3">
                     <Check className="mt-2 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
-                    <span>{a}</span>
+                    <span className="min-w-0">{a}</span>
                   </li>
                 ))}
               </ul>

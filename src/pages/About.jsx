@@ -144,7 +144,7 @@ export default function About({ language }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackCta({ label: id, location: 'about', page: 'About', language })}
-                      className="inline-flex items-center gap-1.5 text-blue-600 hover:underline"
+                      className="inline-flex max-w-full flex-wrap items-center gap-1.5 text-blue-600 hover:underline"
                     >
                       {label}
                       <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -184,7 +184,7 @@ export default function About({ language }) {
               {PRINCIPLES.map((k) => (
                 <li key={k} className="flex gap-3 text-lg leading-relaxed text-gray-700">
                   <Check className="mt-1.5 h-4 w-4 shrink-0 text-blue-600" aria-hidden="true" />
-                  <span>{t[k]}</span>
+                  <span className="min-w-0">{t[k]}</span>
                 </li>
               ))}
             </ul>
