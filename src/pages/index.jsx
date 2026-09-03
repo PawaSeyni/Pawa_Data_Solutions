@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'r
 import Layout from "./Layout.jsx";
 import { LANGUAGES, DEFAULT_LANGUAGE, parsePath, prefixFor } from "@/lib/i18n";
 import { PAGES } from "@/lib/pages";
+import { DEEP_PAGE_NAMES } from "@/lib/deepSolutions";
 import { trackScrollDepth } from "@/lib/analytics";
 
 // Home is the landing page — load it eagerly so the first paint needs no extra request.
@@ -24,6 +25,7 @@ const About = lazy(() => import("./About"));
 const Locations = lazy(() => import("./Locations"));
 const Insights = lazy(() => import("./Insights"));
 const HealthCheck = lazy(() => import("./HealthCheck"));
+const DeepSolution = lazy(() => import("./DeepSolution"));
 const Book = lazy(() => import("./Book"));
 const BestPractice = lazy(() => import("./BestPractice"));
 const CaseStudies = lazy(() => import("./CaseStudies"));
@@ -42,7 +44,10 @@ const ROUTED = PAGES.filter((p) => p.name !== 'Home').map((p) => [
     p.name,
     // Every individual case study renders through the same template, resolved
     // from the slug — one component, one page per approved engagement.
-    p.name.startsWith('CaseStudy:') ? CaseStudy
+    // Sprint 7: solutions that have deep content render through the one shared
+    // DeepSolution renderer; the rest keep their original page until 7D.
+    DEEP_PAGE_NAMES.has(p.name) ? DeepSolution
+        : p.name.startsWith('CaseStudy:') ? CaseStudy
         : p.name.startsWith('Book:') ? Book
         : p.name.startsWith('BestPractice:') ? BestPractice
         : COMPONENTS[p.name],

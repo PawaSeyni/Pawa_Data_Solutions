@@ -10,6 +10,7 @@ import { translations } from '@/components/translations';
 import { caseStudyBySlug } from '@/lib/caseStudies';
 import { bookBySlug } from '@/lib/writing';
 import { bestPracticeBySlug } from '@/lib/bestPractices';
+import { deepSeoFor } from '@/lib/deepSolutions';
 import { DEFAULT_LANGUAGE, LANGUAGES, localizedPath, alternatesFor } from '@/lib/i18n';
 
 export const SITE_URL = 'https://pawadata.com';
@@ -70,6 +71,21 @@ const HOME_TITLES = {
 };
 
 export function getSeo(pageName, language = DEFAULT_LANGUAGE) {
+  // A deep solution page describes itself: the title follows the search intent
+  // (§9 "data integration consulting"), not the nav label, which is what the
+  // generic SOURCES table would have produced.
+  const deep = deepSeoFor(pageName, language);
+  if (deep) {
+    const lang = LANGUAGES.includes(language) ? language : DEFAULT_LANGUAGE;
+    return {
+      path: localizedPath(pageName, lang),
+      title: withBrand(deep.title),
+      description: trim(deep.description),
+      noindex: false,
+      alternates: alternatesFor(pageName),
+    };
+  }
+
   // An individual case study describes itself; its title and description come
   // from the approved entry rather than from a generic template.
   if (pageName?.startsWith('Book:')) {
