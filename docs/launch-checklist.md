@@ -90,6 +90,52 @@ required, which is why there isn't one.
    footer and on blue buttons. Replaced with a two-tone ring that works on any
    background.
 
+## Host topology
+
+Netlify serves this site on more than one hostname. Worth knowing before
+diagnosing "different versions of the site" again.
+
+| Host | Serves | Indexable |
+|---|---|---|
+| `pawadata.com` | Current published deploy | Yes — the canonical host |
+| `www.pawadata.com` | 301 to apex (DNS CNAME) | n/a |
+| `pawa-data-solutions.netlify.app` | 301 to apex (netlify.toml) | No, since 2026-09-03 |
+| `main--pawa-data-solutions.netlify.app` | 301 to apex (netlify.toml) | No, since 2026-09-03 |
+| `<deploy-id>--pawa-data-solutions.netlify.app` | **That deploy, frozen forever** | No — Netlify sets `x-robots-tag: noindex` |
+
+**The permalinks are the trap.** Every published deploy stays individually
+reachable at its own URL and never updates. At the time of writing, 39 of them
+are live, and the oldest returns "We can't find that page" for `/solutions/`
+where production returns "Data Consulting Services". Anyone holding one — a
+bookmark, a Slack link, an SEO tool configured months ago — is looking at a
+frozen old site and will report that the site is broken or out of date.
+
+They stay reachable on purpose: they are what makes rollback instant.
+
+### What was investigated, 2026-09-03
+
+Prompted by a report that different routes were serving different generations.
+Production was consistent on every dimension tested: identical asset fingerprint
+across 15 routes and 4 locales, one published deploy, HTML at
+`max-age=0, must-revalidate`, all 14 historical URLs 301ing, dist and sitemap
+matching 96↔96 with no orphans either way, live sitemap byte-identical to the
+generated one, and no variation by user agent.
+
+The two bare netlify.app hosts were a genuine finding — 200 on every page with no
+`X-Robots-Tag` and a `robots.txt` saying `Allow: /`, so a fully indexable second
+copy. They now 301.
+
+That exposure turned out to be **theoretical, not live**: Search Console's
+"Duplicate, Google chose different canonical" row on the `pawadata.com` property
+was empty, meaning Google never preferred the duplicate. The canonical tags on
+that host always pointed home, which is what Google weights most heavily.
+
+Note for next time: Search Console cannot see the netlify.app host at all.
+`pawadata.com` is verified as a **Domain property** (DNS TXT), which covers that
+domain and its subdomains — `netlify.app` is a different registrable domain. And
+the Page indexing report is UI-only; the API exposes Search Analytics, Sitemaps
+and URL Inspection, nothing else.
+
 ## Rollback
 
 Netlify keeps every deploy. To roll back: Deploys → the last known-good deploy →
