@@ -167,11 +167,15 @@ export function ReferenceArchitecture({ layers, crossCutting, crossCuttingLabel,
               : 'flex list-none flex-col gap-3 p-0 m-0 lg:flex-row lg:items-stretch'
           }
         >
+          {/* The stage number is gray-500, not gray-400: it carries the ORDER of
+              the flow, so it is content rather than decoration and has to meet
+              AA. gray-400 on white is 2.54:1 against a 4.5 requirement, and it
+              shipped that way on all six pages. */}
           {layers.map((l, i) => (
             <li key={l.name} className={wraps ? '' : 'flex flex-1 items-stretch gap-3'}>
               <div className="h-full flex-1 rounded-lg border border-gray-200 bg-white p-4">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-blue-600">
-                  <span className="mr-1.5 text-gray-400 tabular-nums">{i + 1}</span>
+                  <span className="mr-1.5 text-gray-500 tabular-nums">{i + 1}</span>
                   {l.name}
                 </p>
                 <ul className="list-none space-y-1 p-0 m-0 text-sm text-gray-700">
