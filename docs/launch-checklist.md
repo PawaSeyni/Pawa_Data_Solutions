@@ -136,6 +136,32 @@ domain and its subdomains — `netlify.app` is a different registrable domain. A
 the Page indexing report is UI-only; the API exposes Search Analytics, Sitemaps
 and URL Inspection, nothing else.
 
+## After a deploy is live
+
+```bash
+npm run indexnow
+```
+
+Submits URLs changed in the last two days to IndexNow — Bing, Yandex, Seznam,
+Naver. `--all` re-seeds everything; `--dry-run` shows what would go.
+
+Run it **after** confirming the deploy is live, never from `npm run build`. The
+build finishes before the deploy is serving, so submitting there points crawlers
+at URLs that are not up yet, and a failed deploy would have invited a crawl of
+content that never shipped.
+
+**Google is not part of IndexNow.** For Google the lever is the `<lastmod>` field
+in the sitemap, which `scripts/gen-sitemap.mjs` derives from the git history of
+each page's real content files. Google retired its ping endpoint in 2023 —
+`https://www.google.com/ping?sitemap=…` now returns 404 — in favour of reading
+exactly that field. A Search Console resubmit is a nudge on top; the accuracy of
+`lastmod` is what actually drives recrawl.
+
+The IndexNow key file in `public/` is public by design: fetching
+`https://pawadata.com/<key>.txt` and finding the key inside is how domain
+ownership is proved. It is not a secret. The script refuses to run if the file's
+contents and filename disagree, since that mismatch fails verification silently.
+
 ## Rollback
 
 Netlify keeps every deploy. To roll back: Deploys → the last known-good deploy →
