@@ -15,7 +15,8 @@
     "sync:writing": "node scripts/sync-writing.mjs",
     "check:cases": "node scripts/check-case-studies.mjs",
     "check:pages": "node scripts/check-page-names.mjs",
-    "check:solutions": "node scripts/check-solutions.mjs"
+    "check:solutions": "node scripts/check-solutions.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.2",
