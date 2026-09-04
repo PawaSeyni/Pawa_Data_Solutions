@@ -61,7 +61,35 @@ function sourcesFor(page) {
   // is one it learns to discount. So each page contributes only the commits that
   // touched ITS keys, matched by prefix (see keyPrefixFor).
   const comp = `src/pages/${n}.jsx`;
-  return [comp].filter((f) => existsSync(path.join(REPO, f)));
+  return [comp, ...contentModulesFor(n)].filter((f) => existsSync(path.join(REPO, f)));
+}
+
+/**
+ * Data modules whose contents are the page's visible content.
+ *
+ * Deliberately excludes cta.js, analytics.js and motion.js: those are behaviour
+ * and instrumentation, and a change to how a click is tracked does not change
+ * what a reader sees. Including them would reintroduce exactly the churn that
+ * scoping translations.jsx by key prefix was meant to remove.
+ *
+ * The gap this closes: extending the job postings' validThrough changed what
+ * /careers/ publishes and what Google reads from its JobPosting schema, but
+ * lastmod did not move — jobPostings.js was not listed as a source — so the
+ * IndexNow run reported nothing to submit.
+ */
+function contentModulesFor(name) {
+  return {
+    Careers: ['src/lib/jobPostings.js'],
+    Locations: ['src/lib/locations.js'],
+    About: ['src/lib/team.js'],
+    HealthCheck: ['src/lib/healthCheck.js'],
+    CaseStudies: ['src/lib/caseStudies.js', 'src/content/caseStudyCopy.js'],
+    // The homepage composes the practice list, the team block and Selected Work,
+    // so all three genuinely change what it shows.
+    Home: ['src/lib/practices.js', 'src/lib/team.js',
+           'src/lib/caseStudies.js', 'src/content/caseStudyCopy.js',
+           'src/components/SelectedWork.jsx', 'src/components/Leadership.jsx'],
+  }[name] || [];
 }
 
 /**
