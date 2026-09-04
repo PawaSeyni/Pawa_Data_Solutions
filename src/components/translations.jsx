@@ -92,14 +92,15 @@ export const translations = {
     kpi5Desc: "One partner across integration, pipelines, governance, analytics, and AI readiness.",
     
     // Careers
-    careersEyebrow: "Join Our Team",
-    careersHeroTitle: "Build the Future of Data",
-    careersHeroSubtitle: "Join PaWa Data Solutions and help organizations transform their data into competitive advantage. Work with cutting-edge technologies and passionate professionals.",
+    careersHeroNote: "We do not build large delivery pyramids. The people clients meet are the people doing the work. If you are an experienced practitioner who values technical depth, direct client responsibility and practical outcomes, we would like to hear from you.",
+    careersEyebrow: "Careers",
+    careersHeroTitle: "Do meaningful data work with experienced people",
+    careersHeroSubtitle: "PaWa Data Solutions is a deliberately small, senior-led data and AI consultancy. We bring together experienced practitioners to solve complex integration, governance, analytics, automation and AI-readiness problems for our clients.",
     careersHeroCta: "View Open Positions",
     careersOpenPositions: "Open Positions",
-    careersOpenPositionsDesc: "We're looking for talented individuals to join our growing team and help shape the future of data solutions.",
-    careersDontSeeRole: "Don't See Your Perfect Role?",
-    careersDontSeeRoleDesc: "We're always looking for exceptional talent. Send us your resume and tell us how you'd like to contribute to our mission.",
+    careersOpenPositionsDesc: "Each of these is a real, currently open role. You would work directly with clients alongside senior practitioners, not behind an account layer.",
+    careersDontSeeRole: "None of these quite fit?",
+    careersDontSeeRoleDesc: "We work with specialist collaborators as well as permanent hires. Tell us what you do and the kind of problem you want to be handed.",
     careersApplyAnyway: "Apply Anyway",
     careersApplyNow: "Apply Now",
     
@@ -114,8 +115,8 @@ export const translations = {
     jobAnalyticsConsultantDesc: "Help clients unlock insights from their data through advanced analytics, BI implementations, and strategic guidance.",
     
     // Application Form
-    careersApplicationTitle: "Apply to Join Our Team",
-    careersApplicationDesc: "Ready to make an impact? Submit your application and let's discuss how you can contribute to our mission.",
+    careersApplicationTitle: "Apply",
+    careersApplicationDesc: "Applications are read by the people you would work with. Tell us what you have delivered and where you want more depth.",
     careersApplicationFormTitle: "Job Application",
     careersFullName: "Full Name",
     careersEmail: "Email Address",
@@ -613,14 +614,15 @@ export const translations = {
     kpi5Desc: "Un seul partenaire pour l'intégration, les pipelines, la gouvernance, l'analytique et la préparation à l'IA.",
 
     // Careers
-    careersEyebrow: "Rejoignez Notre Équipe",
-    careersHeroTitle: "Construisez l'Avenir des Données",
-    careersHeroSubtitle: "Rejoignez PaWa Data Solutions et aidez les organisations à transformer leurs données en avantage concurrentiel. Travaillez avec des technologies de pointe et des professionnels passionnés.",
+    careersHeroNote: "Nous ne construisons pas de pyramides de delivery. Les personnes que rencontrent les clients sont celles qui font le travail. Si vous êtes un praticien expérimenté attaché à la profondeur technique, à la responsabilité directe vis-à-vis du client et aux résultats concrets, nous aimerions vous parler.",
+    careersEyebrow: "Carrières",
+    careersHeroTitle: "Un travail de données qui a du sens, avec des gens expérimentés",
+    careersHeroSubtitle: "PaWa Data Solutions est un cabinet-conseil en données et en IA délibérément petit, dirigé par des praticiens expérimentés. Nous réunissons des profils chevronnés pour résoudre des problèmes complexes d'intégration, de gouvernance, d'analytique, d'automatisation et de préparation à l'IA pour nos clients.",
     careersHeroCta: "Voir les Postes Ouverts",
     careersOpenPositions: "Postes Ouverts",
-    careersOpenPositionsDesc: "Nous recherchons des personnes talentueuses pour rejoindre notre équipe en croissance et aider à façonner l'avenir des solutions de données.",
-    careersDontSeeRole: "Vous Ne Voyez Pas Votre Rôle Parfait?",
-    careersDontSeeRoleDesc: "Nous recherchons toujours des talents exceptionnels. Envoyez-nous votre CV et dites-nous comment vous aimeriez contribuer à notre mission.",
+    careersOpenPositionsDesc: "Chacun de ces postes est réellement ouvert aujourd'hui. Vous travailleriez directement avec les clients, aux côtés de praticiens expérimentés, sans couche commerciale intermédiaire.",
+    careersDontSeeRole: "Aucun ne correspond tout à fait ?",
+    careersDontSeeRoleDesc: "Nous travaillons aussi avec des collaborateurs spécialisés, pas uniquement en recrutement permanent. Dites-nous ce que vous faites et le type de problème que vous aimeriez qu'on vous confie.",
     careersApplyAnyway: "Postuler Quand Même",
     careersApplyNow: "Postuler Maintenant",
     
@@ -635,8 +637,8 @@ export const translations = {
     jobAnalyticsConsultantDesc: "Aider les clients à débloquer des insights de leurs données grâce à l'analytique avancée, aux implémentations BI, et aux conseils stratégiques.",
     
     // Application Form
-    careersApplicationTitle: "Postulez pour Rejoindre Notre Équipe",
-    careersApplicationDesc: "Prêt à avoir un impact? Soumettez votre candidature et discutons de comment vous pouvez contribuer à notre mission.",
+    careersApplicationTitle: "Postuler",
+    careersApplicationDesc: "Les candidatures sont lues par les personnes avec qui vous travailleriez. Dites-nous ce que vous avez livré et où vous souhaitez approfondir.",
     careersApplicationFormTitle: "Candidature d'Emploi",
     careersFullName: "Nom Complet",
     careersEmail: "Adresse E-mail",
@@ -1130,14 +1132,15 @@ export const translations = {
     kpi5Desc: "Un solo socio para integración, pipelines, gobernanza, analítica y preparación para IA.",
 
     // Careers
-    careersEyebrow: "Únete a Nuestro Equipo",
-    careersHeroTitle: "Construye el Futuro de los Datos",
-    careersHeroSubtitle: "Únete a PaWa Data Solutions y ayuda a las organizaciones a transformar sus datos en ventaja competitiva. Trabaja con tecnologías de vanguardia y profesionales apasionados.",
+    careersHeroNote: "No construimos pirámides de entrega. Las personas que el cliente conoce son las que hacen el trabajo. Si eres un profesional con experiencia que valora la profundidad técnica, la responsabilidad directa ante el cliente y los resultados prácticos, nos gustaría hablar contigo.",
+    careersEyebrow: "Carreras",
+    careersHeroTitle: "Trabajo de datos con sentido, junto a gente con experiencia",
+    careersHeroSubtitle: "PaWa Data Solutions es una consultoría de datos e IA deliberadamente pequeña y dirigida por profesionales sénior. Reunimos a practicantes con experiencia para resolver problemas complejos de integración, gobernanza, analítica, automatización y preparación para IA de nuestros clientes.",
     careersHeroCta: "Ver Posiciones Abiertas",
     careersOpenPositions: "Posiciones Abiertas",
-    careersOpenPositionsDesc: "Buscamos personas talentosas para unirse a nuestro equipo en crecimiento y ayudar a dar forma al futuro de las soluciones de datos.",
-    careersDontSeeRole: "¿No Ves Tu Rol Perfecto?",
-    careersDontSeeRoleDesc: "Siempre estamos buscando talento excepcional. Envíanos tu currículum y cuéntanos cómo te gustaría contribuir a nuestra misión.",
+    careersOpenPositionsDesc: "Cada uno de estos puestos está realmente abierto hoy. Trabajarías directamente con clientes junto a profesionales sénior, sin una capa comercial de por medio.",
+    careersDontSeeRole: "¿Ninguno encaja del todo?",
+    careersDontSeeRoleDesc: "También trabajamos con colaboradores especializados, no solo con contrataciones permanentes. Cuéntanos qué haces y qué tipo de problema te gustaría que te encargaran.",
     careersApplyAnyway: "Aplicar De Todos Modos",
     careersApplyNow: "Aplicar Ahora",
     
@@ -1152,8 +1155,8 @@ export const translations = {
     jobAnalyticsConsultantDesc: "Ayudar a los clientes a desbloquear insights de sus datos a través de análisis avanzados, implementaciones de BI, y orientación estratégica.",
     
     // Application Form
-    careersApplicationTitle: "Aplica para Unirte a Nuestro Equipo",
-    careersApplicationDesc: "¿Listo para hacer un impacto? Envía tu solicitud y hablemos sobre cómo puedes contribuir a nuestra misión.",
+    careersApplicationTitle: "Postular",
+    careersApplicationDesc: "Las candidaturas las leen las personas con las que trabajarías. Cuéntanos qué has entregado y dónde quieres ganar profundidad.",
     careersApplicationFormTitle: "Solicitud de Empleo",
     careersFullName: "Nombre Completo",
     careersEmail: "Dirección de Correo",
@@ -1647,14 +1650,15 @@ export const translations = {
     kpi5Desc: "Um único parceiro para integração, pipelines, governança, analytics e preparação para IA.",
 
     // Careers
-    careersEyebrow: "Junte-se à Nossa Equipe",
-    careersHeroTitle: "Construa o Futuro dos Dados",
-    careersHeroSubtitle: "Junte-se à PaWa Data Solutions e ajude organizações a transformar seus dados em vantagem competitiva. Trabalhe com tecnologias de ponta e profissionais apaixonados.",
+    careersHeroNote: "Não construímos pirâmides de entrega. As pessoas que o cliente conhece são as que fazem o trabalho. Se você é um profissional experiente que valoriza profundidade técnica, responsabilidade direta com o cliente e resultados práticos, gostaríamos de conversar.",
+    careersEyebrow: "Carreiras",
+    careersHeroTitle: "Trabalho de dados com sentido, ao lado de gente experiente",
+    careersHeroSubtitle: "A PaWa Data Solutions é uma consultoria de dados e IA deliberadamente pequena e liderada por profissionais sênior. Reunimos praticantes experientes para resolver problemas complexos de integração, governança, analytics, automação e prontidão para IA dos nossos clientes.",
     careersHeroCta: "Ver Vagas Abertas",
     careersOpenPositions: "Vagas Abertas",
-    careersOpenPositionsDesc: "Estamos procurando pessoas talentosas para se juntar à nossa equipe em crescimento e ajudar a moldar o futuro das soluções de dados.",
-    careersDontSeeRole: "Não Vê Seu Papel Perfeito?",
-    careersDontSeeRoleDesc: "Estamos sempre procurando talentos excepcionais. Envie-nos seu currículo e nos diga como gostaria de contribuir para nossa missão.",
+    careersOpenPositionsDesc: "Cada uma destas vagas está realmente aberta hoje. Você trabalharia diretamente com clientes ao lado de profissionais sênior, sem uma camada comercial no meio.",
+    careersDontSeeRole: "Nenhuma encaixa exatamente?",
+    careersDontSeeRoleDesc: "Também trabalhamos com colaboradores especializados, não apenas com contratações permanentes. Conte o que você faz e que tipo de problema gostaria de receber.",
     careersApplyAnyway: "Candidatar-se Mesmo Assim",
     careersApplyNow: "Candidatar-se Agora",
     
@@ -1669,8 +1673,8 @@ export const translations = {
     jobAnalyticsConsultantDesc: "Ajudar clientes a desbloquear insights de seus dados através de analytics avançadas, implementações de BI, e orientação estratégica.",
     
     // Application Form
-    careersApplicationTitle: "Candidate-se para Juntar-se à Nossa Equipe",
-    careersApplicationDesc: "Pronto para fazer um impacto? Envie sua candidatura e vamos discutir como você pode contribuir para nossa missão.",
+    careersApplicationTitle: "Candidatar-se",
+    careersApplicationDesc: "As candidaturas são lidas pelas pessoas com quem você trabalharia. Conte o que você entregou e onde quer aprofundar.",
     careersApplicationFormTitle: "Candidatura de Emprego",
     careersFullName: "Nome Completo",
     careersEmail: "Endereço de E-mail",

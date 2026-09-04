@@ -26,8 +26,15 @@ export default function CareersHero({ language }) {
             {t.careersHeroTitle}
           </h1>
 
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
+          <p className="text-xl text-gray-600 mb-5 max-w-2xl leading-relaxed">
             {t.careersHeroSubtitle}
+          </p>
+
+          {/* The boutique proposition, said plainly. This is the part that has to
+              agree with the About page: no delivery pyramid, and the person a
+              client meets is the person doing the work. */}
+          <p className="mb-8 max-w-2xl leading-relaxed text-gray-600">
+            {t.careersHeroNote}
           </p>
 
           <Button 
