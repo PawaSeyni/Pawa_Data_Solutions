@@ -53,7 +53,8 @@ for (const page of MOVED) {
 for (const { from, to } of ALSO_MOVED) {
   for (const lang of LANGUAGES) {
     const src = `${prefixFor(lang)}/${from}`;
-    const dst = `${prefixFor(lang)}/${to}/`;
+    // An empty target means the locale home: `${prefix}/`, not `${prefix}//`.
+    const dst = to === '' ? `${prefixFor(lang)}/` : `${prefixFor(lang)}/${to}/`;
     lines.push(`${src}      ${dst}   301`);
     lines.push(`${src}/     ${dst}   301`);
     count += 2;

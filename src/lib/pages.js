@@ -30,10 +30,6 @@ import { BEST_PRACTICES } from './bestPractices.js';
 const BASE_PAGES = [
   { name: 'Home',                 slug: '',                                legacySlug: null,                 changefreq: 'monthly', priority: '1.0' },
 
-  // Hub for the six pages below. Added 2 Sep because moving them under
-  // /solutions/ made that path a 404 for anyone who trims the URL — and a
-  // section index is real internal linking, which the redesign plan asks for.
-  { name: 'Solutions',            slug: 'solutions',                       legacySlug: null,                 changefreq: 'monthly', priority: '0.9' },
 
   // The six capability pages now sit under /solutions/. The redesign plan lists
   // both a Solutions and a Services tier; its own SEO section uses only
@@ -134,5 +130,12 @@ export const MOVED = PAGES.filter((p) => p.legacySlug);
 // the request before these rules run, and a rule whose target it would rewrite
 // back to the source is the infinite loop that took this site down in June.
 export const ALSO_MOVED = [
+  // The /solutions/ hub was retired in the Production Closure sprint. It served
+  // the current five-practice taxonomy, but the homepage already is the practice
+  // discovery experience, and the hub duplicated it while carrying leftover
+  // six-service copy. Retiring it consolidates the signal rather than splitting
+  // it. `to: ''` means the locale home. Exact-match only: the six deep pages
+  // under /solutions/<slug>/ are untouched.
+  { from: 'solutions', to: '' },
   { from: 'publications', to: 'insights' },
 ];
