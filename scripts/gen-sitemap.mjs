@@ -121,9 +121,21 @@ function lastmodFor(page) {
     .map((f) => lastCommitISO(f) || (existsSync(path.join(REPO, f))
       ? statSync(path.join(REPO, f)).mtime.toISOString() : null))]
     .filter(Boolean)
-    .sort();
-  // Omitting is better than guessing: a wrong lastmod poisons the field sitewide.
-  return dates.length ? dates[dates.length - 1].slice(0, 10) : null;
+    // Sort by instant, not lexically: offsets differ between commits, so
+    // "2026-09-03T20:28-04:00" must rank after "2026-09-04T00:10+02:00".
+    .sort((a, b) => new Date(a) - new Date(b));
+  // Convert to UTC before taking the date. `git log %cI` prints the committer's
+  // LOCAL time with an offset, so a commit at 20:28 -04:00 is already the next
+  // day in UTC — slicing the raw string yields yesterday. That silently made
+  // lastmod a day stale for anything committed after 20:00 local, which is also
+  // why an IndexNow run straight after a content change found nothing to send.
+  // Sitemaps are read in UTC; the dates in them must be UTC too.
+  if (!dates.length) return null;
+  const newest = dates[dates.length - 1];
+  const asUtc = new Date(newest);
+  return Number.isNaN(asUtc.getTime())
+    ? newest.slice(0, 10)                       // unparseable: better than nothing
+    : asUtc.toISOString().slice(0, 10);
 }
 
 function localizedPath(page, language) {
