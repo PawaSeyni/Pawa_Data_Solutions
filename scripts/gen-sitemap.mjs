@@ -54,9 +54,42 @@ function sourcesFor(page) {
   }[n];
   if (deep) return [`src/content/${deep}.js`, 'src/pages/DeepSolution.jsx'];
   if (n === 'Insights') return ['src/lib/writing.js', 'src/pages/Insights.jsx'];
-  // Everything else takes its copy from translations.jsx plus its own component.
-  const comp = `src/pages/${n === 'Home' ? 'Home' : n}.jsx`;
-  return [comp, TRANSLATIONS].filter((f) => existsSync(path.join(REPO, f)));
+  // Everything else takes its copy from translations.jsx — but that file changes
+  // on nearly every commit, so using it whole would bump every page's lastmod
+  // whenever any page's copy was touched. Google's guidance is that lastmod
+  // reflects the last SIGNIFICANT change, and a field that moves on every deploy
+  // is one it learns to discount. So each page contributes only the commits that
+  // touched ITS keys, matched by prefix (see keyPrefixFor).
+  const comp = `src/pages/${n}.jsx`;
+  return [comp].filter((f) => existsSync(path.join(REPO, f)));
+}
+
+/**
+ * Translation key prefix owned by a page, for scoping translations.jsx history.
+ * Home is intentionally absent: it composes hero, services, process, KPIs, team
+ * and selected work, so no single prefix describes it and its own component plus
+ * those component files are the honest source.
+ */
+function keyPrefixFor(name) {
+  return {
+    About: 'about', Locations: 'locations', Workshop: 'workshop',
+    Careers: 'careers', PrivacyPolicy: 'privacy', DoNotSellOrShare: 'doNotSell',
+    HealthCheck: 'hc', Contact: 'contact', Solutions: 'solutions',
+    CaseStudies: 'caseStudies', Insights: 'insights',
+  }[name] || null;
+}
+
+/** Last commit that changed lines matching a regex within one file. */
+function lastCommitMatching(file, regex) {
+  if (!gitWorks) return null;
+  try {
+    const out = execFileSync('git',
+      ['log', '-1', '--format=%cI', `-G${regex}`, '--', file],
+      { cwd: REPO, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    return out || null;
+  } catch {
+    return null;
+  }
 }
 
 let gitWorks = true;
@@ -74,9 +107,19 @@ function lastCommitISO(file) {
 }
 
 function lastmodFor(page) {
-  const dates = sourcesFor(page)
+  const extra = [];
+  const prefix = keyPrefixFor(page.name);
+  if (prefix) {
+    // Only commits touching this page's own translation keys count.
+    // POSIX ERE, not PCRE: git -G does not understand \s and silently matches
+    // NOTHING rather than erroring, so this scoping quietly did nothing until a
+    // cross-check against git caught it.
+    const d = lastCommitMatching(TRANSLATIONS, `^[[:space:]]+${prefix}[A-Z0-9]`);
+    if (d) extra.push(d);
+  }
+  const dates = [...extra, ...sourcesFor(page)
     .map((f) => lastCommitISO(f) || (existsSync(path.join(REPO, f))
-      ? statSync(path.join(REPO, f)).mtime.toISOString() : null))
+      ? statSync(path.join(REPO, f)).mtime.toISOString() : null))]
     .filter(Boolean)
     .sort();
   // Omitting is better than guessing: a wrong lastmod poisons the field sitewide.

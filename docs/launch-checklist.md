@@ -143,7 +143,18 @@ npm run indexnow
 ```
 
 Submits URLs changed in the last two days to IndexNow — Bing, Yandex, Seznam,
-Naver. `--all` re-seeds everything; `--dry-run` shows what would go.
+Naver. `--all` re-seeds everything, `--dry-run` shows the plan, `--force`
+resubmits URLs unchanged since the last run.
+
+Before submitting it fetches every selected URL and refuses the whole run unless
+each one returns 200, on the canonical host, with no redirect. A redirect here is
+a sitemap bug rather than something to hand a crawler. `--dry-run` exits non-zero
+when validation fails, so it can gate a release.
+
+Each run appends to `docs/indexnow-log.jsonl`: timestamp, commit, Netlify deploy
+id, window, count, response status, a SHA-256 of the submitted list, and the
+url→lastmod map. That file is both the audit trail and the idempotency state — a
+URL already submitted at its current lastmod is skipped unless `--force`.
 
 Run it **after** confirming the deploy is live, never from `npm run build`. The
 build finishes before the deploy is serving, so submitting there points crawlers
