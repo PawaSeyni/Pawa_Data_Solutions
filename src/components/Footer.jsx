@@ -54,7 +54,14 @@ export default function Footer({ language }) {
   const columns = [
     {
       title: t.footerPracticesTitle,
-      links: PRACTICES.map((p) => ({ label: t[p.labelKey], to: `${prefix}${p.href}` })),
+      // The /solutions/ hub is in the sitemap but had zero inbound internal
+      // links, which makes it an orphan: crawlable via the sitemap, but with no
+      // link equity and no way for a reader to reach it. One footer link fixes
+      // that without inventing a nav slot for it.
+      links: [
+        ...PRACTICES.map((p) => ({ label: t[p.labelKey], to: `${prefix}${p.href}` })),
+        { label: t.footerAllPractices, to: `${prefix}/solutions/` },
+      ],
     },
     {
       title: t.footerPawadataTitle,

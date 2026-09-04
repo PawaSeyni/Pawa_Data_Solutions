@@ -19,12 +19,13 @@ export const translations = {
 
     // Services
     servicesTitle: "Where we usually start",
-    servicesSubtitle: "Six problems we are called in to fix. Most engagements begin with one of them and expand once the first result lands.",
+    servicesSubtitle: "The problems we are called in to fix. Most engagements begin with one of them and expand once the first result lands.",
     // /solutions/ hub
     solutionsSeoTitle: "Data Consulting Services",
-    solutionsSeoDesc: "Six practices: integration, data engineering, governance and MDM, analytics, automation and AI readiness. Each page covers the problem and how we approach it.",
+    solutionsSeoDesc: "Five practices: integration and data engineering, governance and MDM, analytics, automation and AI readiness. Each page covers the problem and how we approach it.",
     solutionsEyebrow: "Solutions",
-    solutionsTitle: "Six problems we are called in to fix",
+    footerAllPractices: "All practices",
+    solutionsTitle: "The problems we are called in to fix",
     solutionsSubtitle: "Most engagements start with one of these and widen once the first result lands. Each page covers the problem, what it costs to leave alone, and how we approach it.",
     solutionsCardCta: "Read more",
     solutionsCtaTitle: "Not sure which one you need?",
@@ -539,12 +540,13 @@ export const translations = {
 
     // Services - From the attached file
     servicesTitle: "Par où nous commençons",
-    servicesSubtitle: "Six problèmes pour lesquels on nous appelle. La plupart des missions démarrent sur l'un d'eux, puis s'élargissent une fois le premier résultat obtenu.",
+    servicesSubtitle: "Les problèmes pour lesquels on nous appelle. La plupart des missions démarrent sur l'un d'eux, puis s'élargissent une fois le premier résultat obtenu.",
     // Hub /solutions/
     solutionsSeoTitle: "Services de conseil en données",
-    solutionsSeoDesc: "Six pratiques : intégration, ingénierie, gouvernance et MDM, analytique, automatisation et préparation à l'IA. Chaque page présente le problème et notre approche.",
+    solutionsSeoDesc: "Cinq pratiques : intégration et ingénierie des données, gouvernance et MDM, analytique, automatisation et préparation à l'IA. Chaque page présente le problème et notre approche.",
     solutionsEyebrow: "Solutions",
-    solutionsTitle: "Six problèmes pour lesquels on nous appelle",
+    footerAllPractices: "Toutes les pratiques",
+    solutionsTitle: "Les problèmes pour lesquels on nous appelle",
     solutionsSubtitle: "La plupart des missions démarrent sur l'un d'eux, puis s'élargissent une fois le premier résultat obtenu. Chaque page présente le problème, ce qu'il coûte de le laisser en l'état, et notre façon de l'aborder.",
     solutionsCardCta: "En savoir plus",
     solutionsCtaTitle: "Vous ne savez pas par où commencer ?",
@@ -1055,12 +1057,13 @@ export const translations = {
 
     // Services
     servicesTitle: "Por dónde solemos empezar",
-    servicesSubtitle: "Seis problemas para los que nos llaman. La mayoría de los proyectos empiezan por uno de ellos y se amplían cuando llega el primer resultado.",
+    servicesSubtitle: "Los problemas para los que nos llaman. La mayoría de los proyectos empiezan por uno de ellos y se amplían cuando llega el primer resultado.",
     // Hub /solutions/
     solutionsSeoTitle: "Servicios de consultoría de datos",
-    solutionsSeoDesc: "Seis prácticas: integración, ingeniería, gobernanza y MDM, analítica, automatización y preparación para IA. Cada página explica el problema y cómo lo abordamos.",
+    solutionsSeoDesc: "Cinco prácticas: integración e ingeniería de datos, gobernanza y MDM, analítica, automatización y preparación para IA. Cada página explica el problema y cómo lo abordamos.",
     solutionsEyebrow: "Soluciones",
-    solutionsTitle: "Seis problemas para los que nos llaman",
+    footerAllPractices: "Todas las prácticas",
+    solutionsTitle: "Los problemas para los que nos llaman",
     solutionsSubtitle: "La mayoría de los proyectos empiezan por uno de ellos y se amplían cuando llega el primer resultado. Cada página explica el problema, lo que cuesta dejarlo como está y cómo lo abordamos.",
     solutionsCardCta: "Leer más",
     solutionsCtaTitle: "¿No sabes por dónde empezar?",
@@ -1571,12 +1574,13 @@ export const translations = {
 
     // Services
     servicesTitle: "Por onde costumamos começar",
-    servicesSubtitle: "Seis problemas para os quais nos chamam. A maioria dos projetos começa por um deles e se amplia quando chega o primeiro resultado.",
+    servicesSubtitle: "Os problemas para os quais nos chamam. A maioria dos projetos começa por um deles e se amplia quando chega o primeiro resultado.",
     // Hub /solutions/
     solutionsSeoTitle: "Serviços de consultoria em dados",
-    solutionsSeoDesc: "Seis práticas: integração, engenharia, governança e MDM, analytics, automação e prontidão para IA. Cada página apresenta o problema e como o abordamos.",
+    solutionsSeoDesc: "Cinco práticas: integração e engenharia de dados, governança e MDM, analytics, automação e prontidão para IA. Cada página apresenta o problema e como o abordamos.",
     solutionsEyebrow: "Soluções",
-    solutionsTitle: "Seis problemas para os quais nos chamam",
+    footerAllPractices: "Todas as práticas",
+    solutionsTitle: "Os problemas para os quais nos chamam",
     solutionsSubtitle: "A maioria dos projetos começa por um deles e se amplia quando chega o primeiro resultado. Cada página apresenta o problema, o que custa deixá-lo como está e como o abordamos.",
     solutionsCardCta: "Saiba mais",
     solutionsCtaTitle: "Não sabe por onde começar?",
