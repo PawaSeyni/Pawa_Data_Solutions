@@ -55,7 +55,7 @@ const APPLICANT_LOCATIONS = [
 // so a role nobody remembers to delete expires instead of misleading applicants.
 // Push it forward while the roles are genuinely open.
 export const DATE_POSTED = '2026-09-01';
-export const VALID_THROUGH = '2026-12-01';
+export const VALID_THROUGH = '2027-03-01';  // extended 2026-09-04, roles confirmed open
 
 export const ROLES = [
   {
