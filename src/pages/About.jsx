@@ -19,6 +19,11 @@ const BOUTIQUE = [
 
 const PRINCIPLES = ['aboutPrinciple1', 'aboutPrinciple2', 'aboutPrinciple3', 'aboutPrinciple4'];
 
+const PAPA_BIO = [
+  'aboutP1', 'aboutP2', 'aboutP3', 'aboutP4', 'aboutP5',
+  'aboutP6', 'aboutP7', 'aboutP8', 'aboutP9', 'aboutP10',
+];
+
 const CREDENTIALS = [
   "CISSP",
   "TOGAF",
@@ -66,6 +71,9 @@ function jasonSchema(t, language) {
     description: t.aboutJasonP1,
     worksFor: { '@type': 'Organization', name: 'PaWa Data Solutions', url: SITE_URL },
     url: `${SITE_URL}${prefixFor(language)}/about/`,
+    // Parity with the other principal, whose LinkedIn also lives in sameAs
+    // rather than as a rendered link on this page.
+    sameAs: ['https://www.linkedin.com/in/jasonthienvo'],
   };
 }
 
@@ -111,14 +119,15 @@ export default function About({ language }) {
             <div className="self-center">
               <h2 className="text-2xl font-bold text-gray-900">Papa S. Nguer</h2>
               <p className="text-gray-600">{t.aboutRole}</p>
+              <p className="mt-1 text-sm text-gray-500">{t.aboutPapaFocus}</p>
             </div>
           </div>
 
+          {/* Rendered from a list rather than four hand-written <p> tags: the bio
+              has grown from four paragraphs to ten, and a fixed set of tags is
+              how a paragraph gets silently dropped when the copy changes again. */}
           <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-gray-700">
-            <p>{t.aboutP1}</p>
-            <p>{t.aboutP2}</p>
-            <p>{t.aboutP3}</p>
-            <p>{t.aboutP4}</p>
+            {PAPA_BIO.map((k) => <p key={k}>{t[k]}</p>)}
           </div>
 
           {/* The Tier 1 names above were earned at Informatica. Saying so plainly is

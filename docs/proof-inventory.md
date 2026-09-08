@@ -20,7 +20,7 @@ before PaWa Data Solutions.
 
 | Item | Basis | Publishable |
 |---|---|---|
-| 300+ customer-facing proving engagements, ~55/year, 60%+ success rate | Papa's own record | Yes — already on About |
+| 300+ customer-facing proving engagements | Papa's own record | Yes — already on About |
 | $93M+ influenced revenue over final four years | Papa's own record | Yes — already on About |
 | Tier 1 institutions: JPMorgan Chase, PNC, CIBC, Scotiabank, Manulife, Sun Life, CN Rail, Air Canada, Bell Canada | Papa's own record | **Named list only, as background.** Never as PaWa client work, and never attached to a specific outcome |
 | Domain depth: KYC/AML, entity resolution, MDM, governance, lineage, regulatory reporting | Papa's own record | Yes |
@@ -125,6 +125,14 @@ Per §8 of the brief, recorded rather than silently deferred:
   practitioner background. This is disclosed, but it is the real gap.
 - **Client permission outreach drafted, unsent.** Would unlock named studies
   and quotes.
+- **Informatica tenure corrected 15 → 18 years on 2026-09-08**, per an updated
+  bio supplied by Papa. 28 strings across translations.jsx and four content
+  files, in all four locales, because the About page and the solution pages must
+  not disagree about it.
+- **Role title needs a decision.** The supplied profile heads with "VP, Solutions
+  Engineering" while its own body says "VP of Technical Sales & Engineering". The
+  site uses the latter, which matches the existing Person schema. The former is
+  published as a focus line under the name instead.
 - **Jason Thien Vo's bio is published as supplied.** The 25+ years, the two
   decades at the front of the industry and the Informatica tenure come from the
   text given to me; I have verified none of it independently. No LinkedIn or

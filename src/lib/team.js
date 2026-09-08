@@ -28,9 +28,7 @@ export const TEAM = [
     photo: '/jason-vo.jpg',
     photoWebp: '/jason-vo.webp',
     credentialKeys: ['teamJasonCred1', 'teamJasonCred2', 'teamJasonCred3'],
-    // No LinkedIn URL supplied. The component omits the link rather than
-    // guessing at a profile — a wrong link on a named person is worse than none.
-    linkedin: null,
+    linkedin: 'https://www.linkedin.com/in/jasonthienvo',
     profile: null,
   },
 ];
