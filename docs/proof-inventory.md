@@ -125,10 +125,17 @@ Per §8 of the brief, recorded rather than silently deferred:
   practitioner background. This is disclosed, but it is the real gap.
 - **Client permission outreach drafted, unsent.** Would unlock named studies
   and quotes.
-- **Informatica tenure corrected 15 → 18 years on 2026-09-08**, per an updated
-  bio supplied by Papa. 28 strings across translations.jsx and four content
-  files, in all four locales, because the About page and the solution pages must
-  not disagree about it.
+- **Informatica tenure is stated as "nearly two decades", not a number** (set
+  2026-09-08, on Papa's instruction). It was "fifteen years", briefly became
+  "18 years", and is now unnumbered everywhere — 44 strings across
+  translations.jsx and five content files, in all four locales.
+  **Do not reintroduce a figure in one place only.** The tenure appears in the
+  About bio, the case study provenance note, six deep-page practitioner notes,
+  the vendor-neutrality argument, the homepage team card and the book author bio.
+  A number added to one of those and not the others is a visible contradiction
+  between two pages — which is exactly what happened when a lowercase-only
+  find-and-replace left "Fifteen years" on the homepage while About said
+  "18 years".
 - **Role title needs a decision.** The supplied profile heads with "VP, Solutions
   Engineering" while its own body says "VP of Technical Sales & Engineering". The
   site uses the latter, which matches the existing Person schema. The former is

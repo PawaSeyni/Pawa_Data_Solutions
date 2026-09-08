@@ -238,7 +238,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Integration work is led by Papa S. Nguer, who spent eighteen years at Informatica and ran more than 300 customer-facing proving engagements for Tier 1 banks, insurers, telecoms and transport operators. The person who scopes your engagement is the person who delivers it.",
+    "practitionerNote": "Integration work is led by Papa S. Nguer, who spent nearly two decades at Informatica and ran more than 300 customer-facing proving engagements for Tier 1 banks, insurers, telecoms and transport operators. The person who scopes your engagement is the person who delivers it.",
     "relatedInsights": [
       {
         "kind": "Article",
@@ -262,7 +262,7 @@ export const LOCALES = {
       },
       {
         "q": "Do you recommend particular vendors?",
-        "a": "We have no reseller margin and no partner quota, which is deliberate. Papa S. Nguer spent eighteen years selling one vendor's platform, so the recommendation comes with an unusually direct view of how these tools get positioned, and it is not shaped by what we would earn from it."
+        "a": "We have no reseller margin and no partner quota, which is deliberate. Papa S. Nguer spent nearly two decades selling one vendor's platform, so the recommendation comes with an unusually direct view of how these tools get positioned, and it is not shaped by what we would earn from it."
       },
       {
         "q": "Can we modernise incrementally rather than replatform everything?",
@@ -529,7 +529,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux d'intégration sont dirigés par Papa S. Nguer, qui a passé dix-huit ans chez Informatica et mené plus de 300 missions de validation auprès de banques, assureurs, télécoms et transporteurs de premier plan. La personne qui cadre votre mission est celle qui la réalise.",
+    "practitionerNote": "Les travaux d'intégration sont dirigés par Papa S. Nguer, qui a passé près de deux décennies chez Informatica et mené plus de 300 missions de validation auprès de banques, assureurs, télécoms et transporteurs de premier plan. La personne qui cadre votre mission est celle qui la réalise.",
     "relatedInsights": [
       {
         "kind": "Article",
@@ -553,7 +553,7 @@ export const LOCALES = {
       },
       {
         "q": "Recommandez-vous des éditeurs en particulier ?",
-        "a": "Nous n'avons ni marge de revente ni quota partenaire, et c'est délibéré. Papa S. Nguer a passé dix-huit ans à vendre la plateforme d'un éditeur : la recommandation s'appuie donc sur une vision très directe de la façon dont ces outils sont positionnés, et elle n'est pas façonnée par ce que nous en tirerions."
+        "a": "Nous n'avons ni marge de revente ni quota partenaire, et c'est délibéré. Papa S. Nguer a passé près de deux décennies à vendre la plateforme d'un éditeur : la recommandation s'appuie donc sur une vision très directe de la façon dont ces outils sont positionnés, et elle n'est pas façonnée par ce que nous en tirerions."
       },
       {
         "q": "Pouvons-nous moderniser par étapes plutôt que tout remplacer ?",
@@ -803,7 +803,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de integración lo dirige Papa S. Nguer, que pasó dieciocho años en Informatica y realizó más de 300 proyectos de validación con bancos, aseguradoras, telecomunicaciones y transporte de primer nivel. La persona que define el alcance es la que lo ejecuta.",
+    "practitionerNote": "El trabajo de integración lo dirige Papa S. Nguer, que pasó casi dos décadas en Informatica y realizó más de 300 proyectos de validación con bancos, aseguradoras, telecomunicaciones y transporte de primer nivel. La persona que define el alcance es la que lo ejecuta.",
     "relatedInsights": [
       {
         "kind": "Artículo",
@@ -827,7 +827,7 @@ export const LOCALES = {
       },
       {
         "q": "¿Recomendáis proveedores concretos?",
-        "a": "No tenemos margen de reventa ni cuota de partner, y es deliberado. Papa S. Nguer pasó dieciocho años vendiendo la plataforma de un proveedor, así que la recomendación viene con una visión muy directa de cómo se posicionan estas herramientas, y no está condicionada por lo que ganaríamos con ella."
+        "a": "No tenemos margen de reventa ni cuota de partner, y es deliberado. Papa S. Nguer pasó casi dos décadas vendiendo la plataforma de un proveedor, así que la recomendación viene con una visión muy directa de cómo se posicionan estas herramientas, y no está condicionada por lo que ganaríamos con ella."
       },
       {
         "q": "¿Podemos modernizar por fases en lugar de reemplazarlo todo?",
@@ -1077,7 +1077,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de integração é liderado por Papa S. Nguer, que passou dezoito anos na Informatica e conduziu mais de 300 projetos de validação junto a bancos, seguradoras, telecomunicações e transporte de primeira linha. A pessoa que define o escopo é a que executa.",
+    "practitionerNote": "O trabalho de integração é liderado por Papa S. Nguer, que passou quase duas décadas na Informatica e conduziu mais de 300 projetos de validação junto a bancos, seguradoras, telecomunicações e transporte de primeira linha. A pessoa que define o escopo é a que executa.",
     "relatedInsights": [
       {
         "kind": "Artigo",
@@ -1101,7 +1101,7 @@ export const LOCALES = {
       },
       {
         "q": "Vocês recomendam fornecedores específicos?",
-        "a": "Não temos margem de revenda nem cota de parceiro, e isso é deliberado. Papa S. Nguer passou dezoito anos vendendo a plataforma de um fornecedor, então a recomendação vem com uma visão bastante direta de como essas ferramentas são posicionadas, e não é moldada pelo que ganharíamos com ela."
+        "a": "Não temos margem de revenda nem cota de parceiro, e isso é deliberado. Papa S. Nguer passou quase duas décadas vendendo a plataforma de um fornecedor, então a recomendação vem com uma visão bastante direta de como essas ferramentas são posicionadas, e não é moldada pelo que ganharíamos com ela."
       },
       {
         "q": "Podemos modernizar aos poucos em vez de trocar tudo?",
