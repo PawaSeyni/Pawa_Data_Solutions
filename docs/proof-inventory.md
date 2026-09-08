@@ -136,10 +136,11 @@ Per §8 of the brief, recorded rather than silently deferred:
   between two pages — which is exactly what happened when a lowercase-only
   find-and-replace left "Fifteen years" on the homepage while About said
   "18 years".
-- **Role title needs a decision.** The supplied profile heads with "VP, Solutions
-  Engineering" while its own body says "VP of Technical Sales & Engineering". The
-  site uses the latter, which matches the existing Person schema. The former is
-  published as a focus line under the name instead.
+- **Role title resolved 2026-09-09: "VP, Solutions Engineering".** The supplied
+  profile headed with that while its own body said "VP of Technical Sales &
+  Engineering"; Papa chose the headline. Applied to aboutRole, the About bio and
+  the book author bio, in all four locales. The focus line under the name stays
+  as "Financial Services · Data & AI · Enterprise Architecture".
 - **Jason Thien Vo's bio is published as supplied.** The 25+ years, the two
   decades at the front of the industry and the Informatica tenure come from the
   text given to me; I have verified none of it independently. No LinkedIn or

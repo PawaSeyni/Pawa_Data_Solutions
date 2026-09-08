@@ -37,12 +37,20 @@ const CREDENTIALS = [
 // papanguer.com genuinely belongs in a sameAs — as the person's own site. It was
 // deliberately kept out of the Organization block in index.html, where listing
 // it would have conflated a firm with an individual.
+// The visible role line carries the organisation for the reader's benefit —
+// "VP, Solutions Engineering — PaWa Data Solutions". schema.org jobTitle must
+// not: worksFor already states the organisation, and repeating it inside the
+// title makes the title wrong. Strips either separator, so it holds for a role
+// written with a comma and one written with a dash.
+const jobTitleOnly = (role) =>
+  (role || '').split(/\s+—\s+|,\s*PaWa Data Solutions/)[0].trim();
+
 function personSchema(t, language) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Papa S. Nguer',
-    jobTitle: t.aboutRole,
+    jobTitle: jobTitleOnly(t.aboutRole),
     image: `${SITE_URL}/papa-nguer.jpg`,
     description: t.aboutP1,
     worksFor: { '@type': 'Organization', name: 'PaWa Data Solutions', url: SITE_URL },
@@ -66,7 +74,7 @@ function jasonSchema(t, language) {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Jason Thien Vo',
-    jobTitle: t.jasonRole,
+    jobTitle: jobTitleOnly(t.jasonRole),
     image: `${SITE_URL}/jason-vo.jpg`,
     description: t.aboutJasonP1,
     worksFor: { '@type': 'Organization', name: 'PaWa Data Solutions', url: SITE_URL },
