@@ -8,12 +8,18 @@ import { trackCta } from "@/lib/analytics";
 // Homepage people block — Sprint 2's first deliverable. Photo, name, role, the
 // two or three credential lines that matter to a buyer, and a profile link.
 //
-// Laid out for the size of the team rather than assuming a grid. With one person
-// this is a single wide card, which reads as deliberate; a lone card sitting in a
-// three-column grid reads as two people having left.
+// Laid out for the size of the team rather than assuming a grid. One person is a
+// single wide card, which reads as deliberate — a lone card in a three-column
+// grid reads as two people having left. Two people get two columns rather than
+// two-of-three, for the same reason: an empty third cell looks like a vacancy.
 export default function Leadership({ language }) {
   const t = translations[language];
   const solo = TEAM.length === 1;
+  const cols = solo
+    ? 'max-w-3xl mx-auto'
+    : TEAM.length === 2
+      ? 'max-w-4xl mx-auto sm:grid-cols-2'
+      : 'md:grid-cols-2 lg:grid-cols-3';
 
   return (
     <section id="team" className="py-20 bg-gray-50">
@@ -24,7 +30,7 @@ export default function Leadership({ language }) {
         </div>
 
         <ul
-          className={`list-none p-0 m-0 grid gap-6 ${solo ? 'max-w-3xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}
+          className={`list-none p-0 m-0 grid gap-6 ${cols}`}
         >
           {TEAM.map((m) => (
             <li
@@ -89,14 +95,14 @@ export default function Leadership({ language }) {
           ))}
         </ul>
 
-        {/* Says the quiet part out loud. A prospect wondering "is it just him?"
-            gets a straight answer framed as the advantage it actually is, rather
-            than discovering it later and feeling misled. */}
-        {solo && (
-          <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gray-500">
-            {t.teamBoutiqueNote}
-          </p>
-        )}
+        {/* Says the quiet part out loud. A prospect wondering how small this
+            firm is gets a straight answer framed as the advantage it actually
+            is, rather than discovering it later and feeling misled. Shown at any
+            team size: it was never an apology for being one person, it is the
+            delivery model. */}
+        <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-gray-500">
+          {t.teamBoutiqueNote}
+        </p>
       </div>
     </section>
   );

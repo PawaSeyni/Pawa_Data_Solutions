@@ -255,7 +255,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Automation work is led by our principal. The most useful thing we bring here is the discipline to say when a process problem is really a data problem — a judgment built on entity resolution and MDM work for Tier 1 institutions, and one that saves clients from automating the wrong thing.",
+    "practitionerNote": "Automation work is led by Papa S. Nguer. The most useful thing we bring here is the discipline to say when a process problem is really a data problem — a judgment built on entity resolution and MDM work for Tier 1 institutions, and one that saves clients from automating the wrong thing.",
     "relatedInsights": [
       {
         "kind": "Case study",
@@ -565,7 +565,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux d'automatisation sont dirigés par notre associé principal. Ce que nous apportons de plus utile ici est la rigueur de dire quand un problème de processus est en réalité un problème de données — un jugement bâti sur la résolution d'entités et le MDM pour des institutions de premier plan, et qui évite d'automatiser la mauvaise chose.",
+    "practitionerNote": "Les travaux d'automatisation sont dirigés par Papa S. Nguer. Ce que nous apportons de plus utile ici est la rigueur de dire quand un problème de processus est en réalité un problème de données — un jugement bâti sur la résolution d'entités et le MDM pour des institutions de premier plan, et qui évite d'automatiser la mauvaise chose.",
     "relatedInsights": [
       {
         "kind": "Étude de cas",
@@ -875,7 +875,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de automatización lo dirige nuestro socio principal. Lo más útil que aportamos aquí es la disciplina de decir cuándo un problema de proceso es en realidad un problema de datos: un criterio construido sobre resolución de entidades y MDM para instituciones de primer nivel.",
+    "practitionerNote": "El trabajo de automatización lo dirige Papa S. Nguer. Lo más útil que aportamos aquí es la disciplina de decir cuándo un problema de proceso es en realidad un problema de datos: un criterio construido sobre resolución de entidades y MDM para instituciones de primer nivel.",
     "relatedInsights": [
       {
         "kind": "Caso de estudio",
@@ -1185,7 +1185,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de automação é liderado pelo nosso sócio principal. O mais útil que trazemos aqui é a disciplina de dizer quando um problema de processo é na verdade um problema de dados: um julgamento construído sobre resolução de entidades e MDM para instituições de primeira linha.",
+    "practitionerNote": "O trabalho de automação é liderado por Papa S. Nguer. O mais útil que trazemos aqui é a disciplina de dizer quando um problema de processo é na verdade um problema de dados: um julgamento construído sobre resolução de entidades e MDM para instituições de primeira linha.",
     "relatedInsights": [
       {
         "kind": "Estudo de caso",

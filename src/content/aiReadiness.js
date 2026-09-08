@@ -272,7 +272,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "AI readiness work is led by our principal, whose background is enterprise data architecture, governance, MDM and entity resolution, lineage and financial-services controls — plus fifteen years translating vendor capability into production operating patterns. That matters here because the questions an auditor asks about a regulatory figure are the questions you should be asking about a model's inputs.",
+    "practitionerNote": "AI readiness work is led by Papa S. Nguer, whose background is enterprise data architecture, governance, MDM and entity resolution, lineage and financial-services controls — plus fifteen years translating vendor capability into production operating patterns. That matters here because the questions an auditor asks about a regulatory figure are the questions you should be asking about a model's inputs.",
     "relatedInsights": [
       {
         "kind": "Solution",
@@ -587,7 +587,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux de préparation à l'IA sont dirigés par notre associé principal, dont le parcours couvre l'architecture de données d'entreprise, la gouvernance, le MDM et la résolution d'entités, la traçabilité et les contrôles en services financiers — plus quinze ans à traduire des capacités éditeurs en schémas d'exploitation en production. Cela compte ici : les questions qu'un auditeur pose sur un chiffre réglementaire sont celles qu'il faut poser sur les données d'entrée d'un modèle.",
+    "practitionerNote": "Les travaux de préparation à l'IA sont dirigés par Papa S. Nguer, dont le parcours couvre l'architecture de données d'entreprise, la gouvernance, le MDM et la résolution d'entités, la traçabilité et les contrôles en services financiers — plus quinze ans à traduire des capacités éditeurs en schémas d'exploitation en production. Cela compte ici : les questions qu'un auditeur pose sur un chiffre réglementaire sont celles qu'il faut poser sur les données d'entrée d'un modèle.",
     "relatedInsights": [
       {
         "kind": "Solution",
@@ -902,7 +902,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de preparación para IA lo dirige nuestro socio principal, cuya trayectoria abarca arquitectura de datos corporativos, gobernanza, MDM y resolución de entidades, linaje y controles en servicios financieros, más quince años traduciendo capacidades de proveedores en patrones operativos de producción. Importa aquí porque las preguntas que un auditor hace sobre una cifra regulatoria son las que deberías hacer sobre las entradas de un modelo.",
+    "practitionerNote": "El trabajo de preparación para IA lo dirige Papa S. Nguer, cuya trayectoria abarca arquitectura de datos corporativos, gobernanza, MDM y resolución de entidades, linaje y controles en servicios financieros, más quince años traduciendo capacidades de proveedores en patrones operativos de producción. Importa aquí porque las preguntas que un auditor hace sobre una cifra regulatoria son las que deberías hacer sobre las entradas de un modelo.",
     "relatedInsights": [
       {
         "kind": "Solución",
@@ -1217,7 +1217,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de prontidão para IA é liderado pelo nosso sócio principal, cuja trajetória cobre arquitetura de dados corporativos, governança, MDM e resolução de entidades, linhagem e controles em serviços financeiros, além de quinze anos traduzindo capacidade de fornecedores em padrões operacionais de produção. Isso importa aqui porque as perguntas que um auditor faz sobre um número regulatório são as que você deveria fazer sobre as entradas de um modelo.",
+    "practitionerNote": "O trabalho de prontidão para IA é liderado por Papa S. Nguer, cuja trajetória cobre arquitetura de dados corporativos, governança, MDM e resolução de entidades, linhagem e controles em serviços financeiros, além de quinze anos traduzindo capacidade de fornecedores em padrões operacionais de produção. Isso importa aqui porque as perguntas que um auditor faz sobre um número regulatório são as que você deveria fazer sobre as entradas de um modelo.",
     "relatedInsights": [
       {
         "kind": "Solução",

@@ -56,6 +56,19 @@ function personSchema(t, language) {
   };
 }
 
+function jasonSchema(t, language) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Jason Thien Vo',
+    jobTitle: t.jasonRole,
+    image: `${SITE_URL}/jason-vo.jpg`,
+    description: t.aboutJasonP1,
+    worksFor: { '@type': 'Organization', name: 'PaWa Data Solutions', url: SITE_URL },
+    url: `${SITE_URL}${prefixFor(language)}/about/`,
+  };
+}
+
 export default function About({ language }) {
   const t = translations[language];
 
@@ -64,6 +77,10 @@ export default function About({ language }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema(t, language)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jasonSchema(t, language)) }}
       />
 
       <section className="bg-gradient-to-b from-blue-50/50 via-white to-white">
@@ -152,6 +169,38 @@ export default function About({ language }) {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          {/* Second principal, placed AFTER the credentials and links grid, not
+              before it. Those belong to Papa — CISSP, TOGAF, papanguer.com — and
+              sitting them under Jason's bio silently attributed another person's
+              certifications to him. Same treatment otherwise: photo, name, role,
+              bio, because a co-founder listed as a footnote reads as an
+              afterthought. No LinkedIn link: none was supplied, and a guessed
+              profile URL on a named person is worse than no link. */}
+          <div className="mt-16 border-t border-gray-200 pt-12">
+            <div className="mb-10 flex flex-col gap-8 sm:flex-row">
+              <picture className="shrink-0">
+                <source srcSet="/jason-vo.webp" type="image/webp" />
+                <img
+                  src="/jason-vo.jpg"
+                  alt="Jason Thien Vo"
+                  width="400"
+                  height="400"
+                  loading="lazy"
+                  className="h-40 w-40 rounded-xl object-cover shadow-sm"
+                />
+              </picture>
+              <div className="self-center">
+                <h2 className="text-2xl font-bold text-gray-900">Jason Thien Vo</h2>
+                <p className="text-gray-600">{t.jasonRole}</p>
+              </div>
+            </div>
+
+            <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-gray-700">
+              <p>{t.aboutJasonP1}</p>
+              <p>{t.aboutJasonP2}</p>
             </div>
           </div>
 

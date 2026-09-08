@@ -238,7 +238,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Integration work is led by our principal, who spent fifteen years at Informatica and ran more than 300 customer-facing proving engagements for Tier 1 banks, insurers, telecoms and transport operators. The person who scopes your engagement is the person who delivers it.",
+    "practitionerNote": "Integration work is led by Papa S. Nguer, who spent fifteen years at Informatica and ran more than 300 customer-facing proving engagements for Tier 1 banks, insurers, telecoms and transport operators. The person who scopes your engagement is the person who delivers it.",
     "relatedInsights": [
       {
         "kind": "Article",
@@ -529,7 +529,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux d'intégration sont dirigés par notre associé principal, qui a passé quinze ans chez Informatica et mené plus de 300 missions de validation auprès de banques, assureurs, télécoms et transporteurs de premier plan. La personne qui cadre votre mission est celle qui la réalise.",
+    "practitionerNote": "Les travaux d'intégration sont dirigés par Papa S. Nguer, qui a passé quinze ans chez Informatica et mené plus de 300 missions de validation auprès de banques, assureurs, télécoms et transporteurs de premier plan. La personne qui cadre votre mission est celle qui la réalise.",
     "relatedInsights": [
       {
         "kind": "Article",
@@ -803,7 +803,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de integración lo dirige nuestro socio principal, que pasó quince años en Informatica y realizó más de 300 proyectos de validación con bancos, aseguradoras, telecomunicaciones y transporte de primer nivel. La persona que define el alcance es la que lo ejecuta.",
+    "practitionerNote": "El trabajo de integración lo dirige Papa S. Nguer, que pasó quince años en Informatica y realizó más de 300 proyectos de validación con bancos, aseguradoras, telecomunicaciones y transporte de primer nivel. La persona que define el alcance es la que lo ejecuta.",
     "relatedInsights": [
       {
         "kind": "Artículo",
@@ -1077,7 +1077,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de integração é liderado pelo nosso sócio principal, que passou quinze anos na Informatica e conduziu mais de 300 projetos de validação junto a bancos, seguradoras, telecomunicações e transporte de primeira linha. A pessoa que define o escopo é a que executa.",
+    "practitionerNote": "O trabalho de integração é liderado por Papa S. Nguer, que passou quinze anos na Informatica e conduziu mais de 300 projetos de validação junto a bancos, seguradoras, telecomunicações e transporte de primeira linha. A pessoa que define o escopo é a que executa.",
     "relatedInsights": [
       {
         "kind": "Artigo",

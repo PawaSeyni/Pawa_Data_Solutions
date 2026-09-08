@@ -74,7 +74,7 @@ contacting anyone: no client is identifiable and no number is asserted.
 | Personal LinkedIn | In place | Linked from the homepage people block and the Person schema |
 | Credentials | Published | CISSP, TOGAF, Microsoft Azure, Informatica Certified, BSc Computer Science |
 | Role history | Published | About page, sourced from Papa's own record |
-| Team size | **One** | `src/lib/team.js` holds one entry. The site says so explicitly rather than implying a bench |
+| Team size | **Two** | `src/lib/team.js`: Papa S. Nguer and Jason Thien Vo (co-founder, added 2026-09-04). Still no bench implied — the components lay out for the array's length |
 
 **Scale claims corrected this sprint.** The people block makes team size visible,
 which turned two pieces of existing copy into contradictions:
@@ -125,9 +125,11 @@ Per §8 of the brief, recorded rather than silently deferred:
   practitioner background. This is disclosed, but it is the real gap.
 - **Client permission outreach drafted, unsent.** Would unlock named studies
   and quotes.
-- **"Team" is one person.** Every component reads `src/lib/team.js` and lays out
-  for its length, so adding people is a data change. If there are collaborators
-  who should be listed, they are not recorded anywhere I could find.
+- **Jason Thien Vo's bio is published as supplied.** The 25+ years, the two
+  decades at the front of the industry and the Informatica tenure come from the
+  text given to me; I have verified none of it independently. No LinkedIn or
+  personal-site URL was supplied, so his card and profile carry no external link
+  rather than a guessed one.
 - **Headshot is 400×400.** Adequate at the rendered size (128px) but there is no
   larger original in the repo if a bigger treatment is ever wanted.
 - **Credentials are unverified from my side.** They were supplied directly and

@@ -230,7 +230,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Analytics work is led by our principal, whose background is governance, lineage and mastered data for Tier 1 financial institutions. That matters here because most analytics trust problems are definition and entity problems that have surfaced in a dashboard.",
+    "practitionerNote": "Analytics work is led by Papa S. Nguer, whose background is governance, lineage and mastered data for Tier 1 financial institutions. That matters here because most analytics trust problems are definition and entity problems that have surfaced in a dashboard.",
     "relatedInsights": [
       {
         "kind": "Case study",
@@ -514,7 +514,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux d'analytique sont dirigés par notre associé principal, dont le parcours est la gouvernance, la traçabilité et les données maîtres pour des institutions financières de premier plan. Cela compte ici, car la plupart des problèmes de confiance en analytique sont des problèmes de définition et d'entités qui ont fait surface dans un tableau de bord.",
+    "practitionerNote": "Les travaux d'analytique sont dirigés par Papa S. Nguer, dont le parcours est la gouvernance, la traçabilité et les données maîtres pour des institutions financières de premier plan. Cela compte ici, car la plupart des problèmes de confiance en analytique sont des problèmes de définition et d'entités qui ont fait surface dans un tableau de bord.",
     "relatedInsights": [
       {
         "kind": "Étude de cas",
@@ -798,7 +798,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de analítica lo dirige nuestro socio principal, cuya trayectoria es gobernanza, linaje y datos maestros para instituciones financieras de primer nivel. Importa aquí porque la mayoría de los problemas de confianza en analítica son problemas de definición y de entidades que han aflorado en un cuadro de mando.",
+    "practitionerNote": "El trabajo de analítica lo dirige Papa S. Nguer, cuya trayectoria es gobernanza, linaje y datos maestros para instituciones financieras de primer nivel. Importa aquí porque la mayoría de los problemas de confianza en analítica son problemas de definición y de entidades que han aflorado en un cuadro de mando.",
     "relatedInsights": [
       {
         "kind": "Caso de estudio",
@@ -1082,7 +1082,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de analytics é liderado pelo nosso sócio principal, cuja trajetória é governança, linhagem e dados mestres para instituições financeiras de primeira linha. Importa aqui porque a maioria dos problemas de confiança em analytics são problemas de definição e de entidades que afloraram num painel.",
+    "practitionerNote": "O trabalho de analytics é liderado por Papa S. Nguer, cuja trajetória é governança, linhagem e dados mestres para instituições financeiras de primeira linha. Importa aqui porque a maioria dos problemas de confiança em analytics são problemas de definição e de entidades que afloraram num painel.",
     "relatedInsights": [
       {
         "kind": "Estudo de caso",

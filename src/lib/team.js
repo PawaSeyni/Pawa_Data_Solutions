@@ -1,10 +1,10 @@
 // The people who actually do the work. Sprint 2 deliverable.
 //
-// One entry, because there is one person. The brief's §7 guardrail is explicit
-// about not inflating team scale, and a boutique that lists an invented bench is
-// doing precisely the "big-firm cosplay" §5 rules out. The components read this
-// array and lay out for its length, so adding a second person is a data change
-// and nothing else.
+// Two entries. This was one for a while, and the components were built to lay
+// out for whatever length the array happens to be — so adding the second
+// principal was a data change and a layout rule, not a rewrite. The guardrail
+// that mattered then still holds now: nobody is listed who does not actually do
+// the work, and no bench is implied that does not exist.
 //
 // `credentials` are the two or three buyer-relevant lines the homepage card
 // shows. They are deliberately about what the person has delivered, not who they
@@ -20,6 +20,18 @@ export const TEAM = [
     credentialKeys: ['teamPapaCred1', 'teamPapaCred2', 'teamPapaCred3'],
     linkedin: 'https://www.linkedin.com/in/papa-nguer-14ba6240',
     profile: 'https://papanguer.com/',
+  },
+  {
+    id: 'jason-vo',
+    name: 'Jason Thien Vo',
+    roleKey: 'jasonRole',
+    photo: '/jason-vo.jpg',
+    photoWebp: '/jason-vo.webp',
+    credentialKeys: ['teamJasonCred1', 'teamJasonCred2', 'teamJasonCred3'],
+    // No LinkedIn URL supplied. The component omits the link rather than
+    // guessing at a profile — a wrong link on a named person is worse than none.
+    linkedin: null,
+    profile: null,
   },
 ];
 

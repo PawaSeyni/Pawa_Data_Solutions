@@ -261,7 +261,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Governance and MDM work is led by our principal, whose depth sits where financial services meets data: KYC and AML, entity resolution, MDM, governance, lineage and the regulatory reporting that has to survive an audit. Fifteen years at Informatica, and more than 300 customer-facing engagements with Tier 1 institutions.",
+    "practitionerNote": "Governance and MDM work is led by Papa S. Nguer, whose depth sits where financial services meets data: KYC and AML, entity resolution, MDM, governance, lineage and the regulatory reporting that has to survive an audit. Fifteen years at Informatica, and more than 300 customer-facing engagements with Tier 1 institutions.",
     "relatedInsights": [
       {
         "kind": "Article",
@@ -575,7 +575,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux de gouvernance et de MDM sont dirigés par notre associé principal, dont l'expertise se situe à la rencontre des services financiers et des données : KYC et LCB, résolution d'entités, MDM, gouvernance, traçabilité et les rapports réglementaires qui doivent résister à un audit. Quinze ans chez Informatica et plus de 300 missions auprès d'institutions de premier plan.",
+    "practitionerNote": "Les travaux de gouvernance et de MDM sont dirigés par Papa S. Nguer, dont l'expertise se situe à la rencontre des services financiers et des données : KYC et LCB, résolution d'entités, MDM, gouvernance, traçabilité et les rapports réglementaires qui doivent résister à un audit. Quinze ans chez Informatica et plus de 300 missions auprès d'institutions de premier plan.",
     "relatedInsights": [
       {
         "kind": "Article",
@@ -872,7 +872,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de gobernanza y MDM lo dirige nuestro socio principal, cuya profundidad está donde los servicios financieros se encuentran con los datos: KYC y AML, resolución de entidades, MDM, gobernanza, linaje y los informes regulatorios que deben resistir una auditoría. Quince años en Informatica y más de 300 proyectos con instituciones de primer nivel.",
+    "practitionerNote": "El trabajo de gobernanza y MDM lo dirige Papa S. Nguer, cuya profundidad está donde los servicios financieros se encuentran con los datos: KYC y AML, resolución de entidades, MDM, gobernanza, linaje y los informes regulatorios que deben resistir una auditoría. Quince años en Informatica y más de 300 proyectos con instituciones de primer nivel.",
     "relatedInsights": [
       {
         "kind": "Artículo",
@@ -1169,7 +1169,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de governança e MDM é liderado pelo nosso sócio principal, cuja profundidade está onde os serviços financeiros encontram os dados: KYC e AML, resolução de entidades, MDM, governança, linhagem e os relatórios regulatórios que precisam resistir a uma auditoria. Quinze anos na Informatica e mais de 300 projetos com instituições de primeira linha.",
+    "practitionerNote": "O trabalho de governança e MDM é liderado por Papa S. Nguer, cuja profundidade está onde os serviços financeiros encontram os dados: KYC e AML, resolução de entidades, MDM, governança, linhagem e os relatórios regulatórios que precisam resistir a uma auditoria. Quinze anos na Informatica e mais de 300 projetos com instituições de primeira linha.",
     "relatedInsights": [
       {
         "kind": "Artigo",

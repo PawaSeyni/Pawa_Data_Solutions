@@ -258,7 +258,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Engineering work is led by our principal, whose fifteen years at Informatica covered more than 300 customer-facing engagements for Tier 1 banks, insurers, telecoms and transport operators. The reliability problems in a pipeline estate are rarely novel, which is the good news.",
+    "practitionerNote": "Engineering work is led by Papa S. Nguer, whose fifteen years at Informatica covered more than 300 customer-facing engagements for Tier 1 banks, insurers, telecoms and transport operators. The reliability problems in a pipeline estate are rarely novel, which is the good news.",
     "relatedInsights": [
       {
         "kind": "Case study",
@@ -568,7 +568,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "Les travaux d'ingénierie sont dirigés par notre associé principal, dont les quinze ans chez Informatica ont couvert plus de 300 missions auprès de banques, assureurs, télécoms et transporteurs de premier plan. Les problèmes de fiabilité d'un parc de pipelines sont rarement inédits, ce qui est une bonne nouvelle.",
+    "practitionerNote": "Les travaux d'ingénierie sont dirigés par Papa S. Nguer, dont les quinze ans chez Informatica ont couvert plus de 300 missions auprès de banques, assureurs, télécoms et transporteurs de premier plan. Les problèmes de fiabilité d'un parc de pipelines sont rarement inédits, ce qui est une bonne nouvelle.",
     "relatedInsights": [
       {
         "kind": "Étude de cas",
@@ -878,7 +878,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "El trabajo de ingeniería lo dirige nuestro socio principal, cuyos quince años en Informatica cubrieron más de 300 proyectos con bancos, aseguradoras, telecomunicaciones y transporte de primer nivel. Los problemas de fiabilidad de un parque de pipelines rara vez son inéditos, lo cual es una buena noticia.",
+    "practitionerNote": "El trabajo de ingeniería lo dirige Papa S. Nguer, cuyos quince años en Informatica cubrieron más de 300 proyectos con bancos, aseguradoras, telecomunicaciones y transporte de primer nivel. Los problemas de fiabilidad de un parque de pipelines rara vez son inéditos, lo cual es una buena noticia.",
     "relatedInsights": [
       {
         "kind": "Caso de estudio",
@@ -1188,7 +1188,7 @@ export const LOCALES = {
         ]
       }
     ],
-    "practitionerNote": "O trabalho de engenharia é liderado pelo nosso sócio principal, cujos quinze anos na Informatica cobriram mais de 300 projetos com bancos, seguradoras, telecomunicações e transporte de primeira linha. Os problemas de confiabilidade de um parque de pipelines raramente são inéditos, o que é uma boa notícia.",
+    "practitionerNote": "O trabalho de engenharia é liderado por Papa S. Nguer, cujos quinze anos na Informatica cobriram mais de 300 projetos com bancos, seguradoras, telecomunicações e transporte de primeira linha. Os problemas de confiabilidade de um parque de pipelines raramente são inéditos, o que é uma boa notícia.",
     "relatedInsights": [
       {
         "kind": "Estudo de caso",
