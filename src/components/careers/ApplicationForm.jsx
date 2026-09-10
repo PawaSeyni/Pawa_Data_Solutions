@@ -1,6 +1,9 @@
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import { submitNetlifyFormWithFiles } from "@/lib/netlifyForms";
+import { createPageUrl } from "@/utils";
+import { EVENTS, track, makeStartTracker } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +15,10 @@ import { Upload, CheckCircle, FileText } from "lucide-react";
 
 export default function ApplicationForm({ language }) {
   const t = translations[language];
+  // Without JavaScript the browser posts straight to Netlify, which then
+  // redirects to the form's action. That lands back here with ?submitted=1,
+  // so the same confirmation shows either way.
+  const [params] = useSearchParams();
   const [formData, setFormData] = useState({
     full_name: '',
     email: '',
@@ -27,7 +34,7 @@ export default function ApplicationForm({ language }) {
     language: language
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(params.get('submitted') === '1');
   const [resumeFile, setResumeFile] = useState(null);
   const [isUploadingResume, setIsUploadingResume] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -39,18 +46,30 @@ export default function ApplicationForm({ language }) {
     pt: "Ocorreu um erro ao enviar sua candidatura. Tente novamente ou escreva para hello@pawadata.com.",
   };
 
+  // Fires once, on the first interaction, whichever control it is. Declared in
+  // EVENTS and never called until now, so the application funnel had a start
+  // and an end defined and neither was ever emitted.
+  const startTracker = useRef(null);
+  if (!startTracker.current) {
+    startTracker.current = makeStartTracker(EVENTS.APPLICATION_START, { page: 'Careers', language });
+  }
+  const trackStart = () => startTracker.current();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!resumeFile) {
       alert(t.careersResumeRequired);
       return;
     }
+    // Same as the contact form: the honeypot is a DOM input, not state.
+    const honeypot = new FormData(e.currentTarget).get('bot-field') || '';
 
     setIsSubmitting(true);
     setHasError(false);
 
     try {
-      await submitNetlifyFormWithFiles("job-application", formData, { resume: resumeFile });
+      await submitNetlifyFormWithFiles("job-application", { ...formData, 'bot-field': honeypot }, { resume: resumeFile });
+      track(EVENTS.APPLICATION_SUBMIT, { page: 'Careers', language, position: formData.position });
       setIsSubmitted(true);
       setFormData({
         full_name: '',
@@ -93,6 +112,7 @@ export default function ApplicationForm({ language }) {
       return;
     }
 
+    trackStart();
     setIsUploadingResume(true);
     try {
       // The file is attached directly to the form submission (multipart),
@@ -107,6 +127,7 @@ export default function ApplicationForm({ language }) {
   };
 
   const handleChange = (field, value) => {
+    trackStart();
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -166,6 +187,9 @@ export default function ApplicationForm({ language }) {
               name="job-application"
               method="POST"
               encType="multipart/form-data"
+              action={`${createPageUrl('Careers', language)}?submitted=1`}
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="space-y-6"
             >
@@ -175,6 +199,14 @@ export default function ApplicationForm({ language }) {
                   Don't fill this out: <input name="bot-field" />
                 </label>
               </p>
+              {/* Radix Selects render as buttons, so they carry no name and a
+                  native submission would lose them. These mirrors are what the
+                  browser actually posts when JavaScript is off; with it on, the
+                  POST is built from state and they are simply redundant. */}
+              <input type="hidden" name="position" value={formData.position} />
+              <input type="hidden" name="experience_level" value={formData.experience_level} />
+              <input type="hidden" name="remote_preference" value={formData.remote_preference} />
+              <input type="hidden" name="language" value={formData.language} />
               {/* Personal Information */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -183,6 +215,7 @@ export default function ApplicationForm({ language }) {
                   </Label>
                   <Input
                     id="full_name"
+                    name="full_name"
                     required
                     value={formData.full_name}
                     onChange={(e) => handleChange('full_name', e.target.value)}
@@ -197,6 +230,7 @@ export default function ApplicationForm({ language }) {
                   </Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
                     value={formData.email}
@@ -214,6 +248,7 @@ export default function ApplicationForm({ language }) {
                   </Label>
                   <Input
                     id="phone"
+                    name="phone"
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
@@ -227,6 +262,7 @@ export default function ApplicationForm({ language }) {
                   </Label>
                   <Input
                     id="location"
+                    name="location"
                     value={formData.location}
                     onChange={(e) => handleChange('location', e.target.value)}
                     className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
@@ -299,6 +335,7 @@ export default function ApplicationForm({ language }) {
                   </Label>
                   <Input
                     id="availability"
+                    name="availability"
                     value={formData.availability}
                     onChange={(e) => handleChange('availability', e.target.value)}
                     className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
@@ -316,6 +353,7 @@ export default function ApplicationForm({ language }) {
                   <input
                     type="file"
                     id="resume"
+                    name="resume"
                     accept=".pdf,.doc,.docx"
                     onChange={handleFileUpload}
                     className="hidden"
@@ -350,6 +388,7 @@ export default function ApplicationForm({ language }) {
                   </Label>
                   <Input
                     id="linkedin_url"
+                    name="linkedin_url"
                     type="url"
                     value={formData.linkedin_url}
                     onChange={(e) => handleChange('linkedin_url', e.target.value)}
@@ -364,6 +403,7 @@ export default function ApplicationForm({ language }) {
                   </Label>
                   <Input
                     id="portfolio_url"
+                    name="portfolio_url"
                     type="url"
                     value={formData.portfolio_url}
                     onChange={(e) => handleChange('portfolio_url', e.target.value)}
@@ -380,6 +420,7 @@ export default function ApplicationForm({ language }) {
                 </Label>
                 <Textarea
                   id="cover_letter"
+                  name="cover_letter"
                   value={formData.cover_letter}
                   onChange={(e) => handleChange('cover_letter', e.target.value)}
                   className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 min-h-[120px] resize-y"

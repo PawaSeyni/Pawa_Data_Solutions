@@ -62,11 +62,15 @@ export default function ContactForm({ title, description, language, source = 'Ho
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // The honeypot is an uncontrolled input, so it is not in formData. Netlify
+    // only rejects a submission when the field arrives non-empty; a POST built
+    // from state alone never carried it, which made the trap decorative.
+    const honeypot = new FormData(e.currentTarget).get('bot-field') || '';
     setIsSubmitting(true);
     setHasError(false);
 
     try {
-      await submitNetlifyForm("contact", formData);
+      await submitNetlifyForm("contact", { ...formData, 'bot-field': honeypot });
       track(EVENTS.CONTACT_SUBMIT, {
         page: source,
         language,
