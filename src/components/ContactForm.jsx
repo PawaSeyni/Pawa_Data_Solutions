@@ -23,7 +23,7 @@ import { Send, CheckCircle } from "lucide-react";
 // It also rides along as a hidden field, so the Netlify submission itself records
 // the origin. Plausible tells you the rate; the submission tells you which lead
 // came from where, and those need to agree.
-export default function ContactForm({ title, description, language, source = 'Home', showPrimary = true }) {
+export default function ContactForm({ title, description, language, source = 'Home', offer = '', showPrimary = true }) {
   const t = translations[language];
   const [formData, setFormData] = useState({
     name: '',
@@ -35,6 +35,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
     outcome: '',
     language: language,
     source,
+    offer,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -195,6 +196,7 @@ export default function ContactForm({ title, description, language, source = 'Ho
                 >
                   <input type="hidden" name="form-name" value="contact" />
                   <input type="hidden" name="source" value={source} />
+                  <input type="hidden" name="offer" value={offer} />
                   {/* Radix Selects render as buttons, not form controls, so
                       Netlify's deploy-time form parser has never seen role,
                       timeline or language. The submission carried them (the POST

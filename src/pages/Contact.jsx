@@ -1,4 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import { translations } from "@/components/translations";
 import ContactForm from "@/components/ContactForm";
 
@@ -15,6 +16,10 @@ import ContactForm from "@/components/ContactForm";
 // above the form rather than as competing hero actions.
 export default function Contact({ language }) {
   const t = translations[language];
+  // Solution pages arrive here with ?offer=<id> so the enquiry names the
+  // assessment the visitor clicked rather than a generic contact request.
+  const [params] = useSearchParams();
+  const offer = params.get('offer') || '';
 
   return (
     <>
@@ -47,6 +52,7 @@ export default function Contact({ language }) {
 
       <ContactForm
         source="Contact"
+        offer={offer}
         title={t.contactFormTitle}
         /* The hero already carries the invitation; repeating it directly above
            the form was the duplicated introduction the audit flags. */

@@ -79,7 +79,7 @@ export default function DeepSolution({ language }) {
                 Health Check does. Sending those to a form anchor would ask the
                 visitor to enquire about something we have a page explaining. */}
             <Link
-              to={c.entryOffer.href ? `${prefixFor(language)}${c.entryOffer.href}` : `${prefixFor(language)}/#contact`}
+              to={c.entryOffer.href ? `${prefixFor(language)}${c.entryOffer.href}` : `${createPageUrl('Contact', language)}?offer=${c.entryOffer.id}`}
               onClick={() => {
                 track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'hero', language });
                 window.scrollTo(0, 0);
@@ -271,6 +271,9 @@ export default function DeepSolution({ language }) {
             <p className="mx-auto mb-2 max-w-2xl leading-relaxed text-gray-600">{c.entryOffer.body}</p>
             <p className="mx-auto mb-7 max-w-2xl text-sm text-gray-500">{c.entryOffer.note}</p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              {/* No #contact anchor exists on these pages, nor on the localized
+                  home the hero used to point at: the form lives on /contact/.
+                  The offer id rides along so the enquiry says which one. */}
               {c.entryOffer.href ? (
                 <Link
                   to={`${prefixFor(language)}${c.entryOffer.href}`}
@@ -284,14 +287,17 @@ export default function DeepSolution({ language }) {
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
                 </Link>
               ) : (
-                <a
-                  href="#contact"
-                  onClick={() => track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'page_end', language })}
+                <Link
+                  to={`${createPageUrl('Contact', language)}?offer=${c.entryOffer.id}`}
+                  onClick={() => {
+                    track(EVENTS.ENTRY_OFFER_CLICK, { solution: c.slug, offer: c.entryOffer.id, cta_location: 'page_end', language });
+                    window.scrollTo(0, 0);
+                  }}
                   className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3.5 sm:px-7 font-medium text-white transition-colors hover:bg-blue-700"
                 >
                   {c.entryOffer.cta}
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
-                </a>
+                </Link>
               )}
               {/* Sprint 8 §10 made "Talk to a Practitioner" the secondary CTA
                   tier and gave it a destination — /contact/. This pointed at
