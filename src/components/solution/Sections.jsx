@@ -14,6 +14,10 @@ export function Section({ id, solution, language, className = '', children }) {
   const ref = useRef(null);
   const fired = useRef(false);
   useEffect(() => {
+    // React reuses this component when the route changes from one solution to
+    // the next, so a ref that is never cleared reports the first solution's
+    // sections and then nothing. Every (page, language) is a fresh view.
+    fired.current = false;
     const el = ref.current;
     if (!el || typeof IntersectionObserver === 'undefined') return;
     const io = new IntersectionObserver((es) => {
