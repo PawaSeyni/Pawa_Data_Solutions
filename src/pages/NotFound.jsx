@@ -40,12 +40,12 @@ export default function NotFound({ language }) {
             {t.notFoundHome}
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
-          <a
-            href={`${prefixFor(language)}/#contact`}
+          <Link
+            to={createPageUrl('Contact', language)}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 text-gray-900 font-medium hover:border-gray-900 transition-colors"
           >
             {t.notFoundContact}
-          </a>
+          </Link>
         </div>
 
         <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-4">

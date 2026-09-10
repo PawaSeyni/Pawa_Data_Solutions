@@ -182,24 +182,51 @@ if (!LOCAL) {
 
 // --- link integrity ------------------------------------------------------
 console.log('Checking links…');
-const { html: home } = await text('/');
+// Every page in the sitemap, plus the 404 page, which is not in the sitemap
+// but carries links of its own. The previous version checked eight English
+// pages and threw the fragment away before looking, so a link to /#contact
+// passed as long as / returned 200 -- which is how forty-eight solution CTAs
+// pointed at an anchor no page rendered and every audit said the links were
+// fine. A fragment is a claim about the destination page, so it is checked
+// against that page's ids.
+const crawl = [...paths, '/404.html'];
 const internal = new Set();
 const external = new Set();
-for (const page of ['/', '/about/', '/insights/', '/data-health-check/', '/solutions/', '/case-studies/', '/locations/', '/careers/']) {
+const fragRefs = [];
+for (const page of crawl) {
   const { html } = await text(page);
+  if (!html) continue;
   for (const m of html.matchAll(/href="([^"]+)"/g)) {
     const h = m[1];
-    if (h.startsWith('/')) internal.add(h.split('#')[0] || '/');
-    else if (h.startsWith('http')) external.add(h);
+    if (h.startsWith('#')) { if (h.length > 1) fragRefs.push({ from: page, dest: page, frag: h.slice(1) }); continue; }
+    if (h.startsWith('/')) {
+      const [pathPart, frag] = h.split('#');
+      const dest = pathPart.split('?')[0] || '/';
+      // The 404 page is snapshotted from a sentinel route, so its canonical and
+      // hreflang links point at /__prerender_not_found__/ by construction. Those
+      // are not links a visitor can follow; only its real fragments are checked.
+      if (!dest.includes('__prerender_not_found__')) internal.add(dest);
+      if (frag) fragRefs.push({ from: page, dest, frag });
+    } else if (h.startsWith('http')) external.add(h);
     else if (h.startsWith('mailto:') || h.startsWith('tel:')) external.add(h);
   }
 }
 for (const href of internal) {
-  if (!href) continue;
   const res = await get(href);
   if (res.status >= 400) fail(href, `internal link ${res.status}`);
 }
-console.log(`  ${internal.size} internal links checked`);
+const idCache = new Map();
+const idsOf = async (p) => {
+  if (!idCache.has(p)) {
+    const { html } = await text(p);
+    idCache.set(p, new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])));
+  }
+  return idCache.get(p);
+};
+for (const { from, dest, frag } of fragRefs) {
+  if (!(await idsOf(dest)).has(frag)) fail(from, `links to ${dest}#${frag} but that page has no id="${frag}"`);
+}
+console.log(`  ${crawl.length} pages crawled, ${internal.size} internal links checked, ${fragRefs.length} fragment targets validated`);
 
 const checkedExternal = [];
 for (const href of external) {
