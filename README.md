@@ -41,6 +41,29 @@ npm run build    # outputs to dist/
 npm run preview  # preview the production build
 ```
 
+## Hydration contract
+
+Every route is prerendered to static HTML (`scripts/prerender.mjs`) and
+`src/main.jsx` **hydrates** it rather than repainting. That is what keeps lazy
+routes from dropping to their empty Suspense fallback on load (mobile CLS was
+0.32 on `/solutions/*` and `/contact/` before). It only works while the first
+client render matches the snapshot, which is taken *after* effects run:
+
+- No `Math.random()`, `Date` or `window`/`localStorage` reads in render.
+- Nothing that changes visible output in a mount effect. Radix `SelectValue`
+  is the known trap: with a preselected value and no children it renders empty,
+  then portals the label in after mount. Pass the label as children.
+- `prerender.mjs` adds what React's own SSR would: `<!--$-->…<!--/$-->` around
+  `<main data-suspense-outlet>`, `<!-- -->` between adjacent text nodes, and it
+  strips the `<option>`s Radix adds to its hidden native `<select>` after mount.
+
+`npm run check:hydration`, the last step of `npm run build` (and so of every
+Netlify deploy), loads all 92 routes plus the 404 page and fails the build on
+React errors #418/#422/#423/#425. To see *which* element mismatched, build with
+`NODE_ENV=development npx vite build --mode development` and pass
+`onRecoverableError: (e, info) => console.error(info.componentStack)` to
+`hydrateRoot` temporarily.
+
 ## Deploy to Netlify
 
 1. Push this repo to GitHub.

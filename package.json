@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run check:cases && npm run check:pages && npm run check:solutions && npm run gen:sitemap && npm run gen:redirects && vite build && npm run prerender",
+    "build": "npm run check:cases && npm run check:pages && npm run check:solutions && npm run gen:sitemap && npm run gen:redirects && vite build && npm run prerender && npm run check:hydration",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:spa": "vite build",
     "prerender": "node scripts/prerender.mjs",
+    "check:hydration": "node scripts/check-hydration.mjs",
     "gen:sitemap": "node scripts/gen-sitemap.mjs",
     "gen:redirects": "node scripts/gen-redirects.mjs",
     "sync:writing": "node scripts/sync-writing.mjs",
