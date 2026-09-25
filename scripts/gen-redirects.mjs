@@ -62,6 +62,26 @@ for (const { from, to } of ALSO_MOVED) {
   lines.push('');
 }
 
+// The site's first URLs were its page names, in their original case
+// (/DataGovernance, /HealthCheck), and Google still holds some of them. Netlify
+// matches rules case-sensitively, so the lowercase legacy rules above never
+// catch them; they 404ed (Search Console, 2026-09-25). One rule per page whose
+// name does not already lowercase to its current path, which Netlify's own
+// case normalization serves (/About -> /about/).
+lines.push('# --- Original page-name URLs, in their original case ----------------------');
+for (const page of PAGES) {
+  if (!/^[A-Z][A-Za-z]+$/.test(page.name) || page.name === 'Home') continue;
+  if (page.name.toLowerCase() === page.slug) continue;
+  for (const lang of LANGUAGES) {
+    const from = `${prefixFor(lang)}/${page.name}`;
+    const to = `${prefixFor(lang)}/${page.slug}/`;
+    lines.push(`${from}      ${to}   301`);
+    lines.push(`${from}/     ${to}   301`);
+    count += 2;
+  }
+}
+lines.push('');
+
 // /home duplicated / at 200 in every locale.
 lines.push('# --- One home URL per locale --------------------------------------------');
 lines.push('# Both cases: Netlify normalizes paths when SERVING a file but not when');

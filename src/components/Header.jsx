@@ -65,7 +65,7 @@ export default function Header({ currentPageName, language }) {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 py-3">
           <Link to={`${prefix}/`} onClick={() => window.scrollTo(0, 0)} className="shrink-0">
-            <img src="/pawa-logo.webp" alt="PaWa Data Solutions" width="120" height="48" className="h-11 w-auto" />
+            <img src="/pawa-logo.webp" alt="PaWa Data Solutions" width="240" height="360" className="h-11 w-auto" />
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">

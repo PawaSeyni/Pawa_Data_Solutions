@@ -94,8 +94,8 @@ export default function Footer({ language }) {
             <img
               src="/pawa-logo-light.webp"
               alt="PaWa Data Solutions"
-              width="120"
-              height="48"
+              width="240"
+              height="360"
               className="mb-4 h-10 w-auto"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />

@@ -138,6 +138,14 @@ and URL Inspection, nothing else.
 
 ## After a deploy is live
 
+**Automatic since 2026-09-25.** Every production deploy runs
+`scripts/indexnow-deploy.mjs` after the build passes: it fingerprints each sitemap
+URL's visible content, publishes `/indexnow-manifest.json`, and submits only the
+pages whose fingerprint differs from the live manifest (plus removed ones). A
+code-only deploy submits nothing. The result is one line in the Netlify deploy
+log (`indexnow: submitted N URL(s) ... -> HTTP 202`). The manual run below is for
+a full re-seed or an audited resubmission:
+
 ```bash
 npm run indexnow
 ```

@@ -2,7 +2,9 @@
 # Static Vite + React SPA — no backend. Forms handled by Netlify Forms.
 
 [build]
-  command = "npm run build"
+  # IndexNow runs only once the whole build has passed, so a failed build never
+  # announces anything, and it can never fail a deploy (scripts/indexnow-deploy.mjs).
+  command = "npm run build && (node scripts/indexnow-deploy.mjs || true)"
   publish = "dist"
 
 [build.environment]
@@ -70,6 +72,13 @@
   to = "https://pawadata.com/:splat"
   status = 301
   force = true
+
+# The IndexNow manifest is read back by the NEXT production build to decide which
+# pages changed (scripts/indexnow-deploy.mjs), so it must never come from a cache.
+[[headers]]
+  for = "/indexnow-manifest.json"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0"
 
 [[headers]]
   for = "/*"
