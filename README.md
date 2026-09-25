@@ -53,13 +53,19 @@ client render matches the snapshot, which is taken *after* effects run:
 - Nothing that changes visible output in a mount effect. Radix `SelectValue`
   is the known trap: with a preselected value and no children it renders empty,
   then portals the label in after mount. Pass the label as children.
+- No mount-time state update ABOVE the route `<Suspense>` (a provider flipping a
+  flag, a delayed popup) unless wrapped in `startTransition`: if the page chunk is
+  still loading when it lands (slow phone, cold CDN), React abandons hydrating the
+  page (#421).
 - `prerender.mjs` adds what React's own SSR would: `<!--$-->…<!--/$-->` around
   `<main data-suspense-outlet>`, `<!-- -->` between adjacent text nodes, and it
   strips the `<option>`s Radix adds to its hidden native `<select>` after mount.
 
 `npm run check:hydration`, the last step of `npm run build` (and so of every
 Netlify deploy), loads all 92 routes plus the 404 page and fails the build on
-React errors #418/#422/#423/#425. To see *which* element mismatched, build with
+React errors #418/#421/#422/#423/#425, then reloads three routes with their lazy
+chunks held back 2 s (everything outside the entry's static import graph), so the
+#421 race always happens. To see *which* element mismatched, build with
 `NODE_ENV=development npx vite build --mode development` and pass
 `onRecoverableError: (e, info) => console.error(info.componentStack)` to
 `hydrateRoot` temporarily.
