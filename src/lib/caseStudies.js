@@ -5,7 +5,7 @@
 // client's permission, because no client is identifiable, and no number is
 // claimed. Outcomes are described in kind.
 //
-// Provenance: this work was delivered during fifteen years at Informatica, most
+// Provenance: this work was delivered during nearly two decades at Informatica, most
 // recently as Country Manager for Technical Sales in Canada — 300+ customer-facing
 // proving engagements for Tier 1 institutions. The site already draws this
 // distinction on the About page, and each study repeats it, because a case study
