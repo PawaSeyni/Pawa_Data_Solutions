@@ -28,7 +28,9 @@ export default function Layout({ children, currentPageName, language }) {
         `}
       </style>
       <Header currentPageName={currentPageName} language={language} />
-      <main>
+      {/* data-suspense-outlet: the route <Suspense> renders straight into <main>;
+          scripts/prerender.mjs marks it so hydration can find the boundary. */}
+      <main data-suspense-outlet>
         {children}
       </main>
       <Footer language={language} />

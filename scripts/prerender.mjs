@@ -198,6 +198,40 @@ async function snapshot(route) {
     await blockAnalytics(page);
     await page.goto(ORIGIN + route, { waitUntil: 'load', timeout: 30000 });
     await waitUntilRendered(page, route);
+    // src/main.jsx HYDRATES these snapshots, so they must look like React's own
+    // server output (the same contract as griotmoon.com, enforced by
+    // scripts/check-hydration.mjs):
+    // - the route <Suspense> boundary renders into <main data-suspense-outlet>,
+    //   and React marks a resolved boundary as <!--$--> ... <!--/$-->; without
+    //   the markers hydration cannot find it and repaints the whole page;
+    // - the live DOM holds adjacent text nodes ("Step ", "2") that HTML
+    //   serialization merges into one, while React expects one node per child;
+    //   its SSR separates them with <!-- -->, so do the same.
+    await page.evaluate(() => {
+      const root = document.getElementById('root');
+      if (!root) return;
+      const outlet = root.querySelector('[data-suspense-outlet]') || root;
+      outlet.insertBefore(document.createComment('$'), outlet.firstChild);
+      outlet.appendChild(document.createComment('/$'));
+      // Radix Select renders a visually hidden native <select aria-hidden> for
+      // form submission. Its first render holds at most an empty placeholder
+      // <option>; the real options are added from an effect once the items
+      // register, so the snapshot (taken after effects) has options the first
+      // client render does not, and every page with a form failed hydration.
+      // Strip them here; the same effect adds them back after hydration. No-JS
+      // posts are unaffected: they use the hidden inputs that mirror each select.
+      for (const select of root.querySelectorAll('select[aria-hidden="true"]')) {
+        for (const option of [...select.options]) if (option.value !== '') option.remove();
+      }
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      const texts = [];
+      while (walker.nextNode()) texts.push(walker.currentNode);
+      for (const node of texts) {
+        if (node.nextSibling && node.nextSibling.nodeType === Node.TEXT_NODE) {
+          node.parentNode.insertBefore(document.createComment(' '), node.nextSibling);
+        }
+      }
+    });
     return await page.content();
   } finally {
     await page.close();

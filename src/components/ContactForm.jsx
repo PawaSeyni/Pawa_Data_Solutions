@@ -348,7 +348,13 @@ export default function ContactForm({ title, description, language, source = 'Ho
                     </Label>
                     <Select value={formData.language} onValueChange={(value) => handleChange('language', value)}>
                       <SelectTrigger id="language" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-                        <SelectValue />
+                        {/* The label is passed in rather than left to Radix, which portals the
+                            selected item's text in after mount. The prerendered page shows the
+                            label, so an empty first render failed hydration on every page with
+                            this form (scripts/check-hydration.mjs). */}
+                        <SelectValue>
+                          {{ en: t.contactLangEn, fr: t.contactLangFr, es: t.contactLangEs, pt: t.contactLangPt }[formData.language]}
+                        </SelectValue>
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="en">{t.contactLangEn}</SelectItem>
