@@ -1,0 +1,88 @@
+# Production deploy watchdog.
+#
+# A green merge does not mean the change is live. Two failures look identical
+# from the outside, and neither turns anything red:
+#
+#   - the push produces no Netlify build at all (seen on griotmoon.com,
+#     2026-10-21: the PR preview built, the site settings were untouched, and
+#     the merge commit carried zero Netlify statuses);
+#   - the shared Netlify team runs out of credits, and production deploys are
+#     SKIPPED while the previous deploy stays published.
+#
+# CI cannot catch either: CI checks the commit, and the failure is in the site.
+# So this job proves the SITE is serving this commit:
+#
+#   1. wait for /version.json to report the merged SHA;
+#   2. if it does not, fire the Netlify build hook once;
+#   3. wait again, then fail red if production still is not on this commit.
+#
+# When the deploy works normally, step 1 passes in a few minutes and the hook
+# never fires, so a merge still builds exactly once.
+name: Deploy watch
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Never let two merges race. Do NOT cancel in progress: a superseded run still
+# has to prove ITS commit reached production.
+concurrency:
+  group: deploy-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    env:
+      SITE: https://pawadata.com
+    steps:
+      - name: Wait for production to report this commit
+        id: first
+        run: |
+          for i in $(seq 1 24); do   # 24 x 20s = 8 minutes
+            live=$(curl -fsS --max-time 15 "$SITE/version.json?_=$(date +%s)" 2>/dev/null \
+              | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(JSON.parse(s).commit||'')}catch{console.log('')}})" || true)
+            if [ "$live" = "$GITHUB_SHA" ]; then
+              echo "live=true" >> "$GITHUB_OUTPUT"; echo "Production is on $GITHUB_SHA after $((i * 20))s."; exit 0
+            fi
+            sleep 20
+          done
+          echo "live=false" >> "$GITHUB_OUTPUT"
+          echo "::warning::No production deploy for $GITHUB_SHA after 8 minutes. Firing the Netlify build hook."
+
+      - name: Fire the Netlify build hook
+        if: steps.first.outputs.live == 'false'
+        env:
+          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::NETLIFY_BUILD_HOOK_URL is not set, so the deploy cannot be recovered automatically."
+            echo "Create a build hook for this site in Netlify and store it as that repository secret."
+            exit 1
+          fi
+          curl -fsS -X POST -d '{}' "$HOOK" && echo "Build hook accepted."
+
+      - name: Wait for the recovered deploy
+        if: steps.first.outputs.live == 'false'
+        run: |
+          for i in $(seq 1 45); do   # 45 x 20s = 15 minutes
+            live=$(curl -fsS --max-time 15 "$SITE/version.json?_=$(date +%s)" 2>/dev/null \
+              | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(JSON.parse(s).commit||'')}catch{console.log('')}})" || true)
+            if [ "$live" = "$GITHUB_SHA" ]; then echo "Production is on $GITHUB_SHA after the build hook."; exit 0; fi
+            sleep 20
+          done
+          echo "::error::Build hook fired but production never reached $GITHUB_SHA."
+
+      - name: Verify production is serving this commit
+        run: |
+          body=$(curl -fsS --max-time 15 "$SITE/version.json?_=$(date +%s)")
+          echo "$body"
+          live=$(printf '%s' "$body" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(JSON.parse(s).commit||'')}catch{console.log('')}})")
+          ctx=$(printf '%s' "$body" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(JSON.parse(s).context||'')}catch{console.log('')}})")
+          [ "$live" = "$GITHUB_SHA" ] || { echo "::error::production reports $live, expected $GITHUB_SHA"; exit 1; }
+          [ "$ctx" = "production" ] || { echo "::error::/version.json says context=$ctx, so that is not the production deploy"; exit 1; }
+          echo "Chain verified: ${GITHUB_SHA:0:7} -> deploy -> $SITE"
