@@ -81,6 +81,7 @@ function contentModulesFor(name) {
   return {
     Careers: ['src/lib/jobPostings.js'],
     Locations: ['src/lib/locations.js'],
+    Partners: ['src/lib/partners.js'],
     About: ['src/lib/team.js'],
     HealthCheck: ['src/lib/healthCheck.js'],
     CaseStudies: ['src/lib/caseStudies.js', 'src/content/caseStudyCopy.js'],
@@ -100,7 +101,7 @@ function contentModulesFor(name) {
  */
 function keyPrefixFor(name) {
   return {
-    About: 'about', Locations: 'locations', Workshop: 'workshop',
+    About: 'about', Locations: 'locations', Partners: 'partners', Workshop: 'workshop',
     Careers: 'careers', PrivacyPolicy: 'privacy', DoNotSellOrShare: 'doNotSell',
     HealthCheck: 'hc', Contact: 'contact', Solutions: 'solutions',
     CaseStudies: 'caseStudies', Insights: 'insights',
