@@ -64,6 +64,7 @@ export default function Footer({ language }) {
         ...(hasCaseStudies() ? [{ label: t.navSelectedWork, page: 'CaseStudies' }] : []),
         { label: t.insightsEyebrow, page: 'Insights' },
         { label: t.navAbout, page: 'About' },
+        { label: t.navPartners, page: 'Partners' },
         { label: t.navLocations, page: 'Locations' },
         { label: t.navCareers, page: 'Careers' },
         { label: t.navContact, page: 'Contact' },

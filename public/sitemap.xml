@@ -8,7 +8,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -30,7 +30,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -41,7 +41,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/"/>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -530,6 +530,50 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://pawadata.com/partners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/partners/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/partners/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/partners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/partners/"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/fr/partners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/partners/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/partners/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/partners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/partners/"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/es/partners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/partners/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/partners/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/partners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/partners/"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pawadata.com/pt/partners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/partners/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/partners/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/partners/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/partners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/partners/"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://pawadata.com/workshop/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://pawadata.com/workshop/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://pawadata.com/fr/workshop/"/>
@@ -844,7 +888,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -855,7 +899,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -866,7 +910,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -877,7 +921,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -888,7 +932,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -899,7 +943,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -910,7 +954,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -921,7 +965,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/entity-resolution-financial-crime/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/entity-resolution-financial-crime/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -932,7 +976,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -943,7 +987,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -954,7 +998,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -965,7 +1009,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/integration-platform-consolidation/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/integration-platform-consolidation/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -976,7 +1020,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -987,7 +1031,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -998,7 +1042,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1009,7 +1053,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pawadata.com/es/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pawadata.com/pt/case-studies/governance-regulatory-reporting/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pawadata.com/case-studies/governance-regulatory-reporting/"/>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

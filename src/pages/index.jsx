@@ -17,6 +17,7 @@ const Careers = lazy(() => import("./Careers"));
 const Solutions = lazy(() => import("./Solutions"));
 const About = lazy(() => import("./About"));
 const Locations = lazy(() => import("./Locations"));
+const Partners = lazy(() => import("./Partners"));
 const Insights = lazy(() => import("./Insights"));
 const HealthCheck = lazy(() => import("./HealthCheck"));
 const DeepSolution = lazy(() => import("./DeepSolution"));
@@ -36,7 +37,7 @@ const COMPONENTS = {
     // imports and ~550 translation keys were still being carried, including the
     // 'Enterprise-Grafe' typo §11 lists as a release blocker. The typo was real;
     // it just lived in code nothing could reach.
-    Solutions, About, Locations, Insights, HealthCheck, Contact, CaseStudies, Workshop,
+    Solutions, About, Locations, Partners, Insights, HealthCheck, Contact, CaseStudies, Workshop,
     PrivacyPolicy, DoNotSellOrShare, Careers,
 };
 const ROUTED = PAGES.filter((p) => p.name !== 'Home').map((p) => [

@@ -50,6 +50,7 @@ const SOURCES = {
   Solutions:            { title: 'solutionsSeoTitle', desc: 'solutionsSeoDesc' },
   About:                { title: 'aboutEyebrow',  desc: 'aboutIntro' },
   Locations:            { title: 'navLocations',  desc: 'locationsSubtitle' },
+  Partners:             { title: 'partnersTitle', desc: 'partnersSubtitle' },
   Insights:             { title: 'insightsEyebrow', desc: 'insightsSubtitle' },
   HealthCheck:          { title: 'hcTitle',       desc: 'hcSubtitle' },
   Contact:              { title: 'contactPageTitle', desc: 'contactPageSubtitle' },

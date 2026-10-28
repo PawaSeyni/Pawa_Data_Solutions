@@ -66,6 +66,12 @@ const BASE_PAGES = [
   { name: 'Insights',             slug: 'insights',                        legacySlug: 'blog',               changefreq: 'weekly',  priority: '0.7' },
   { name: 'Locations',            slug: 'locations',                       legacySlug: null,                 changefreq: 'yearly',  priority: '0.5' },
 
+  // Added 28 Oct. Technology partners, in the footer beside Locations and
+  // Careers rather than the primary nav: Sprint 8 §5 deliberately held the
+  // header to five destinations, and a partner list is reference material, not
+  // a first-level destination.
+  { name: 'Partners',             slug: 'partners',                        legacySlug: null,                 changefreq: 'monthly', priority: '0.6' },
+
   // Workshop and Careers stay top-level. Neither is a solution — one is an
   // offer, the other is hiring — and burying them under /solutions/ would make
   // the nav less honest, not more organised.
