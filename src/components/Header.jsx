@@ -11,9 +11,11 @@ import { hasCaseStudies } from "@/lib/caseStudies";
 import { CTA_PRIMARY, CTA_LOCATIONS } from "@/lib/cta";
 import { track, trackCta, EVENTS } from "@/lib/analytics";
 
-// Sprint 8 §5. Five primary destinations before the utility controls:
+// Sprint 8 §5. Five primary destinations before the utility controls, plus
+// Partners (owner's call, 2026-10-28: the partner relationships are a sales
+// signal he wants visible at first glance, not only in the footer):
 //
-//   Logo | Services ▾ | Selected Work | Insights | About | Contact | EN ▾ | [Book a Data Health Check]
+//   Logo | Services ▾ | Selected Work | Insights | About | Partners | Contact | EN ▾ | [Book a Data Health Check]
 //
 // What left the primary nav and why:
 //   Process   → About / How We Work, and embedded on each solution page. It is
@@ -50,6 +52,7 @@ export default function Header({ currentPageName, language }) {
     ...(hasCaseStudies() ? [{ id: 'selected_work', label: t.navSelectedWork, page: 'CaseStudies' }] : []),
     { id: 'insights', label: t.insightsEyebrow, page: 'Insights' },
     { id: 'about', label: t.navAbout, page: 'About' },
+    { id: 'partners', label: t.navPartners, page: 'Partners' },
     { id: 'contact', label: t.navContact, page: 'Contact' },
   ];
 
