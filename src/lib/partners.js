@@ -36,6 +36,19 @@ export const PARTNERS = [
     },
   },
   {
+    id: 'informatica',
+    name: 'Informatica',
+    url: 'https://www.informatica.com/',
+    type: PARTNER_TYPES.TECHNOLOGY,
+    logo: null,
+    blurb: {
+      en: "An AI-powered cloud data management platform, now part of Salesforce. It covers master data management, data integration, governance, quality and privacy. We use it to build the trusted data foundation that enterprise AI and analytics depend on.",
+      fr: "Une plateforme cloud de gestion des données propulsée par l'IA, désormais intégrée à Salesforce. Elle couvre la gestion des données de référence (MDM), l'intégration, la gouvernance, la qualité et la confidentialité des données. Nous l'utilisons pour bâtir la base de données fiable dont dépendent l'IA et l'analytique d'entreprise.",
+      es: "Una plataforma cloud de gestión de datos impulsada por IA, ahora parte de Salesforce. Cubre la gestión de datos maestros (MDM), la integración, el gobierno, la calidad y la privacidad de los datos. La usamos para construir la base de datos confiable de la que dependen la IA y la analítica empresarial.",
+      pt: "Uma plataforma cloud de gestão de dados com IA, agora parte da Salesforce. Cobre gestão de dados mestres (MDM), integração, governança, qualidade e privacidade de dados. Nós a usamos para construir a base de dados confiável da qual dependem a IA e a análise corporativa.",
+    },
+  },
+  {
     id: 'wisdomai',
     name: 'WisdomAI',
     url: 'https://www.wisdomai.com/',
