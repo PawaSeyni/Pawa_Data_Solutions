@@ -9,6 +9,10 @@
 // web: partner brand guidelines (Salesforce's in particular) restrict their use.
 // Dropping in an approved file is a one-field change: { webp, png, width, height }.
 //
+// `featured` renders the partner as a full-width banner at the top of the grid.
+// With five partners in two columns, the odd card would otherwise sit alone;
+// leading with one banner keeps the four below it in an even 2×2.
+//
 // Plain data with no JSX, so the Node build scripts can import it directly.
 
 export const PARTNER_TYPES = {
@@ -23,6 +27,20 @@ export const PARTNER_TYPE_KEY = {
 
 export const PARTNERS = [
   {
+    id: 'informatica',
+    name: 'Informatica',
+    url: 'https://www.informatica.com/',
+    type: PARTNER_TYPES.TECHNOLOGY,
+    logo: null,
+    featured: true,
+    blurb: {
+      en: "An AI-powered cloud data management platform, now part of Salesforce. It covers master data management, data integration, governance, quality and privacy. We use it to build the trusted data foundation that enterprise AI and analytics depend on.",
+      fr: "Une plateforme cloud de gestion des données propulsée par l'IA, désormais intégrée à Salesforce. Elle couvre la gestion des données de référence (MDM), l'intégration, la gouvernance, la qualité et la confidentialité des données. Nous l'utilisons pour bâtir la base de données fiable dont dépendent l'IA et l'analytique d'entreprise.",
+      es: "Una plataforma cloud de gestión de datos impulsada por IA, ahora parte de Salesforce. Cubre la gestión de datos maestros (MDM), la integración, el gobierno, la calidad y la privacidad de los datos. La usamos para construir la base de datos confiable de la que dependen la IA y la analítica empresarial.",
+      pt: "Uma plataforma cloud de gestão de dados com IA, agora parte da Salesforce. Cobre gestão de dados mestres (MDM), integração, governança, qualidade e privacidade de dados. Nós a usamos para construir a base de dados confiável da qual dependem a IA e a análise corporativa.",
+    },
+  },
+  {
     id: 'salesforce',
     name: 'Salesforce',
     url: 'https://www.salesforce.com/',
@@ -33,19 +51,6 @@ export const PARTNERS = [
       fr: "La plateforme CRM de référence dans le monde. Nous aidons nos clients à connecter Salesforce au reste de leur patrimoine de données, pour que les données clients, ventes et service circulent proprement vers des plateformes gouvernées et reviennent dans les outils que leurs équipes utilisent au quotidien.",
       es: "La plataforma CRM líder en el mundo. Ayudamos a nuestros clientes a conectar Salesforce con el resto de su patrimonio de datos, para que los datos de clientes, ventas y servicio fluyan de forma limpia hacia plataformas gobernadas y de vuelta a las herramientas que sus equipos usan cada día.",
       pt: "A plataforma de CRM líder mundial. Ajudamos os clientes a conectar o Salesforce ao restante do seu patrimônio de dados, para que dados de clientes, vendas e atendimento fluam de forma limpa para plataformas governadas e voltem às ferramentas que suas equipes usam todos os dias.",
-    },
-  },
-  {
-    id: 'informatica',
-    name: 'Informatica',
-    url: 'https://www.informatica.com/',
-    type: PARTNER_TYPES.TECHNOLOGY,
-    logo: null,
-    blurb: {
-      en: "An AI-powered cloud data management platform, now part of Salesforce. It covers master data management, data integration, governance, quality and privacy. We use it to build the trusted data foundation that enterprise AI and analytics depend on.",
-      fr: "Une plateforme cloud de gestion des données propulsée par l'IA, désormais intégrée à Salesforce. Elle couvre la gestion des données de référence (MDM), l'intégration, la gouvernance, la qualité et la confidentialité des données. Nous l'utilisons pour bâtir la base de données fiable dont dépendent l'IA et l'analytique d'entreprise.",
-      es: "Una plataforma cloud de gestión de datos impulsada por IA, ahora parte de Salesforce. Cubre la gestión de datos maestros (MDM), la integración, el gobierno, la calidad y la privacidad de los datos. La usamos para construir la base de datos confiable de la que dependen la IA y la analítica empresarial.",
-      pt: "Uma plataforma cloud de gestão de dados com IA, agora parte da Salesforce. Cobre gestão de dados mestres (MDM), integração, governança, qualidade e privacidade de dados. Nós a usamos para construir a base de dados confiável da qual dependem a IA e a análise corporativa.",
     },
   },
   {

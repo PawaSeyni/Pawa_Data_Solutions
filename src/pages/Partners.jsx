@@ -39,35 +39,42 @@ export default function Partners({ language }) {
             {PARTNERS.map((p) => (
               <li
                 key={p.id}
-                className="flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className={
+                  p.featured
+                    // Full-width banner: mark on the left, copy on the right.
+                    ? "sm:col-span-2 flex flex-col gap-6 rounded-xl border border-gray-200 bg-gradient-to-br from-blue-50/60 to-white p-8 shadow-sm lg:flex-row lg:items-center lg:gap-12 lg:p-10"
+                    : "flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                }
               >
-                <div className="mb-4 flex items-start justify-between gap-4">
-                  <div className="flex h-14 items-center">
+                <div className={p.featured ? "flex items-start justify-between gap-4 lg:w-1/3 lg:flex-col lg:items-start lg:gap-4" : "mb-4 flex items-start justify-between gap-4"}>
+                  <div className={p.featured ? "flex h-20 items-center" : "flex h-14 items-center"}>
                     {p.logo ? (
                       <picture>
                         <source srcSet={p.logo.webp} type="image/webp" />
-                        <img src={p.logo.png} alt={p.name} width={p.logo.width} height={p.logo.height} className="h-10 w-auto" />
+                        <img src={p.logo.png} alt={p.name} width={p.logo.width} height={p.logo.height} className={p.featured ? "h-16 w-auto" : "h-10 w-auto"} />
                       </picture>
                     ) : (
-                      <span className="text-2xl font-bold tracking-tight text-gray-900">{p.name}</span>
+                      <span className={p.featured ? "text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl" : "text-2xl font-bold tracking-tight text-gray-900"}>{p.name}</span>
                     )}
                   </div>
                   <span className="mt-1 shrink-0 rounded-full border border-gray-300 px-2.5 py-0.5 text-xs text-gray-600">
                     {t[PARTNER_TYPE_KEY[p.type]]}
                   </span>
                 </div>
-                <p className="flex-grow text-gray-600 leading-relaxed m-0">{blurbFor(p)}</p>
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${t.partnersVisit}: ${p.name}`}
-                  onClick={() => trackCta({ label: p.id, location: 'partners_grid', page: 'Partners', language })}
-                  className="mt-5 inline-flex items-center gap-1 self-start font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline"
-                >
-                  {t.partnersVisit}
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </a>
+                <div className={p.featured ? "flex flex-col lg:flex-1" : "contents"}>
+                  <p className={p.featured ? "text-lg text-gray-600 leading-relaxed m-0" : "flex-grow text-gray-600 leading-relaxed m-0"}>{blurbFor(p)}</p>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${t.partnersVisit}: ${p.name}`}
+                    onClick={() => trackCta({ label: p.id, location: 'partners_grid', page: 'Partners', language })}
+                    className="mt-5 inline-flex items-center gap-1 self-start font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline"
+                  >
+                    {t.partnersVisit}
+                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                </div>
               </li>
             ))}
           </ul>
