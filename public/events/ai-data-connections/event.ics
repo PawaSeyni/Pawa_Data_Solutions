@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//PaWa Data Solutions and WisdomAI//AI Data and Connections//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ai-data-connections-20261203@pawadata.com
+DTSTAMP:20261105T090000Z
+DTSTART:20261203T213000Z
+DTEND:20261204T003000Z
+SUMMARY:AI\, Data & Connections: PaWa Data Solutions x WisdomAI Happy Hour
+LOCATION:Little Anthony's\, 121 Richmond Street West\, Toronto\, ON M5H 2K1
+DESCRIPTION:Executive networking happy hour hosted by PaWa Data Solutions and WisdomAI. Details: https://pawadata.com/events/ai-data-connections/
+URL:https://pawadata.com/events/ai-data-connections/
+END:VEVENT
+END:VCALENDAR

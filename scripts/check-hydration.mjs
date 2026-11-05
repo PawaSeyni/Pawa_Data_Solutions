@@ -75,6 +75,9 @@ async function* snapshots(dir) {
 const seen = new Set(sitemapRoutes.map(r => (r.endsWith('/') ? r : r + '/')));
 const extraRoutes = [];
 for await (const file of snapshots(DIST)) {
+  // Plain static pages under public/ (event landing pages and the like) have no
+  // React root, so there is nothing to hydrate and nothing for this gate to say.
+  if (!(await readFile(file, 'utf8')).includes('id="root"')) continue;
   const dir = path.relative(DIST, path.dirname(file)).split(path.sep).join('/');
   const route = dir ? `/${dir}/` : '/';
   if (!seen.has(route)) extraRoutes.push(route);
