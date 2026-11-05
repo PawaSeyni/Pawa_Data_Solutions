@@ -42,6 +42,8 @@ Where: ${EVENT.where}
 Add to calendar: ${EVENT.ics}
 Event page: ${EVENT.url}
 
+Drinks and appetizers are complimentary, courtesy of your hosts.
+
 If your plans change, just reply to this email. We look forward to seeing you.
 
 PaWa Data Solutions and WisdomAI`;
@@ -56,6 +58,7 @@ PaWa Data Solutions and WisdomAI`;
 <tr><td style="padding:6px 16px 6px 0;color:#7a8692;font-size:13px;vertical-align:top">Where</td><td style="padding:6px 0">${escape(EVENT.where)}</td></tr>
 </table>
 <p><a href="${EVENT.ics}" style="display:inline-block;background:#c9a45c;color:#102033;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:6px">Add to calendar</a></p>
+<p>Drinks and appetizers are complimentary, courtesy of your hosts.</p>
 <p style="font-size:14px;color:#5f6b78">If your plans change, just reply to this email. Event page: <a href="${EVENT.url}" style="color:#0b1c2e">${EVENT.url}</a></p>
 <p>We look forward to seeing you.<br>PaWa Data Solutions and WisdomAI</p>
 </div>`;
