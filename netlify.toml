@@ -113,3 +113,9 @@
   for = "/version.json"
   [headers.values]
     Cache-Control = "no-store"
+
+# One function, netlify/functions/submission-created.mjs: Netlify invokes it on
+# every form submission; it emails the RSVP confirmation for the event form
+# through Resend (RESEND_API_KEY) and ignores the other forms.
+[functions]
+  directory = "netlify/functions"

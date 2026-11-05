@@ -29,7 +29,7 @@
   </picture>
   <div class="wrap topbar">
     <div class="brands">
-      <a href="https://pawadata.com/" aria-label="PaWa Data Solutions"><img src="/pawa-logo-light.webp" alt="PaWa Data Solutions" width="240" height="360"></a>
+      <a class="pawa" href="https://pawadata.com/"><img src="/pawa-logo-light.webp" alt="" width="240" height="360"><span>PaWa Data Solutions</span></a>
       <span class="x" aria-hidden="true">×</span>
       <a href="https://www.wisdomai.com/" target="_blank" rel="noopener noreferrer" aria-label="WisdomAI"><img src="wisdomai-white.svg" alt="WisdomAI" width="1376" height="293" style="height:30px"></a>
     </div>
@@ -132,6 +132,11 @@
           <div class="field"><label for="title">Title</label><input id="title" name="title" autocomplete="organization-title"></div>
           <div class="field full"><label for="dietary">Dietary requirements (optional)</label><input id="dietary" name="dietary" autocomplete="off" placeholder="Vegetarian, allergies, or anything we should know"></div>
         </div>
+        <div class="consent">
+          <p>Would you like a follow-up conversation after the event? (optional)</p>
+          <label><input type="checkbox" name="followup_pawa" value="yes"> Yes, with PaWa Data Solutions</label>
+          <label><input type="checkbox" name="followup_wisdomai" value="yes"> Yes, with WisdomAI</label>
+        </div>
         <button class="btn btn-gold" type="submit">Reserve Your Spot</button>
         <p class="fine">Your details are used only to manage this event and are shared between the two hosts, PaWa Data Solutions and WisdomAI. See the <a href="https://pawadata.com/privacy-policy/">PaWa Data Solutions privacy policy</a>.</p>
       </form>
@@ -143,7 +148,7 @@
   <div class="wrap">
     <div class="top">
       <div class="brands">
-        <a href="https://pawadata.com/" aria-label="PaWa Data Solutions"><img src="/pawa-logo-light.webp" alt="PaWa Data Solutions" width="240" height="360"></a>
+        <a class="pawa" href="https://pawadata.com/"><img src="/pawa-logo-light.webp" alt="" width="240" height="360"><span>PaWa Data Solutions</span></a>
         <span class="x" aria-hidden="true">×</span>
         <a href="https://www.wisdomai.com/" target="_blank" rel="noopener noreferrer" aria-label="WisdomAI"><img src="wisdomai-white.svg" alt="WisdomAI" width="1376" height="293" style="height:24px"></a>
       </div>
@@ -159,5 +164,6 @@
     </div>
   </div>
 </footer>
+<div class="sticky" id="sticky-rsvp"><a class="btn btn-gold" href="#rsvp">Reserve Your Spot</a></div>
 </body>
 </html>
