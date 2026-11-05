@@ -56,7 +56,7 @@ export const PARTNERS = [
   {
     id: 'wisdomai',
     name: 'WisdomAI',
-    url: 'https://www.wisdomai.com/',
+    url: 'https://www.wisdom.ai/',
     type: PARTNER_TYPES.TECHNOLOGY,
     logo: null,
     blurb: {
