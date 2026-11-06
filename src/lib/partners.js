@@ -7,7 +7,10 @@
 // `logo` is null until the partner's approved files arrive. A card with no logo
 // renders a typographic name tile. Third-party marks are never lifted from the
 // web: partner brand guidelines (Salesforce's in particular) restrict their use.
-// Dropping in an approved file is a one-field change: { webp, png, width, height }.
+// Dropping in an approved file is a one-field change:
+// { webp, png, width, height, displayHeight }. `width` and `height` are the file's
+// pixels; `displayHeight` is the CSS height in the card. Logos differ in shape, so
+// each gets its own height to keep them at a similar visual weight side by side.
 //
 // `featured` renders the partner as a full-width banner at the top of the grid.
 // With five partners in two columns, the odd card would otherwise sit alone;
@@ -58,7 +61,7 @@ export const PARTNERS = [
     name: 'WisdomAI',
     url: 'https://www.wisdom.ai/',
     type: PARTNER_TYPES.TECHNOLOGY,
-    logo: null,
+    logo: { webp: '/partners/wisdomai.webp', png: '/partners/wisdomai.png', width: 553, height: 120, displayHeight: 32 },
     blurb: {
       en: "An AI-native analytics platform that lets business teams ask questions of their data in plain language and get governed, explainable answers. We pair it with a trusted data foundation, so the answers rest on data that is actually correct.",
       fr: "Une plateforme d'analytique native en IA qui permet aux équipes métier de poser des questions sur leurs données en langage courant et d'obtenir des réponses gouvernées et explicables. Nous l'associons à une base de données fiable, pour que les réponses reposent sur des données réellement exactes.",
@@ -71,7 +74,7 @@ export const PARTNERS = [
     name: 'Acceldata',
     url: 'https://www.acceldata.io/',
     type: PARTNER_TYPES.TECHNOLOGY,
-    logo: null,
+    logo: { webp: '/partners/acceldata.webp', png: '/partners/acceldata.png', width: 754, height: 120, displayHeight: 28 },
     blurb: {
       en: "An enterprise data observability platform that monitors the health, quality and performance of data pipelines end to end. We use it to make the reliability of a client's data measurable, so problems surface before they reach a dashboard or a model.",
       fr: "Une plateforme d'observabilité des données d'entreprise qui surveille de bout en bout la santé, la qualité et la performance des pipelines de données. Nous l'utilisons pour rendre mesurable la fiabilité des données d'un client, afin que les problèmes apparaissent avant d'atteindre un tableau de bord ou un modèle.",
@@ -84,7 +87,7 @@ export const PARTNERS = [
     name: 'K2View',
     url: 'https://www.k2view.com/',
     type: PARTNER_TYPES.TECHNOLOGY,
-    logo: null,
+    logo: { webp: '/partners/k2view.webp', png: '/partners/k2view.png', width: 439, height: 120, displayHeight: 40 },
     blurb: {
       en: "A data product platform that organizes data around business entities, such as a customer or an order, and delivers it in real time to operational and analytical systems. We use it where clients need unified, governed entity data across many source systems.",
       fr: "Une plateforme de produits de données qui organise les données autour des entités métier, comme un client ou une commande, et les livre en temps réel aux systèmes opérationnels et analytiques. Nous l'utilisons lorsque les clients ont besoin de données d'entité unifiées et gouvernées à travers de nombreux systèmes sources.",
