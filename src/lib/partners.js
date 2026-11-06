@@ -8,9 +8,10 @@
 // renders a typographic name tile. Third-party marks are never lifted from the
 // web: partner brand guidelines (Salesforce's in particular) restrict their use.
 // Dropping in an approved file is a one-field change:
-// { webp, png, width, height, displayHeight }. `width` and `height` are the file's
+// { webp, png, width, height, displayHeight, alt? }. `width` and `height` are the file's
 // pixels; `displayHeight` is the CSS height in the card. Logos differ in shape, so
 // each gets its own height to keep them at a similar visual weight side by side.
+// `alt` is only for a logo whose words differ from the partner's name.
 //
 // `featured` renders the partner as a full-width banner at the top of the grid.
 // With five partners in two columns, the odd card would otherwise sit alone;
@@ -34,7 +35,7 @@ export const PARTNERS = [
     name: 'Informatica',
     url: 'https://www.informatica.com/',
     type: PARTNER_TYPES.TECHNOLOGY,
-    logo: null,
+    logo: { webp: '/partners/informatica.webp', png: '/partners/informatica.png', width: 835, height: 216, displayHeight: 72, alt: 'Informatica from Salesforce' },
     featured: true,
     blurb: {
       en: "An AI-powered cloud data management platform, now part of Salesforce. It covers master data management, data integration, governance, quality and privacy. We use it to build the trusted data foundation that enterprise AI and analytics depend on.",

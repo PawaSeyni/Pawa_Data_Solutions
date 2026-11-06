@@ -46,12 +46,12 @@ export default function Partners({ language }) {
                     : "flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
                 }
               >
-                <div className={p.featured ? "flex items-start justify-between gap-4 lg:w-1/3 lg:flex-col lg:items-start lg:gap-4" : "mb-4 flex flex-wrap items-start justify-between gap-x-4 gap-y-1"}>
+                <div className={p.featured ? "flex flex-wrap items-start justify-between gap-x-4 gap-y-1 lg:w-1/3 lg:flex-col lg:flex-nowrap lg:items-start lg:gap-4" : "mb-4 flex flex-wrap items-start justify-between gap-x-4 gap-y-1"}>
                   <div className={p.featured ? "flex h-20 min-w-0 items-center" : "flex h-14 min-w-0 items-center"}>
                     {p.logo ? (
                       <picture>
                         <source srcSet={p.logo.webp} type="image/webp" />
-                        <img src={p.logo.png} alt={p.name} width={p.logo.width} height={p.logo.height} style={{ height: p.logo.displayHeight }} className="w-auto max-w-full object-contain object-left" />
+                        <img src={p.logo.png} alt={p.logo.alt || p.name} width={p.logo.width} height={p.logo.height} style={{ height: p.logo.displayHeight }} className="w-auto max-w-full object-contain object-left" />
                       </picture>
                     ) : (
                       <span className={p.featured ? "text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl" : "text-2xl font-bold tracking-tight text-gray-900"}>{p.name}</span>
