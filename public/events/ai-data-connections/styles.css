@@ -35,7 +35,7 @@ h2{font-size:clamp(30px,3.4vw,42px);margin:16px 0 22px}
 .pcard{background:#fff;border-radius:10px;padding:44px 40px;box-shadow:0 24px 70px rgba(15,30,48,.07);border-top:3px solid var(--gold);text-align:left}
 .pcard .mark{height:84px;display:flex;align-items:center;margin-bottom:26px}
 .pcard .mark img{height:84px;width:auto}
-.pcard .mark .wordmark{font-size:26px;font-weight:600;letter-spacing:-.02em;color:var(--navy)}
+.pcard .mark img.wide{height:40px}
 .pcard h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7a8692;font-weight:600;margin-bottom:12px}
 .pcard p{margin:0;color:var(--muted);line-height:1.8}
 .pcard a.more{display:inline-block;margin-top:20px;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold)}
