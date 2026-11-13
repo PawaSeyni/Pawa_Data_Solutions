@@ -4,7 +4,8 @@
 //
 // Guard rails:
 // - Only a caller holding a Netlify personal access token with access to THIS
-//   site can use it: the token is checked against the Netlify API on every call.
+//   site can use it: the token must be able to read this site's forms, checked
+//   against the Netlify API on every call.
 //   No new secret is needed; the Resend key never leaves the function.
 // - It can only write to addresses that RSVP'd (or, in test mode, to exactly one
 //   address with "[TEST]" in the subject), so it can never become an open relay.
@@ -58,9 +59,11 @@ export default async (request, context) => {
   const token = (request.headers.get('authorization') || '').replace(/^Bearer\s+/i, '');
   const siteId = context?.site?.id || process.env.SITE_ID;
   if (!token || !siteId) return json({ error: 'unauthorized' }, 401);
+  // GET /sites/:id answers even for a bad token, so check against the site's
+  // forms, which need a token that really has access to this site.
   try {
-    const site = await netlify(token, `/sites/${siteId}`);
-    if (site.id !== siteId) return json({ error: 'unauthorized' }, 401);
+    const forms = await netlify(token, `/sites/${siteId}/forms`);
+    if (!Array.isArray(forms)) return json({ error: 'unauthorized' }, 401);
   } catch {
     return json({ error: 'unauthorized' }, 401);
   }
@@ -76,7 +79,7 @@ export default async (request, context) => {
     if (!/^\[TEST\]/.test(subject)) return json({ error: 'test sends need a subject starting with [TEST]' }, 400);
     list = [{ email: String(testTo).trim().toLowerCase(), first: body.testFirst || 'Test' }];
   } else {
-    list = await rsvps(token, siteId);
+    try { list = await rsvps(token, siteId); } catch (e) { return json({ error: 'could not read RSVPs', status: e.status }, 502); }
     if (Array.isArray(only) && only.length) {
       const want = new Set(only.map((e) => String(e).trim().toLowerCase()));
       const unknown = [...want].filter((e) => !list.some((r) => r.email === e));
